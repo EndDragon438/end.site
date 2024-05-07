@@ -14,9 +14,6 @@ tagsList.sort();
 /* ONTO THE FUNCTIONS!!! */
 
 
-
-
-
 // adding header sitewide
 const headerHTML = `
 <a href="/index.html" class="logo">
@@ -176,7 +173,7 @@ async function parsePost(url) {
 	const postJSON = await response.json();
 	let output = "";
 	if (postJSON.postType == "2d") {
-		output = `
+		output += `
 		<div class="creation-side">
 			<p>${postJSON.postTitle}</p>
 			<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>
@@ -188,7 +185,7 @@ async function parsePost(url) {
 		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else if (postJSON.postType == "3d") {
-		output = `
+		output += `
 		<div class="creation-side">
 			<p>${postJSON.postTitle}</p>
 			<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>
@@ -200,40 +197,11 @@ async function parsePost(url) {
 		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else if (postJSON.postType == "games") {
-		output = `
-		<div class="creation-side">
-			<p>${postJSON.postTitle}</p>
-			<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>
-			<p class="creation-description">
-			  ${postJSON.postText}
-			</p>
-			<p id="tags">tags: ${postJSON.postTags}</p>
-		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
-		`;
+		output +='';
 	} else if (postJSON.postType == "music") {
-		output = `
-		<div class="creation-side">
-			<p>${postJSON.postTitle}</p>
-			<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>
-			<p class="creation-description">
-			  ${postJSON.postText}
-			</p>
-			<p id="tags">tags: ${postJSON.postTags}</p>
-		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
-		`;
+		output +='';
 	} else if (postJSON.postType == "writing") {
-		output = `
-		<div class="creation-side">
-			<p>${postJSON.postTitle}</p>
-			<p class="creation-description">
-			  ${postJSON.postText}
-			</p>
-			<p id="tags">tags: ${postJSON.postTags}</p>
-		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
-		`;
+		output +='';
 	} else {
 		if (postJSON.postTitle) {
 
