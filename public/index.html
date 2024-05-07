@@ -6,18 +6,22 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="pinterest" content="nopin" />
     <meta name="description" content="personal blog and portfolio of end!">
-    <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
+    <link rel="icon" type="image/png" href="/public/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
     <title>end.site</title> <!-- name it shows on the tab -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
+    <link href="/public/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
   </head>
   <body>
     <!-- navbar div -->
-    <div class="header" id="header"><p>SOME PAGES WILL NOT WORK WITHOUT JAVASCRIPT &emsp;&emsp;<a class="noJS" href="/index.html">Home</a> | <a class="noJS" href="/pages/about/index.html">About</a> | <a class="noJS" href="/pages/blog/index.html">Blog</a> | <a class="noJS" href="/pages/projects/index.html">Creations</a> | <a class="noJS" href="/pages/socials/index.html">Socials</a> | <a class="noJS" href="/pages/links/index.html">Linkies</a></p></div>    <!-- site content begins -->
+    <div class="header" id="header"><p>SOME PAGES WILL NOT WORK WITHOUT JAVASCRIPT &emsp;&emsp;<a class="noJS" href="/index.html">Home</a> | <a class="noJS" href="/public/pages/about/index.html">About</a> | <a class="noJS" href="/public/pages/blog/index.html">Blog</a> | <a class="noJS" href="/public/pages/projects/index.html">Creations</a> | <a class="noJS" href="/public/pages/socials/index.html">Socials</a> | <a class="noJS" href="/public/pages/links/index.html">Linkies</a></p></div>    <!-- site content begins -->
     <aside id="rightSidebar" title="thanks to sadgrl for the sidebar code!"><h2>Changelog</h2>
       <div>
         <ul>
+          May 6, 2024
+          <li>moved files to <a href="https://github.com/EndDragon438/end.site" target="blank">github</a> for easier edit syncing!</li>
+        </ul>
+        <ul>
           May 5, 2024
-          <li>made a <a href="/pages/projects/other/json_generator.html" target="blank">post JSON generator</a></li>
+          <li>made a <a href="/public/pages/projects/other/json_generator.html" target="blank">post JSON generator</a></li>
         </ul>
         <ul>
           May 3, 2024
@@ -37,14 +41,14 @@
         </ul>
         <ul>
           April 27, 2024
-          <li>finished auto-population of the <a href="/pages/projects/tagged.html">Tagged</a> page</li>
+          <li>finished auto-population of the <a href="/public/pages/projects/tagged.html">Tagged</a> page</li>
           <li>added autolinking tags to pages including tags</li>
           <li>added jQuery code to <code>script.js</code>, plan to use for JSON to HTML parser</li>
         </ul>
         <ul>
           April 26, 2024
           <li>beginnings of the tag system</li>
-          <li>initial <a href="/pages/blog/pages/2024-04-27_Welcome.html">blog post</a></li>
+          <li>initial <a href="/public/pages/blog/pages/2024-04-27_Welcome.html">blog post</a></li>
           <li>cleaned up <code>style.css</code>, and converted to em instead of px</li>
           <li>fixed fucked up header :3</li>
           <li>looked into microformats! don't care! stole class names! they're mine now!</li>
@@ -57,7 +61,7 @@
         </ul>
         <ul>
           April 24, 2024
-          <li>added <a href="/pages/projects/2d/pages/demo.html">demo</a> creation page
+          <li>added <a href="/public/pages/projects/2d/pages/demo.html">demo</a> creation page
           <li>check out <a href="https://www.11ty.dev/" targer="blank">Eleventy</a> for tags/posts
         </ul>
         <ul>
@@ -129,7 +133,7 @@
         even have to touch the actual JSON file, but there's a little bit more to do first. i'm using <code>fetch()</code> to get the JSON files from the <code>/posts</code> directory, and then use that along with an <code>.html</code> page i copy-paste to pass into
         a function that generates the post layout based on the post type! i still need to implement different layouts for different post types, everything is using the 2D layout right now, but i'm really happy with where
         i'm at right now. beyond all the post creation stuff, i index pages on the Tag Pages by looping through the post JSON array, which lists all the posts i want displayed. it loops through <code>fetch()</code>ing each JSON and adding
-        it to the Tag Page as another list item, matching the post tags against the tag provided by the Tag Page. if you want to see all i've done with the scripting, you can find it <a href="/script.js">here</a>. next, i'll be
+        it to the Tag Page as another list item, matching the post tags against the tag provided by the Tag Page. if you want to see all i've done with the scripting, you can find it <a href="/public/script.js">here</a>. next, i'll be
         adding more layouts depending on the post type, as well as adding some of my old projects to the Creations page!!
       </p>
       <ul>
@@ -146,24 +150,23 @@
         <li>figure out how to get the scrollbar to render under the header/footer</li>
         <li>add to Linkies: <a href="https://www.tumblr.com/friendliness/159592953380/how-to-grow-the-fuck-up?source=share">how to grow the fuck up</a> | <a href="https://www.211.org/">211</a> | <a href="https://catbox.moe/faq.php">catbox & litterbox</a> | <a href="https://www.webtender.com/info/">Web Bartender</a> | <a href="https://www.mapcrunch.com/" target="blank">Random Google Maps</a> | <a href="https://staticsitegenerators.net/">SSG list</a> | <a href="https://solaria.neocities.org/jscheats" target="blank">JS block swapper</a></li>
       </ul>
-      <p class="alternate" style="text-align:center;">&gt; SITE IS NOW v1.0!!! &lt;</p>
       <!-- blinkies and buttons, oh my!!!! -->
       <div id="buttons">
         <h2 style="font-size:15pt;margin:0;padding:0;">my site blinkie & button (link my site!!)</h2>
         <br>
-        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/resources/images/end.site_blinkie.gif" alt="my site blinkie! made by me." title="my site blinkie! made by me."/></a>
-        <a class="button" rel="noreferrer" href="/index.html"><img src="/resources/images/end.site_button.jpg" alt="my site button! made by me." title="my site button! made by me."/></a>
+        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/public/resources/images/end.site_blinkie.gif" alt="my site blinkie! made by me." title="my site blinkie! made by me."/></a>
+        <a class="button" rel="noreferrer" href="/index.html"><img src="/public/resources/images/end.site_button.jpg" alt="my site button! made by me." title="my site button! made by me."/></a>
         <br><br>
         <h2 style="font-size:15pt;margin:0;padding:0;">blinkie wall!</h2>
         <br>
-        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/resources/images/autism_blinkie.gif" alt="autism infinity symbol scrolling rainbow. made by me!" title="autism infinity symbol. made by me!"></a>
-        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/resources/images/e5074b_blinkie.gif" alt="'#E5074B' flashing on a background of the same color. made by me!" title="#E5074B' flashing on a background of the same color. made by me!"></a>
-        <a class="button animated" rel="noreferrer" href="https://getmusicbee.com/" target="blank"><img src="/resources/images/musicbee_blinkie.gif" alt="bee flying with the blinking text 'MUSICBEE' made by me!" title="bee flying with the blinking text 'MUSICBEE' made by me!"></a>
-        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/resources/images/acab_blinkie.gif" alt="all cops are bastards! made by me." title="all cops are bastards! made by me."/></a>
-        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/resources/images/palestine_blinkie.gif" alt="Free Palestine! made by me." title="Free Palestine! made by me."/></a>
-        <a class="button" href="https://artfight.net/~EndDragon438"><img src="/resources/images/2023-werewolves-stamp.png" alt="Artfight 2023!" title="Artfight 2023!"/></a>
-        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/resources/images/no2web3.gif" alt="say no to web3 tech! from yesterweb.org" title="say no to web3 tech! from yesterweb.org"></a>
-        <a class="button" rel="noreferrer" href="https://yesterweb.org/"><img src="/resources/images/yesterweb_button.png" alt="yesterweb movement link. from yesterweb.org" title="yesterweb movement link. from yesterweb.org"></a>
+        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/public/resources/images/autism_blinkie.gif" alt="autism infinity symbol scrolling rainbow. made by me!" title="autism infinity symbol. made by me!"></a>
+        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/public/resources/images/e5074b_blinkie.gif" alt="'#E5074B' flashing on a background of the same color. made by me!" title="#E5074B' flashing on a background of the same color. made by me!"></a>
+        <a class="button animated" rel="noreferrer" href="https://getmusicbee.com/" target="blank"><img src="/public/resources/images/musicbee_blinkie.gif" alt="bee flying with the blinking text 'MUSICBEE' made by me!" title="bee flying with the blinking text 'MUSICBEE' made by me!"></a>
+        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/public/resources/images/acab_blinkie.gif" alt="all cops are bastards! made by me." title="all cops are bastards! made by me."/></a>
+        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/public/resources/images/palestine_blinkie.gif" alt="Free Palestine! made by me." title="Free Palestine! made by me."/></a>
+        <a class="button" href="https://artfight.net/~EndDragon438"><img src="/public/resources/images/2023-werewolves-stamp.png" alt="Artfight 2023!" title="Artfight 2023!"/></a>
+        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/public/resources/images/no2web3.gif" alt="say no to web3 tech! from yesterweb.org" title="say no to web3 tech! from yesterweb.org"></a>
+        <a class="button" rel="noreferrer" href="https://yesterweb.org/"><img src="/public/resources/images/yesterweb_button.png" alt="yesterweb movement link. from yesterweb.org" title="yesterweb movement link. from yesterweb.org"></a>
         <a class="button" href="https://jigsaw.w3.org/css-validator/check/referer"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" title="Valid CSS!"/></a>
       </div>
     </div>
@@ -174,6 +177,6 @@
       <p class="footer">SITE INFO: HOSTED ON NEOCITIES. MADE WITH BUILT IN EDITOR & VSCode IN HTML + CSS + JS. SITE CREATED APRIL 11, 2024</p>
       <p class="footer" id="last_modified"></p>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/public/script.js"></script>
   </body>
 </html>

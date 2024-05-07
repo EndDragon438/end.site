@@ -22,7 +22,7 @@ content: "LAST MODIFIED: MAY 5, 2024";
 /* main elements */
 body {
   font-family: "Albertus MT", "Helvetica";
-  background-image: url("/resources/images/dragons_clouds_seamless.jpg");
+  background-image: url("/public/resources/images/dragons_clouds_seamless.jpg");
   margin: 0;
   padding: 0;
 }

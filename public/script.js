@@ -20,16 +20,16 @@ tagsList.sort();
 // adding header sitewide
 const headerHTML = `
 <a href="/index.html" class="logo">
-  <img src="/resources/images/aroace_dragon.PNG" style="width:63%;">
+  <img src="/public/resources/images/aroace_dragon.PNG" style="width:63%;">
 </a>
 <h3 class="alternate" style="float:left;padding:15px 0 15px 25px;font-size:25px;">end.site</h3>
 <div class="clickyButtons"><button type="button" onclick="toggleButtons()">Toggle Buttons</button> <button type="button" onclick="toggleAnimations()">Toggle Animations</button></div>
 <div class="header-right">
-  <a class="active" href="/pages/about/index.html">About</a>
-  <a class="active" href="/pages/blog/index.html">Blog</a>
-  <a class="active" href="/pages/projects/index.html">Creations</a>
-  <a class="active" href="/pages/socials/index.html">Socials</a>
-  <a class="active" href="/pages/links/index.html">Linkies</a>
+  <a class="active" href="/public/pages/about/index.html">About</a>
+  <a class="active" href="/public/pages/blog/index.html">Blog</a>
+  <a class="active" href="/public/pages/projects/index.html">Creations</a>
+  <a class="active" href="/public/pages/socials/index.html">Socials</a>
+  <a class="active" href="/public/pages/links/index.html">Linkies</a>
 </div>`;
 
 if (document.getElementById("header")) {
@@ -107,7 +107,7 @@ function listBlogPosts() {
     const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const monthName = monthArray[date.substring(5,7)-1];
     const title = post.substring(11).replace(/-/g, " ").replace(/.html/, "");
-    const thumbnail = `<li><a href="/pages/blog/pages/${postArray[i]}">${title} | ${monthName} ${date.substring(8,10)}, ${date.substring(0,4)}</a></li>`;
+    const thumbnail = `<li><a href="/public/pages/blog/pages/${postArray[i]}">${title} | ${monthName} ${date.substring(8,10)}, ${date.substring(0,4)}</a></li>`;
     listElement.insertAdjacentHTML("beforeend", thumbnail);
   }
 }
@@ -120,9 +120,9 @@ function listTags() {
   for (i=0; i<tagsList.length; i++) {
     const tagList = document.getElementById("tagList");
     const node = document.createElement("li");
-    const textnode = document.createTextNode(`<a href="/pages/projects/tags/${tagsList[i]}">${tagsList[i]}</a>`);
+    const textnode = document.createTextNode(`<a href="/public/pages/projects/tags/${tagsList[i]}">${tagsList[i]}</a>`);
     node.appendChild(textnode);
-    const testNode = `<li><a href="/pages/projects/tags/${tagsList[i]}.html">${tagsList[i]}</a></li>`;
+    const testNode = `<li><a href="/public/pages/projects/tags/${tagsList[i]}.html">${tagsList[i]}</a></li>`;
     tagList.insertAdjacentHTML("beforeend", testNode);
   }
   //createTagPage(tagsList[i]); NOT IMPLEMENTED
@@ -132,11 +132,11 @@ function listTags() {
 async function populateTags(tagName) {
 	document.getElementsByClassName("tagPage")[0].insertAdjacentHTML("afterbegin", `<h1>Tagged: ${tagName}</h1>`)
 	for (i=0; i<postList.length; i++) {
-		const response = await fetch("/posts/" + postList[i]);
+		const response = await fetch("/public/posts/" + postList[i]);
 		const postJSON = await response.json();
 		const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 		const monthName = monthArray[postJSON.postDate.substring(5,7)-1];
-		const thumbnail = `<li><a href="/pages/projects/${postJSON.postType}/${postJSON.postTitle.toLowerCase().replace(/ /g, '_')}.html">${postJSON.postTitle} | ${monthName} ${postJSON.postDate.substring(8,10)}, ${postJSON.postDate.substring(0,4)}</a></li>`;
+		const thumbnail = `<li><a href="/public/pages/projects/${postJSON.postType}/${postJSON.postTitle.toLowerCase().replace(/ /g, '_')}.html">${postJSON.postTitle} | ${monthName} ${postJSON.postDate.substring(8,10)}, ${postJSON.postDate.substring(0,4)}</a></li>`;
 		for (n=0; n<postJSON.postTags.length; n++) {
 			if (postJSON.postTags[n] === tagName) {
 				document.getElementById("pageList").insertAdjacentHTML("beforeend", thumbnail);
@@ -152,7 +152,7 @@ function linkTags() {
   tagArray.sort();
   let linkedTags = 'tags: ';
   for (i=0; i<tagArray.length; i++) {
-    linkedTags += `<a href="/pages/projects/tags/${tagArray[i]}.html">${tagArray[i]}</a>, `;
+    linkedTags += `<a href="/public/pages/projects/tags/${tagArray[i]}.html">${tagArray[i]}</a>, `;
   }
   linkedTags = linkedTags.slice(0, linkedTags.length - 2);
   document.getElementById("tags").innerHTML = linkedTags;
@@ -185,7 +185,7 @@ async function parsePost(url) {
 			</p>
 			<p id="tags">tags: ${postJSON.postTags}</p>
 		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+		<img class="creation-content" src="/public/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else if (postJSON.postType == "3d") {
 		output = `
@@ -197,7 +197,7 @@ async function parsePost(url) {
 			</p>
 			<p id="tags">tags: ${postJSON.postTags}</p>
 		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+		<img class="creation-content" src="/public/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else if (postJSON.postType == "games") {
 		output = `
@@ -209,7 +209,7 @@ async function parsePost(url) {
 			</p>
 			<p id="tags">tags: ${postJSON.postTags}</p>
 		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+		<img class="creation-content" src="/public/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else if (postJSON.postType == "music") {
 		output = `
@@ -221,7 +221,7 @@ async function parsePost(url) {
 			</p>
 			<p id="tags">tags: ${postJSON.postTags}</p>
 		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+		<img class="creation-content" src="/public/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else if (postJSON.postType == "writing") {
 		output = `
@@ -232,7 +232,7 @@ async function parsePost(url) {
 			</p>
 			<p id="tags">tags: ${postJSON.postTags}</p>
 		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+		<img class="creation-content" src="/public/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else {
 		if (postJSON.postTitle) {
