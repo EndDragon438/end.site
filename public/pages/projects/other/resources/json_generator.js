@@ -9,7 +9,7 @@ function generateJSON(type) {
         const image = document.getElementById("2dImage").value;
         const title = document.getElementById("2dTitle").value;
         const date = document.getElementById("2dDate").value;
-        const text = document.getElementById("2dText").value;
+        const text = document.getElementById("2dText").value.replace('"',"'");
         const tags = document.getElementById("2dTags").value.split(",");
 
         // formatting the tags like a JSON array
@@ -31,7 +31,7 @@ function generateJSON(type) {
         const image = document.getElementById("3dImage").value;
         const title = document.getElementById("3dTitle").value;
         const date = document.getElementById("3dDate").value;
-        const text = document.getElementById("3dText").value;
+        const text = document.getElementById("3dText").value.replace('"',"'");
         const tags = document.getElementById("3dTags").value.split(",");
 
         // formatting the tags like a JSON array
@@ -53,7 +53,7 @@ function generateJSON(type) {
         const link = document.getElementById("writLink").value;
         const title = document.getElementById("writTitle").value;
         const date = document.getElementById("writDate").value;
-        const text = document.getElementById("writText").value;
+        const text = document.getElementById("writText").value.replace('"',"'");
         const tags = document.getElementById("writTags").value.split(",");
 
         // formatting the tags like a JSON array
@@ -72,7 +72,7 @@ function generateJSON(type) {
         //const file = document.getElementById("musicFile").value;  MUSIC PLAYER NOT IMPLEMENTED YET
         const title = document.getElementById("musicTitle").value;
         const date = document.getElementById("musicDate").value;
-        const text = document.getElementById("musicText").value;
+        const text = document.getElementById("musicText").value.replace('"',"'");
         const tags = document.getElementById("musicTags").value.split(",");
 
         // formatting the tags like a JSON array
@@ -90,7 +90,7 @@ function generateJSON(type) {
         const link = document.getElementById("gamesLink").value;
         const title = document.getElementById("gamesTitle").value;
         const date = document.getElementById("gamesDate").value;
-        const text = document.getElementById("gamesText").value;
+        const text = document.getElementById("gamesText").value.replace('"',"'");
         const tags = document.getElementById("gamesTags").value.split(",");
 
         // formatting the tags like a JSON array
@@ -108,7 +108,7 @@ function generateJSON(type) {
         const link = document.getElementById("otherLink").value;
         const title = document.getElementById("otherTitle").value;
         const date = document.getElementById("otherDate").value;
-        const text = document.getElementById("otherText").value;
+        const text = document.getElementById("otherText").value.replace('"',"'");
         const tags = document.getElementById("otherTags").value.split(",");
         const subtitle = document.getElementById("otherSubtitle").value;
         const timelapse = document.getElementById("otherTimelapse").value;
