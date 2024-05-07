@@ -246,10 +246,31 @@ aside li {
   border-width: 0.5em;
   margin-right: 10px;
 }
-.creation-description {
-  height: 30rem;
+.creation-image-desc {
+  height: 29rem;
   overflow-y: auto;
   overflow-x: initial;
+}
+.creation-image {
+  width: 60%;
+  border: #181c24;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 10px;
+}
+.creation-title {
+  font-size: 2em;
+  padding: 25px;
+  border-radius: 10px;
+}
+.creation-subtitle {
+  font-size: 1em;
+  padding: 25px;
+  border-radius: 10px;
+}
+.creation-date {
+  font-size: 0.75em;
+  color: white;
 }
 
 #tags {
@@ -257,13 +278,6 @@ aside li {
   font-size: 15pt
 }
 
-.creation-content {
-  width: 60%;
-  border: #181c24;
-  border-style: solid;
-  border-radius: 5px;
-  border-width: 10px;
-}
 
 /* header styling */
 .header {

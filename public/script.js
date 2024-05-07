@@ -177,12 +177,12 @@ async function parsePost(url) {
 		<div class="creation-side">
 			<p>${postJSON.postTitle}</p>
 			<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>
-			<p class="creation-description">
+			<p class="creation-image-desc">
 			  ${postJSON.postText}
 			</p>
 			<p id="tags">tags: ${postJSON.postTags}</p>
 		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+		<img class="creation-image" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
 	} else if (postJSON.postType == "3d") {
 		output += `
@@ -196,11 +196,11 @@ async function parsePost(url) {
 		</div>
 		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
-	} else if (postJSON.postType == "games") {
+	} else if (postJSON.postType == "writing") {
 		output +='';
 	} else if (postJSON.postType == "music") {
 		output +='';
-	} else if (postJSON.postType == "writing") {
+	} else if (postJSON.postType == "games") {
 		output +='';
 	} else {
 		if (postJSON.postTitle) {
