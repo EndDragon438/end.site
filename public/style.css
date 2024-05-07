@@ -259,23 +259,34 @@ aside li {
   border-width: 10px;
 }
 .creation-title {
-  font-size: 2em;
+  margin: 0em;
+  font-size: 2.5em;
   padding: 25px;
+  margin-bottom: -0.75em;
   border-radius: 10px;
 }
 .creation-subtitle {
-  font-size: 1em;
-  padding: 25px;
+  margin: 0em;
+  margin-bottom: -0.75em;
+  font-size: 1.5em;
+  padding: 1em;
+  padding-left: 50px;
   border-radius: 10px;
 }
 .creation-date {
+  margin: 0em;
   font-size: 0.75em;
   color: white;
+  background: #181c24;
+  padding: 1em;
+  padding-left: 50px;
+  border-radius: 10px;
 }
 
 #tags {
   color: #FFFFFF;
-  font-size: 15pt
+  font-size: 1em;
+  padding-left: 50px;
 }
 
 

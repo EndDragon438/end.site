@@ -70,7 +70,9 @@ if (document.getElementsByClassName('tabSelector')) {
 	for (i=0; i<tabs.length; i++) {
 		tabs[i].style.display = 'none';
 	}
-	document.getElementById('bio').style.display = "block";
+	if (document.getElementById('bio')) {
+		document.getElementById('bio').style.display = "block";
+	}
 }
 
 function swapTab(event, tab) {
@@ -145,7 +147,7 @@ async function populateTags(tagName) {
 // link tags on posts to their correct Tag Pages
 function linkTags() {
   const rawList = document.getElementById("tags").innerHTML;
-  const tagArray = rawList.substring(6).split(",");
+  const tagArray = rawList.replace("tags: ", "").split(",");
   tagArray.sort();
   let linkedTags = 'tags: ';
   for (i=0; i<tagArray.length; i++) {
@@ -167,12 +169,11 @@ function embedYoutube(url) {
 }
 
 // parsing post JSON to turn into a post page
-// TODO: customize generated layout depending on postType
 async function parsePost(url) {
 	const response = await fetch(url);
 	const postJSON = await response.json();
 	let output = "";
-	if (postJSON.postType == "2d") {
+	if (postJSON.postType == ("2d" || "3d")) { // same formatting for 2D and 3D
 		output += `
 		<div class="creation-side">
 			<p>${postJSON.postTitle}</p>
@@ -184,41 +185,44 @@ async function parsePost(url) {
 		</div>
 		<img class="creation-image" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
 		`;
-	} else if (postJSON.postType == "3d") {
+	}  else if (postJSON.postType == "writing") { // Writing has unique formatting
 		output += `
-		<div class="creation-side">
-			<p>${postJSON.postTitle}</p>
-			<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>
-			<p class="creation-description">
-			  ${postJSON.postText}
-			</p>
-			<p id="tags">tags: ${postJSON.postTags}</p>
-		</div>
-		<img class="creation-content" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+			<h1 class="creation-title">${postJSON.postTitle}</h1>
 		`;
-	} else if (postJSON.postType == "writing") {
-		output +='';
-	} else if (postJSON.postType == "music") {
-		output +='';
-	} else if (postJSON.postType == "games") {
-		output +='';
-	} else {
+		if (postJSON.postSubtitle) {output += `<h2 class="creation-subtitle">${postJSON.postSubtitle}</h2>`;}
+		output += `
+			<h3 class="creation-date">${postJSON.postDate}</h3>
+			<p id="tags">${postJSON.postTags}</p>
+		`;
+		if (postJSON.postLink) {output += `<h2 class="creation-subtitle" style="margin:0;"><a href="${postJSON.postLink}" target="blank">alternative link</a></h2>`;}
+		output += `
+			<p>${postJSON.postText}</p>
+		`;
+	} else if (postJSON.postType == ("music" || "games")) { // same formatting for Music and Games
+		output += `
+			<h1 class="creation-title">${postJSON.postTitle}<h1>
+			<h3 class="creation-date">${postJSON.postDate}</h3>
+			<p id="tags">${postJSON.postTags}</p>
+			<h2 class="creation-subtitle" style="margin:0;"><a href="${postJSON.postLink}" target="blank">alternative link</a></h2>
+			<p>${postJSON.postText}</p>
+		`;
+	}  else { // Other type Creations
 		if (postJSON.postTitle) {
-
+			output += `<h1 class="creation-title">${postJSON.postTitle}<h1>`;
 		} else if (postJSON.postSubtitle) {
-
-		}else if (postJSON.postSubtitle) {
-
-		}else if (postJSON.postSubtitle) {
-
-		}else if (postJSON.postSubtitle) {
-
-		}else if (postJSON.postSubtitle) {
-
-		}else if (postJSON.postSubtitle) {
-
-		}else if (postJSON.postSubtitle) {
-
+			output += `<h2 class="creation-subtitle">${postJSON.postSubtitle}</h2>`;
+		}else if (postJSON.postDate) {
+			output += `<h3 class="creation-date">${postJSON.postDate}</h3>`;
+		}else if (postJSON.postTags) {
+			output += `<p id="tags">${postJSON.postTags}</p>`;
+		}else if (postJSON.postLink) {
+			output += `<h2 class="creation-subtitle" style="margin:0;"><a href="${postJSON.postLink}" target="blank">alternative link</a></h2>`;
+		}else if (postJSON.postTimelapse) {
+			output += `<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>`;
+		}/*else if (postJSON.postFile) {	MISC FILETYPES NOT IMPLEMENTED + NEOCITIES FILE RESTRICTIONS MAKE THIS KINDA USELESS (MAYBE JUST LINK TO A DOWNLOAD??)
+			output += ``;
+		}*/else if (postJSON.postText) {
+			output += `<p>${postJSON.postText}</p>`;
 		}
 	}
 	document.getElementById("creation_page").innerHTML = output;

@@ -68,7 +68,8 @@ function generateJSON(type) {
     }
     else if (type == 'music') {
         // defining unique vars
-        const file = document.getElementById("musicFile").value;
+        const link = document.getElementById("musicLink").value;
+        //const file = document.getElementById("musicFile").value;  MUSIC PLAYER NOT IMPLEMENTED YET
         const title = document.getElementById("musicTitle").value;
         const date = document.getElementById("musicDate").value;
         const text = document.getElementById("musicText").value;
@@ -82,7 +83,7 @@ function generateJSON(type) {
         tagsOut = tagsOut.slice(0, tagsOut.length - 1);
 
         // assembling the output
-        output += `{"postType":"${type}","postTitle":"${title}","postDate":"${date}","postContent":"${file}","postText":"${text}","postTags":[${tagsOut}]}`;
+        output += `{"postType":"${type}","postTitle":"${title}","postDate":"${date}","postLink":"${link}","postText":"${text}","postTags":[${tagsOut}]}`;
     }
     else if (type == 'games') {
         // defining unique vars
