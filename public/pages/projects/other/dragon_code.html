@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="pinterest" content="nopin" />
+    <meta name="description" content="personal blog and portfolio of end!">
+    <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
+    <title>end.site</title> <!-- name it shows on the tab -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
+    <style>
+        button {
+            font-size: 1.4em;
+        }
+        .tabButton {
+            width: 20%;
+        }
+        .tabButton:hover {
+          bottom: 5px;
+          right: 0;
+        }
+        .tabButton.active {
+          bottom: 10px;
+          right: 0;
+        }
+        label {
+          font-size: 1.75em;
+          color: #e5074b;
+          background-color: #181c24;
+          padding: 1em;
+          margin: 0;
+          border-radius: 10px;
+        }
+        input{
+          width: 65%;
+          font-size: 1.5em;
+          color: #e5074b;
+          background-color: #181c24;
+          border-width: 5px;
+          border-color: rgb(255, 149, 234);
+          padding: 1em;
+          margin: 1em;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main_content" style="margin-top: -6em;">
+        <h1>The Dragon Code</h1>
+        <div class="tabSelector">
+            <button class="tabButton active" onclick="swapTab(event, 'dragon_code')">The Code</button>
+            <button class="tabButton" onclick="swapTab(event, 'decoder')">Decoder</button>
+            <button class="tabButton" onclick="swapTab(event, 'encoder')">Encoder</button>
+        </div>
+
+        <div class="tab" id="dragon_code">
+            <p>&emsp;The <strong>Dragon Code (DC2)</strong> is one of several Sig File codes that were around in the early days of the internet with the earliest (i know of at least) being the Geek Code in the early 90s.
+            Nowadays, nearly all the Codes are extinct, except for the <strong>Furry Code</strong> which still has a website and a small amount of users.
+            The <strong>Dragon Code</strong> is also extinct, having last been updated in Jan. 2004, and the <a href="https://web.archive.org/web/20131002065845/http://www.wyrm.org.uk/dc/" target="blank">official website</a> went down in Oct. 2013. As far as I know, that was the end of maintainment for the <strong>Dragon Code</strong> (If anyone knows of a later maintainer, please let me know!!!).
+            Even though the <strong>Dragon Code</strong> is pretty much extinct, it still sees some use among dragons, including myself!! And because I use the <strong>DC2</strong>, I'm trying to learn webdev, and I just happened to be bored, I decided to build a fully functional decoder for the <strong>DC2</strong> in JS!!
+            The <strong>Dragon Code</strong> previously had a couple decoders and encoders (listed on the official site) but only one was web-based and none of them have been archived (that I could find) also, none of them were listed as v2.6 compliant, which was the last version of the <strong>DC2</strong>.
+            So, I present, the <strong>Dragon Code v2.6 Decoder</strong>!! It took me one sleepless week (the colour took 3 whole days), but it's done!! Technically, it doesn't support complex species (meaning species including extra species inside {})
+            but I plan on adding that soon (it should be pretty simple) and the official site recommends just making seperate codes anyways. You'll notice that I also have an <strong>Encoder</strong> tab, and I do plan on making an encoder in the future.
+            The encoder is a lot more simple, mostly just a lot of dropdowns, but the main focus of this project was the decoder (the more complex one!) so I'm making this page with it still WIP.<br>
+            &emsp;Also, if my decoder/encoder get enough interest, and if people request changes, I may take up <strong>maintaining the Dragon Code</strong> (if no one else is of course) and make a page for it. I'm still kinda iffy on this,
+            but if there are actually enough dragons interested I might just go for it.<br><br>
+
+            If you would like to know more about the <strong>Dragon Code</strong>, or <strong>Sig File</strong> codes in general, please visit <a href="https://web.archive.org/web/20131002065845/http://www.wyrm.org.uk/dc/" target="blank">this website</a>, the (now nonexistent) front page of the official website of the <strong>Dragon Code</strong>!
+            <br>The page was maintained by <a href="http://www.wyrm.org.uk/" target="blank">Wyrm</a>, who created v2-2.6 of the Code, until the site went down in Oct. 2013
+            </p>
+        </div>
+        <div class="tab" id="decoder">
+            <br>
+            <label>Translate: </label>
+		    <input id="codeInput" placeholder="put dragon code in here!">
+		    <button onclick="decodeDC(standardizeDC(document.getElementById('codeInput').value))">submit</button>
+		    <h1>Output: </h1>
+		    <p id="translatedOutput" style="margin-top:-50px;"></p>
+        </div>
+        <div class="tab" id="encoder">
+            <p>Not finished yet!!</p>
+        </div>
+    </div>
+    <footer>
+      <p class="footer" id="last_modified"></p>
+    </footer>
+    <script src="./resources/dragon_code.js"></script>
+  </body>
+</html>
