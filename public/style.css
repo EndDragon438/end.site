@@ -21,7 +21,10 @@ content: "LAST MODIFIED: MAY 15, 2024";
 
 /* main elements */
 * {
-  cursor: url('/resources/images/test_cursor.png'), auto;
+  cursor: url('/resources/images/dragon_cursor_auto.png'), auto;
+}
+button:hover, a:hover {
+  cursor: url('/resources/images/dragon_cursor_pointer.png'), auto;
 }
 
 body {
