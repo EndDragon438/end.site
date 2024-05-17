@@ -20,6 +20,10 @@ content: "LAST MODIFIED: MAY 15, 2024";
 }
 
 /* main elements */
+* {
+  cursor: url('/resources/images/test_cursor.png'), auto;
+}
+
 body {
   font-family: "Albertus MT", "Helvetica";
   background-image: url("/resources/images/dragons_clouds_seamless.jpg");
@@ -27,6 +31,7 @@ body {
   padding: 0;
 }
 .main_content {
+  cursor: url('/resources/images/test_cursor.png'), auto;
   position: relative;
   top: 200px;
   max-width: 65%;
