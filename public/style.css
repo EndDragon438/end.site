@@ -20,6 +20,9 @@ content: "LAST MODIFIED: MAY 15, 2024";
 }
 
 /* main elements */
+* {
+  cursor: url('/resources/images/test_cursor.png'), auto;
+}
 
 body {
   font-family: "Albertus MT", "Helvetica";
