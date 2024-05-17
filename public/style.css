@@ -31,7 +31,6 @@ body {
   padding: 0;
 }
 .main_content {
-  cursor: url('/resources/images/test_cursor.png'), auto;
   position: relative;
   top: 200px;
   max-width: 65%;
