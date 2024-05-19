@@ -42,18 +42,48 @@
           padding: 1em;
           margin: 1em;
         }
+        select {
+          font-size: 1.5em;
+          font-family: 'Albertus MT';
+          background-color: #e50748;
+          border: none;
+          padding: 15px;
+          border-radius: 5px;
+        }
+        option {
+          background-color: #9807b5;
+        }
+        .tag {
+          background-color: #181c24;
+          padding: 2em 0;
+          border-radius: 10px;
+          margin-bottom: 1em;
+        }
+        #leftSidebar {
+          position: fixed;
+          margin-left: -25em;
+          margin-top: -10em;
+        }
+        #leftSidebar a {
+          font-size: 1.75em;
+          margin-left: 1em;
+        }
+        #leftSidebar a::before {
+          content: '> ';
+        }
     </style>
   </head>
-  <body>
-    <div class="main_content" style="margin-top: -6em;">
+  <body onLoad="speciesSelect()">
+    <div class="main_content" style="margin-top: -10em;">
         <h1>The Dragon Code</h1>
         <div class="tabSelector">
-            <button class="tabButton active" onclick="swapTab(event, 'dragon_code')">The Code</button>
+            <button class="tabButton active" onclick="swapTab(event, 'about')">About</button>
+            <button class="tabButton" onclick="swapTab(event, 'dragon_code')" style="display:none;">The Code</button>
             <button class="tabButton" onclick="swapTab(event, 'decoder')">Decoder</button>
             <button class="tabButton" onclick="swapTab(event, 'encoder')">Encoder</button>
         </div>
 
-        <div class="tab" id="dragon_code">
+        <div class="tab defaultTab" id="about">
             <p>&emsp;The <strong>Dragon Code (DC2)</strong> is one of several Sig File codes that were around in the early days of the internet with the earliest (i know of at least) being the Geek Code in the early 90s.
             Nowadays, nearly all the Codes are extinct, except for the <strong>Furry Code</strong> which still has a website and a small amount of users.
             The <strong>Dragon Code</strong> is also extinct, having last been updated in Jan. 2004, and the <a href="https://web.archive.org/web/20131002065845/http://www.wyrm.org.uk/dc/" target="blank">official website</a> went down in Oct. 2013. As far as I know, that was the end of maintainment for the <strong>Dragon Code</strong> (If anyone knows of a later maintainer, please let me know!!!).
@@ -65,9 +95,124 @@
             &emsp;Also, if my decoder/encoder get enough interest, and if people request changes, I may take up <strong>maintaining the Dragon Code</strong> (if no one else is of course) and make a page for it. I'm still kinda iffy on this,
             but if there are actually enough dragons interested I might just go for it.<br><br>
 
-            If you would like to know more about the <strong>Dragon Code</strong>, or <strong>Sig File</strong> codes in general, please visit <a href="https://web.archive.org/web/20131002065845/http://www.wyrm.org.uk/dc/" target="blank">this website</a>, the (now nonexistent) front page of the official website of the <strong>Dragon Code</strong>!
-            <br>The page was maintained by <a href="http://www.wyrm.org.uk/" target="blank">Wyrm</a>, who created v2-2.6 of the Code, until the site went down in Oct. 2013
+            If you would like to know more about the history of the <strong>Dragon Code</strong>, or <strong>Sig File</strong> codes in general, please visit <a href="https://web.archive.org/web/20131002065845/http://www.wyrm.org.uk/dc/" target="blank">this website</a>, the (now nonexistent) front page of the official website of the <strong>Dragon Code</strong>!
+            <br>The page was maintained by <a href="http://www.wyrm.org.uk/" target="blank">Wyrm</a>, who created v2-2.6 of the Code, until the site went down in Oct. 2013<br>Wyrm has confirmed to me (by email) that they are no longer maintaining the Dragon Code.
             </p>
+        </div>
+        <div class="tab" id="dragon_code"> <!-- Still WIP!!!-->
+          <aside id="leftSidebar">
+              <h2>Table of Contents</h2><br>
+              <a href="#speciesDict">Species</a><br>
+              <a href="#genderDict">Gender</a><br>
+              <a href="#lengthDict">Length</a><br>
+              <a href="#widthDict">Width</a><br>
+              <a href="#weightDict">Weight</a><br>
+              <a href="#appendagesDict">Appendages</a><br>
+              <a href="#skinDict">Skin</a><br>
+              <a href="#colourDict">Colouration</a><br>
+              <a href="#breathDict">Breath Weapon</a><br>
+              <a href="#ageDict">Age</a><br>
+              <a href="#fruitDict">Fruitiness</a><br>
+              <a href="#habitatDict">Habitat</a><br>
+              <a href="#mateDict">Mating Status</a><br>
+              <a href="#offspringDict">Offspring</a><br>
+              <a href="#hoardDict">Hoard Size</a><br>
+              <a href="#monetaryDict">Treasure Philosophy</a><br>
+              <a href="#dietDict">Diet</a><br>
+              <a href="#realityDict">Reality Index</a><br>
+              <a href="#activityDict">Activity Index</a><br>
+              <a href="#humourDict">Humour Index</a><br>
+              <a href="#socialDict">Social Life</a><br>
+              <a href="#ubiquityDict">Ubiquity</a><br>
+              <a href="#irritabilityDict">Irritability</a><br>
+              <a href="#magicDict">Magical Ability</a><br>
+              <a href="#psyDict">Psy-Power</a><br>
+              <a href="#techDict">Technology</a><br>
+              <a href="#hugDict">Huggability</a><br>
+              <a href="#friendDict">Dragon Friend</a><br>
+            </aside>
+          <p>This is purely copied off of the old archive of the Dragon Code. Making changes to the code requires me taking over maintaining the code, as well as general acceptence from dragons to update their codes in compliance with updates. Until then, this is an exact copy with formatting changes.</p>
+          <p id="speciesDict">
+          Species
+          </p>
+          <p id="genderDict">
+          Gender
+          </p>
+          <p id="lengthDict">
+          Length
+          </p>
+          <p id="widthDict">
+          Width
+          </p>
+          <p id="appendagesDict">
+          Appendages
+          </p>
+          <p id="skinDict">
+          Skin
+          </p>
+          <p id="colourDict">
+          Colouration
+          </p>
+          <p id="breathDict">
+          Breath Weapon
+          </p>
+          <p id="ageDict">
+          Age
+          </p>
+          <p id="fruitDict">
+          Fruitiness
+          </p>
+          <p id="habitatDict"> <!-- I have changed this tag to be called "Habitat", though the tag's syntax itself is unchanged. Native-Land is a bit of a mouthful, especially when we already have a fitting word!!-->
+          Habitat
+          </p>
+          <p id="mateDict">
+          Mating Status
+          </p>
+          <p id="offspringDict">
+          Offspring
+          </p>
+          <p id="hoardDict">
+          Hoard Size
+          </p>
+          <p id="monetaryDict"> <!--might hafta come up with something for this. Monetary Philosophy is a mouthful, and I just feel that there *must* be something more convenient-->
+          Monetary Philosophy
+          </p>
+          <p id="dietDict">
+          Diet
+          </p>
+          <p id="realityDict">
+          Reality Index
+          </p>
+          <p id="activityDict">
+          Activity Index
+          </p>
+          <p id="humourDict">
+          Humour Index
+          </p>
+          <p id="socialDict">
+          Social Life
+          </p>
+          <p id="ubiquityDict">
+          Ubiquity
+          </p>
+          <p id="irritabilityDict">
+          Irritability
+          </p>
+          <p id="magicDict">
+          Magical Ability
+          </p>
+          <p id="psyDict">
+          Psy-Power
+          </p>
+          <p id="techDict">
+          Technology
+          </p>
+          <p id="hugDict">
+          Huggability
+          </p>
+          <p id="friendDict">
+          Dragon Friend
+          </p>
         </div>
         <div class="tab" id="decoder">
             <br>
@@ -79,6 +224,102 @@
         </div>
         <div class="tab" id="encoder">
             <p>Not finished yet!!</p>
+            <div>
+                <div class="tag">
+                  <label>Species</label>
+                  <select id="speciesSelect" onclick="speciesSelect()">
+                    <option value="dragon">Dragon</option>
+                    <option value="humanoid">Humanoid</option>
+                    <option value="amphibian">Amphibian</option>
+                    <option value="bird">Bird</option>
+                    <option value="crustacean">Crustacean</option>
+                    <option value="dinosaur">Dinosaur</option>
+                    <option value="extraterrestrial">Extraterrestrial</option>
+                    <option value="fish">Fish</option>
+                    <option value="insect">Insect</option>
+                    <option value="legend">Legend</option>
+                    <option value="mammal">Mammal</option>
+                    <option value="mollusc">Mollusc</option>
+                    <option value="mythical">Mythical</option>
+                    <option value="plant">Plant</option>
+                    <option value="reptile">Reptile</option>
+                    <option value="spirit">Spirit</option>
+                    <option value="undead">Undead</option>
+                    <option value="shapechanger">Shapechanger</option>
+                    <option value="formtrapped">Form Trapped</option>
+                    <option value="shaped">Shaped</option>
+                    <option value="crossed">Crossed</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                  <select id="subspeciesDropdown">
+                  </select>
+                  <label class="multiSpecies" style="display:none;">Between</label>
+                  <select class="multiSpecies shapeOne" onclick="speciesSelect()" style="display:none;">
+                    <option value="dragon">Dragon</option>
+                    <option value="humanoid">Humanoid</option>
+                    <option value="amphibian">Amphibian</option>
+                    <option value="bird">Bird</option>
+                    <option value="crustacean">Crustacean</option>
+                    <option value="dinosaur">Dinosaur</option>
+                    <option value="extraterrestrial">Extraterrestrial</option>
+                    <option value="fish">Fish</option>
+                    <option value="insect">Insect</option>
+                    <option value="legend">Legend</option>
+                    <option value="mammal">Mammal</option>
+                    <option value="mollusc">Mollusc</option>
+                    <option value="mythical">Mythical</option>
+                    <option value="plant">Plant</option>
+                    <option value="reptile">Reptile</option>
+                    <option value="spirit">Spirit</option>
+                    <option value="undead">Undead</option>
+                    <option value="shapechanger">Shapechanger</option>
+                    <option value="formtrapped">Form Trapped</option>
+                    <option value="shaped">Shaped</option>
+                    <option value="crossed">Crossed</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                  <label class="multiSpecies" style="display:none;">And</label>
+                  <select class="multiSpecies shapeTwo" onclick="speciesSelect()" style="display:none;">
+                    <option value="dragon">Dragon</option>
+                    <option value="humanoid">Humanoid</option>
+                    <option value="amphibian">Amphibian</option>
+                    <option value="bird">Bird</option>
+                    <option value="crustacean">Crustacean</option>
+                    <option value="dinosaur">Dinosaur</option>
+                    <option value="extraterrestrial">Extraterrestrial</option>
+                    <option value="fish">Fish</option>
+                    <option value="insect">Insect</option>
+                    <option value="legend">Legend</option>
+                    <option value="mammal">Mammal</option>
+                    <option value="mollusc">Mollusc</option>
+                    <option value="mythical">Mythical</option>
+                    <option value="plant">Plant</option>
+                    <option value="reptile">Reptile</option>
+                    <option value="spirit">Spirit</option>
+                    <option value="undead">Undead</option>
+                    <option value="shapechanger">Shapechanger</option>
+                    <option value="formtrapped">Form Trapped</option>
+                    <option value="shaped">Shaped</option>
+                    <option value="crossed">Crossed</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                </div>
+                <div class="tag">
+                  <label>Gender</label>
+                  <select>
+                    <option value="Gf">Female</option>
+                    <option value="Gh">Hermaphrodite</option>
+                    <option value="Gm">Male</option>
+                    <option value="Gn">Neuter</option>
+                    <option value="Gp">Pseudo-hermaphrodite</option>
+                    <option value="G~">Variable</option>
+                    <option value="G?">Unknown</option>
+                    <option value=">">In Transition</option>
+                    <option value="/">Mental/Physical Difference</option>
+                    <option value='"'>Custom</option> <!-- NEED TO FINISH THE NON-REGULAR GENDERS. NO IMPLEMENTATION SO FAR BUT I'M MOVING ON TO THE DRAGON CODE PAGE RATHER THAN THE ENCODER-->
+                  </select>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
