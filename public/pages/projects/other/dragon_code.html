@@ -14,7 +14,7 @@
             font-size: 1.4em;
         }
         .tabButton {
-            width: 20%;
+            width: 18%;
         }
         .tabButton:hover {
           bottom: 5px;
@@ -45,7 +45,7 @@
         select {
           font-size: 1.5em;
           font-family: 'Albertus MT';
-          background-color: #e50748;
+          background-color: #e5074b;
           border: none;
           padding: 15px;
           border-radius: 5px;
@@ -63,10 +63,13 @@
           position: fixed;
           margin-left: -25em;
           margin-top: -10em;
+          height: 1050px;
+          border-radius: 15px;
         }
         #leftSidebar a {
           font-size: 1.75em;
           margin-left: 1em;
+          color: #ff59b2;
         }
         #leftSidebar a::before {
           content: '> ';
@@ -79,6 +82,7 @@
         <div class="tabSelector">
             <button class="tabButton active" onclick="swapTab(event, 'about')">About</button>
             <button class="tabButton" onclick="swapTab(event, 'dragon_code')" style="display:none;">The Code</button>
+            <button class="tabButton" onclick="swapTab(event, 'draconic_archive')">The Archive</button>
             <button class="tabButton" onclick="swapTab(event, 'decoder')">Decoder</button>
             <button class="tabButton" onclick="swapTab(event, 'encoder')">Encoder</button>
         </div>
@@ -131,9 +135,66 @@
               <a href="#hugDict">Huggability</a><br>
               <a href="#friendDict">Dragon Friend</a><br>
             </aside>
-          <p>This is purely copied off of the old archive of the Dragon Code. Making changes to the code requires me taking over maintaining the code, as well as general acceptence from dragons to update their codes in compliance with updates. Until then, this is an exact copy with formatting changes.</p>
+          <p>This is purely copied off of the old archive of the Dragon Code. Making changes to the code requires me taking over maintaining the code, as well as general acceptence from dragons to update their codes in
+          compliance with updates. Until then, this is an exact copy with formatting changes.<br>For the decoder, all tags are optional except Species<br>Please note that <code>DC2.</code> is a prefix required for <em>all</em> codes using the Revised Dragon Code
+          <br><a href="/not_found.html">Text Only Version</a>
+          </p>
           <p id="speciesDict">
-          Species
+          Species is the first tag after the <code>DC2.</code> (specifying that this is the Revised Dragon Code), and is the only one required by the Decoder. No tags are required generally, but the decoder does require a species.
+          <br>
+          <br>Dragons (DC2.D*)<br>
+          * <code>D</code>&emsp;Dragons<br>
+          &emsp;- <code>a</code>&emsp;Amphiteres - <code>Da</code><br>
+          &emsp;- <code>c</code>&emsp;Draconids - <code>Dc</code><br>
+          &emsp;- <code>d</code>&emsp;Dragonettes - <code>Dd</code><br>
+          &emsp;- <code>e</code>&emsp;Eastern Dragons - <code>De</code><br>
+          &emsp;- <code>f</code>&emsp;Faerie Dragons - <code>Df</code><br>
+          &emsp;- <code>h</code>&emsp;Hydra - <code>Dh</code><br>
+          &emsp;- <code>i</code>&emsp;Dimar - <code>Di</code><br>
+          &emsp;- <code>l</code>&emsp;Dracolich - <code>Dl</code><br>
+          &emsp;- <code>p</code>&emsp;Pernese Dragons - <code>Dp</code><br>
+          &emsp;- <code>r</code>&emsp;Turtle Dragons - <code>Dr</code><br>
+          &emsp;- <code>s</code>&emsp;Serpents - <code>Ds</code><br>
+          &emsp;&emsp;+ <code>s</code>&emsp;Sea Serpents - <code>Dss</code><br>
+          &emsp;&emsp;+ <code>f</code>&emsp;Fire Serpents - <code>Dsf</code><br>
+          &emsp;- <code>t</code>&emsp;Tarrasques - <code>Dt</code><br>
+          &emsp;- <code>u</code>&emsp;Pseudodragons - <code>Du</code><br>
+          &emsp;- <code>v</code>&emsp;Wyverns - <code>Dv</code><br>
+          &emsp;- <code>w</code>&emsp;Western Dragons - <code>Dw</code><br>
+          &emsp;- <code>y</code>&emsp;Wyrms - <code>Dy</code><br>
+          <br>Humanoids (DC2.H*)<br>
+          * <code>H</code>&emsp;Humanoids<br>
+          &emsp;- <code>a</code>&emsp;Apes - <code>Ha</code><br>
+          &emsp;- <code>d</code>&emsp;Dwarves - <code>Hd</code><br>
+          &emsp;- <code>e</code>&emsp;Elves - <code>He</code><br>
+          &emsp;&emsp;+ <code>w</code>&emsp;Wood Elves - <code>Hew</code><br>
+          &emsp;- <code>f</code>&emsp;Fairies - <code>Hf</code><br>
+          &emsp;- <code>i</code>&emsp;Giants - <code>Hi</code><br>
+          &emsp;- <code>g</code>&emsp;Gnomes - <code>Hg</code><br>
+          &emsp;- <code>h</code>&emsp;Hobbits - <code>Hh</code><br>
+          &emsp;- <code>k</code>&emsp;Kender - <code>Hk</code><br>
+          &emsp;- <code>y</code>&emsp;Nymphs - <code>Hy</code><br>
+          &emsp;- <code>t</code>&emsp;Troll - <code>Ht</code><br>
+          &emsp;- <code>w</code>&emsp;Wolfman - <code>Hw</code><br>
+          &emsp;- <code>?</code>&emsp;Unknown (Anthropomorphic) - <code>H?</code><br>
+          <br>Amphibians (DC2.A*)<br>
+          * <code>A</code>&emsp;Amphibians<br>
+          &emsp;- <code>f</code>&emsp;Frogs - <code>Af</code><br>
+          &emsp;- <code>n</code>&emsp;Newts - <codeAn></code><br>
+          &emsp;- <code>s</code>&emsp;Salamanders - <code>As</code><br>
+          &emsp;- <code>t</code>&emsp;Toads - <code>At</code><br>
+          <br>Birds (DC2.B*)<br>
+          * <code>B</code>&emsp;Birds<br>
+          &emsp;- <code>c</code>&emsp;Crows - <code>Bc</code><br>
+          &emsp;- <code>e</code>&emsp;Eagles - <code>Be</code><br>
+          &emsp;- <code>h</code>&emsp;Hawks - <code>Bh</code><br>
+          &emsp;- <code>p</code>&emsp;Pheonix - <code>Bp</code><br>
+          &emsp;- <code>r</code>&emsp;Ravens - <code>Br</code><br>
+          <br>Crustaceans (DC2.C*)<br>
+          * <code>C</code>&emsp;Crustaceans<br>
+          &emsp;- <code>c</code>&emsp;Crabs - <code>Cc</code><br>
+          &emsp;- <code>l</code>&emsp;Lobsters - <code>Cl</code><br>
+          &emsp;- <code>s</code>&emsp;Shrimps - <code>Cs</code><br>
           </p>
           <p id="genderDict">
           Gender
@@ -175,7 +236,7 @@
           Hoard Size
           </p>
           <p id="monetaryDict"> <!--might hafta come up with something for this. Monetary Philosophy is a mouthful, and I just feel that there *must* be something more convenient-->
-          Monetary Philosophy
+          Treasure Philosophy
           </p>
           <p id="dietDict">
           Diet
@@ -214,6 +275,20 @@
           Dragon Friend
           </p>
         </div>
+        <div class="tab" id="draconic_archive">
+          <p>this is a collection of links relating to old draonity, back in the days of AFD. it's pretty much just a collection of Wayback Machine links. unfortunately, draconity on the internet goes back before the Internet Archive, but I've grabbed as many links as I can find. enjoy!</p>
+          <ul>
+            <li><a href="https://web.archive.org/web/20000621035534/http://www.ecis.com:80/~ddragon/oldcode.html" target="blank">original dragon code</a> </li>
+            <li><a href="https://web.archive.org/web/19990117094217/http://www.geocities.com/Area51/Vault/3274/dhdc.html" target="blank">Dragon Hold Dragon Code</a> (alternative DC) </li>
+            <li><a href="https://web.archive.org/web/20000818122052/http://www.ecis.com:80/~ddragon/oldcode.html" target="blank">original code archive</a> </li>
+            <li><a href="https://web.archive.org/web/20120206225213fw_/http://www.wyrm.org.uk/dc/code.html" target="blank">revised dragon code</a> </li>
+            <li><a href="https://web.archive.org/web/20000616224556/http://www.ecis.com/~ddragon/baxil.html" target="blank">Baxil</a>, original maintainer of the Code </li>
+            <li><a href="https://web.archive.org/web/20000609114639/http://www.wyrm.demon.co.uk/index.htm" target="blank">Wyrm</a>, maintainer of the Revised Dragon Code until 2013 </li>
+            <li>personal site of <a href="https://web.archive.org/web/19961220081327/http://weber.u.washington.edu/~auryanne/" target="blank">Auryanne the Radiant</a> </li>
+            <li><a href="https://web.archive.org/web/19961221070412/http://weber.u.washington.edu/~auryanne/dragon.html" target="blank">list</a> of a few dragon's personal pages </li>
+            <li><a href="https://web.archive.org/web/19970323232823/http://icecube.acf-lab.alaska.edu/~fxdlk/" target="blank">list</a> of various dragon pages, including personal sites </li>
+          </ul>
+        </div>
         <div class="tab" id="decoder">
             <br>
             <label>Translate: </label>
@@ -224,7 +299,7 @@
         </div>
         <div class="tab" id="encoder">
             <p>Not finished yet!!</p>
-            <div>
+            <div style="display:none;"> <!-- Still WIP!!!-->
                 <div class="tag">
                   <label>Species</label>
                   <select id="speciesSelect" onclick="speciesSelect()">
