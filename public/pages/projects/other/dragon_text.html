@@ -1,109 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="pinterest" content="nopin" />
-    <meta name="description" content="personal blog and portfolio of end!">
-    <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
-    <title>end.site</title> <!-- name it shows on the tab -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
-    <style>
-        button {
-            font-size: 1.4em;
-        }
-        .tabButton {
-            width: 18%;
-        }
-        .tabButton:hover {
-          bottom: 5px;
-          right: 0;
-        }
-        .tabButton.active {
-          bottom: 10px;
-          right: 0;
-        }
-        label {
-          font-size: 1.75em;
-          color: #e5074b;
-          background-color: #181c24;
-          padding: 1em;
-          margin: 0;
-          border-radius: 10px;
-        }
-        input{
-          width: 65%;
-          font-size: 1.5em;
-          color: #e5074b;
-          background-color: #181c24;
-          border-width: 5px;
-          border-color: rgb(255, 149, 234);
-          padding: 1em;
-          margin: 1em;
-        }
-        select {
-          font-size: 1.5em;
-          font-family: 'Albertus MT';
-          background-color: #e5074b;
-          border: none;
-          padding: 15px;
-          border-radius: 5px;
-        }
-        option {
-          background-color: #9807b5;
-        }
-        .tag {
-          background-color: #181c24;
-          padding: 2em 0;
-          border-radius: 10px;
-          margin-bottom: 1em;
-        }
-        #leftSidebar {
-          position: fixed;
-          margin-left: -25em;
-          margin-top: -10em;
-          height: 1050px;
-          border-radius: 15px;
-        }
-        #leftSidebar a {
-          font-size: 1.75em;
-          margin-left: 1em;
-          color: #ff59b2;
-        }
-        #leftSidebar a::before {
-          content: '> ';
-        }
-    </style>
-  </head>
-  <body onLoad="speciesSelect()">
-    <div class="main_content" style="margin-top: -10em;">
-        <h1>The Dragon Code</h1>
-        <div class="tabSelector">
-            <button class="tabButton active" onclick="swapTab(event, 'about')">About</button>
-            <button class="tabButton" onclick="swapTab(event, 'dragon_code')">The Code</button>
-            <button class="tabButton" onclick="swapTab(event, 'draconic_archive')">The Archive</button>
-            <button class="tabButton" onclick="swapTab(event, 'decoder')">Decoder</button>
-            <button class="tabButton" onclick="swapTab(event, 'encoder')">Encoder</button>
-        </div>
-
-        <div class="tab defaultTab" id="about">
-            <p>&emsp;The <strong>Dragon Code (DC2)</strong> is one of several Sig File codes that were around in the early days of the internet with the earliest (i know of at least) being the Geek Code in the early 90s.
-            Nowadays, nearly all the Codes are extinct, except for the <strong>Furry Code</strong> which still has a website and a small amount of users.
-            The <strong>Dragon Code</strong> is also extinct, having last been updated in Jan. 2004, and the <a href="https://web.archive.org/web/20131002065845/http://www.wyrm.org.uk/dc/" target="blank">official website</a> went down in Oct. 2013. As far as I know, that was the end of maintainment for the <strong>Dragon Code</strong> (If anyone knows of a later maintainer, please let me know!!!).
-            Even though the <strong>Dragon Code</strong> is pretty much extinct, it still sees some use among dragons, including myself!! And because I use the <strong>DC2</strong>, I'm trying to learn webdev, and I just happened to be bored, I decided to build a fully functional decoder for the <strong>DC2</strong> in JS!!
-            The <strong>Dragon Code</strong> previously had a couple decoders and encoders (listed on the official site) but only one was web-based and none of them have been archived (that I could find) also, none of them were listed as v2.6 compliant, which was the last version of the <strong>DC2</strong>.
-            So, I present, the <strong>Dragon Code v2.6 Decoder</strong>!! It took me one sleepless week (the colour took 3 whole days), but it's done!! Technically, it doesn't support complex species (meaning species including extra species inside {})
-            but I plan on adding that soon (it should be pretty simple) and the official site recommends just making seperate codes anyways. You'll notice that I also have an <strong>Encoder</strong> tab, and I do plan on making an encoder in the future.
-            The encoder is a lot more simple, mostly just a lot of dropdowns, but the main focus of this project was the decoder (the more complex one!) so I'm making this page with it still WIP.<br>
-            &emsp;Also, if my decoder/encoder get enough interest, and if people request changes, I may take up <strong>maintaining the Dragon Code</strong> (if no one else is of course) and make a page for it. I'm still kinda iffy on this,
-            but if there are actually enough dragons interested I might just go for it.<br><br>
-
-            If you would like to know more about the history of the <strong>Dragon Code</strong>, or <strong>Sig File</strong> codes in general, please visit <a href="https://web.archive.org/web/20131002065845/http://www.wyrm.org.uk/dc/" target="blank">this website</a>, the (now nonexistent) front page of the official website of the <strong>Dragon Code</strong>!
-            <br>The page was maintained by <a href="http://www.wyrm.org.uk/" target="blank">Wyrm</a>, who created v2-2.6 of the Code, until the site went down in Oct. 2013<br>Wyrm has confirmed to me (by email) that they are no longer maintaining the Dragon Code.
-            </p>
-        </div>
-        <div class="tab" id="dragon_code"> <!-- Still WIP!!!-->
+        <div id="dragon_code">
           <aside id="leftSidebar">
               <h2>Table of Contents</h2><br>
               <a href="#speciesDict">Species</a><br>
@@ -137,9 +32,9 @@
             </aside>
           <p>This is purely copied off of the old archive of the Dragon Code. Making changes to the code requires me taking over maintaining the code, as well as general acceptence from dragons to update their codes in
           compliance with updates. Until then, this is an exact copy of the Revised Dragon Code (v2.6) with some formatting changes.<br>For the decoder, all tags are optional except Species<br>Please note that <code>DC2.</code> is a prefix required for <em>all</em> codes using the Revised Dragon Code
-          <br><a href="./dragon_text.html">Text Only Version</a>
+          <br><a href="/not_found.html">Text Only Version</a>
           </p>
-          <p id="speciesDict">
+          <p id="speciesDict"> <a href="#dragon_code">Back To Top</a><br>
           Species is the first tag after the <code>DC2.</code> (specifying that this is the Revised Dragon Code), and is the only one required by the Decoder. No tags are required generally, but the decoder does require a species.
           <br>
           <br>Dragons (DC2.D*)<br>
@@ -329,7 +224,7 @@
           * <code>[]</code>&emsp;Form Trapped - used to indicate when you are one species trapped in the form of another. ex: <code>DC2.Dw[H]</code> indicates you are a Western Dragon trapped in the form of a Human.<br>
           * <code>+</code>&emsp;Crossed - used to indicate you are a cross between two or more species. ex: <code>DC2.Dw+H</code> indicates you are a cross between a Western Dragon and a Human.<br>
           </p>
-          <p id="genderDict"> <!-- this section is pretty dated, but unless there's a consensus among dragons to update it, it's not going to change. I'd recommend just putting a custom gender down -->
+          <p id="genderDict"> <a href="#dragon_code">Back To Top</a><br> <!-- this section is pretty dated, but unless there's a consensus among dragons to update it, it's not going to change. I'd recommend just putting a custom gender down -->
           Gender (G*)<br>
           * <code>Gf</code>&emsp;Female<br>
           * <code>Gh</code>&emsp;Hermaphrodite; Characteristics of both genders<br>
@@ -343,7 +238,7 @@
           * <code>/</code>&emsp;Differing mental/physical genders. ex: <code>Gm/f</code> to mean male trapped in a female body<br>
           * <code>""</code>&emsp;Custom gender, if you'd like to specify something outside the Code. ex: <code>G"agender"</code> if you are agender. If you'd like your custom gender to be compatible with the Decoder, make sure it's all lowercase. (I'd recommend using custom, as this section of the Code is a little bit dated)<br>
           </p>
-          <p id="lengthDict">
+          <p id="lengthDict"> <a href="#dragon_code">Back To Top</a><br>
           Length (L*)<br>
           * <code>L+++!</code>&emsp;Celestial<br>
           * <code>L+++</code>&emsp;Mistaken for mountain ranges<br>
@@ -373,7 +268,7 @@
           * <code>[number]w</code>&emsp;for wingspan<br>
           ex: <code>L6f2t</code> to mean overall length of 6ft and tail being 2ft of that. you don't need to specify units again.
           </p>
-          <p id="widthDict">
+          <p id="widthDict"> <a href="#dragon_code">Back To Top</a><br>
           Width (W*)<br>
           this tag has always been a bit of a joke.<br>
           * <code>W+++!</code>&emsp;I am Athelind! my belly is several galaxies wide!<br>
@@ -387,7 +282,7 @@
           * <code>W---!</code>&emsp;One-dimensional<br>
           * <code>W~</code>&emsp;Variable width<br>
           </p>
-          <p id="weightDict">
+          <p id="weightDict"> <a href="#dragon_code">Back To Top</a><br>
           Weight (T*)<br>
           * <code>T+++!</code>&emsp;Black Hole<br>
           * <code>T+++</code>&emsp;Massive<br>
@@ -408,7 +303,7 @@
           * <code>T[number]s</code>&emsp;A weight in stones (1 stone = 14lbs)<br>
           * <code>T[number]t</code>&emsp;A weight in tonnes (1 ton  = 1000kg)<br>
           </p>
-          <p id="appendagesDict">
+          <p id="appendagesDict"> <a href="#dragon_code">Back To Top</a><br>
           Appendages (P*)<br>
           * <code>Pa</code>&emsp;a pair of arms<br>
           * <code>Pf</code>&emsp;a pair of fore-limbs (limbs that can be used as arms and legs)<br>
@@ -429,7 +324,7 @@
           * <code>[number]</code>&emsp;Specify a number of an appendage. ex: <code>Pa3</code> means 3 arms<br>
           * <code>~</code>&emsp;Variable number of an appendage. ex: <code>Pa~</code> means 'I grow arms when it suits me!'<br>
           </p>
-          <p id="skinDict">
+          <p id="skinDict"> <a href="#dragon_code">Back To Top</a><br>
           Skin (Sk*)<br>
           * <code>Skb</code>&emsp;Bark<br>
           * <code>Skc</code>&emsp;Cellulose<br>
@@ -455,7 +350,7 @@
           * <code>,w</code>&emsp;Wings<br>
           ex: <code>Sks,am</code> means you are scaly, with metal arms.
           </p>
-          <p id="colourDict">
+          <p id="colourDict"> <a href="#dragon_code">Back To Top</a><br>
           Colouration (C*)<br>
           * <code>Cag</code>&emsp;Silver<br>
           * <code>Cam</code>&emsp;Amber<br>
@@ -534,7 +429,7 @@
           * <code>,w[colour]</code>&emsp;Wings<br>
           ex: <code>Cbk^\rb,ere-,sre-,wre-,vgy-,cgy-</code>
           </p>
-          <p id="breathDict">
+          <p id="breathDict"> <a href="#dragon_code">Back To Top</a><br>
           Breath Weapon (B*)<br>
           * <code>Bac</code>&emsp;Acid<br>
           * <code>Bco</code>&emsp;Cold<br>
@@ -564,7 +459,7 @@
           * <code>/</code>&emsp;For specifying multiple breath weapons<br>
           * <code>""</code>&emsp;Custom breath weapon<br>
           </p>
-          <p id="ageDict">
+          <p id="ageDict"> <a href="#dragon_code">Back To Top</a><br>
           Age (A*)<br>
           * <code>A+++!</code>&emsp;Ancient<br>
           * <code>A+++</code>&emsp;Venerable<br>
@@ -582,7 +477,7 @@
           * <code>v</code>&emsp;to specify virtual age<br>
           * <code>()</code>&emsp;If you'd like to specify both real life and virtual age. ex: <code>A(r-v-)</code><br>
           </p>
-          <p id="fruitDict">
+          <p id="fruitDict"> <a href="#dragon_code">Back To Top</a><br>
           Fruitiness (Fr*) (this referencing the old AFD newsgroup which is no longer around. if you'd like, you can base it off attitude instead.)<br>
           * <code>Fr+++!</code>&emsp;I remember when humans ruled the newsgroup<br>
           * <code>Fr+++</code>&emsp; I remember Dalvenjah posting regularly<br>
@@ -596,7 +491,7 @@
           * <code>Fr^</code>&emsp;I've joined, left, returned AFD several times.<br>
           * <code>Fr*</code>&emsp;I got flamed off the newsgroup for yealling at Shim! :8)<br>
           </p>
-          <p id="habitatDict"> <!-- I have changed this tag to be called "Habitat", though the tag's syntax itself is unchanged. Native-Land is a bit of a mouthful, especially when we already have a fitting word!!-->
+          <p id="habitatDict"> <a href="#dragon_code">Back To Top</a><br> <!-- I have changed this tag to be called "Habitat", though the tag's syntax itself is unchanged. Native-Land is a bit of a mouthful, especially when we already have a fitting word!!-->
           Habitat (N*) (originally called Native-Land, but I changed it up. the tag remains the same I just call it something else.)<br>
           * <code>Na</code>&emsp;Air<br>
           * <code>Ne</code>&emsp;Earth/Underground<br>
@@ -614,7 +509,7 @@
           * <code>N^</code>&emsp;Ethereal<br>
           * <code>N!</code>&emsp;Imaginary<br>
           </p>
-          <p id="mateDict">
+          <p id="mateDict"> <a href="#dragon_code">Back To Top</a><br>
           Mating Status (M*)<br>
           * <code>M+++!</code>&emsp;I'm mated in real life to my online mate's real life self as well<br>
           * <code>M+++</code>&emsp;Am I mated? Ask my hatchlings!<br>
@@ -639,7 +534,7 @@
           * <code>v</code>&emsp;to specify virtual mating status<br>
           * <code>()</code>&emsp;If you'd like to specify both real life and virtual mating status. ex: <code>M(r-v-)</code><br>
           </p>
-          <p id="offspringDict">
+          <p id="offspringDict"> <a href="#dragon_code">Back To Top</a><br>
           Offspring (O*)<br>
           * <code>O+++!</code>&emsp;I have many offspring and none of them look like leaving yet!<br>
           * <code>O+++</code>&emsp;I have several offpsring that haven't fledged yet<br>
@@ -661,7 +556,7 @@
           * <code>v</code>&emsp;to specify virtual offspring<br>
           * <code>()</code>&emsp;to specify both real life and virtual offspring<br>
           </p>
-          <p id="hoardDict">
+          <p id="hoardDict"> <a href="#dragon_code">Back To Top</a><br>
           Hoard Size (H*)<br>
           * <code>H+++!</code>&emsp;The economy quakes when you sell<br>
           * <code>H+++</code>&emsp;You really can't tell when someone steals an item<br>
@@ -673,7 +568,7 @@
           * <code>H---</code>&emsp;No money, no lair, at least you aren't starving!<br>
           * <code>H---!</code>&emsp;Look on the bright side. At least you've got friends!<br>
           </p>
-          <p id="monetaryDict"> <!--might hafta come up with something for this. Monetary Philosophy is a mouthful, and I just feel that there *must* be something more convenient-->
+          <p id="monetaryDict"> <a href="#dragon_code">Back To Top</a><br> <!--might hafta come up with something for this. Monetary Philosophy is a mouthful, and I just feel that there *must* be something more convenient-->
           Treasure Philosophy ($*)<br>
           * <code>$+++!</code>&emsp;All things of value gravitate towards me! When I've got my claws on them I never let go!<br>
           * <code>$+++</code>&emsp;The coinage has my likeness on it!<br>
@@ -685,7 +580,7 @@
           * <code>$---</code>&emsp;I'm a philanthropist, I gave it all to the poor!<br>
           * <code>$---!</code>&emsp;I eschew all things of value. I don't need them!<br>
           </p>
-          <p id="dietDict">
+          <p id="dietDict"> <a href="#dragon_code">Back To Top</a><br>
           Diet (F*)<br>
           * <code>F+++!</code>&emsp;Insatiable<br>
           * <code>F+++</code>&emsp;Voracious<br>
@@ -711,7 +606,7 @@
           * <code>/</code>&emsp;If you eat several things you can use "/" to seperate them<br>
           * <code>~</code>&emsp;This indicates yo ueat anything<br>
           </p>
-          <p id="realityDict">
+          <p id="realityDict"> <a href="#dragon_code">Back To Top</a><br>
           Reality Index (R*)<br>
           * <code>R+++!</code>&emsp;I am as I describe myself and no one is going to convince me otherwise.<br>
           * <code>R+++</code>&emsp;I am as I describe myself online. The human body is either an unfortunate mismatch, an illusion, or just my messenger.<br>
@@ -725,7 +620,7 @@
           * <code>R*</code>&emsp;Don't ask, don't tell.<br>
           * <code>R?</code>&emsp;The thought just hasn't crossed my mind!<br>
           </p>
-          <p id="activityDict">
+          <p id="activityDict"> <a href="#dragon_code">Back To Top</a><br>
           Activity Index (Ac*)<br>
           * <code>Ac+++!</code>&emsp;I have a T1 connection and am never off the 'net!<br>
           * <code>Ac+++</code>&emsp;This is my home! I spend as much time as possible online<br>
@@ -739,7 +634,7 @@
           * <code>Ac~</code>&emsp;I get online whenever I feel like it<br>
           * <code>Ac?</code>&emsp;I have no idea when I'll be online again<br>
           </p>
-          <p id="humourDict">
+          <p id="humourDict"> <a href="#dragon_code">Back To Top</a><br>
           Humour Index (J*)<br>
           * <code>J+++!</code>&emsp;Everything is a joke<br>
           * <code>J+++</code>&emsp;There's very little I won't laugh at<br>
@@ -756,7 +651,7 @@
           * <code>v</code>&emsp;to specify online humour<br>
           * <code>()</code>&emsp;to specify both real life and online humour<br>
           </p>
-          <p id="socialDict">
+          <p id="socialDict"> <a href="#dragon_code">Back To Top</a><br>
           Social Life (S*)<br>
           * <code>S+++!</code>&emsp;I've made a determined effort to advertise the fact that I'm not human<br>
           * <code>S+++</code>&emsp;My friends parents all know. I use my online name in front of total strangers regularly.<br>
@@ -768,7 +663,7 @@
           * <code>S---</code>&emsp;I've emailed a few kindred souls I think I can trust. <br>
           * <code>S---!</code>&emsp;No one knows, at all.<br>
           </p>
-          <p id="ubiquityDict">
+          <p id="ubiquityDict"> <a href="#dragon_code">Back To Top</a><br>
           Ubiquity (U*)<br>
           * <code>U+++!</code>&emsp;There still holy wars being fought over me<br>
           * <code>U+++</code>&emsp;I remember most of my past lives, and a bit about you too!<br>
@@ -784,7 +679,7 @@
           * <code>U*</code>&emsp;I've been around a bit, I'm not saying how many times!<br>
           * <code>U2</code>&emsp;My name is Bono! :8)<br>
           </p>
-          <p id="irritabilityDict">
+          <p id="irritabilityDict"> <a href="#dragon_code">Back To Top</a><br>
           Irritability (I*)<br>
           * <code>I+++!</code>&emsp;You're not going to catch me in a good mood<br>
           * <code>I+++</code>&emsp;I'd eat my mother if she looked at me wrong<br>
@@ -799,7 +694,7 @@
           <br>Modifiers:<br>
           * <code>#</code>&emsp;But when I get angry, I hope you like barbeque!<br>
           </p>
-          <p id="magicDict">
+          <p id="magicDict"> <a href="#dragon_code">Back To Top</a><br>
           Magical Ability (V*)<br>
           * <code>V+++!</code>&emsp;I have reached the pinnacle of my profession<br>
           * <code>V+++</code>&emsp;I'm reasonably adept in my field<br>
@@ -814,7 +709,7 @@
           <br>Modifiers:<br>
           * <code>[field]</code>&emsp;indicates the field of magic. ex: <code>V++[fire]</code><br>
           </p>
-          <p id="psyDict">
+          <p id="psyDict"> <a href="#dragon_code">Back To Top</a><br>
           Psy-Power (Q*)<br>
           * <code>Q+++!</code>&emsp;There's almost nothing I can't do if I put my mind to it!<br>
           * <code>Q+++</code>&emsp;I can move mountains, and not bit by bit<br>
@@ -829,7 +724,7 @@
           <br>Modifiers:<br>
           * <code>[ability]</code>&emsp;Specify the field of your ability<br>
           </p>
-          <p id="techDict">
+          <p id="techDict"> <a href="#dragon_code">Back To Top</a><br>
           Technology (Tc*)<br>
           * <code>Tc+++!</code>&emsp;I write microcode in my spare time<br>
           * <code>Tc+++</code>&emsp;I can program in assembly languages<br>
@@ -844,7 +739,7 @@
           <br>Modifiers:<br>
           * <code>[field]</code>&emsp;indicates your chosen field of technology!<br>
           </p>
-          <p id="hugDict">
+          <p id="hugDict"> <a href="#dragon_code">Back To Top</a><br>
           Huggability (E*)<br>
           * <code>E+++!</code>&emsp;I'll hug it to death!<br>
           * <code>E+++</code>&emsp;if it is living, I'll hug it freely<br>
@@ -859,7 +754,7 @@
           <br>Modifiers:<br>
           * <code>#</code>&emsp;But when you do expect a violent reaction!<br>
           </p>
-          <p id="friendDict">
+          <p id="friendDict"> <a href="#dragon_code">Back To Top</a><br>
           Dragon Friend (Df*)<br>
           * <code>Df+++!</code>&emsp;I've started growing scales!<br>
           * <code>Df+++</code>&emsp;I'm popular with dragons<br>
@@ -872,132 +767,3 @@
           * <code>Df---!</code>&emsp;I'm being hunted by dragons, hide me!<br>
           </p>
         </div>
-        <div class="tab" id="draconic_archive">
-          <p>this is a collection of links relating to old draonity, back in the days of AFD. it's pretty much just a collection of Wayback Machine links. unfortunately, draconity on the internet goes back before the Internet Archive, but I've grabbed as many links as I can find. enjoy!</p>
-          <ul>
-            <li><a href="https://web.archive.org/web/20000621035534/http://www.ecis.com:80/~ddragon/oldcode.html" target="blank">original dragon code</a> </li>
-            <li><a href="https://web.archive.org/web/19990117094217/http://www.geocities.com/Area51/Vault/3274/dhdc.html" target="blank">Dragon Hold Dragon Code</a> (alternative DC) </li>
-            <li><a href="https://web.archive.org/web/20000818122052/http://www.ecis.com:80/~ddragon/oldcode.html" target="blank">original code archive</a> </li>
-            <li><a href="https://web.archive.org/web/20120206225213fw_/http://www.wyrm.org.uk/dc/code.html" target="blank">revised dragon code</a> </li>
-            <li><a href="https://web.archive.org/web/20000616224556/http://www.ecis.com/~ddragon/baxil.html" target="blank">Baxil</a>, original maintainer of the Code </li>
-            <li><a href="https://web.archive.org/web/20000609114639/http://www.wyrm.demon.co.uk/index.htm" target="blank">Wyrm</a>, maintainer of the Revised Dragon Code until 2013 </li>
-            <li>personal site of <a href="https://web.archive.org/web/19961220081327/http://weber.u.washington.edu/~auryanne/" target="blank">Auryanne the Radiant</a> </li>
-            <li><a href="https://web.archive.org/web/19961221070412/http://weber.u.washington.edu/~auryanne/dragon.html" target="blank">list</a> of a few dragon's personal pages </li>
-            <li><a href="https://web.archive.org/web/19970323232823/http://icecube.acf-lab.alaska.edu/~fxdlk/" target="blank">list</a> of various dragon pages, including personal sites </li>
-          </ul>
-        </div>
-        <div class="tab" id="decoder">
-            <br>
-            <label>Translate: </label>
-		    <input id="codeInput" placeholder="put dragon code in here!">
-		    <button onclick="decodeDC(standardizeDC(document.getElementById('codeInput').value))">submit</button>
-		    <h1>Output: </h1>
-		    <p id="translatedOutput" style="margin-top:-50px;"></p>
-        </div>
-        <div class="tab" id="encoder">
-            <p>Not finished yet!!</p>
-            <div style="display:none;"> <!-- Still WIP!!!-->
-                <div class="tag">
-                  <label>Species</label>
-                  <select id="speciesSelect" onclick="speciesSelect()">
-                    <option value="dragon">Dragon</option>
-                    <option value="humanoid">Humanoid</option>
-                    <option value="amphibian">Amphibian</option>
-                    <option value="bird">Bird</option>
-                    <option value="crustacean">Crustacean</option>
-                    <option value="dinosaur">Dinosaur</option>
-                    <option value="extraterrestrial">Extraterrestrial</option>
-                    <option value="fish">Fish</option>
-                    <option value="insect">Insect</option>
-                    <option value="legend">Legend</option>
-                    <option value="mammal">Mammal</option>
-                    <option value="mollusc">Mollusc</option>
-                    <option value="mythical">Mythical</option>
-                    <option value="plant">Plant</option>
-                    <option value="reptile">Reptile</option>
-                    <option value="spirit">Spirit</option>
-                    <option value="undead">Undead</option>
-                    <option value="shapechanger">Shapechanger</option>
-                    <option value="formtrapped">Form Trapped</option>
-                    <option value="shaped">Shaped</option>
-                    <option value="crossed">Crossed</option>
-                    <option value="unknown">Unknown</option>
-                  </select>
-                  <select id="subspeciesDropdown">
-                  </select>
-                  <label class="multiSpecies" style="display:none;">Between</label>
-                  <select class="multiSpecies shapeOne" onclick="speciesSelect()" style="display:none;">
-                    <option value="dragon">Dragon</option>
-                    <option value="humanoid">Humanoid</option>
-                    <option value="amphibian">Amphibian</option>
-                    <option value="bird">Bird</option>
-                    <option value="crustacean">Crustacean</option>
-                    <option value="dinosaur">Dinosaur</option>
-                    <option value="extraterrestrial">Extraterrestrial</option>
-                    <option value="fish">Fish</option>
-                    <option value="insect">Insect</option>
-                    <option value="legend">Legend</option>
-                    <option value="mammal">Mammal</option>
-                    <option value="mollusc">Mollusc</option>
-                    <option value="mythical">Mythical</option>
-                    <option value="plant">Plant</option>
-                    <option value="reptile">Reptile</option>
-                    <option value="spirit">Spirit</option>
-                    <option value="undead">Undead</option>
-                    <option value="shapechanger">Shapechanger</option>
-                    <option value="formtrapped">Form Trapped</option>
-                    <option value="shaped">Shaped</option>
-                    <option value="crossed">Crossed</option>
-                    <option value="unknown">Unknown</option>
-                  </select>
-                  <label class="multiSpecies" style="display:none;">And</label>
-                  <select class="multiSpecies shapeTwo" onclick="speciesSelect()" style="display:none;">
-                    <option value="dragon">Dragon</option>
-                    <option value="humanoid">Humanoid</option>
-                    <option value="amphibian">Amphibian</option>
-                    <option value="bird">Bird</option>
-                    <option value="crustacean">Crustacean</option>
-                    <option value="dinosaur">Dinosaur</option>
-                    <option value="extraterrestrial">Extraterrestrial</option>
-                    <option value="fish">Fish</option>
-                    <option value="insect">Insect</option>
-                    <option value="legend">Legend</option>
-                    <option value="mammal">Mammal</option>
-                    <option value="mollusc">Mollusc</option>
-                    <option value="mythical">Mythical</option>
-                    <option value="plant">Plant</option>
-                    <option value="reptile">Reptile</option>
-                    <option value="spirit">Spirit</option>
-                    <option value="undead">Undead</option>
-                    <option value="shapechanger">Shapechanger</option>
-                    <option value="formtrapped">Form Trapped</option>
-                    <option value="shaped">Shaped</option>
-                    <option value="crossed">Crossed</option>
-                    <option value="unknown">Unknown</option>
-                  </select>
-                </div>
-                <div class="tag">
-                  <label>Gender</label>
-                  <select>
-                    <option value="Gf">Female</option>
-                    <option value="Gh">Hermaphrodite</option>
-                    <option value="Gm">Male</option>
-                    <option value="Gn">Neuter</option>
-                    <option value="Gp">Pseudo-hermaphrodite</option>
-                    <option value="G~">Variable</option>
-                    <option value="G?">Unknown</option>
-                    <option value=">">In Transition</option>
-                    <option value="/">Mental/Physical Difference</option>
-                    <option value='"'>Custom</option> <!-- NEED TO FINISH THE NON-REGULAR GENDERS. NO IMPLEMENTATION SO FAR BUT I'M MOVING ON TO THE DRAGON CODE PAGE RATHER THAN THE ENCODER-->
-                  </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-      <p class="footer" id="last_modified"></p>
-    </footer>
-    <script src="./resources/dragon_code.js"></script>
-    <script src="/script/tabs.js"></script>
-  </body>
-</html>
