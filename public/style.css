@@ -143,11 +143,6 @@ button:hover {
 button:active {
   box-shadow: #9b0633 4px 0 4px 0;
 }
-.clickyButtons {
-  margin: 0 auto 1em auto;
-  padding: 2em 1em 1em 1em;
-  width: 20%;
-}
 
 /* link styling */
 a:link {
@@ -309,7 +304,6 @@ aside li {
   background-color: #161a26;
   padding: 10px 10px;
 }
-
 .header a {
   float: left;
   color: white;
@@ -323,29 +317,29 @@ aside li {
   font-size: 25px;
   font-weight: bold;
 }
-
 .header a:hover {
   background-color: #26334D;
 }
-
-.header a.active {
+.header-right a {
   color: #e5074b;
   outline: solid #4d5e80 2px;
   padding: 3em 1em;
-  margin-top: -5.5em;
-  margin-right: 4px;
+  margin-top: -2em;
 }
-
 .header-right {
   float: right;
 }
-
 .noJS {
   color: white;
   font-size: 1em;
   padding: 0;
-  margin: 0;
+  margin-right: 0;
   text-align: left;
+}
+.clickyButtons {
+  margin: 0 2em;
+  padding: 2em 1em;
+  width: 20%;
 }
 
 /* footer styling */
