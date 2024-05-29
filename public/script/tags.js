@@ -10,6 +10,7 @@ const postList = [
 "saguaro_bio.json",
 "sierra_bio.json",
 "snowreader_bio.json",
+"dump_truck.json",
 ];
 
 // postArray idea taken from Zonelets, i hope to make something requiring less effort in the future but that might need some backend, so it goes to the bottom of the list
