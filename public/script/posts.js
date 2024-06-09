@@ -1,3 +1,8 @@
+// postArray idea taken from Zonelets, i hope to make something requiring less effort in the future but that might need some backend, so it goes to the bottom of the list
+const postArray = [
+"2024-04-27_Welcome-to-end.site!!!.html",
+];
+
 // formatting blog posts
 if (document.getElementById("dt-published")) {
   const retrieveElement = document.getElementById("dt-published");
@@ -10,6 +15,7 @@ if (document.getElementById("dt-published")) {
 
 // populate Blog page
 function listBlogPosts() {
+
   const listElement = document.getElementById("blogPosts");
   for (i=0; i<postArray.length; i++) {
     const post = postArray[i];

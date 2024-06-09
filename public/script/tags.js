@@ -13,11 +13,6 @@ const postList = [
 "dump_truck.json",
 ];
 
-// postArray idea taken from Zonelets, i hope to make something requiring less effort in the future but that might need some backend, so it goes to the bottom of the list
-const postArray = [
-"2024-04-27_Welcome-to-end.site!!!.html",
-];
-
 // list of all tags in use
 const tagsList = ["2d", "3d", "writing", "music", "games", "other", "dragon", "wof", "pride", "2023", "2024", "oc-amaranth", "oc-borealis", "oc-gharial", "oc-moon_moon", "oc-saguaro", "oc-sierra", "oc-snowreader", "webdev"];
 tagsList.sort();
