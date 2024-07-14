@@ -56,6 +56,13 @@ function standardizeDC(code) {
     return code;
 }
 
+
+/* ENCODING BLOCKS */
+function encodeDC() { // this function is a lot easier cause i can limit the options a lot more. decoding requires accounting for *every* variable, which is a fuck of a lot. pretty much just reading a buncha inputs
+
+}
+
+{ // encode selects
 function speciesSelect() {
     let dropdownB = document.getElementById('subspeciesDropdown')
     document.getElementById('subspeciesDropdown').style.display = 'inline';
@@ -152,10 +159,116 @@ function speciesSelect() {
     }
 }
 
-function encodeDC() { // this function is a lot easier cause i can limit the options a lot more. decoding requires accounting for *every* variable, which is a fuck of a lot. pretty much just reading a buncha inputs
+function genderSelect() {
+    // array!! gotta make space for custom too, but array!!
+    const genderArray = ['Gf','Gh','Gm','Gn','Gp','G~','G?']
+}
+
+function lengthSelect() {
 
 }
 
+function widthSelect() {
+
+}
+
+function weightSelect() {
+
+}
+
+function appendageSelect() {
+
+}
+
+function skinSelect() {
+
+}
+
+function colourSelect() {
+ // dis gonna suck :(
+}
+
+function breathSelect() {
+
+}
+
+function ageSelect() {
+
+}
+
+function fruitSelect() {
+
+}
+
+function habitatSelect() {
+
+}
+
+function mateSelect() {
+
+}
+
+function offspringSelect() {
+
+}
+function hoardSelect() {
+
+}
+
+function monetarySelect() {
+
+}
+
+function dietSelect() {
+
+}
+
+function realitySelect() {
+
+}
+
+function activitySelect() {
+
+}
+
+function humourSelect() {
+
+}
+
+function socialSelect() {
+
+}
+
+function ubiquitySelect() {
+
+}
+
+function irritabilitySelect() {
+
+}
+
+function magicSelect() {
+
+}
+
+function psySelect() {
+
+}
+
+function techSelect() {
+
+}
+
+function hugSelect() {
+
+}
+
+function friendSelect() {
+
+}
+}
+
+/* DECODING BLOCKS */
 function decodeDC(text) { // yeah this is a bit of an overscoped project, but at least i'll use it later :crying thumbs up:
     let output = "";
     code = text;
@@ -207,7 +320,7 @@ function decodeDC(text) { // yeah this is a bit of an overscoped project, but at
 // actually i'm just gonna seperate each tag into it's own function. why not, fuck it we ball, etc etc.
 
 // 5 days later, i can not *imagine* how horrible decodeDC() would look if I didn't seperate out all the tag checks. it already looks like shit, but it could be *so* much worse.
-
+{ // decode checks
 function checkSpecies(text) { // complete // needs multi support
     let output = "";
     if (text.match(/[\x7B]/g)) { // multiple descriptions {}
@@ -2141,4 +2254,5 @@ function checkFriend(text) { // complete
             break;
     }
     return friend;
+}
 }
