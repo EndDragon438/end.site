@@ -57,7 +57,7 @@ async function parsePost(url) {
 	const response = await fetch(url);
 	const postJSON = await response.json();
 	let output = "";
-	if (postJSON.postType == "2d" || "3d") { // same formatting for 2D and 3D
+	if (postJSON.postType == ("2d" || "3d")) { // same formatting for 2D and 3D
 		output += `
 		<div class="creation-side">
 			<p>${postJSON.postTitle}</p>
