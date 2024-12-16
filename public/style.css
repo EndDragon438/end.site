@@ -1,7 +1,7 @@
 /* !!!! NEEDS TO BE UPDATED !!!! */
 
 #last_modified::before {
-  content: "LAST MODIFIED: JULY 13, 2024";
+  content: "LAST MODIFIED: DECEMBER 16, 2024";
 }
 
 /* Importing Resources */
@@ -169,8 +169,9 @@ a:visited {
   border: solid;
   border-width: 5px;
   border-color: #31010f;
-  width: 90%;
+  width: 100%;
   margin: 8px;
+  overflow: visible;
 }
 .tabButton:hover {
   box-shadow: #ff60cd 5px 5px 0px 4px;

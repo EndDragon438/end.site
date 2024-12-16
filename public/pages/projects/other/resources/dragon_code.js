@@ -2,6 +2,10 @@
 
 // end's code (unspaced)      : DC2.Dw[H]GnL8mW-T-PflhtvwSksCbk^\rb,ere-,sre-,wre-,vgy-,cgy-BflAFr---NeM---!OH++$---Fc/oR+++Ac++J+SU?I--#VQ+Tc++E++
 // end's code (spaced)        : DC2.Dw[H] Gn L8m W- T- Pflhtvw Sks Cbk^\rb,ere-,sre-,wre-,vgy-,cgy- Bfl A Fr--- Ne M---! O H++ $--- Fc/o R+++ Ac++ J+ S U? I--# V Q+ Tc++ E++
+// every's code               : DC2.DwGmL++WTSksCbl/pu/bl-BicA++NmH+++!$+++FR+++!Ac-J++IV+++Tc+++E
+
+// colour success             : DC2.Dw Cbl-
+// colour fail                : DC2.DwCbl/pu/bl-
 
 // notes on DC:
 // remember, all tags can use "?" and "~" to indicate either unknown or anything
@@ -1230,39 +1234,62 @@ function checkSkin(text) { // complete
 function checkColour(text) { // complete // I ONLY SACRIFICED MY SANITY!!!!! ITS COMPLETE !!!! IVE BEEN WORKING ON THIS FOR 3 DAYS STRAIGHT!!!!! I CAN FINALLY MOVE ON!!!!
     let colour = "";
     if (text.slice(0,1) == "C") {text = text.replace("C", "");}
-    if (text.slice(1).match(/\x2C/)) { // first, check to see if it's a basic or multiargument (limb) colour
+    if (text.slice(1).match(/\x2C/)) { // first, check to see if it's a basic or multiargument (limb) colour (2C = `,`)
         let colourArray = text.split(/(?=\x2C)/g);
         for (i=0; i<colourArray.length; i++) { // loop through all items
             colour += checkColour(colourArray[i])
             colour += "+ "
         }
     }else {
+        //Add the first colour of the list
         colour += nameColour(text.split(/[\x7C\x3D\x3A\x2A\x40\x2F\x5C\x23\x26\x3E]/)[0])
 
         if (text.match(/[\x7C\x3D\x3A\x2A\x40\x2F\x5C\x23\x26\x3E]/g)) { // further modifiers (|=:*@/\#&>)
+            //Constant for the second colour
             let imaginativeName = nameColour(text.split(/[\x7C\x3D\x3A\x2A\x40\x2F\x5C\x23\x26\x3E]/)[1]) // listen, it's 4am gimme a break
-            if (text.match(/\x7C/)) {colour += "striped with " + imaginativeName}
-            else if (text.match(/\x3D/)) {colour += "banded with " + imaginativeName}
-            else if (text.match(/\x3A/)) {colour += "spotted with " + imaginativeName}
-            else if (text.match(/\x2A/)) {colour += "star sprinkled with " + imaginativeName}
-            else if (text.match(/\x40/)) {colour += "mottled with " + imaginativeName}
-            else if (text.match(/\x5C/)) {colour += "iridescent with " + imaginativeName}
-            else if (text.match(/\x3E/)) {colour += "in transition to " + imaginativeName}
-            else if (text.match(/\x2F/)) {
+            if (text.match(/\x7C/)) { // `\`
+                colour += "striped with " + imaginativeName
+            }
+            else if (text.match(/\x3D/)) { // `=`
+                colour += "banded with " + imaginativeName
+            }
+            else if (text.match(/\x3A/)) { // `:`
+                colour += "spotted with " + imaginativeName
+            }
+            else if (text.match(/\x2A/)) { // `*`
+                colour += "star sprinkled with " + imaginativeName
+            }
+            else if (text.match(/\x40/)) { // `@`
+                colour += "mottled with " + imaginativeName
+            }
+            else if (text.match(/\x5C/)) { // `\`
+                colour += "iridescent with " + imaginativeName
+            }
+            else if (text.match(/\x3E/)) { // `>`
+                colour += "in transition to " + imaginativeName
+            }
+            else if (text.match(/\x2F/)) { // `/`
                 let mixArray = text.split("/");
-                colour += "mixed with " + nameColour(mixArray[1])
-                for (j=2; j<mixArray.length; j++) {
+                console.log("mixed colours: " + mixArray)
+                console.log("length: " + mixArray.length)
+                //English grammar, doing `and` between them all sounds weird so i'm adding `mixed with` for the first one, then the `and`s
+                colour += "mixed with " + imaginativeName
+                //oh fuck off. i left off the `let` and it made it an infinite loop cause it was reassigning every time
+                for (let j = 2; j < mixArray.length; j++) {
+                    console.log("calling mixed with " + mixArray[j])
+                    console.log("J is " + j)
                     colour += "and " + nameColour(mixArray[j])
                 }
+                console.log("loop exited!")
             }
-            else if (text.match(/\x23/)) {
+            else if (text.match(/\x23/)) { // `#`
                 let plaidArray = text.split("#");
                 colour += "plaid with " + nameColour(plaidArray[1])
                 for (j=2; j<plaidArray.length; j++) {
                     colour += "and " + nameColour(plaidArray[j])
                 }
             }
-            else if (text.match(/\x261/)) {
+            else if (text.match(/\x261/)) { // `&1`
                 let marbleArray = text.split(/\x261/)[1].split("&");
                 colour += "marble patterned with " + nameColour(marbleArray[0])
                 for (j=1; j<marbleArray.length; j++) {
@@ -1270,7 +1297,7 @@ function checkColour(text) { // complete // I ONLY SACRIFICED MY SANITY!!!!! ITS
                 }
                 colour += "veins "
             }
-            else if (text.match(/\x26/)) {
+            else if (text.match(/\x26/)) { // `&`
                 let patternArray = text.split(/\x26/)[1].split(";");
                 colour += "patterned with " + nameColour(patternArray[0])
                 for (j=1; j<patternArray.length; j++) {
@@ -1299,15 +1326,28 @@ function checkColour(text) { // complete // I ONLY SACRIFICED MY SANITY!!!!! ITS
 }
 
 function nameColour(text) { // secondary colour function, complete
+    console.log("COLOUR PASSED: " + text);
+    // fail case: DC2.DwCbl/pu/bl-
     let colour = ""
     if (text.match(/[\x2B\x2D\x5E\x5F\x21\x27\x25]/g)) { // modifiers (+-^_'%!)
-        if (text.match(/\x2B/g)) {for (j=0; j<(text.match(/\x2B/g) || []).length; j++) {colour += "light ";}}
-        if (text.match(/\x2D/g)) {for (j=0; j<(text.match(/\x2D/g) || []).length; j++) {colour += "dark ";}}
-        if (text.match(/\x5E/g)) {colour += "metallic "}
-        if (text.match(/\x5F/g)) {colour += "transparent "}
-        if (text.match(/\x27/g)) {colour += "liminescent "}
-        if (text.match(/\x25/g)) {colour += "pearlescent "}
-        if (text.match(/\x21/g)) {colour += "glittery "}
+        console.log("modifier found")
+        if (text.match(/\x2B/g)) {
+            for (j=0; j<(text.match(/\x2B/g)).length; j++) {
+                console.log("lighter")
+                colour += "light ";
+            }
+        }
+        if (text.match(/\x2D/g)) {
+            for (j=0; j<(text.match(/\x2D/g)).length; j++) {
+                console.log("darker")
+                colour += "dark ";
+            }
+        }
+        if (text.match(/\x5E/g)) {colour += "metallic "} // `^`
+        if (text.match(/\x5F/g)) {colour += "transparent "} // `_`
+        if (text.match(/\x27/g)) {colour += "liminescent "} // `'`
+        if (text.match(/\x25/g)) {colour += "pearlescent "} // `%`
+        if (text.match(/\x21/g)) {colour += "glittery "} // `!`
     }
     if (text.match("ag")) {colour += "silver "}
     else if (text.match("am")) {colour += "amber "}
@@ -1343,7 +1383,7 @@ function nameColour(text) { // secondary colour function, complete
     else if (text.match("wh")) {colour += "white "}
     else if (text.match("ye")) {colour += "yellow "}
     else if (text.match("~")) {colour += "variable colour "}
-    else if (text.match(/\x3F/)) {colour += "unknown colour "}
+    else if (text.match(/\x3F/)) {colour += "unknown colour "} // `?`
     else if (text == "") {colour += "colourless "}
     return colour
 }
