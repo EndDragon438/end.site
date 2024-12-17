@@ -30,15 +30,15 @@ function listBlogPosts() {
 
 // link tags on posts to their correct Tag Pages
 function linkTags() {
-  const rawList = document.getElementById("tags").innerHTML;
-  const tagArray = rawList.replace("tags: ", "").split(",");
-  tagArray.sort();
-  let linkedTags = 'tags: ';
-  for (i=0; i<tagArray.length; i++) {
-    linkedTags += `<a href="/pages/projects/tags/${tagArray[i]}.html">${tagArray[i]}</a>, `;
-  }
-  linkedTags = linkedTags.slice(0, linkedTags.length - 2);
-  document.getElementById("tags").innerHTML = linkedTags;
+  	const rawList = document.getElementById("tags").innerHTML;
+  	const tagArray = rawList.replace("tags: ", "").split(",");
+  	tagArray.sort();
+  	let linkedTags = 'tags: ';
+  	for (i=0; i<tagArray.length; i++) {
+  	  	linkedTags += `<a href="/pages/projects/tags/${tagArray[i]}.html">${tagArray[i]}</a>, `;
+  	}
+  	linkedTags = linkedTags.slice(0, linkedTags.length - 2);
+  	document.getElementById("tags").innerHTML = linkedTags;
 }
 
 // default youtube link => youtube embed link
@@ -57,7 +57,7 @@ async function parsePost(url) {
 	const response = await fetch(url);
 	const postJSON = await response.json();
 	let output = "";
-	if (postJSON.postType == ("2d" || "3d")) { // same formatting for 2D and 3D
+	if (postJSON.postType == "2d" || postJSON.postType == "3d") { // same formatting for 2D and 3D
 		output += `
 		<div class="creation-side">
 			<p>${postJSON.postTitle}</p>
@@ -84,7 +84,7 @@ async function parsePost(url) {
 		output += `
 			<p>${postJSON.postText}</p>
 		`;
-	} else if (postJSON.postType == ("music" || "games")) { // same formatting for Music and Games
+	} else if (postJSON.postType == "music" || postJSON.postType == "games") { // same formatting for Music and Games
 		output += `
 			<h1 class="creation-title">${postJSON.postTitle}<h1>
 			<h3 class="creation-date">${postJSON.postDate}</h3>

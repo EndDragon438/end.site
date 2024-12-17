@@ -4,17 +4,22 @@
 const postList = [
 "peril_the_adventurer.json",
 "amaranth_bio.json",
+"amaranth_ref.json",
 "borealis_bio.json",
+"borealis_ref.json",
 "gharial_bio.json",
 "moon_moon_bio.json",
+"moon_moon_ref.json",
 "saguaro_bio.json",
 "sierra_bio.json",
 "snowreader_bio.json",
+"snowreader_ref.json",
 "dump_truck.json",
+"pflr_2_ref.json",
 ];
 
 // list of all tags in use
-const tagsList = ["2d", "3d", "writing", "music", "games", "other", "dragon", "wof", "pride", "2023", "2024", "oc-amaranth", "oc-borealis", "oc-gharial", "oc-moon_moon", "oc-saguaro", "oc-sierra", "oc-snowreader", "webdev"];
+const tagsList = ["2d", "3d", "writing", "music", "games", "other", "dragon", "wof", "pride", "2023", "2024", "oc-amaranth", "oc-borealis", "oc-gharial", "oc-moon_moon", "oc-saguaro", "oc-sierra", "oc-snowreader", "oc-pflr_2", "webdev"];
 tagsList.sort();
 
 
@@ -43,7 +48,7 @@ async function populateTags(tagName) {
 		const postJSON = await response.json();
 		const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 		const monthName = monthArray[postJSON.postDate.substring(5,7)-1];
-		const thumbnail = `<li><a href="/pages/projects/${postJSON.postType}/${postJSON.postTitle.toLowerCase().replace(/ /g, '_')}.html">${postJSON.postTitle} | ${monthName} ${postJSON.postDate.substring(8,10)}, ${postJSON.postDate.substring(0,4)}</a></li>`;
+		const thumbnail = `<li><a href="/pages/projects/${postJSON.postType}/${postJSON.postTitle.toLowerCase().replace(/ /g, '_')}.html">${postJSON.postTitle} | ${monthName} ${postJSON.postDate.substring(8,10)}, ${postJSON.postDate.substring(0,4)} | ${postJSON.postType}</a></li>`;
 		for (n=0; n<postJSON.postTags.length; n++) {
 			if (postJSON.postTags[n] === tagName) {
 				document.getElementById("pageList").insertAdjacentHTML("beforeend", thumbnail);
