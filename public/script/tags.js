@@ -15,6 +15,7 @@ async function setLists() {
 	postList = siteData.posts;
 	tagsList = siteData.tags;
 	tagsList.sort();
+	console.log(postList)
 }
 
 /* ONTO THE FUNCTIONS!!! */
