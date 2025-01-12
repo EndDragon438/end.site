@@ -1,0 +1,10 @@
+{
+    "postType": "writing",
+    "postTitle": "Test Post",
+    "postSubtitle": "Testing out my refactor",
+    "postDate": [2025, 1, 14],
+    "postFile": "amaranth_ref.png",
+    "postLink": "https://www.youtube.com/watch?v=5l5YlDr0u4Y",
+    "postText": "I'm testing out the refactor of my JSON post system, which I'm doing to make it work with my new and improved JSON Post Generator, now in Python.",
+    "postTags": ["2025", "webdev"]
+}

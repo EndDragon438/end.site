@@ -1,54 +1,48 @@
 /* THIS SECTION IS FOR STUFF THAT MUST BE UPDATED CONSTANTLY */
 
+// TODO: Migrate postList and tagsList to their own JSON file, for easy editing externally
+
 // array of post JSONs
-const postList = [
-"peril_the_adventurer.json",
-"amaranth_bio.json",
-"amaranth_ref.json",
-"borealis_bio.json",
-"borealis_ref.json",
-"gharial_bio.json",
-"moon_moon_bio.json",
-"moon_moon_ref.json",
-"saguaro_bio.json",
-"sierra_bio.json",
-"snowreader_bio.json",
-"snowreader_ref.json",
-"dump_truck.json",
-"pflr_2_ref.json",
-];
+let postList;
 
 // list of all tags in use
-const tagsList = ["2d", "3d", "writing", "music", "games", "other", "dragon", "wof", "pride", "2023", "2024", "oc-amaranth", "oc-borealis", "oc-gharial", "oc-moon_moon", "oc-saguaro", "oc-sierra", "oc-snowreader", "oc-pflr_2", "webdev"];
-tagsList.sort();
+let tagsList;
 
+async function setLists() {
+	const dataResponse = await fetch("/resources/data.json");
+	const siteData = await dataResponse.json();
+
+	postList = siteData.posts;
+	tagsList = siteData.tags;
+	tagsList.sort();
+}
 
 /* ONTO THE FUNCTIONS!!! */
 
 // TAG SYSTEM IMPLEMENTATION //
-
-function listTags() {
-  const listElement = document.getElementById("tagList");
-  for (i=0; i<tagsList.length; i++) {
-    const tagList = document.getElementById("tagList");
-    const node = document.createElement("li");
-    const textnode = document.createTextNode(`<a href="/pages/projects/tags/${tagsList[i]}">${tagsList[i]}</a>`);
-    node.appendChild(textnode);
-    const testNode = `<li><a href="/pages/projects/tags/${tagsList[i]}.html">${tagsList[i]}</a></li>`;
-    tagList.insertAdjacentHTML("beforeend", testNode);
-  }
-  //createTagPage(tagsList[i]); NOT IMPLEMENTED
+async function listTags() {
+  	await setLists()
+  	for (i=0; i<tagsList.length; i++) {
+  	  	const tagList = document.getElementById("tagList");
+  	  	const node = document.createElement("li");
+  	  	const textnode = document.createTextNode(`<a href="/pages/projects/tags/${tagsList[i]}">${tagsList[i]}</a>`);
+  	  	node.appendChild(textnode);
+  	  	const testNode = `<li><a href="/pages/projects/tags/${tagsList[i]}.html">${tagsList[i]}</a></li>`;
+  	  	tagList.insertAdjacentHTML("beforeend", testNode);
+  	}
+  	//createTagPage(tagsList[i]); NOT IMPLEMENTED (requires file creation perms, which don't work on Neocities. may implement locally in python)
 }
 
 // populate a Tag Page with posts including that tag
 async function populateTags(tagName) {
+	await setLists()
 	document.getElementsByClassName("tagPage")[0].insertAdjacentHTML("afterbegin", `<h1>Tagged: ${tagName}</h1>`)
 	for (i=0; i<postList.length; i++) {
 		const response = await fetch("/posts/" + postList[i]);
 		const postJSON = await response.json();
 		const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-		const monthName = monthArray[postJSON.postDate.substring(5,7)-1];
-		const thumbnail = `<li><a href="/pages/projects/${postJSON.postType}/${postJSON.postTitle.toLowerCase().replace(/ /g, '_')}.html">${postJSON.postTitle} | ${monthName} ${postJSON.postDate.substring(8,10)}, ${postJSON.postDate.substring(0,4)} | ${postJSON.postType}</a></li>`;
+		const monthName = monthArray[postJSON.postDate[1] - 1];
+		const thumbnail = `<li><a href="/pages/projects/${postJSON.postType}/${postJSON.postTitle.toLowerCase().replace(/ /g, '_')}.html">${postJSON.postTitle} | ${monthName} ${postJSON.postDate[2]}, ${postJSON.postDate[0]} | ${postJSON.postType}</a></li>`;
 		for (n=0; n<postJSON.postTags.length; n++) {
 			if (postJSON.postTags[n] === tagName) {
 				document.getElementById("pageList").insertAdjacentHTML("beforeend", thumbnail);

@@ -1,9 +1,9 @@
 {
     "postType": "",
     "postTitle": "",
-    "postTimelapse": "",
-    "postDate": "",
-    "postContent": "",
+    "postLink": "",
+    "postDate": [],
+    "postFile": "",
     "postText": "",
-    "postTags": ""
+    "postTags": [""]
 }

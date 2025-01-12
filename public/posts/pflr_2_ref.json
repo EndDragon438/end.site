@@ -1,8 +1,8 @@
 {
     "postType":"3d",
     "postTitle":"PFLR-2 Ref",
-    "postDate":"2024-06-29",
-    "postContent":"pflr_2_ref.png",
+    "postDate":[2024, 6, 29],
+    "postFile":"pflr_2_ref.png",
     "postText":"Refsheet of my OC, PFLR-2!",
     "postTags":["2024","oc-pflr_2","3d"]
 }

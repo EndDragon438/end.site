@@ -48,7 +48,7 @@ function embedYoutube(url) {
 	} else if (url.slice(0, 32) == "https://www.youtube.com/watch?v=") {
 		return `https://www.youtube.com/embed/${url.substr(32)}`;
 	} else {
-		return "https://www.youtube.com/embed/dQw4w9WgXcQ";
+		return url;
 	}
 }
 
@@ -58,18 +58,28 @@ async function parsePost(url) {
 	const postJSON = await response.json();
 	let output = "";
 	if (postJSON.postType == "2d" || postJSON.postType == "3d") { // same formatting for 2D and 3D
+		// Adding post title
 		output += `
 		<div class="creation-side">
 			<p>${postJSON.postTitle}</p>
 		`;
-		if (postJSON.postTimelapse) output += `<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>`;
+
+		// Adding link, either embedding iframe for Youtube links or just stickin a button in there otherwise
+		if (postJSON.postLink && postJSON.postLink.match("youtu") != null)  {
+			output += `<iframe src="${embedYoutube(postJSON.postLink)}" frameborder="0" allowfullscreen></iframe>`;
+		}
+		else if (postJSON.postLink) {
+			output += `<h2 class="creation-subtitle" style="margin:0;"><a href="${postJSON.postLink}" target="blank">alternative link</a></h2>`;
+		}
+
+		// Adding post text, tags, and image
 		output += `
 			<p class="creation-image-desc">
 			  ${postJSON.postText}
 			</p>
 			<p id="tags">tags: ${postJSON.postTags}</p>
 		</div>
-		<img class="creation-image" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postContent}"/>
+		<img class="creation-image" src="/pages/projects/${postJSON.postType}/resources/${postJSON.postFile}"/>
 		`;
 	}  else if (postJSON.postType == "writing") { // Writing has unique formatting
 		output += `
@@ -77,7 +87,7 @@ async function parsePost(url) {
 		`;
 		if (postJSON.postSubtitle) {output += `<h2 class="creation-subtitle">${postJSON.postSubtitle}</h2>`;}
 		output += `
-			<h3 class="creation-date">${postJSON.postDate}</h3>
+			<h3 class="creation-date">${postJSON.postDate[0]}-${postJSON.postDate[1]}-${postJSON.postDate[2]}</h3>
 			<p id="tags">${postJSON.postTags}</p>
 		`;
 		if (postJSON.postLink) {output += `<h2 class="creation-subtitle" style="margin:0;"><a href="${postJSON.postLink}" target="blank">alternative link</a></h2>`;}
@@ -87,24 +97,24 @@ async function parsePost(url) {
 	} else if (postJSON.postType == "music" || postJSON.postType == "games") { // same formatting for Music and Games
 		output += `
 			<h1 class="creation-title">${postJSON.postTitle}<h1>
-			<h3 class="creation-date">${postJSON.postDate}</h3>
+			<h3 class="creation-date">${postJSON.postDate[0]}-${postJSON.postDate[1]}-${postJSON.postDate[2]}</h3>
 			<p id="tags">${postJSON.postTags}</p>
 			<h2 class="creation-subtitle" style="margin:0;"><a href="${postJSON.postLink}" target="blank">alternative link</a></h2>
 			<p>${postJSON.postText}</p>
 		`;
-	}  else { // Other type Creations
+	} else { // Other type Creations
 		if (postJSON.postTitle) {
 			output += `<h1 class="creation-title">${postJSON.postTitle}<h1>`;
 		} else if (postJSON.postSubtitle) {
 			output += `<h2 class="creation-subtitle">${postJSON.postSubtitle}</h2>`;
 		}else if (postJSON.postDate) {
-			output += `<h3 class="creation-date">${postJSON.postDate}</h3>`;
+			output += `<h3 class="creation-date">${postJSON.postDate[0]}-${postJSON.postDate[1]}-${postJSON.postDate[2]}</h3>`;
 		}else if (postJSON.postTags) {
 			output += `<p id="tags">${postJSON.postTags}</p>`;
 		}else if (postJSON.postLink) {
 			output += `<h2 class="creation-subtitle" style="margin:0;"><a href="${postJSON.postLink}" target="blank">alternative link</a></h2>`;
-		}else if (postJSON.postTimelapse) {
-			output += `<iframe src="${embedYoutube(postJSON.postTimelapse)}" frameborder="0" allowfullscreen></iframe>`;
+		}else if (postJSON.postLink) {
+			output += `<iframe src="${embedYoutube(postJSON.postLink)}" frameborder="0" allowfullscreen></iframe>`;
 		}/*else if (postJSON.postFile) {	MISC FILETYPES NOT IMPLEMENTED + NEOCITIES FILE RESTRICTIONS MAKE THIS KINDA USELESS (MAYBE JUST LINK TO A DOWNLOAD??)
 			output += ``;
 		}*/else if (postJSON.postText) {
