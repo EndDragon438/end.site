@@ -710,7 +710,7 @@
 
           <br>Modifiers:<br>
           * <code>/</code>&emsp;If you eat several things you can use "/" to seperate them<br>
-          * <code>~</code>&emsp;This indicates yo ueat anything<br>
+          * <code>~</code>&emsp;This indicates you eat anything<br>
           </p>
           <p id="realityDict">
           Reality Index (R*)<br>
@@ -897,13 +897,14 @@
         <h1>Credits: </h1>
         <p style="margin-top: -50px;">
           Script written by <a href="https://endy-boi.neocities.org/">end</a> (me!)<br>
-          Thanks to <a href="https://www.neververy4.com/en_US/">Never Jhonsen</a> for a bug report!
+          Thanks to <a href="https://www.neververy4.com/en_US/">Never Jhonsen</a> for a bug report!<br>
+          Thanks to Mimu [Ara'hurr] for a bug report!
         </p>
         </div>
         <div class="tab" id="encoder">
             <p>Not finished yet!!</p>
-            <div style="display:none;"> <!-- Still WIP!!!  style="display:none;"-->
-                <div class="tag">
+            <div> <!-- Still WIP!!!  style="display:none;"-->
+                <div class="tag"> <!-- Species | Complete -->
                   <label>Species</label>
                   <select id="speciesSelect" onclick="speciesSelect()">
                     <option value="">Select</option>
@@ -930,7 +931,7 @@
                     <option value="crossed">Crossed</option>
                     <option value="unknown">Unknown</option>
                   </select>
-                  <select id="subspeciesDropdown">
+                  <select id="subspeciesDropdown" onclick="speciesSelect('update')">
                   </select>
                   <label class="multiSpecies" style="display:none;">Between</label>
                   <select class="multiSpecies shapeOne" onclick="speciesSelect()" style="display:none;">
@@ -983,7 +984,7 @@
                     <option value="unknown">Unknown</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Gender | Incomplete -->
                   <label>Gender</label>
                   <select>
                     <option value="">Select</option>
@@ -996,10 +997,11 @@
                     <option value="G?">Unknown</option>
                     <option value=">">In Transition</option>
                     <option value="/">Mental/Physical Difference</option>
-                    <option value='"'>Custom</option> <!-- NEED TO FINISH THE NON-REGULAR GENDERS. NO IMPLEMENTATION SO FAR BUT I'M MOVING ON TO THE DRAGON CODE PAGE RATHER THAN THE ENCODER-->
+                    <option value='"'>Custom</option>
+                    <!-- needs custom implementation and `~`, `>`, `/` modifiers -->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Length | Incomplete -->
                   <label>Length</label>
                   <select>
                     <option value="">Select</option>
@@ -1015,9 +1017,10 @@
                     <option value="L~">Variable Length</option>
                     <option value="L^">One Dragon Sized!</option>
                     <option value="custom">CUSTOM</option>
+                    <!-- needs custom implementation and limb modifiers-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Width | Complete -->
                   <label>Width</label>
                   <select>
                     <option value="">Select</option>
@@ -1033,7 +1036,7 @@
                     <option value="W~">Variable width</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Weight | Incomplete -->
                   <label>Weight</label>
                   <select>
                     <option value="">Select</option>
@@ -1047,33 +1050,34 @@
                     <option value="T---">Featherweight</option>
                     <option value="T---!">Weightless</option>
                     <option value="custom">CUSTOM</option>
+                    <!-- needs custom implementation with units-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Appendages | Incomplete -->
                   <label>Appendages</label>
                   <select>
                     <option value=""></option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Skin | Incomplete -->
                   <label>Skin</label>
                   <select>
                     <option value=""></option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Colouration | Incomplete -->
                   <label>Colouration</label>
                   <select>
                     <option value=""></option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Breath | Incomplete -->
                   <label>Breath Weapon</label>
                   <select>
                     <option value=""></option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Age | Incomplete -->
                   <label>Age</label>
                   <select>
                     <option value="">Select</option>
@@ -1087,9 +1091,10 @@
                     <option value="A---">Hatchling</option>
                     <option value="A---!">e g g</option>
                     <option value="A?">No idea!</option>
+                    <!-- needs `r`, `v`, and `()` modifiers-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Fruitiness | Complete -->
                   <label>Fruitiness</label>
                   <select>
                     <option value="">Select</option>
@@ -1106,13 +1111,13 @@
                     <option value="Fr*">I got flamed off the newsgroup for yelling at Shim</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Habitat | Incomplete -->
                   <label>Habitat</label>
                   <select>
                     <option value=""></option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Mating Status | Incomplete -->
                   <label>Mating Status</label>
                   <select>
                     <option value="">Select</option>
@@ -1126,9 +1131,10 @@
                     <option value="M---">I'm single and proud of it!</option>
                     <option value="M---!">Not only am I single but I despise the idea of mating</option>
                     <option value="M/">Ask me and I'll ask your snout to meet your kidneys</option>
+                    <!-- needs a fuck of a lotta modifiers-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Offsprint | Incomplete -->
                   <label>Offspring</label>
                   <select>
                     <option value="">Select</option>
@@ -1145,9 +1151,10 @@
                     <option value="O~">I have a variable number</option>
                     <option value="O/">If I heard one was my fault I'd faint</option>
                     <option value="custom">CUSTOM</option>
+                    <!-- needs custom implementation and `r`, `v`, and `()` modifiers-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Hoard Size | Complete -->
                   <label>Hoard Size</label>
                   <select>
                     <option value="">Select</option>
@@ -1162,7 +1169,7 @@
                     <option value="H---!">At least I've still got friends!</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Treasure Philosophy | Complete -->
                   <label>Treasure Philosophy</label>
                   <select>
                     <option value="">Select</option>
@@ -1177,7 +1184,7 @@
                     <option value="$---!">I eschew all things of value</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Diet | Incomplete -->
                   <label>Diet</label>
                   <select>
                     <option value="">Select</option>
@@ -1190,9 +1197,10 @@
                     <option value="F--">Efficient Eater</option>
                     <option value="F---">Anorexic</option>
                     <option value="F---!">Fasting</option>
+                    <!-- needs food group modifiers and `/`, `~` modifiers-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Reality Index | Complete -->
                   <label>Reality Index</label>
                   <select>
                     <option value="">Select</option>
@@ -1209,7 +1217,7 @@
                     <option value="R?">The thought hasn't crossed my mind</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Activity Index | Complete -->
                   <label>Activity Index</label>
                   <select>
                     <option value="">Select</option>
@@ -1226,7 +1234,7 @@
                     <option value="Ac?">I have no idea when I'll be online again</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Humour Index | Incomplete -->
                   <label>Humour Index</label>
                   <select>
                     <option value="">Select</option>
@@ -1239,9 +1247,10 @@
                     <option value="J--">I'll take everything seriously first</option>
                     <option value="J---">I can't remember when I last laughed</option>
                     <option value="J---!">Jokes are the work of the Devil!</option>
+                    <!-- needs `r`, `v`, and `()` modifiers-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Social Life | Complete -->
                   <label>Social Life</label>
                   <select>
                     <option value="">Select</option>
@@ -1256,7 +1265,7 @@
                     <option value="S---!">No one knows, at all</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Ubiquity | Complete -->
                   <label>Ubiquity</label>
                   <select>
                     <option value="">Select</option>
@@ -1275,7 +1284,7 @@
                     <option value="U2">My name is Bono!</option>
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Irritability | Incomplete -->
                   <label>Irritability</label>
                   <select>
                     <option value="">Select</option>
@@ -1288,9 +1297,10 @@
                     <option value="I--">I take everything in stride</option>
                     <option value="I---">You could stab me and I wouldn't blink</option>
                     <option value="I---!">There's nothing you can do to make me lose my cool</option>
+                    <!-- needs `#` modifier-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Magical Ability | Incomplete -->
                   <label>Magical Ability</label>
                   <select>
                     <option value="">Select</option>
@@ -1303,9 +1313,10 @@
                     <option value="V--">Most magic fails when I'm nearby</option>
                     <option value="V---">Only a few spells seem to have effect</option>
                     <option value="V---!">Magic? What's that?</option>
+                    <!-- needs `[field]` modifier-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Psy-Power | Incomplete -->
                   <label>Psy-Power</label>
                   <select>
                     <option value="">Select</option>
@@ -1318,9 +1329,10 @@
                     <option value="Q--">Only my outer thoughts are exposed</option>
                     <option value="Q---">Psionics don't have any effect</option>
                     <option value="Q---!">I block any psionic effects around</option>
+                    <!-- needs `[ability]` modifier-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Technology | Incomplete -->
                   <label>Technology</label>
                   <select>
                     <option value="">Select</option>
@@ -1333,9 +1345,10 @@
                     <option value="Tc--">Electricity does funny things when I'm around</option>
                     <option value="Tc---">Only basic machines work when I'm near</option>
                     <option value="Tc---!">All tech fails when I'm near!</option>
+                    <!-- needs `[field]` modifier-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Huggability | Incomplete -->
                   <label>Huggability</label>
                   <select>
                     <option value="">Select</option>
@@ -1348,9 +1361,10 @@
                     <option value="E--">Only my mate is allowed to hug me</option>
                     <option value="E---">Don't you dare hug me!</option>
                     <option value="E---!">Don't even think about touching</option>
+                    <!-- needs `#` modifier-->
                   </select>
                 </div>
-                <div class="tag">
+                <div class="tag"> <!-- Dragon Friend | Complete -->
                   <label>Dragon Friend</label>
                   <select>
                     <option value="">Select</option>
@@ -1367,7 +1381,7 @@
                 </div>
                 <div>
                   <h1>Output:</h1>
-                  <p style="margin-top:-2em;">placeholder</p>
+                  <p style="margin-top:-2em;" id="encoderOutput">placeholder</p>
                 </div>
             </div>
         </div>

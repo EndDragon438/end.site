@@ -48,6 +48,7 @@ const speciesArray = ['D','Da','Dc','Dd','De','Df','Dh','Di','Dl','Dp','Dr','Ds'
 
 let codeOffset = 1; // offset for the code array
 let code = "";
+let outputCode = ['DC2.'];
 
 function standardizeDC(code) {
     if (code.match(" M")) {
@@ -62,70 +63,218 @@ function standardizeDC(code) {
 
 
 /* ENCODING BLOCKS */
-function encodeDC() { // this function is a lot easier cause i can limit the options a lot more. decoding requires accounting for *every* variable, which is a fuck of a lot. pretty much just reading a buncha inputs
-
+function encodeDC(id, code) { // this function is a lot easier cause i can limit the options a lot more. decoding requires accounting for *every* variable, which is a fuck of a lot. pretty much just reading a buncha inputs
+    outputCode[id] = code
+    document.getElementById('encoderOutput').textContent = outputCode.toString().replace(',', '').replaceAll(',', ' '); // replace the first comma with nothing (for the species) and the rest with a space. THIS WILL HAVE ISSUES WITH THE CODE
 }
 
 { // encode selects
-function speciesSelect() {
-    let dropdownB = document.getElementById('subspeciesDropdown')
-    document.getElementById('subspeciesDropdown').style.display = 'inline';
-    document.getElementsByClassName('multiSpecies')[0].textContent = 'Between'
-    document.getElementsByClassName('multiSpecies')[2].textContent = 'And'
-    for (i=0; i<document.getElementsByClassName('multiSpecies').length; i++) {
-        document.getElementsByClassName('multiSpecies')[i].style.display = 'none';
-    }
-    switch (document.getElementById('speciesSelect').value) {
-        case 'dragon':
-            dropdownB.innerHTML = `<option value="D" selected>OPTIONAL SUBSPECIES</option><option value="Da">Amphitere</option><option value="Dc">Draconid</option><option value="Dd">Dragonette</option><option value="De">Eastern</option><option value="Df">Faeries</option><option value="Dh">Hydra</option><option value="Di">Dimar</option><option value="Dl">Dracolich</option><option value="Dp">Pernese</option><option value="Dr">Turtle</option><option value="Ds">Serpent</option><option value="Dss">Sea Serpent</option><option value="Dfs">Fire Serpent</option><option value="Dt">Tarrasque</option><option value="Du">Pseudodragon</option><option value="Dv">Wyvern</option><option value="Dw">Western</option><option value="Dy">Wyrm</option>`;
+function speciesSelect(mode) {
+    // Only set all the shit if we're not updating. if we're updating, just call encodeDC
+    if (mode != 'update') {
+        let dropdownB = document.getElementById('subspeciesDropdown')
+        document.getElementById('subspeciesDropdown').style.display = 'inline';
+        document.getElementsByClassName('multiSpecies')[0].textContent = 'Between';
+        document.getElementsByClassName('multiSpecies')[2].textContent = 'And';
+        for (i=0; i<document.getElementsByClassName('multiSpecies').length; i++) {
+            document.getElementsByClassName('multiSpecies')[i].style.display = 'none';
+        }
+        // Setting the subspecies dropdown based on the species selected
+        switch (document.getElementById('speciesSelect').value) {
+            case 'dragon':
+            dropdownB.innerHTML = `<option value="D" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Da">Amphitere</option>
+            <option value="Dc">Draconid</option>
+            <option value="Dd">Dragonette</option>
+            <option value="De">Eastern</option>
+            <option value="Df">Faeries</option>
+            <option value="Dh">Hydra</option>
+            <option value="Di">Dimar</option>
+            <option value="Dl">Dracolich</option>
+            <option value="Dp">Pernese</option>
+            <option value="Dr">Turtle</option>
+            <option value="Ds">Serpent</option>
+            <option value="Dss">Sea Serpent</option>
+            <option value="Dfs">Fire Serpent</option>
+            <option value="Dt">Tarrasque</option>
+            <option value="Du">Pseudodragon</option>
+            <option value="Dv">Wyvern</option>
+            <option value="Dw">Western</option>
+            <option value="Dy">Wyrm</option>`;
             break;
         case 'humanoid':
-            dropdownB.innerHTML = `<option value="H" selected>OPTIONAL SUBSPECIES</option><option value="Ha">Ape</option><option value="Hd">Dwarf</option><option value="He">Elf</option><option value="Hew">Wood Elf</option><option value="Hf">Fairie</option><option value="Hi">Giant</option><option value="Hg">Gnome</option><option value="Hh">Hobbit</option><option value="Hk">Kender</option><option value="Hy">Nymph</option><option value="Ht">Troll</option><option value="Hw">Wolfman</option><option value="H?">Unknown (Anthro)</option>`;
+            dropdownB.innerHTML = `<option value="H" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Ha">Ape</option>
+            <option value="Hd">Dwarf</option>
+            <option value="He">Elf</option>
+            <option value="Hew">Wood Elf</option>
+            <option value="Hf">Fairie</option>
+            <option value="Hi">Giant</option>
+            <option value="Hg">Gnome</option>
+            <option value="Hh">Hobbit</option>
+            <option value="Hk">Kender</option>
+            <option value="Hy">Nymph</option>
+            <option value="Ht">Troll</option>
+            <option value="Hw">Wolfman</option>
+            <option value="H?">Unknown (Anthro)</option>`;
             break;
         case 'amphibian':
-            dropdownB.innerHTML = `<option value="A" selected>OPTIONAL SUBSPECIES</option><option value="Af">Frog</option><option value="An">Newt</option><option value="As">Salamander</option><option value="At">Toad</option>`;
+            dropdownB.innerHTML = `<option value="A" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Af">Frog</option>
+            <option value="An">Newt</option>
+            <option value="As">Salamander</option>
+            <option value="At">Toad</option>`;
             break;
         case 'bird':
-            dropdownB.innerHTML = `<option value="B" selected>OPTIONAL SUBSPECIES</option><option value="Bc">Crow</option><option value="Be">Eagle</option><option value="Bh">Hawk</option><option value="Bp">Pheonix</option><option value="Br">Raven</option>`;
+            dropdownB.innerHTML = `<option value="B" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Bc">Crow</option>
+            <option value="Be">Eagle</option>
+            <option value="Bh">Hawk</option>
+            <option value="Bp">Pheonix</option>
+            <option value="Br">Raven</option>`;
             break;
         case 'crustacean':
-            dropdownB.innerHTML = `<option value="C" selected>OPTIONAL SUBSPECIES</option><option value="Cc">Crab</option><option value="Cl">Lobster</option><option value="Cs">Shrimp</option>`;
+            dropdownB.innerHTML = `<option value="C" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Cc">Crab</option>
+            <option value="Cl">Lobster</option>
+            <option value="Cs">Shrimp</option>`;
             break;
         case 'dinosaur':
-            dropdownB.innerHTML = `<option value="S" selected>OPTIONAL SUBSPECIES</option><option value="Sa">Allosaur</option><option value="Sc">Triceratops</option><option value="Sp">Apatosaur</option><option value="Ss">Stegosaur</option><option value="St">Tyrannosaur</option><option value="Sv">Velociraptor</option>`;
+            dropdownB.innerHTML = `<option value="S" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Sa">Allosaur</option>
+            <option value="Sc">Triceratops</option>
+            <option value="Sp">Apatosaur</option>
+            <option value="Ss">Stegosaur</option>
+            <option value="St">Tyrannosaur</option>
+            <option value="Sv">Velociraptor</option>`;
             break;
         case 'extraterrestrial':
-            dropdownB.innerHTML = `<option value="E" selected>OPTIONAL SUBSPECIES</option><option value="Ed">Dalek</option><option value="Et">Tribble</option>`;
+            dropdownB.innerHTML = `<option value="E" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Ed">Dalek</option>
+            <option value="Et">Tribble</option>`;
             break;
         case 'fish':
-            dropdownB.innerHTML = `<option value="F" selected>OPTIONAL SUBSPECIES</option><option value="Fh">Sea Horse</option><option value="Ff">Freshwater Fish</option><option value="Ffg">Goldfish</option><option value="Fft">Trout</option><option value="Fs">Shark</option>`;
+            dropdownB.innerHTML = `<option value="F" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Fh">Sea Horse</option>
+            <option value="Ff">Freshwater Fish</option>
+                <option value="Ffg">Goldfish</option>
+                <option value="Fft">Trout</option>
+            <option value="Fs">Shark</option>`;
             break;
         case 'insect':
-            dropdownB.innerHTML = `<option value="I" selected>OPTIONAL SUBSPECIES</option><option value="Ia">Ant</option><option value="Ib">Beetle</option><option value="If">Fly</option><option value="Il">Locust</option><option value="Im">Moth</option><option value="Iu">Butterfly</option>`;
+            dropdownB.innerHTML = `<option value="I" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Ia">Ant</option>
+            <option value="Ib">Beetle</option>
+            <option value="If">Fly</option>
+            <option value="Il">Locust</option>
+            <option value="Im">Moth</option>
+            <option value="Iu">Butterfly</option>`;
             break;
         case 'legend':
-            dropdownB.innerHTML = `<option value="L" selected>OPTIONAL SUBSPECIES</option><option value="Lr">Gargoyle</option><option value="Ll">Gremlin</option><option value="Lg">Griffon</option><option value="Ln">Manticore</option><option value="Lm">Mermaid</option><option value="Lf">Salamander</option><option value="Ls">Sprite</option><option value="Lt">Treefolk</option><option value="Lu">Unicorn</option>`;
+            dropdownB.innerHTML = `<option value="L" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Lr">Gargoyle</option>
+            <option value="Ll">Gremlin</option>
+            <option value="Lg">Griffon</option>
+            <option value="Ln">Manticore</option>
+            <option value="Lm">Mermaid</option>
+            <option value="Lf">Salamander</option>
+            <option value="Ls">Sprite</option>
+            <option value="Lt">Treefolk</option>
+            <option value="Lu">Unicorn</option>`;
             break;
         case 'mammal':
-            dropdownB.innerHTML = `<option value="M" selected>OPTIONAL SUBSPECIES</option><option value="Ma">Bat</option><option value="Mb">Bear</option><option value="Mc">Canine</option><option value="Mcd">Domestic Dog</option><option value="Mcf">Fox</option><option value="Mcw">Wolf</option><option value="Mf">Feline</option><option value="Mfb">Black Panther</option><option value="Mfc">Cheetah</option><option value="Mfd">Domestic Cat</option><option value="Mfp">Leopard</option><option value="Mfps">Snow Leopard</option><option value="Mfl">Lion</option><option value="Mfx">Lynx</option><option value="Mfa">Panther</option><option value="Mfu">Puma</option><option value="Mft">Tiger</option><option value="Mh">Horse</option><option value="Mm">Monkey</option><option value="Mmg">Gibbon</option><option value="Mp">Polecat</option><option value="Mpf">Ferret</option><option value="Mpm">Mink</option><option value="Mr">Rodent</option><option value="Mrg">Gerbil</option><option value="Mrh">Hamster</option><option value="Mrm">Mouse</option><option value="Mrr">Rat</option><option value="Mrs">Squirrel</option><option value="Mw">Whale</option><option value="Mwd">Dolphin</option><option value="Mwk">Orca</option><option value="Mwp">Porpoise</option>`;
+            dropdownB.innerHTML = `<option value="M" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Ma">Bat</option>
+            <option value="Mb">Bear</option>
+            <option value="Mc">Canine</option>
+                <option value="Mcd">Domestic Dog</option>
+                <option value="Mcf">Fox</option>
+                <option value="Mcw">Wolf</option>
+            <option value="Mf">Feline</option>
+                <option value="Mfb">Black Panther</option>
+                <option value="Mfc">Cheetah</option>
+                <option value="Mfd">Domestic Cat</option>
+                <option value="Mfp">Leopard</option>
+                    <option value="Mfps">Snow Leopard</option>
+                <option value="Mfl">Lion</option>
+                <option value="Mfx">Lynx</option>
+                <option value="Mfa">Panther</option>
+                <option value="Mfu">Puma</option>
+                <option value="Mft">Tiger</option>
+            <option value="Mh">Horse</option>
+            <option value="Mm">Monkey</option>
+                <option value="Mmg">Gibbon</option>
+            <option value="Mp">Polecat</option>
+                <option value="Mpf">Ferret</option>
+                <option value="Mpm">Mink</option>
+            <option value="Mr">Rodent</option>
+                <option value="Mrg">Gerbil</option>
+                <option value="Mrh">Hamster</option>
+                <option value="Mrm">Mouse</option>
+                <option value="Mrr">Rat</option>
+                <option value="Mrs">Squirrel</option>
+            <option value="Mw">Whale</option>
+                <option value="Mwd">Dolphin</option>
+                <option value="Mwk">Orca</option>
+                <option value="Mwp">Porpoise</option>`;
             break;
         case 'mollusc':
-            dropdownB.innerHTML = `<option value="O" selected>OPTIONAL SUBSPECIES</option><option value="Oc">Cuttlefish</option><option value="Ol">Limpet</option><option value="Oo">Octopus</option><option value="Oy">Oyster</option><option value="Os">Snail</option>`;
+            dropdownB.innerHTML = `<option value="O" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Oc">Cuttlefish</option>
+            <option value="Ol">Limpet</option>
+            <option value="Oo">Octopus</option>
+            <option value="Oy">Oyster</option>
+            <option value="Os">Snail</option>`;
             break;
         case 'mythical':
-            dropdownB.innerHTML = `<option value="Y" selected>OPTIONAL SUBSPECIES</option><option value="Yc">Centaur</option><option value="Yy">Cyclops</option><option value="Yg">Golem</option><option value="Yh">Hellhound</option><option value="Ym">Minotaur</option><option value="Yp">Pegasus</option><option value="Yt">Satyr</option><option value="Ys">Sphinx</option>`;
+            dropdownB.innerHTML = `<option value="Y" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Yc">Centaur</option>
+            <option value="Yy">Cyclops</option>
+            <option value="Yg">Golem</option>
+            <option value="Yh">Hellhound</option>
+            <option value="Ym">Minotaur</option>
+            <option value="Yp">Pegasus</option>
+            <option value="Yt">Satyr</option>
+            <option value="Ys">Sphinx</option>`;
             break;
         case 'plant':
-            dropdownB.innerHTML = `<option value="P" selected>OPTIONAL SUBSPECIES</option><option value="Pc">Cacti</option><option value="Pf">Fungii</option><option value="Pt">Tree</option><option value="Pta">Ash Tree</option><option value="Pte">Elm Tree</option><option value="Pto">Oak Tree</option>`;
+            dropdownB.innerHTML = `<option value="P" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Pc">Cacti</option>
+            <option value="Pf">Fungii</option>
+            <option value="Pt">Tree</option>
+                <option value="Pta">Ash Tree</option>
+                <option value="Pte">Elm Tree</option>
+                <option value="Pto">Oak Tree</option>`;
             break;
         case 'reptile':
-            dropdownB.innerHTML = `<option value="R" selected>OPTIONAL SUBSPECIES</option><option value="Ra">Alligator</option><option value="Rc">Chameleon</option><option value="Rg">Gecko</option><option value="Rk">Komodo Dragon</option><option value="Rl">Lizard</option><option value="Rn">Skink</option><option value="Rnf">Fire Skink</option><option value="Rs">Snake</option><option value="Rt">Turtle</option>`; // fun fact: "skink" is actually mistyped as "Pn" on the archive. i'm just assuming this is a typo and correcting it here. typing all this out without fucking up is difficult. pls point out my spelling mistakes. they could break shit.
+            dropdownB.innerHTML = `<option value="R" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Ra">Alligator</option>
+            <option value="Rc">Chameleon</option>
+            <option value="Rg">Gecko</option>
+            <option value="Rk">Komodo Dragon</option>
+            <option value="Rl">Lizard</option>
+            <option value="Rn">Skink</option>
+                <option value="Rnf">Fire Skink</option>
+            <option value="Rs">Snake</option>
+            <option value="Rt">Turtle</option>`;
+            // fun fact: "skink" is actually mistyped as "Pn" on the archive. i'm just assuming this is a typo and correcting it here.
+            // typing all this out without fucking up is difficult. pls point out my spelling mistakes. they could break shit.
             break;
         case 'spirit':
-            dropdownB.innerHTML = `<option value="Q" selected>OPTIONAL SUBSPECIES</option><option value="Qa">Angel</option><option value="Qd">Devil</option><option value="Qg">Ghost</option><option value="Qi">Imp</option><option value="Qp">Poltergeist</option><option value="Qs">Spectre</option><option value="Qw">Will-o-the-Wisp</option>`;
+            dropdownB.innerHTML = `<option value="Q" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Qa">Angel</option>
+            <option value="Qd">Devil</option>
+            <option value="Qg">Ghost</option>
+            <option value="Qi">Imp</option>
+            <option value="Qp">Poltergeist</option>
+            <option value="Qs">Spectre</option>
+            <option value="Qw">Will-o-the-Wisp</option>`;
             break;
         case 'undead':
-            dropdownB.innerHTML = `<option value="U" selected>OPTIONAL SUBSPECIES</option><option value="Ug">Ghoul</option><option value="Uv">Vampire</option><option value="Uz">Zombie</option>`;
+            dropdownB.innerHTML = `<option value="U" selected>OPTIONAL SUBSPECIES</option>
+            <option value="Ug">Ghoul</option>
+            <option value="Uv">Vampire</option>
+            <option value="Uz">Zombie</option>`;
             break;
         case 'shapechanger':
             dropdownB.innerHTML = `<option value="~" selected>OPTIONAL SUBSPECIES</option>`;
@@ -160,7 +309,10 @@ function speciesSelect() {
                 document.getElementsByClassName('multiSpecies')[i].style.display = 'inline';
             }
             break;
+        }
     }
+    
+    encodeDC(1, document.getElementById('subspeciesDropdown').value)
 }
 
 function genderSelect() {
