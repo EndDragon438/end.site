@@ -843,7 +843,7 @@ function checkGender(text) { // complete
     }else if (text.match(/\x2F/g)) { // / (y in x body)
         gender += checkGender(text.slice(1,text.indexOf('/')-1)) + " in a " + checkGender(text.slice(text.indexOf('/')+1)) + " body"
     }else {
-        switch (text) {
+        switch (text.slice(1, text.length)) {
             case "f":
                 gender += "Female";
                 break;
