@@ -70,7 +70,7 @@ function encodeDC(id, code) { // this function is a lot easier cause i can limit
 }
 
 { // encode selects
-function speciesSelect(mode) {
+function speciesSelect(mode) { // outputCode[1]
     // Only set all the shit if we're not updating. if we're updating, just call encodeDC
     if (mode != 'update') {
         let dropdownB = document.getElementById('subspeciesDropdown')
@@ -316,7 +316,7 @@ function speciesSelect(mode) {
     encodeDC(1, document.getElementById('subspeciesDropdown').value)
 }
 
-function genderSelect() {
+function genderSelect() { // outputCode[2]
     // array!! gotta make space for custom too, but array!!
     const genderArray = ['Gf','Gh','Gm','Gn','Gp','G~','G?']
     const genderOneValue = document.getElementById('genderOne').value;
@@ -353,16 +353,22 @@ function genderSelect() {
     }
 }
 
-function lengthSelect() {
+function lengthSelect() { // outputCode[3]
 
 }
 
-function widthSelect() {
-
+function widthSelect() { // outputCode[4]
+    const widthValue = document.getElementById('widthSelect').value
+    encodeDC(4, widthValue)
 }
 
-function weightSelect() {
-
+function weightSelect() { // outputCode[5]
+    const weightValue = document.getElementById('weightSelect').value
+    if (weightValue == 'custom') {
+        document.getElementById('weightNumber').style.display = 'inline'
+        document.getElementById('weightUnits').style.display = 'inline'
+        encodeDC(5, 'T' + document.getElementById('weightNumber').value + document.getElementById('weightUnits').value)
+    }
 }
 
 function appendageSelect() {

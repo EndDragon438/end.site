@@ -903,7 +903,7 @@
         </div>
         <div class="tab" id="encoder">
             <p>Not finished yet!!</p>
-            <div style="display: none;"> <!-- Still WIP!!!  style="display:none;"-->
+            <div style="display: block;"> <!-- Still WIP!!!  style="display:none;"-->
                 <div class="tag"> <!-- Species | Complete -->
                   <label>Species</label>
                   <select id="speciesSelect" onclick="speciesSelect()">
@@ -1033,10 +1033,13 @@
                     <option value="custom">CUSTOM</option>
                     <!-- needs custom implementation and limb modifiers-->
                   </select>
+                  <select style="display: none;" id="lengthUnits">
+                    <option value="">Units</option>
+                  </select>
                 </div>
                 <div class="tag"> <!-- Width | Complete -->
                   <label>Width</label>
-                  <select>
+                  <select id="widthSelect" onclick="widthSelect()">
                     <option value="">Select</option>
                     <option value="W+++!">Galaxy</option>
                     <option value="W+++">Planet Cracker</option>
@@ -1050,9 +1053,9 @@
                     <option value="W~">Variable width</option>
                   </select>
                 </div>
-                <div class="tag"> <!-- Weight | Incomplete -->
+                <div class="tag"> <!-- Weight | Complete -->
                   <label>Weight</label>
-                  <select>
+                  <select id="weightSelect" onclick="weightSelect()">
                     <option value="">Select</option>
                     <option value="T+++!">Black hole</option>
                     <option value="T+++">Massive</option>
@@ -1064,7 +1067,17 @@
                     <option value="T---">Featherweight</option>
                     <option value="T---!">Weightless</option>
                     <option value="custom">CUSTOM</option>
-                    <!-- needs custom implementation with units-->
+                  </select>
+                  <input style="display: none; width: 250px; font-size: 18px;" id="weightNumber" placeholder="Weight Number">
+                  <select style="display: none;" id="weightUnits" onclick="weightSelect()">
+                    <option value="">Units</option>
+                    <option value="c">Long Hundredweight</option>
+                    <option value="g">Grams</option>
+                    <option value="k">Kilograms</option>
+                    <option value="l">Pounds</option>
+                    <option value="o">Ounces</option>
+                    <option value="s">Stones</option>
+                    <option value="t">Metric Tonnes</option>
                   </select>
                 </div>
                 <div class="tag"> <!-- Appendages | Incomplete -->
