@@ -902,8 +902,8 @@
         </p>
         </div>
         <div class="tab" id="encoder">
-            <p>Not finished yet!!</p>
-            <div style="display: block;"> <!-- Still WIP!!!  style="display:none;"-->
+            <p>Not finished yet!! 15/28 Complete</p>
+            <div style="display: none;"> <!-- Still WIP!!!  style="display:none;"-->
                 <div class="tag"> <!-- Species | Complete -->
                   <label>Species</label>
                   <select id="speciesSelect" onclick="speciesSelect()">
@@ -1123,7 +1123,7 @@
                 </div>
                 <div class="tag"> <!-- Fruitiness | Complete -->
                   <label>Fruitiness</label>
-                  <select>
+                  <select id="fruitSelect" onclick="fruitSelect()">
                     <option value="">Select</option>
                     <option value="Fr+++!">I remember when humans ruled the newsgroup</option>
                     <option value="Fr+++">I remember Dalvenjah posting regularly</option>
@@ -1138,10 +1138,25 @@
                     <option value="Fr*">I got flamed off the newsgroup for yelling at Shim</option>
                   </select>
                 </div>
-                <div class="tag"> <!-- Habitat | Incomplete -->
+                <div class="tag"> <!-- Habitat | Complete -->
                   <label>Habitat</label>
-                  <select>
-                    <option value=""></option>
+                  <select id="habitatSelect" onclick="habitatSelect()">
+                    <option value="">Select</option>
+                    <option value="Na">Air</option>
+                    <option value="Ne">Earth/Underground</option>
+                    <option value="Nf">Fire</option>
+                    <option value="Ni">Ice</option>
+                    <option value="Nj">Jungle</option>
+                    <option value="Nm">Mountains</option>
+                    <option value="Nn">Nature</option>
+                    <option value="Np">Plains</option>
+                    <option value="Nr">Rock</option>
+                    <option value="Ns">Space</option>
+                    <option value="Nt">Trees</option>
+                    <option value="Nu">Urban</option>
+                    <option value="Nw">Water</option>
+                    <option value="N^">Ethereal</option>
+                    <option value="N!">Imaginary</option>
                   </select>
                 </div>
                 <div class="tag"> <!-- Mating Status | Incomplete -->
@@ -1183,7 +1198,7 @@
                 </div>
                 <div class="tag"> <!-- Hoard Size | Complete -->
                   <label>Hoard Size</label>
-                  <select>
+                  <select id="hoardSelect" onclick="hoardSelect()">
                     <option value="">Select</option>
                     <option value="H+++!">The economy quakes when I sell</option>
                     <option value="H+++">I can't tell when someone steals an item</option>
@@ -1198,7 +1213,7 @@
                 </div>
                 <div class="tag"> <!-- Treasure Philosophy | Complete -->
                   <label>Treasure Philosophy</label>
-                  <select>
+                  <select id="monetarySelect" onclick="monetarySelect()">
                     <option value="">Select</option>
                     <option value="$+++!">When I get my claws on something I never let go</option>
                     <option value="$+++">The coins have my face on them</option>
@@ -1229,7 +1244,7 @@
                 </div>
                 <div class="tag"> <!-- Reality Index | Complete -->
                   <label>Reality Index</label>
-                  <select>
+                  <select id="realitySelect" onclick="realitySelect()">
                     <option value="">Select</option>
                     <option value="R+++!">I am as I describe myself and you can't convince me otherwise</option>
                     <option value="R+++">I am as I describe myself the human body is an unfortunate mistake</option>
@@ -1246,7 +1261,7 @@
                 </div>
                 <div class="tag"> <!-- Activity Index | Complete -->
                   <label>Activity Index</label>
-                  <select>
+                  <select id="activitySelect" onclick="activitySelect()">
                     <option value="">Select</option>
                     <option value="Ac+++!">I'm never off the net, not even to eat</option>
                     <option value="Ac+++">I spend as much time as possible online</option>
@@ -1279,7 +1294,7 @@
                 </div>
                 <div class="tag"> <!-- Social Life | Complete -->
                   <label>Social Life</label>
-                  <select>
+                  <select id="socialSelect" onclick="socialSelect()">
                     <option value="">Select</option>
                     <option value="S+++!">I advertise that I'm not human</option>
                     <option value="S+++">My friends parents all know</option>
@@ -1294,7 +1309,7 @@
                 </div>
                 <div class="tag"> <!-- Ubiquity | Complete -->
                   <label>Ubiquity</label>
-                  <select>
+                  <select id="ubiquitySelect" onclick="ubiquitySelect()">
                     <option value="">Select</option>
                     <option value="U+++!">There are still holy wars being fought over me</option>
                     <option value="U+++">I remember most of my past lives and a bit about you too</option>
@@ -1311,9 +1326,9 @@
                     <option value="U2">My name is Bono!</option>
                   </select>
                 </div>
-                <div class="tag"> <!-- Irritability | Incomplete -->
+                <div class="tag"> <!-- Irritability | Complete -->
                   <label>Irritability</label>
-                  <select>
+                  <select id="irritabilitySelect" onclick="irritabilitySelect()">
                     <option value="">Select</option>
                     <option value="I+++!">You're not going to catch me in a good mood</option>
                     <option value="I+++">I'd eat my mother if she looked at me wrong</option>
@@ -1324,8 +1339,9 @@
                     <option value="I--">I take everything in stride</option>
                     <option value="I---">You could stab me and I wouldn't blink</option>
                     <option value="I---!">There's nothing you can do to make me lose my cool</option>
-                    <!-- needs `#` modifier-->
                   </select>
+                  <input type="checkbox" id="angerDanger" name="angerDanger" style="width: 40px; height: 40px;" onclick="irritabilitySelect()">
+                  <label for="angerDanger">But when I do get angry, watch out!</label>
                 </div>
                 <div class="tag"> <!-- Magical Ability | Incomplete -->
                   <label>Magical Ability</label>
@@ -1375,9 +1391,9 @@
                     <!-- needs `[field]` modifier-->
                   </select>
                 </div>
-                <div class="tag"> <!-- Huggability | Incomplete -->
+                <div class="tag"> <!-- Huggability | Complete -->
                   <label>Huggability</label>
-                  <select>
+                  <select id="hugSelect" onclick="hugSelect()">
                     <option value="">Select</option>
                     <option value="E+++!">I'll hug anything (to death!)</option>
                     <option value="E+++">I'll hug anything alive</option>
@@ -1388,12 +1404,13 @@
                     <option value="E--">Only my mate is allowed to hug me</option>
                     <option value="E---">Don't you dare hug me!</option>
                     <option value="E---!">Don't even think about touching</option>
-                    <!-- needs `#` modifier-->
                   </select>
+                  <input type="checkbox" id="hugDanger" name="hugDanger" style="width: 40px; height: 40px;" onclick="hugSelect()">
+                  <label for="hugDanger">But when you do, expect a violent reaction!</label>
                 </div>
                 <div class="tag"> <!-- Dragon Friend | Complete -->
                   <label>Dragon Friend</label>
-                  <select>
+                  <select id="friendSelect" onclick="friendSelect()">
                     <option value="">Select</option>
                     <option value="Df+++!">I've started growing scales!</option>
                     <option value="Df+++">I'm popular with dragons</option>

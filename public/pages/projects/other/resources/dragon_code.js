@@ -2,10 +2,6 @@
 
 // end's code (unspaced)      : DC2.Dw[H]GnL8mW-T-PflhtvwSksCbk^\rb,ere-,sre-,wre-,vgy-,cgy-BflAFr---NeM---!OH++$---Fc/oR+++Ac++J+SU?I--#VQ+Tc++E++
 // end's code (spaced)        : DC2.Dw[H] Gn L8m W- T- Pflhtvw Sks Cbk^\rb,ere-,sre-,wre-,vgy-,cgy- Bfl A Fr--- Ne M---! O H++ $--- Fc/o R+++ Ac++ J+ S U? I--# V Q+ Tc++ E++
-// every's code               : DC2.DwGmL++WTSksCbl/pu/bl-BicA++NmH+++!$+++FR+++!Ac-J++IV+++Tc+++E
-
-// colour success             : DC2.Dw Cbl-
-// colour fail                : DC2.DwCbl/pu/bl-
 
 // notes on DC:
 // remember, all tags can use "?" and "~" to indicate either unknown or anything
@@ -41,8 +37,6 @@
 // species tags *can* involve square and curly brackets,. one other tag uses parentheses
 
 // HEX CHARACTER CODES: "^"="5E" "+"="2B" "-"="2D" "!"="21" "~"="7E" "/"="2F" "?"="3F"
-// Completion: 28/28
-// approximate progress: 98%
 
 const speciesArray = ['D','Da','Dc','Dd','De','Df','Dh','Di','Dl','Dp','Dr','Ds','Dss','Dsf','Dt','Du','Dv','Dw','Dy','H','Ha','Hd','He','Hew','Hf','Hi','Hg','Hh','Hk','Hy','Ht','Hw','H?','A','Af','An','As','At','B','Bc','Be','Bh','Bp','Br','C','Cc','Cl','Cs','S','Sa','Sc','Sp','Ss','St','Sv','E','Ed','Et','F','Fh','Ff','Ffg','Fft','Fs','I','Ia','Ib','If','Il','Im','Iu','L','Lr','Ll','Lg','Ln','Lm','Lf','Ls','Lt','Lu','M','Ma','Mb','Mc','Mcd','Mcf','Mcw','Mf','Mfb','Mfc','Mfd','Mfp','Mfps','Mfl','Mfx','Mfa','Mfu','Mft','Mh','Mm','Mmg','Mp','Mpf','Mpm','Mr','Mrg','Mrh','Mrm','Mrr','Mrs','Mw','Mwd','Mwk','Mwp','O','Oc','Ol','Oo','Oy','Os','Y','Yc','Yy','Yg','Yh','Ym','Yp','Yt','Ys','P','Pc','Pf','Pt','Pta','Pte','Pto','R','Ra','Rc','Rg','Rk','Rl','Rn','Rsnf','Rs','Rt','Q','Qa','Qd','Qg','Qi','Qp','Qs','Qw','U','Ug','Uv','Uz','?'];
 
@@ -317,20 +311,22 @@ function speciesSelect(mode) { // outputCode[1]
 }
 
 function genderSelect() { // outputCode[2]
-    // array!! gotta make space for custom too, but array!!
-    const genderArray = ['Gf','Gh','Gm','Gn','Gp','G~','G?']
+    // constants for all the values
     const genderOneValue = document.getElementById('genderOne').value;
     const genderTwoValue = document.getElementById('genderTwo').value;
     const genderSelectValue = document.getElementById('genderSelect').value
+    // we'll be reassigning these to pass them to the output later
     let outOne = genderOneValue
     let outTwo = genderTwoValue
 
+    // if genderOne is custom get outOne setup right, else just pass it along plain
     if (genderOneValue == '"') {
         document.getElementById('customGenderOne').style.display = 'inline';
         outOne = 'G"' + document.getElementById('customGenderOne').value + '"'
     } else {
         document.getElementById('customGenderOne').style.display = 'none';
     }
+    // if gendertwo is custom get outTwo setup right, else just pass it along plain
     if (genderTwoValue == '"') {
         document.getElementById('customGenderTwo').style.display = 'inline';
         outTwo = '"' + document.getElementById('customGenderTwo').value + '"'
@@ -338,6 +334,8 @@ function genderSelect() { // outputCode[2]
         document.getElementById('customGenderTwo').style.display = 'none';
     }
     
+    // If there's no special gender mixing shit, hide those inputs and just pass the values along
+    // else, show the second input and concatenate it properly, then pass it along
     if (genderSelectValue == '') {
         document.getElementById('genderTwo').style.display = 'none'
         document.getElementById('customGenderTwo').style.display = 'none'
@@ -358,12 +356,14 @@ function lengthSelect() { // outputCode[3]
 }
 
 function widthSelect() { // outputCode[4]
+    // Simple one, just passing it along
     const widthValue = document.getElementById('widthSelect').value
     encodeDC(4, widthValue)
 }
 
 function weightSelect() { // outputCode[5]
     const weightValue = document.getElementById('weightSelect').value
+    // If it's custom, show the text and units inputs then pass along the right string
     if (weightValue == 'custom') {
         document.getElementById('weightNumber').style.display = 'inline'
         document.getElementById('weightUnits').style.display = 'inline'
@@ -371,95 +371,123 @@ function weightSelect() { // outputCode[5]
     }
 }
 
-function appendageSelect() {
+function appendageSelect() { // outputCode[6]
 
 }
 
-function skinSelect() {
+function skinSelect() { // outputCode[7]
 
 }
 
-function colourSelect() {
+function colourSelect() { // outputCode[8]
  // dis gonna suck :(
 }
 
-function breathSelect() {
+function breathSelect() { // outputCode[9]
 
 }
 
-function ageSelect() {
+function ageSelect() { // outputCode[10]
 
 }
 
-function fruitSelect() {
+function fruitSelect() { // outputCode[11]
+    // Simple one, just passing it along
+    const fruitValue = document.getElementById('fruitSelect').value
+    encodeDC(11, fruitValue)
+}
+
+function habitatSelect() { // outputCode[12]
+    // Simple one, just passing it along
+    const habitatValue = document.getElementById('habitatSelect').value
+    encodeDC(12, habitatValue)
+}
+
+function mateSelect() { // outputCode[13]
 
 }
 
-function habitatSelect() {
+function offspringSelect() { // outputCode[14]
+
+}
+function hoardSelect() { // outputCode[15]
+    // Simple one, just passing it along
+    const hoardValue = document.getElementById('hoardSelect').value
+    encodeDC(15, hoardValue)
+}
+
+function monetarySelect() { // outputCode[16]
+    // Simple one, just passing it along
+    const monetaryValue = document.getElementById('monetarySelect').value
+    encodeDC(16, monetaryValue)
+}
+
+function dietSelect() { // outputCode[17]
 
 }
 
-function mateSelect() {
+function realitySelect() { // outputCode[18]
+    // Simple one, just passing it along
+    const realityValue = document.getElementById('realitySelect').value
+    encodeDC(18, realityValue)
+}
+
+function activitySelect() { // outputCode[19]
+    // Simple one, just passing it along
+    const activityValue = document.getElementById('activitySelect').value
+    encodeDC(19, activityValue)
+}
+
+function humourSelect() { // outputCode[20]
 
 }
 
-function offspringSelect() {
-
-}
-function hoardSelect() {
-
-}
-
-function monetarySelect() {
-
+function socialSelect() { // outputCode[21]
+    // Simple one, just passing it along
+    const socialValue = document.getElementById('socialSelect').value
+    encodeDC(21, socialValue)
 }
 
-function dietSelect() {
-
+function ubiquitySelect() { // outputCode[22]
+    // Simple one, just passing it along
+    const ubiquityValue = document.getElementById('ubiquitySelect').value
+    encodeDC(22, ubiquityValue)
 }
 
-function realitySelect() {
-
+function irritabilitySelect() { // outputCode[23]
+    // Pass it along, if the checkbox is checked add the modifier
+    let irritabilityValue = document.getElementById('irritabilitySelect').value
+    if (document.getElementById('angerDanger').checked == true) {
+        irritabilityValue += '#'
+    }
+    encodeDC(23, irritabilityValue)
 }
 
-function activitySelect() {
-
-}
-
-function humourSelect() {
+function magicSelect() { // outputCode[24]
 
 }
 
-function socialSelect() {
+function psySelect() { // outputCode[25]
 
 }
 
-function ubiquitySelect() {
+function techSelect() { // outputCode[26]
 
 }
 
-function irritabilitySelect() {
-
+function hugSelect() { // outputCode[27]
+    // Pass it along, if the checkbox is checked add the modifier
+    let hugValue = document.getElementById('hugSelect').value
+    if (document.getElementById('hugDanger').checked == true) {
+        hugValue += '#'
+    }
+    encodeDC(27, hugValue)
 }
 
-function magicSelect() {
-
-}
-
-function psySelect() {
-
-}
-
-function techSelect() {
-
-}
-
-function hugSelect() {
-
-}
-
-function friendSelect() {
-
+function friendSelect() { // outputCode[28]
+    // Simple one, just passing it along
+    const friendValue = document.getElementById('friendSelect').value
+    encodeDC(28, friendValue)
 }
 }
 
