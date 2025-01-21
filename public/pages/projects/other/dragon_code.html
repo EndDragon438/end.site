@@ -342,7 +342,7 @@
           <br>Modifiers<br>
           * <code>></code>&emsp;In transition between two genders. ex: <code>Gm>f</code> for transitioning from male to female<br>
           * <code>/</code>&emsp;Differing mental/physical genders. ex: <code>Gm/f</code> to mean male trapped in a female body<br>
-          * <code>""</code>&emsp;Custom gender, if you'd like to specify something outside the Code. ex: <code>G"agender"</code> if you are agender. If you'd like your custom gender to be compatible with the Decoder, make sure it's all lowercase. (I'd recommend using custom, as this section of the Code is a little bit dated)<br>
+          * <code>""</code>&emsp;Custom gender, if you'd like to specify something outside the Code. ex: <code>G"agender"</code> if you are agender. If you'd like your custom gender to be compatible with the Decoder, make sure it's all lowercase.<br>
           </p>
           <p id="lengthDict">
           Length (L*)<br>
@@ -903,7 +903,7 @@
         </div>
         <div class="tab" id="encoder">
             <p>Not finished yet!!</p>
-            <div> <!-- Still WIP!!!  style="display:none;"-->
+            <div style="display: none;"> <!-- Still WIP!!!  style="display:none;"-->
                 <div class="tag"> <!-- Species | Complete -->
                   <label>Species</label>
                   <select id="speciesSelect" onclick="speciesSelect()">
@@ -984,22 +984,36 @@
                     <option value="unknown">Unknown</option>
                   </select>
                 </div>
-                <div class="tag"> <!-- Gender | Incomplete -->
+                <div class="tag"> <!-- Gender | Complete -->
                   <label>Gender</label>
-                  <select>
+                  <select id="genderOne" onclick="genderSelect()">
                     <option value="">Select</option>
                     <option value="Gf">Female</option>
                     <option value="Gh">Hermaphrodite</option>
                     <option value="Gm">Male</option>
                     <option value="Gn">Neuter</option>
                     <option value="Gp">Pseudo-hermaphrodite</option>
-                    <option value="G~">Variable</option>
                     <option value="G?">Unknown</option>
-                    <option value=">">In Transition</option>
-                    <option value="/">Mental/Physical Difference</option>
                     <option value='"'>Custom</option>
-                    <!-- needs custom implementation and `~`, `>`, `/` modifiers -->
                   </select>
+                  <input style="display: none; max-width: 230px; font-size:18px;" id="customGenderOne" placeholder="Custom Gender One">
+                  <select id="genderSelect" onclick="genderSelect()">
+                    <option value="">Just that</option>
+                    <option value="~">Variable between</option>
+                    <option value=">">Transitioning to:</option>
+                    <option value="/">Mentally, and physically:</option>
+                  </select>
+                  <select style="display: none;" id="genderTwo" onclick="genderSelect()">
+                    <option value="">Select</option>
+                    <option value="f">Female</option>
+                    <option value="h">Hermaphrodite</option>
+                    <option value="m">Male</option>
+                    <option value="n">Neuter</option>
+                    <option value="p">Pseudo-hermaphrodite</option>
+                    <option value="?">Unknown</option>
+                    <option value='"'>Custom</option>
+                  </select>
+                  <input style="display: none; max-width: 230px; font-size:18px;" id="customGenderTwo" placeholder="Custom Gender Two">
                 </div>
                 <div class="tag"> <!-- Length | Incomplete -->
                   <label>Length</label>

@@ -65,7 +65,8 @@ function standardizeDC(code) {
 /* ENCODING BLOCKS */
 function encodeDC(id, code) { // this function is a lot easier cause i can limit the options a lot more. decoding requires accounting for *every* variable, which is a fuck of a lot. pretty much just reading a buncha inputs
     outputCode[id] = code
-    document.getElementById('encoderOutput').textContent = outputCode.toString().replace(',', '').replaceAll(',', ' '); // replace the first comma with nothing (for the species) and the rest with a space. THIS WILL HAVE ISSUES WITH THE CODE
+    document.getElementById('encoderOutput').textContent = outputCode.join(' ').replace(' ', '');
+    console.log(outputCode)
 }
 
 { // encode selects
@@ -318,6 +319,38 @@ function speciesSelect(mode) {
 function genderSelect() {
     // array!! gotta make space for custom too, but array!!
     const genderArray = ['Gf','Gh','Gm','Gn','Gp','G~','G?']
+    const genderOneValue = document.getElementById('genderOne').value;
+    const genderTwoValue = document.getElementById('genderTwo').value;
+    const genderSelectValue = document.getElementById('genderSelect').value
+    let outOne = genderOneValue
+    let outTwo = genderTwoValue
+
+    if (genderOneValue == '"') {
+        document.getElementById('customGenderOne').style.display = 'inline';
+        outOne = 'G"' + document.getElementById('customGenderOne').value + '"'
+    } else {
+        document.getElementById('customGenderOne').style.display = 'none';
+    }
+    if (genderTwoValue == '"') {
+        document.getElementById('customGenderTwo').style.display = 'inline';
+        outTwo = '"' + document.getElementById('customGenderTwo').value + '"'
+    } else {
+        document.getElementById('customGenderTwo').style.display = 'none';
+    }
+    
+    if (genderSelectValue == '') {
+        document.getElementById('genderTwo').style.display = 'none'
+        document.getElementById('customGenderTwo').style.display = 'none'
+        document.getElementById('genderTwo').set = ''
+        encodeDC(2, outOne)
+    } else {
+        document.getElementById('genderTwo').style.display = 'inline'
+        if (genderSelectValue == '~') {
+            encodeDC(2, 'G~(' + outOne.slice(1) + outTwo + ')')
+        } else {
+            encodeDC(2, outOne + genderSelectValue + outTwo)
+        }
+    }
 }
 
 function lengthSelect() {
