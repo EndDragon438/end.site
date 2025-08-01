@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="pinterest" content="nopin" />
+    <meta name="description" content="personal blog and portfolio of end!">
+    <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
+    <title>end.site</title> <!-- name it shows on the tab -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
+  </head>
+  <body>
+    <!-- navbar div -->
+    <div class="header" id="header"><p>SOME PAGES WILL NOT WORK WITHOUT JAVASCRIPT &emsp;&emsp;<a class="noJS" href="/index.html">Home</a> | <a class="noJS" href="/pages/about/index.html">About</a> | <a class="noJS" href="/pages/blog/index.html">Blog</a> | <a class="noJS" href="/pages/projects/index.html">Creations</a> | <a class="noJS" href="/pages/socials/index.html">Socials</a> | <a class="noJS" href="/pages/links/index.html">Linkies</a></p></div>    <!-- site content begins -->
+    <aside id="rightSidebar" title="thanks to sadgrl for the sidebar code!"><h2>Changelog</h2>
+      <div>
+        <ul>
+          January 11, 2025
+          <li>Swapped dates to arrays in yyyy-MM-dd on the post backend</li>
+          <li>Unified postTimelapse & postLink on the post backend</li>
+          <li>Unified postContent & postFile on the post backend</li>
+          <li>Preparation for the revamped JSON Post Generator</li>
+          <li>*some time passes*</li>
+          <li>I've rebuilt my JSON Post Generator. It's now a Python script running locally,
+            not on the site. I did this so I could also implement a lot of file fuckery that
+            frontend Javascript can't do (on Neocities). Now, the script automatically generates
+            the pages for me, and has a nice lil GUI with file selectors and everything!
+            I'm hoping this'll make it so I put more stuff on my site, cause it's a hell of
+            a lot easier now.
+          </li>
+          <li>added a bunch of new art posts!</li>
+        </ul>
+        <ul>
+          December 16, 2024
+          <li>Fixed a bug in the dragon code decoder with more than 2 mixed colors</li>
+          <li>Added all my OC refs in Creations</li>
+        </ul>
+        <ul>
+          June 18, 2024
+          <li>Added AF2024 Stardust stamp!!</li>
+        </ul>
+        <ul>
+          June 8, 2024
+          <li>fixed Blog page</li>
+        </ul>
+        <ul>
+          June 4, 2024
+          <li>Joined Autists Online webring!!</li>
+        </ul>
+        <ul>
+          June 1, 2024
+          <li>Added email + PGP key to Socials</li>
+        </ul>
+        <ul>
+          May 29, 2024
+          <li>new 3D art thingy!!</li>
+        </ul>
+        <ul>
+          May 23, 2024
+          <li>updated header, making it a lil bit more usable</li>
+        </ul>
+        <ul>
+          May 21, 2024
+          <li>updated landing page + Roadmap</li>
+        </ul>
+        <ul>
+          May 20, 2024
+          <li>Finished transcribing the Revised Dragon Code onto the dragon code page, purely sourced off the archive.</li>
+        </ul>
+        <ul>
+          May 18, 2024
+          <li>updated About>Favorites to add OTHERKIN by AAAAA</li>
+          <li>added a few links to Linkies</li>
+          <li>started work on Dragon Code archive & Encoder</li>
+        </ul>
+        <ul>
+          May 16, 2024
+          <li>added custom dragon cursor (try hovering over a link!!)</li>
+        </ul>
+        <ul>
+          May 14, 2024
+          <li>created the <a href="/pages/projects/other/dragon_code.html">Dragon Code page</a></li>
+          <li>built a Dragon Code (DCv2.6) Decoder (2000 lines of JS!!) on the Dragon Code page</li>
+          <li>^this took a week lol. i haven't slept a whole lot</li>
+        </ul>
+        <ul>
+          May 7, 2024
+          <li>added a couple buttons for games i play</li>
+        </ul>
+        <ul>
+          May 6, 2024
+          <li>moved files to <a href="https://github.com/EndDragon438/end.site" target="blank">github</a> for easier edit syncing!</li>
+          <li>removed site ver. label, cause i don't really care about tracking it past v1.0</li>
+          <li>added unique formatting for generated posts (<code>parsePost()</code>) depending on type</li>
+          <li>added OC bio pages (check the OC tags!!)</li>
+        </ul>
+        <ul>
+          May 5, 2024
+          <li>made a <a href="/pages/projects/other/json_generator.html" target="blank">post JSON generator</a></li>
+        </ul>
+        <ul>
+          May 3, 2024
+          <li>changed the blinkie visibility button to a toggle</li>
+          <li>added a button to just toggle animated stuff, and leave alone other images</li>
+          <li>changed up the inline styling of <code>code</code>, <em>em</em>, and <strong>strong</strong></li>
+          <li>revamped About page</li>
+          <li>added <code>oc</code> tags to Creations</li>
+          <li>its 5 am and im tired but im gona finish off the about page rq</li>
+        </ul>
+        <ul>
+          April 28, 2024 (v1.0!!!!)
+          <li>finished JSON parsing & page populating for 2D creations, other types still need work</li>
+          <li>finished <code>populateTags()</code>, for listing tagged posts on Tag Pages</li>
+          <li>added first post to Creations!</li>
+          <li>HOORAY FOR END.SITE V1.0!!!!!!!!!!!!!!!!!!!!!!</li>
+        </ul>
+        <ul>
+          April 27, 2024
+          <li>finished auto-population of the <a href="/pages/projects/tagged.html">Tagged</a> page</li>
+          <li>added autolinking tags to pages including tags</li>
+          <li>added jQuery code to <code>script.js</code>, plan to use for JSON to HTML parser</li>
+        </ul>
+        <ul>
+          April 26, 2024
+          <li>beginnings of the tag system</li>
+          <li>initial <a href="/pages/blog/pages/2024-04-27_Welcome.html">blog post</a></li>
+          <li>cleaned up <code>style.css</code>, and converted to em instead of px</li>
+          <li>fixed fucked up header :3</li>
+          <li>looked into microformats! don't care! stole class names! they're mine now!</li>
+          <li>added show/hide button for blinkies. accessibility! a little bit!</li>
+          <li>implemented Blog listing, inspired by <a href="https://zonelets.net/" target="blank">Zonelets</a></li>
+        </ul>
+        <ul>
+          April 25, 2024
+          <li>finished (maybe) About page</li>
+        </ul>
+        <ul>
+          April 24, 2024
+          <li>added <a href="/pages/projects/2d/pages/demo.html">demo</a> creation page
+          <li>check out <a href="https://www.11ty.dev/" targer="blank">Eleventy</a> for tags/posts
+        </ul>
+        <ul>
+          April 23 2024
+          <li>created Roadmap on landing page
+          <li>added Changelog sidebar to landing page
+          <li>new landing page paragraph
+          <li>renamed Projects nav to Creations, to fit my filesystem
+          <li>added scrollbar styling
+          <li>checked site CSS with <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fendy-boi.neocities.org%2F&amp;profile=css3svg&amp;usermedium=all&amp;warning=1&amp;vextwarning=&amp;lang=en" target="blank">Jigsaw</a>
+          <li>made ACAB blinkie
+          <li>made palestine blinkie
+          <li>made site blinkie & button
+        </ul>
+        <ul>
+          April 22, 2024
+          <li>moved header to JS
+          <li>added background image, made by me!
+          <li>moved main site content to a div, styled accordingly
+          <li>added Linkies nav, and completed the page
+        </ul>
+        <ul>
+          April 11-22, 2024
+          <li>modified header to be expandable, changed style
+          <li>added "end.site" to header
+          <li>created landing page content, reasons for creating site, etc.
+          <li>created pages (+subdirectories) for nav pages (+projects subpages)
+          <li>made Projects page, with links to subpages
+          <li>customized 404 page
+          <li>added "Under Construction" to incomplete pages
+          <li>added blinkies section on the landing page
+          <li>made custom blinkies (autism, #E5074B, Musicbee)
+          <li>added yesterweb blinkies (no to web3, yesterweb)
+          <li>completed Socials page
+        </ul>
+        <ul>
+          April 11, 2024
+          <li>created Neocities account
+          <li>migrated local site test to Neocities
+        </ul>
+      </div>
+    </aside>
+    <aside id="leftSidebar" title="thanks to sadgrl for the sidebar code!">
+      <h2>this sidebar is empty cause i don't know what to put here but it must be symmetrical.</h2>
+      <!-- Requires Supporter
+      <div id="chatbox" title="tutorial from sadgrl!!">
+        <h2>Chatbox</h2>
+        <label>Name:</label> <input type="text" id="name"><br>
+        <textarea rows="4" cols="40" id="question" placeholder="Type your comment here and click 'send'!"></textarea>
+        <button id="send" style="width:5em; height:3em;">Send</button>
+      </div>
+      -->
+    </aside>
+    <div class="main_content">
+      <p>
+        &emsp;hello and welcome to end.site!! i'm a dragon and you can call me end!
+        <br>
+        &emsp;i'm building this site half as a blog half as an art portfolio. i like learning stuff, so i've got a lot of different interests anywhere from web dev to 3d art.
+        <br><br>
+        &emsp;There are buttons in the navbar to toggle buttons or animations. There aren't many animations, but you can always toggle them with those buttons! all the pages on my site are accessible via the navbar items, though there might be shortcuts in the Changelog if they're recent additions.
+        The Roadmap shows off my plans for the site, i've got a few specific things and some more general ideas too. The site is not at all designed for mobile (and prolly won't be lol), and tbh kinda breaks even on desktop.
+        The site is built for Firefox on a 2560p monitor at 100% zoom full screen, so if it looks wrong try messing with the zoom til it's usable! I'm planning on getting around to making it a bit better later, but I'm working on other projects right now.
+      </p>
+      <ul>
+        <h1>Roadmap (in no particular order):</h1>
+        <li>Write script (Python/JS??) to build site statically (no/least JS) (header, tags, etc.)</li>
+        <li>figure out the header once and for all. (scaling nicely n all that.)</li>
+        <li>get a library card guide/blog post</li>
+        <li>finish off Dragon Code Encoder</li>
+        <li>starter guide (flowchart??) to building a website (SSG, hosts, generators, libraries, straight (jorkin) code, etc.)</li>
+        <li>legal cheat sheet (with references), medical, work, etc.</li>
+        <li>add audio playing functionality to Music type Creations</li>
+        <li>add option for more paragraphs to JSON generator (for loop based on postParas)</li>
+        <li>integrate last.fm "recently played" (might need supporter???)</li>
+        <li>add guestbook (requires supporter)</li>
+        <li>Transfer projects onto the site</li>
+        <li>Figure out audio or YT embed for music</li>
+        <li>join webrings ( <a href="http://www.cyberdragon.digital/rings/draconic/" target="blank">1</a> | <a href="https://isaacfish.neocities.org/webring/" target="blank">4</a> )</li>
+        <li><a href="https://garlic.garden/onionring/" target="blank">Host GC webring</a> (dey gotta make site first >:3)</li>
+        <li>RSS feed, select for blog/project-[type]</li>
+        <li>figure out how to get the scrollbar to render under the header/footer</li>
+      </ul>
+      <!-- blinkies and buttons, oh my!!!! -->
+      <div id="buttons">
+        <h2 style="font-size:15pt;margin:0;padding:0;">my site blinkie & button (link my site!!)</h2>
+        <br>
+        <a class="button animated" rel="noreferrer" href="/index.html"><img src="/resources/images/end.site_blinkie.gif" alt="my site blinkie! made by me."/></a>
+        <a class="button" rel="noreferrer" href="/index.html"><img src="/resources/images/end.site_button.jpg" alt="my site button! made by me."/></a>
+        <br><br>
+        <h2 style="font-size:15pt;margin:0;padding:0;">webrings & cliques!</h2>
+        <!-- alterring is gone :( RIP-->
+        <div id='ahsc' style="text-align:center;">
+          <script type="text/javascript" src="https://feelingmachine.moe/alterring/onionring-variables.js"></script>
+          <script type="text/javascript" src="https://feelingmachine.moe/alterring/onionring-widget.js"></script>
+          <link rel="stylesheet" href="https://feelingmachine.moe/alterring/onionring.css">
+        </div>
+        <!--don't feel like remembering how to center a div so here's this hackjob-->
+        <!-- okay autiring is gone, RIP-->
+        <div id="autiring" style="padding-left:37%; zoom: 1.4;">
+          <script type="text/javascript" src="https://macaque.moe/autiring/onionring-variables.js"></script>
+          <script type="text/javascript" src="https://macaque.moe/autiring/onionring-widget.js"></script>
+        </div>
+        <!-- THIS RING BETTER SURVIVE -->
+        <div id="transring">
+          <script src="https://transring.neocities.org/ring.js"></script>
+        </div>
+        <br><br>
+        <h2 style="font-size:15pt;margin:0;padding:0;">blinkie wall!</h2>
+        <br>
+        <a class="button animated" rel="noreferrer" href="/home.html"><img src="/resources/images/autism_blinkie.gif" alt="autism infinity symbol scrolling rainbow. made by me!"></a>
+        <a class="button animated" rel="noreferrer" href="/home.html"><img src="/resources/images/e5074b_blinkie.gif" alt="'#E5074B' flashing on a background of the same color. made by me!"></a>
+        <a class="button animated" rel="noreferrerr" href="home.html"><img src="/resources/images/updating_blinkie.gif" alt="updating . . ."></a>
+        <a class="button"><img src="/resources/images/r6s_button.jpg" alt="rainbow six siege button. made by me!"/></a>
+        <a class="button"><img src="/resources/images/minecraft_button.jpg" alt="minecraft button. made by me!"/></a>
+        <a class="button"><img src="/resources/images/helldivers_button.jpg" alt="helldivers button. made by me!"/></a>
+        <a class="button"><img src="/resources/images/drg_button.jpg" alt="deep rock galactic button. made by me!"/></a>
+        <a class="button"><img src="/resources/images/csgo2_button.jpg" alt="counter strike: global offensive 2 button. made by me!"/></a>
+        <a class="button"><img src="/resources/images/lethal_button.jpg" alt="lethal company button. made by me!"/></a>
+        <a class="button"><img src="/resources/images/among_us_button.jpg" alt="among us button. made by me!"/></a>
+        <a class="button animated" rel="noreferrer" href="https://getmusicbee.com/" target="blank"><img src="/resources/images/musicbee_blinkie.gif" alt="bee flying with the blinking text 'MUSICBEE' made by me!"></a>
+        <a class="button animated" rel="noreferrer" href="/home.html"><img src="/resources/images/acab_blinkie.gif" alt="all cops are bastards! made by me."/></a>
+        <a class="button animated" rel="noreferrer" href="https://bdsmovement.net/get-involved/what-to-boycott"><img src="/resources/images/palestine_blinkie.gif" alt="Free Palestine! made by me."/></a>
+        <a class="button" href="https://artfight.net/~EndDragon438"><img src="/resources/images/2023-werewolves-stamp.png" alt="Artfight Team Werewolves 2023!"/></a>
+        <a class="button" href="https://artfight.net/~EndDragon438"><img src="/resources/images/2024-stardust-stamp.png" alt="Artfight Team Stardust 2024!"/></a>
+        <a class="button animated" rel="noreferrer" href="https://yesterweb.org/"><img src="/resources/images/no2web3.gif" alt="say no to web3 tech! from yesterweb.org"></a>
+        <a class="button" rel="noreferrer" href="https://yesterweb.org/"><img src="/resources/images/yesterweb_button.png" alt="yesterweb movement link. from yesterweb.org"></a>
+        <a class="button" href="https://jigsaw.w3.org/css-validator/check/referer"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!"/></a>
+        <a class="button" href="https://www.neververy4.com/en_US/"><img src="/resources/images/neverjhonsen.png" alt="Never Jhonsen, another cool dragon on the internet!"></a>
+        <a class="button" href="https://savethedragons.xyz/"><img src = "/resources/images/savethedragons.gif" alt="Save the dragons now!"></a>
+        <a class="button animated" href="https://www.tumblr.com/blinkees"><img src="/resources/images/i_heart_dragons.gif" alt="I &lt;3 dragons surrounded by two dragons waving their tails. made by @blinkees on tumblr!" height=45/></a>
+        <a class="button animated" href="https://nova-dergs.neocities.org/"><img src="/resources/images/fictionfolk_ring.gif" alt="a fictionfolk webring with some cool sites!!" height=45></a>
+      </div>
+    </div>
+
+    <br><br><br><br>
+    <!-- fixed footer here -->
+    <footer>
+      <p class="footer" id="last_modified"></p>
+    </footer>
+    <script src="/script/header.js"></script>
+  </body>
+</html>

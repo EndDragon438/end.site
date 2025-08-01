@@ -1,6 +1,6 @@
 // adding header sitewide
 const headerHTML = `
-<a href="/index.html" class="logo">
+<a href="/home.html" class="logo">
   <img src="/resources/images/aroace_dragon.PNG" style="width:63%;" alt="back to home!">
 </a>
 <h3 class="alternate" style="float:left;padding:15px 0 15px 25px;font-size:25px;">end.site</h3><br>
