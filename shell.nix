@@ -8,6 +8,6 @@ in pkgs.mkShell {
     ];
 
     shellHook = ''
-        echo python3 -m http.server
+        echo "python3 -m http.server"
     '';
 }
