@@ -3,7 +3,7 @@ all code and assets for my personal site and blog at https://endy-boi.neocities.
 
 
 ## TODO:
-- Python site generator (no/minimal JS, main site shoud work without JS)
+- Python site generator (no/minimal JS, main site should work without JS)
 - Rework header to be NICE
 - Rebuild stylesheet to use variables for easy editing
 - rework socials page into Contacts, make better (no dropdowns, lists)
