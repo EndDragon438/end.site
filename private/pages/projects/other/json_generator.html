@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="pinterest" content="nopin" />
+    <title>JSON Generator for end</title> <!-- name it shows on the tab -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
+    <style>
+        .tabButton {
+            width: 250px;
+        }
+        .tabButton:hover {
+          bottom: 5px;
+          right: 0;
+        }
+        .tabButton.active {
+          bottom: 10px;
+          right: 0;
+        }
+        .tab {
+          background-color: #181c24;
+          border-radius: 10px;
+        }
+        label {
+          font-size: 1.5em;
+          color: #e5074b;
+          padding: 1em;
+          margin: 1em;
+        }
+        input, textarea {
+          width: 750px;
+          font-size: 1em;
+          color: #e5074b;
+          background-color: #181c24;
+          border-width: 5px;
+          border-color: rgb(255, 149, 234);
+          padding: 1em;
+          margin: 0.6em;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main_content" style="max-width:80%;">
+        <div class="tabSelector">
+        <button class="tabButton  active" onclick="swapTab(event, '2d')">2D</button>
+        <button class="tabButton" onclick="swapTab(event, '3d')">3D</button>
+        <button class="tabButton" onclick="swapTab(event, 'writing')">Writing</button>
+        <button class="tabButton" onclick="swapTab(event, 'music')">Music</button>
+        <button class="tabButton" onclick="swapTab(event, 'games')">Games</button>
+        <button class="tabButton" onclick="swapTab(event, 'other')">Other</button>
+    </div>
+    <div class="tab defaultTab" id="2d">
+        <h1>2D</h1>
+        <label>Title: </label>
+        <input id="2dTitle" placeholder="enter title here"><br>
+        <label>Date: </label>
+        <input id="2dDate" type="date" class="date" placeholder="enter creation date here"><br>
+        <label>Timelapse: </label>
+        <input id="2dTimelapse" placeholder="leave blank if none"><br>
+        <label>Image: </label>
+        <input id="2dImage" placeholder="enter name of image (with file extension) here"><br>
+        <label>Text: </label>
+        <textarea id="2dText" placeholder="text of post here (image description, making of, etc.)"></textarea><br>
+        <label>Tags: </label>
+        <input id="2dTags" placeholder="enter tags seperated by a single comma"><br>
+        <br><button onclick="generateJSON('2d')" style="font-size:2em; width:250px; margin:15px;">GENERATE</button>
+    </div>
+    <div class="tab" id="3d">
+        <h1>3D</h1>
+        <label>Title: </label>
+        <input id="3dTitle" placeholder="enter title here"><br>
+        <label>Date: </label>
+        <input id="3dDate" type="date" class="date" placeholder="enter creation date here"><br>
+        <label>Timelapse: </label>
+        <input id="3dTimelapse" placeholder="leave blank if none"><br>
+        <label>Image: </label>
+        <input id="3dImage" placeholder="enter name of image (with file extension) here"><br>
+        <label>Text: </label>
+        <textarea id="3dText" placeholder="text of post here (image description, making of, etc.)"></textarea><br>
+        <label>Tags: </label>
+        <input id="3dTags" placeholder="enter tags seperated by a single comma"><br>
+        <br><button onclick="generateJSON('3d')" style="font-size:2em; width:250px; margin:15px;">GENERATE</button>
+    </div>
+    <div class="tab" id="writing">
+        <h1>Writing</h1>
+        <label>Title: </label>
+        <input id="writTitle" placeholder="enter title here"><br>
+        <label>Subtitle: </label>
+        <input id="writSubtitle" placeholder="enter subtitle here"><br>
+        <label>Date: </label>
+        <input id="writDate" type="date" class="date" placeholder="enter creation date here"><br>
+        <label>Project Link: </label>
+        <input id="writLink" class="date" placeholder="give the link to the project here"><br>
+        <label>Text: </label>
+        <textarea id="writText" placeholder="text of post here (image description, making of, etc.)"></textarea><br>
+        <label>Tags: </label>
+        <input id="writTags" placeholder="enter tags seperated by a single comma"><br>
+        <br><button onclick="generateJSON('writing')" style="font-size:2em; width:250px; margin:15px;">GENERATE</button>
+    </div>
+    <div class="tab" id="music">
+        <h1>Music</h1>
+        <label>Title: </label>
+        <input id="musicTitle" placeholder="enter title here"><br>
+        <label>Date: </label>
+        <input id="musicDate" type="date" class="date" placeholder="enter creation date here"><br>
+        <label>Project Link: </label>
+        <input id="musicLink" class="date" placeholder="give the link to the project here"><br>
+        <!--<label>File: </label>
+        <input id="musicFile" placeholder="enter name of the file (with file extension) here"><br>  MUSIC PLAYER NOT IMPLEMENTED YET-->
+        <label>Text: </label>
+        <textarea id="musicText" placeholder="text of post here (image description, making of, etc.)"></textarea><br>
+        <label>Tags: </label>
+        <input id="musicTags" placeholder="enter tags seperated by a single comma"><br>
+        <br><button onclick="generateJSON('music')" style="font-size:2em; width:250px; margin:15px;">GENERATE</button>
+    </div>
+    <div class="tab" id="games">
+        <h1>Games</h1>
+        <label>Title: </label>
+        <input id="gamesTitle" placeholder="enter title here"><br>
+        <label>Date: </label>
+        <input id="gamesDate" type="date" class="date" placeholder="enter creation date here"><br>
+        <label>Project Link: </label>
+        <input id="gamesLink" class="date" placeholder="give the link to the project here"><br>
+        <label>Text: </label>
+        <textarea id="gamesText" placeholder="text of post here (image description, making of, etc.)"></textarea><br>
+        <label>Tags: </label>
+        <input id="gamesTags" placeholder="enter tags seperated by a single comma"><br>
+        <br><button onclick="generateJSON('games')" style="font-size:2em; width:250px; margin:15px;">GENERATE</button>
+    </div>
+    <div class="tab" id="other">
+        <h1>Other</h1>
+        <p>everything is optional!! have fun!!!</p>
+        <label>Title: </label>
+        <input id="otherTitle" placeholder="enter title here"><br>
+        <label>Subtitle: </label>
+        <input id="otherSubtitle" placeholder="enter subtitle here"><br>
+        <label>Date: </label>
+        <input id="otherDate" type="date" class="date" placeholder="enter creation date here"><br>
+        <label>Timelapse: </label>
+        <input id="otherTimelapse" placeholder="leave blank if none"><br>
+        <label>File: </label>
+        <input id="otherFile" placeholder="enter name of displayed file (with file extension) here"><br>
+        <label>Project Link: </label>
+        <input id="otherLink" class="date" placeholder="give the link to the project here"><br>
+        <label>Text: </label>
+        <textarea id="otherText" placeholder="text of post here (image description, making of, etc.)"></textarea><br>
+        <label>Tags: </label>
+        <input id="otherTags" placeholder="enter tags seperated by a single comma"><br>
+        <br><button onclick="generateJSON('other')" style="font-size:2em; width:250px; margin:15px;">GENERATE</button>
+    </div>
+    <div>
+        <h1>Output: </h1>
+        <p id="output">
+        <br><br>
+        </p>
+        <button onclick="toClipboard(document.getElementById('output').textContent)" style="margin:15px;">Copy</button>
+    </div>
+    </div>
+    <script src="./resources/json_generator.js"></script>
+    <script src="/script/tabs.js"></script>
+  </body>
+</html>
