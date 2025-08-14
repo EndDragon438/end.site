@@ -21,10 +21,18 @@ def generate:
 
 # set the <end-header> tag of a page to the static header
 def set_header:
-    # replace <end-header> with the header
     # make sure to not replace other <header> tags, because I would use those for unique headers on some pages
     pass
 
 # generate an HTML page from a post JSON file
 def generate_post:
+    pass
+
+# populates tag pages with related posts
+def populate_tags:
+    pass
+
+# sets the <end-head> tag to the standard header
+def set_head:
+    # make sure to not overwrite the default <head>, those may be used for unique pages
     pass
