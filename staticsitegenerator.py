@@ -15,6 +15,11 @@ Distributed under the terms of the GPLv3
 https://www.gnu.org/licenses/gpl-3.0.en.html
 '''
 
+import os
+
+HEAD = open("./snippets/head", "r").read()
+HEADER = open("./snippets/header", "r").read()
+
 idea_count = 69
 last_updated = "LAST MODIFIED: AUGUST 13, 2025"
 link_count = 289
@@ -23,6 +28,13 @@ link_count = 289
 
 # go through all /private/ files/folders and call the requisite functions for all of them
 def generate():
+    # Check that the counters are updated
+    print("Did you update the counters?")
+    ans = input()
+    if not 'y' in ans:
+        return
+
+
     # loop over all pages (recursively) and call:
     set_head()
 
@@ -40,12 +52,27 @@ def generate():
 
 
 # sets the <end-head> tag to the standard header
-def set_head():
-    # make sure to not overwrite the default <head>, those may be used for unique pages
-    pass
+def set_head(path, destination):
+    # Read the file in
+    temp = ""
+    with open(path, "r") as file:
+        temp = file.read()
+        temp = temp.replace("<end-head>", HEAD)
+    
+    if destination:
+        # Create any new folders along the path
+        if not os.path.exists(destination[:destination.rfind("/")]):
+            os.makedirs(destination[:destination.rfind("/")])
+        # Write to the destination file
+        with open(destination, "w") as file:
+            file.write(temp)
+    else:
+        # Write to the original file
+        with open(path, "w") as file:
+            file.write(temp)
 
 # set the <end-header> tag of a page to the static header
-def set_header():
+def set_header(path):
     # make sure to not replace other <header> tags, because I would use those for unique headers on some pages
     pass
 
@@ -72,4 +99,14 @@ def populate_tags():
     pass
 
 
-generate()
+# generate()
+
+walked = os.walk("./private")
+for (root, dirs, files) in walked:
+    root = root.replace("\\", "/")
+    for file in files:
+        if ".html" in file:
+            # print(root + "/" + file)
+            pass
+
+set_head("./tester.html", "./testing/tested.html")
