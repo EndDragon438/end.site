@@ -23,6 +23,7 @@ HEADER = open("./snippets/header", "r").read()
 idea_count = 69
 last_updated = "LAST MODIFIED: AUGUST 13, 2025"
 link_count = 289
+tags = []
 
 
 
@@ -34,12 +35,19 @@ def generate():
     if not 'y' in ans:
         return
 
+    targets = []
 
-    # loop over all pages (recursively) and call:
-    set_head()
+    # Grab all the filepaths
+    walked = os.walk("./private")
+    for (root, dirs, files) in walked:
+        root = root.replace("\\", "/")
+        for file in files:
+            if ".html" in file:
+                targets.append(root + "/" + file)
 
-    # loop over all pages (recursively) and call:
-    set_header()
+    # Limit how much we fuck with for now
+    # TODO: REMOVE FOR PROD
+    targets = targets[0:2]
 
     # generate all tag pages
     generate_tags()
@@ -49,6 +57,17 @@ def generate():
 
     # populate tag pages with newly generated posts
     populate_tags()
+
+    # loop over all pages (recursively) and call:
+    for file in targets:
+        print(file)
+        set_head(file, file.replace("./private", "./public"))
+
+    # loop over all pages (recursively) and call:
+    for file in targets:
+        print(file)
+        set_header(file, file.replace("./private", "./public"))
+
 
 
 # sets the <end-head> tag to the standard header
@@ -72,9 +91,24 @@ def set_head(path, destination):
             file.write(temp)
 
 # set the <end-header> tag of a page to the static header
-def set_header(path):
-    # make sure to not replace other <header> tags, because I would use those for unique headers on some pages
-    pass
+def set_header(path, destination):
+    # Read the file in
+    temp = ""
+    with open(path, "r") as file:
+        temp = file.read()
+        temp = temp.replace("<end-header>", HEADER)
+    
+    if destination:
+        # Create any new folders along the path
+        if not os.path.exists(destination[:destination.rfind("/")]):
+            os.makedirs(destination[:destination.rfind("/")])
+        # Write to the destination file
+        with open(destination, "w") as file:
+            file.write(temp)
+    else:
+        # Write to the original file
+        with open(path, "w") as file:
+            file.write(temp)
 
 # generate an HTML page from a post JSON file
 def generate_post(path):
@@ -83,11 +117,14 @@ def generate_post(path):
 # generate all posts /snippets/data.json
 def generate_posts():
     # grab posts from data.json
-    posts = {}
+    # posts = {}
+    # gonna try working without the json file, so i don't have to edit it
+
+    posts = os.listdir("./snippets/posts")
 
     # loop over posts creating pages
     for post in posts:
-        generate_post("/snippets/posts/" + post)
+        generate_post("./snippets/posts/" + post)
 
 # generates pages for each tag in use from /snippets/data.json
 def generate_tags():
@@ -100,13 +137,3 @@ def populate_tags():
 
 
 # generate()
-
-walked = os.walk("./private")
-for (root, dirs, files) in walked:
-    root = root.replace("\\", "/")
-    for file in files:
-        if ".html" in file:
-            # print(root + "/" + file)
-            pass
-
-set_head("./tester.html", "./testing/tested.html")
