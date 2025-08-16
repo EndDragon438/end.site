@@ -16,9 +16,11 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 '''
 
 import os
+import json
 
 HEAD = open("./snippets/head", "r").read()
 HEADER = open("./snippets/header", "r").read()
+MONTH_ARRAY = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
 idea_count = 69
 last_updated = "LAST MODIFIED: AUGUST 13, 2025"
@@ -71,7 +73,7 @@ def generate():
 
 
 # sets the <end-head> tag to the standard header
-def set_head(path, destination):
+def set_head(path, destination = None):
     # Read the file in
     temp = ""
     with open(path, "r") as file:
@@ -91,7 +93,7 @@ def set_head(path, destination):
             file.write(temp)
 
 # set the <end-header> tag of a page to the static header
-def set_header(path, destination):
+def set_header(path, destination = None):
     # Read the file in
     temp = ""
     with open(path, "r") as file:
@@ -110,8 +112,13 @@ def set_header(path, destination):
         with open(path, "w") as file:
             file.write(temp)
 
-# generate an HTML page from a post JSON file
-def generate_post(path):
+# generates pages for each tag in use from /snippets/data.json
+def generate_tags():
+    pass
+
+# populates tag pages with related posts
+def populate_tags():
+    # TODO: /pages/blog/index.html, /pages/projects/tagged.html, /pages/project/tags/*.html
     pass
 
 # generate all posts /snippets/data.json
@@ -126,14 +133,88 @@ def generate_posts():
     for post in posts:
         generate_post("./snippets/posts/" + post)
 
-# generates pages for each tag in use from /snippets/data.json
-def generate_tags():
+# generate an HTML page from a post JSON file
+def generate_post(path):
+    with open(path, "r") as file:
+        data = json.loads(file.read())
+        match data["postType"]:
+            case "2d":
+                generate_2d(data, open("./snippets/templates/template-2d.html", "r").read())
+            case "3d":
+                generate_3d(data, open("./snippets/templates/template-3d.html", "r").read())
+            case "games":
+                generate_games(data, open("./snippets/templates/template-games.html", "r").read())
+            case "music":
+                generate_music(data, open("./snippets/templates/template-music.html", "r").read())
+            case "other":
+                generate_other(data, open("./snippets/templates/template-other.html", "r").read())
+            case "writing":
+                generate_writing(data, open("./snippets/templates/template-writing.html", "r").read())
+            case _:
+                raise ValueError("Unknown post type")
+
+# Generate a 2D page from the template and data
+def generate_2d(data, template):
+    template = template.replace("$postTitle", data["postTitle"])
+
+    # Check if there's a link, and if it's a youtube link embed it
+    if "postLink" in data and data["postLink"].find("youtu") > -1:
+        template = template.replace("$postLink", 
+            f'<iframe src="{embedYoutube(data["postLink"])}" frameborder="0" allowfullscreen></iframe>')
+    elif "postLink" in data:
+        template = template.replace("$postLink", 
+            f'<h2 class="creation-subtitle" style="margin:0;"><a href="{data["postLink"]}" target="blank">alternative link</a></h2>')
+    else:
+        template = template.replace("$postLink", "")
+
+    template = template.replace("$postText", data["postText"])
+    template = template.replace("$postTags", parse_tags(data["postTags"]))
+    template = template.replace("$postFile", data["postFile"])
+    write_page(template, f"./public/pages/projects/2d/{data["postDate"][0]}_{data["postDate"][1]}_{data["postDate"][2]}_{data["postTitle"].lower().replace(" ", "_")}.html")
+
+def generate_3d(data, template):
     pass
 
-# populates tag pages with related posts
-def populate_tags():
-    # TODO: /pages/blog/index.html, /pages/projects/tagged.html, /pages/project/tags/*.html
+def generate_games(data, template):
     pass
+
+def generate_music(data, template):
+    pass
+
+def generate_other(data, template):
+    pass
+
+def generate_writing(data, template):
+    pass
+
+def write_page(page, path):
+    with open(path, "w") as file:
+        file.write(page)
+    set_head(path)
+    set_header(path)
+
+# Turn a list of tags from a JSON into a string of <a> tags
+def parse_tags(postTags):
+    out = ""
+    for tag in postTags:
+        # Add the tag to the list if it hasn't been added already
+        if not tag in tags:
+            tags.append(tag)
+
+        out += f'<a href="/pages/projects/tags/{tag}.html">{tag}</a>, '
+    out = out[:-2]
+    return out
+
+# Convert www.youtube.com and youtu.be links to embed links
+def embedYoutube(url):
+    if url[:17] == "https://youtu.be/":
+        return "https://www.youtube.com/embed/" + url[17:]
+    elif url[:32] == "https://www.youtube.com/watch?v=":
+        return "https://www.youtube.com/embed/" + url[32:]
+    else:
+        return url
 
 
 # generate()
+
+generate_post("./snippets/posts/amaranth_ref.json")
