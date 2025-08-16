@@ -1,6 +1,16 @@
 # end.site
 all code and assets for my personal site and blog at https://endy-boi.neocities.org !!
 
+## Update Rules
+These are the rules I have to follow when making updates or adding new pages
+
+### Blog
+- Posts must be in /pages/blog/pages/
+- Posts must be formatted as `YYYY-MM-DD_[a-zA-Z0-9!#$%&()].html` ("MM" is not optional, must be 2 chars so no 4 must be 04)
+
+### Projects
+- Posts are generated from the ../snippets/posts/ folder json files
+- Post resources are stored in the resource/ dir of their respective type (../2d/resources/, etc.)
 
 ## TODO:
 - Python site generator (no/minimal JS, main site should work without JS)
