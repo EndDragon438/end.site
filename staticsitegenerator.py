@@ -44,16 +44,13 @@ tags = []
 
 
 
-# go through all /private/ files/folders and call the requisite functions for all of them
+# go through all files/folders and call the requisite functions for all of them
 def generate():
     # Check that the counters are updated
     print("Did you update the counters?")
     ans = input()
     if not 'y' in ans:
         return
-
-    # generate all tag pages
-    generate_tags()
 
     # generate all posts from /snippets/data.json
     generate_posts()
@@ -64,34 +61,22 @@ def generate():
     targets = []
 
     # Grab all the filepaths
-    walked = os.walk("./private")
+    walked = os.walk("./public")
     for (root, dirs, files) in walked:
         root = root.replace("\\", "/")
         for file in files:
             if ".html" in file:
                 targets.append(root + "/" + file)
 
-    # Limit how much we fuck with for now
-    # TODO: REMOVE FOR PROD
-    targets = targets[0:2]
-
-    # loop over all pages (recursively) and call:
+    # loop over all pages and replace head & headers:
     for file in targets:
-        print(file)
-        set_head(file, file.replace("./private", "./public"))
+        setters(file)
 
-    # loop over all pages (recursively) and call:
-    for file in targets:
-        print(file)
-        set_header(file, file.replace("./private", "./public"))
-
-# sets the <end-head> tag to the standard header
-def set_head(path, destination = None):
+def setters(path, destination = None):
     # Read the file in
-    temp = ""
-    with open(path, "r") as file:
-        temp = file.read()
-        temp = temp.replace("<end-head>", HEAD)
+    temp = open(path, "r").read()
+    temp = temp.replace("<end-head>", HEAD)
+    temp = temp.replace("<end-header", HEADER)
     
     if destination:
         # Create any new folders along the path
@@ -100,34 +85,15 @@ def set_head(path, destination = None):
         # Write to the destination file
         with open(destination, "w") as file:
             file.write(temp)
+            file.close()
     else:
         # Write to the original file
         with open(path, "w") as file:
             file.write(temp)
-
-# set the <end-header> tag of a page to the static header
-def set_header(path, destination = None):
-    # Read the file in
-    temp = ""
-    with open(path, "r") as file:
-        temp = file.read()
-        temp = temp.replace("<end-header>", HEADER)
-    
-    if destination:
-        # Create any new folders along the path
-        if not os.path.exists(destination[:destination.rfind("/")]):
-            os.makedirs(destination[:destination.rfind("/")])
-        # Write to the destination file
-        with open(destination, "w") as file:
-            file.write(temp)
-    else:
-        # Write to the original file
-        with open(path, "w") as file:
-            file.write(temp)
+            file.close()
 
 # populates tag pages with related posts
 def populate_tags():
-    # TODO: /pages/blog/index.html, /pages/projects/tagged.html, /pages/project/tags/*.html
     # Grab list of pages and put into a dict of {file_name (YYYY_MM_DD_name) : tags tuple}
     postlist = os.listdir("./snippets/posts")
 
@@ -160,7 +126,7 @@ def populate_tags():
     
 
     # Grab list of blog posts (/pages/blog/pages/*.html) and populate /blog/index.html
-    bloglist = os.listdir("./private/pages/blog/pages")
+    bloglist = os.listdir("./public/pages/blog/pages")
     bloglist.sort(reverse = True) # this should hopefully sort by date (descending) cause of my YYYYMMDD formatting
 
     # Build the HTML list of blog posts
@@ -170,6 +136,7 @@ def populate_tags():
     with open("./public/pages/blog/index.html", "w") as file:
         template = TEMPLATES["blog"]
         template = template.replace("$blogPosts", "\n\t\t\t\t\t".join(blogindex))
+        print(template)
         file.write(template)
         file.close()
 
@@ -204,7 +171,6 @@ def populate_tags():
             file.write(template)
             file.close()
     
-
 # generate all posts /snippets/data.json
 def generate_posts():
     # grab posts from data.json
@@ -257,25 +223,96 @@ def generate_2d(data, template):
     write_page(template, f"./public/pages/projects/2d/{data["postDate"][0]}-{data["postDate"][1]}-{data["postDate"][2]}_{data["postTitle"].lower().replace(" ", "_")}.html")
 
 def generate_3d(data, template):
-    print("NOT IMPLEMENTED")
+    template = template.replace("$postTitle", data["postTitle"])
+
+    # Check if there's a link, and if it's a youtube link embed it
+    if "postLink" in data and data["postLink"].find("youtu") > -1:
+        template = template.replace("$postLink", 
+            f'<iframe src="{embedYoutube(data["postLink"])}" frameborder="0" allowfullscreen></iframe>')
+    elif "postLink" in data:
+        template = template.replace("$postLink", 
+            f'<h2 class="creation-subtitle" style="margin:0;"><a href="{data["postLink"]}" target="blank">alternative link</a></h2>')
+    else:
+        template = template.replace("$postLink", "")
+
+    template = template.replace("$postText", data["postText"])
+    template = template.replace("$postTags", parse_tags(data["postTags"]))
+    template = template.replace("$postFile", data["postFile"])
+    write_page(template, f"./public/pages/projects/3d/{data["postDate"][0]}-{data["postDate"][1]}-{data["postDate"][2]}_{data["postTitle"].lower().replace(" ", "_")}.html")
 
 def generate_games(data, template):
-    print("NOT IMPLEMENTED")
+    template = template.replace("$postTitle", data["postTitle"])
+    template = template.replace("$postDate", parse_date(data['postDate']))
+    template = template.replace("$postTags", parse_tags(data["postTags"]))
+
+    template = template.replace("$postLink", 
+        f'<h2 class="creation-subtitle" style="margin:0;"><a href="{data["postLink"]}" target="blank">alternative link</a></h2>')
+
+    template = template.replace("$postText", data["postText"])
+    write_page(template, f"./public/pages/projects/games/{data["postDate"][0]}-{data["postDate"][1]}-{data["postDate"][2]}_{data["postTitle"].lower().replace(" ", "_")}.html")
 
 def generate_music(data, template):
-    print("NOT IMPLEMENTED")
+    template = template.replace("$postTitle", data["postTitle"])
+    template = template.replace("$postDate", parse_date(data['postDate']))
+    template = template.replace("$postTags", parse_tags(data["postTags"]))
+
+    template = template.replace("$postLink", 
+        f'<h2 class="creation-subtitle" style="margin:0;"><a href="{data["postLink"]}" target="blank">alternative link</a></h2>')
+
+    template = template.replace("$postText", data["postText"])
+    write_page(template, f"./public/pages/projects/music/{data["postDate"][0]}-{data["postDate"][1]}-{data["postDate"][2]}_{data["postTitle"].lower().replace(" ", "_")}.html")
 
 def generate_other(data, template):
-    print("NOT IMPLEMENTED")
+    template = template.replace("$postTitle", data['postTitle'])
+
+    if "postSubtitle" in data:
+        template = template.replace("$postSubtitle", f'')
+    else:
+        template = template.replace('$postSubtitle', '')
+
+    template = template.replace("$postDate", parse_date(data['postDate']))
+
+    template = template.replace("$postTags", parse_tags(data["postTags"]))
+
+    if "postLink" in data:
+        template = template.replace("$postLink", f'<h2 class="creation-subtitle" style="margin:0;"><a href="{data["postLink"]}" target="blank">alternative link</a></h2>')
+    else:
+        template = template.replace('$postLink', '')
+
+    if "postText" in data:
+        template = template.replace("$postText", f'<p>$postText</p>')
+    else:
+        template = template.replace('$postText', '')
+
+
+    write_page(template, f"./public/pages/projects/other/{data["postDate"][0]}-{data["postDate"][1]}-{data["postDate"][2]}_{data["postTitle"].lower().replace(" ", "_")}.html")
 
 def generate_writing(data, template):
-    print("NOT IMPLEMENTED")
+    template = template.replace("$postTitle", data["postTitle"])
+
+    if "postSubtitle" in data:
+        template = template.replace("$postSubtitle", f'<h2 class="creation-subtitle">{data["postSubtitle"]}</h2>')
+    else:
+        template = template.replace("$postSubtitle", "")
+
+    template = template.replace("$postDate", parse_date(data['postDate']))
+    template = template.replace("$postTags", parse_tags(data["postTags"]))
+
+
+    if "postLink" in data:
+        template = template.replace("$postLink", 
+            f'<h2 class="creation-subtitle" style="margin:0;"><a href="{data["postLink"]}" target="blank">alternative link</a></h2>')
+    else:
+        template = template.replace("$postLink", "")
+
+    template = template.replace("$postText", data["postText"])
+
+    write_page(template, f"./public/pages/projects/writing/{data["postDate"][0]}-{data["postDate"][1]}-{data["postDate"][2]}_{data["postTitle"].lower().replace(" ", "_")}.html")
 
 def write_page(page, path):
     with open(path, "w") as file:
         file.write(page)
-    set_head(path)
-    set_header(path)
+    setters(path)
 
 # Turn a list of tags from a JSON into a string of <a> tags
 def parse_tags(postTags):
@@ -289,6 +326,9 @@ def parse_tags(postTags):
     out = out[:-2]
     return out
 
+def parse_date(postDate):
+    return f'{MONTH_ARRAY[postDate[1]]} {postDate[2]}, {postDate[0]}'
+
 # Convert www.youtube.com and youtu.be links to embed links
 def embedYoutube(url):
     if url[:17] == "https://youtu.be/":
@@ -299,8 +339,4 @@ def embedYoutube(url):
         return url
 
 
-# generate()
-
-generate_post("./snippets/posts/amaranth_ref.json")
-generate_post("./snippets/posts/borealis_ref.json")
-populate_tags()
+generate()

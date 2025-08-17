@@ -310,7 +310,8 @@ header {
   height: 8vw;
   overflow: hidden;
   background-color: #161a26;
-  padding: 10px 10px;
+  padding: 1em;
+  margin-bottom: 15vh;
 }
 /* header a {
   float: left;

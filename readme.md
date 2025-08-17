@@ -11,10 +11,10 @@ These are the rules I have to follow when making updates or adding new pages
 ### Projects
 - Posts are generated from the ../snippets/posts/ folder json files
 - Post resources are stored in the resource/ dir of their respective type (../2d/resources/, etc.)
+- All posts must have at least a title, date, and tags
 
 ## TODO:
-- Python site generator (no/minimal JS, main site should work without JS)
-- Rework header to be NICE
+- UNFUCKUP THE SSG, the private/ was so you could have the placeholder head & header tags and not have to change what the script is targeting every time you try and update them
 - Rebuild stylesheet to use variables for easy editing
 - rework socials page into Contacts, make better (no dropdowns, lists)
 - finish DC Encoder
