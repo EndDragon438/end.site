@@ -1,0 +1,10 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="pinterest" content="nopin" />
+        <meta name="description" content="personal blog and portfolio of end!">
+        <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
+        <title>end.site</title> <!-- name it shows on the tab -->
+        <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
+    </head>

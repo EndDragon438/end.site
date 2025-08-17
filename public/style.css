@@ -1,7 +1,7 @@
 /* !!!! NEEDS TO BE UPDATED !!!! */
 
 #last_modified::before {
-  content: "LAST MODIFIED: JULY 31, 2025";
+  content: "LAST MODIFIED: AUGUST 16, 2025";
 }
 
 /* Importing Resources */
@@ -17,6 +17,13 @@
 @font-face {
   font-family: "Jack Input";
   src: url('/resources/fonts/Jack_Input.ttf') format("truetype");
+}
+
+/* Variables */
+* {
+  --main-color: #e5074b;
+  --secondary-color: #161a26;
+  --tertiary-color: #4d5e80;
 }
 
 /* main elements */
@@ -295,17 +302,18 @@ aside li {
 
 
 /* header styling */
-.header {
+header {
   z-index: 1;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 8em;
+  height: 8vw;
   overflow: hidden;
   background-color: #161a26;
-  padding: 10px 10px;
+  padding: 1em;
+  margin-bottom: 15vh;
 }
-.header a {
+/* header a {
   float: left;
   color: white;
   text-align: center;
@@ -313,34 +321,45 @@ aside li {
   text-decoration: none;
   font-size: 2em;
   font-style: normal;
-}
-.header a.logo {
+} */
+/* header a.logo {
   font-size: 25px;
   font-weight: bold;
-}
-.header a:hover {
+} */
+header a:hover {
   background-color: #26334D;
 }
-.header-right a {
-  color: #e5074b;
-  outline: solid #4d5e80 2px;
-  padding: 3em 1em;
-  margin-top: -2em;
-}
-.header-right {
-  float: right;
-}
-.noJS {
-  color: white;
-  font-size: 1em;
-  padding: 0;
-  margin-right: 0;
-  text-align: left;
+.logo {
+  text-align: center;
+  padding: 2vh 0 2vh 0;
 }
 .clickyButtons {
-  margin: 0 2em;
-  padding: 2em 1em;
-  width: 20%;
+  margin: 0 4vw 0 0;
+  padding: 2em 1vw;
+  width: 20vw;
+  display: flex;
+}
+
+.clickyButtons button {
+  margin: 0 0.25vw;
+  font-size: 1vw;
+}
+
+nav {
+  padding: 4vh 0 2em 0;
+  margin: 0 0;
+}
+
+nav a {
+  font-size: 1.5vw;
+  padding: 4.5vh 2vw 5vh 1em;
+  text-decoration: none;
+  border-style: none solid;
+  border-color: var(--tertiary-color);
+}
+
+nav a:link, nav a:visited {
+  color: var(--main-color)
 }
 
 /* footer styling */

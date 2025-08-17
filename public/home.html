@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="pinterest" content="nopin" />
-    <meta name="description" content="personal blog and portfolio of end!">
-    <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
-    <title>end.site</title> <!-- name it shows on the tab -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
-  </head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="pinterest" content="nopin" />
+        <meta name="description" content="personal blog and portfolio of end!">
+        <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
+        <title>end.site</title> <!-- name it shows on the tab -->
+        <link href="/style.css" rel="stylesheet" type="text/css" media="all"><!-- stylesheet import -->
+    </head>
   <body>
     <!-- navbar div -->
-    <div class="header" id="header"><p>SOME PAGES WILL NOT WORK WITHOUT JAVASCRIPT &emsp;&emsp;<a class="noJS" href="/index.html">Home</a> | <a class="noJS" href="/pages/about/index.html">About</a> | <a class="noJS" href="/pages/blog/index.html">Blog</a> | <a class="noJS" href="/pages/projects/index.html">Creations</a> | <a class="noJS" href="/pages/socials/index.html">Socials</a> | <a class="noJS" href="/pages/links/index.html">Linkies</a></p></div>    <!-- site content begins -->
+    <header style = "display: flex;">
+        <a href="/home.html" class="logo">
+            <img src="/resources/images/aroace_dragon.PNG" style="max-width:63%; padding: auto;" alt="back to home!">
+        </a>
+        <p class="alternate" style="margin: auto 9vw auto 0; font-size: 2vw; padding: 0;">end.site</p>
+        <span class="clickyButtons">
+          <button type="button" onclick="toggleButtons()">Toggle Buttons</button>
+          <button type="button" onclick="toggleAnimations()">Toggle Animations</button>
+        </span>
+        <nav>
+            <a href="/pages/about/index.html">About</a>
+            <a href="/pages/blog/index.html">Blog</a>
+            <a href="/pages/projects/index.html">Creations</a>
+            <a href="/pages/socials/index.html">Contact</a>
+            <a href="/pages/links/index.html">Linkies</a>
+        </nav>
+    </header>
     <aside id="rightSidebar" title="thanks to sadgrl for the sidebar code!"><h2>Changelog</h2>
       <div>
+        <ul>
+          August 16, 2025
+          <li>Finished Python mini-SSG <a href="https://github.com/EndDragon438/end.site/blob/main/staticsitegenerator.py">source</a></li>
+          <li>Site is now nearly JS-free (only JS is on About page for tabs, Home page for animation toggles, and a couple Other projects e.g. Dragon Code)</li>
+        </ul>
+        <ul>
+          August 13, 2025
+          <li>Started work on Python rewrite to minimize JS on the site</li>
+        </ul>
         <ul>
           January 11, 2025
           <li>Swapped dates to arrays in yyyy-MM-dd on the post backend</li>
@@ -198,13 +223,12 @@
         &emsp;i'm building this site half as a blog half as an art portfolio. i like learning stuff, so i've got a lot of different interests anywhere from web dev to 3d art.
         <br><br>
         &emsp;There are buttons in the navbar to toggle buttons or animations. There aren't many animations, but you can always toggle them with those buttons! all the pages on my site are accessible via the navbar items, though there might be shortcuts in the Changelog if they're recent additions.
-        The Roadmap shows off my plans for the site, i've got a few specific things and some more general ideas too. The site is not at all designed for mobile (and prolly won't be lol), and tbh kinda breaks even on desktop.
-        The site is built for Firefox on a 2560p monitor at 100% zoom full screen, so if it looks wrong try messing with the zoom til it's usable! I'm planning on getting around to making it a bit better later, but I'm working on other projects right now.
+        The Roadmap shows off my plans for the site, i've got a few specific things and some more general ideas too.
       </p>
       <ul>
         <h1>Roadmap (in no particular order):</h1>
-        <li>Write script (Python/JS??) to build site statically (no/least JS) (header, tags, etc.)</li>
-        <li>figure out the header once and for all. (scaling nicely n all that.)</li>
+        <li>Change dropdowns on Contact to lists</li>
+        <li>Unfuckup Python SSG so i can update head/header easily</li>
         <li>get a library card guide/blog post</li>
         <li>finish off Dragon Code Encoder</li>
         <li>starter guide (flowchart??) to building a website (SSG, hosts, generators, libraries, straight (jorkin) code, etc.)</li>
@@ -218,7 +242,6 @@
         <li>join webrings ( <a href="http://www.cyberdragon.digital/rings/draconic/" target="blank">1</a> | <a href="https://isaacfish.neocities.org/webring/" target="blank">4</a> )</li>
         <li><a href="https://garlic.garden/onionring/" target="blank">Host GC webring</a> (dey gotta make site first >:3)</li>
         <li>RSS feed, select for blog/project-[type]</li>
-        <li>figure out how to get the scrollbar to render under the header/footer</li>
       </ul>
       <!-- blinkies and buttons, oh my!!!! -->
       <div id="buttons">
@@ -277,6 +300,6 @@
     <footer>
       <p class="footer" id="last_modified"></p>
     </footer>
-    <script src="/script/header.js"></script>
+    <script src="/script/togglebuttons.js"></script>
   </body>
 </html>
