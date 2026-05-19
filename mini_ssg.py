@@ -4,6 +4,7 @@
 Author: end draconis
 """
 
+import datetime
 import glob
 import os
 import re
@@ -29,6 +30,7 @@ SOURCE_DIR = './src'
 DIST_DIR = './dist'
 TEMPLATE_DIR = './templates'
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+blogPosts = []
 
 def main():
     """Collect all files, then execute necessary functions on them
@@ -43,7 +45,13 @@ def main():
     files = [p for p in paths if '.html' not in p and '.toml' not in p]
     pages = [p for p in paths if '.html' in p]
     posts = [p for p in paths if '.toml' in p]
+    blogs = [p for p in paths if 'index.html' not in p and '/blog' in p]
     
+    global blogPosts
+    
+    for blog in blogs:
+        blogPosts += [{'title': blog[blog.find('_') + 1:-5].replace('-', ' '), 'date': [int(x) for x in blog[blog.rfind('/') + 1:blog.find('_')].split('-')]}]
+
     # Populated by post loop. [{name, posts[]}]
     tags = {}
     
@@ -63,7 +71,7 @@ def main():
         
         for tag in [data['type']] + data.get('tags'):
             if tag in tags:
-                tags[tag] = tags[tag] + [{'type':  data.get('type'), 'title': data.get('title'), 'date': data.get('date'), 'name': post[post.find('/'):]}]
+                tags[tag] = tags[tag] + [{'type':  data.get('type'), 'title': data.get('title'), 'date': data.get('date'), 'name': post[post.rfind('/') + 1:-5]}]
             else:
                 tags[tag] = [{'type':  data.get('type'), 'title': data.get('title'), 'date': data.get('date'), 'name': post[post.rfind('/') + 1:-5]}]
         
@@ -76,9 +84,16 @@ def main():
         with open(post.replace(SOURCE_DIR, DIST_DIR).replace('.toml', '.html'), 'w') as file:
             file.write(content)
     
-    print(tags)
+    # Build tag pages
+    os.makedirs(f'{DIST_DIR}/creations/tags/', exist_ok = True)
+    with open(f'{TEMPLATE_DIR}/tag', 'r') as file:
+            tagPage = file.read()
+    for tag in tags:
+        content = applyTemplates(tagPage, {'name': tag, 'posts': tags[tag]})
+        with open(f'{DIST_DIR}/creations/tags/{tag}.html', 'w') as file:
+            file.write(content)
     
-    # Replace templates
+    # Replace templates in static pages
     for page in pages:
         with open(page, 'r') as file:
             content = file.read()
@@ -105,20 +120,36 @@ def applyTemplates(text, data = None):
             # Generated template (handles tags and other lists)
             operation = name[4:].strip()
             if operation == 'blogPosts':
-                text = re.sub(r'{{.*}}', 'blogPosts', text, count = 1)
+                replace = '<ul id="blogPosts">'
+                def blogSort(post):
+                    return datetime.datetime(*post['date'])
+                blogPosts.sort(key = blogSort)
+                for post in blogPosts:
+                    replace += f'\n<li><a href="/blog/{'-'.join([f'{x:02}' for x in post['date']])}_{post['title'].replace(' ', '-')}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
+                replace += '\n</ul>'
+                text = re.sub(r'{{.*}}', replace, text, count = 1)  # TODO
+            elif operation == 'tagName':
+                text = re.sub(r'{{.*}}', data['name'], text, count = 1)
+            elif operation == 'pageList':
+                replace = '<ul id="tagList">'
+                for post in data['posts']:
+                    replace += f'\n<li><a href="/creations/{post['type']}/{post['name']}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
+                replace += '\n</ul>'
+                
+                text = re.sub(r'{{.*}}', replace, text, count = 1)
         elif 'data:' in name:
             # Data template
             field = name[5:].strip()
             if field == 'type':
                 text = subData(text, data['type'], field, data)
             elif field == 'title':
-                text = subData(text, f'<h1 class="creation-title">{data.get(field)}</h1>', field, data)
+                text = subData(text, data.get(field), field, data)
             elif field == 'subtitle':
-                text = subData(text, f'<h2 class="creation-subtitle">{data.get(field)}</h2>', field, data)
+                text = subData(text, data.get(field), field, data)
             elif field == 'link':
-                text = subData(text, f'<a href="{data.get(field)}">Link</a>', field, data)
+                text = subData(text, data.get(field), field, data)
             elif field == 'date':
-                text = subData(text, f'<h3 class="creation-date">{MONTHS[data.get(field)[1]]} {data.get(field)[2]}, {data.get(field)[0]}</h3>', field, data)
+                text = subData(text, f'{MONTHS[data.get(field)[1] - 1]} {data.get(field)[2]}, {data.get(field)[0]}', field, data)
             elif field == 'file':
                 text = subData(text, data.get(field), field, data)
             elif field == 'text':
@@ -126,8 +157,8 @@ def applyTemplates(text, data = None):
             elif field == 'tags':
                 replace = '<ul class="creation-tags">'
                 for tag in data.get(field):
-                    replace += f'\n<li><a href="/creations/tags/{tag}">{tag}</a></li>'
-                replace += '</ul>'
+                    replace += f'\n<li><a href="/creations/tags/{tag}.html">{tag}</a></li>'
+                replace += '\n</ul>'
                 
                 text = subData(text, replace, field, data)
             else:
@@ -143,7 +174,7 @@ def subData(text, replacement, field, data):
     if field in data:
         return re.sub(r'{{.*}}', replacement, text, count = 1)
     else:
-        return re.sub(r'{{.*}}', '', text, count = 1)
+        return re.sub(r'.*{{.*}}.*', '', text, count = 1) # DANGER: this is a fuckin patchy job, only works if the template elem has it's own line
 
 if __name__ == '__main__':
     main()

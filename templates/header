@@ -4,10 +4,10 @@
     </a>
     <p class="alternate" style="margin: auto 35vw auto 0; font-size: 2vw; padding: 0;">end.site</p>
     <nav>
-        <a href="/pages/about/index.html">About</a>
-        <a href="/pages/blog/index.html">Blog</a>
-        <a href="/pages/projects/index.html">Creations</a>
-        <a href="/pages/socials/index.html">Contact</a>
-        <a href="/pages/links/index.html">Linkies</a>
+        <a href="/about/index.html">About</a>
+        <a href="/blog/index.html">Blog</a>
+        <a href="/creations/index.html">Creations</a>
+        <a href="/socials/index.html">Contact</a>
+        <a href="/links/index.html">Linkies</a>
     </nav>
 </header>
