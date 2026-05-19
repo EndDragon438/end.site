@@ -23,7 +23,7 @@ jobs:
   
   deploy:
     runs-on: ubuntu-latest
-
+    needs: build
     steps:
       - uses: actions/checkout@v1
       # When the dist_dir is ready, deploy it to neocities
