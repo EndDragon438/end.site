@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - name: Build with mini-SSG
-        run: python3 ./mini_ssg.py
+        run: python ./mini_ssg.py
   
   deploy:
     runs-on: ubuntu-latest
