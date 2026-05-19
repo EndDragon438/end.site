@@ -9,13 +9,11 @@ These are the rules I have to follow when making updates or adding new pages
 - Posts must be formatted as `YYYY-MM-DD_[a-zA-Z0-9!#$%&()].html` ("MM" is not optional, must be 2 chars so no 4 must be 04)
 
 ### Projects
-- Posts are generated from the ../snippets/posts/ folder json files
+- Posts are generated from `toml` files in `/src` wherever they should end up after parsing
 - Post resources are stored in the resource/ dir of their respective type (../2d/resources/, etc.)
-- All posts must have at least a title, date, and tags
+- All posts must have at least a type.
 
 ## TODO:
-- UNFUCKUP THE SSG, the private/ was so you could have the placeholder head & header tags and not have to change what the script is targeting every time you try and update them
-- Rebuild stylesheet to use variables for easy editing
 - rework socials page into Contacts, make better (no dropdowns, lists)
 - finish DC Encoder
 - debug DC Decoder/Encoder (kidnap some testers)
@@ -28,5 +26,13 @@ These are the rules I have to follow when making updates or adding new pages
 - add guestbook (supporter, or python implementation)
 - move more projects onto site
 - join (or start :3) webrings
-- RSS integration (select for category, blog/project-type. python implementation)
-- figure out how to render scroll bar under header/footer
+- Stylesheet
+    - Figure out how to render scroll bar under header/footer
+    - Swap to using variables everywhere
+    - Build several themes; build theme switcher, default to legible theme (if no js)
+    - Add styling for `creation-tags` (list style none, horizontal list)
+- Mini SSG
+    - Rebuild with pseudo-Liquid templating
+    - Swap post data format to TOML
+    - Check if Github Actions can run the SSG script on push
+    - Build RSS generator (select for category, creation type, etc.)
