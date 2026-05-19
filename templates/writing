@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ head }}
+  <body>
+    <!-- navbar div -->
+    {{ header }}
+    <div class="main_content" id="creation_page">
+      {{ data: title }}
+      {{ data: subtitle }}
+      {{ data: date }}
+      {{ data: tags }}
+      {{ data: link }}
+      <p>{{ data: text }}</p>
+    </div>
+    <!-- fixed footer here -->
+    <footer>
+      <p class="footer" id="last_modified"></p>
+    </footer>
+  </body>
+</html>

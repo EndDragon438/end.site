@@ -1,0 +1,17 @@
+{
+ "postType": "3d",
+ "postTitle": "Digital Violence",
+ "postSubtitle": "",
+ "postLink": "",
+ "postDate": [
+  2024,
+  12,
+  15
+ ],
+ "postFile": "digital violence.png",
+ "postTags": [
+  "2024",
+  "3d"
+ ],
+ "postText": "&emsp;This is probably the work I'm most proud of right now. It's my first piece that felt really complete, and comparable to the work of art I admire.<br>&emsp;This piece is about autism, and autistic shutdown. The text is a bunch of (kind of) Java exceptions. It starts by warning that there isn't enough memory allocated, which I related to going into a situation without enough energy (social, physical, etc.) to make it through. Then there's a StackOverflowException, recieving an infinite/too many inputs and not being able to deal with it. This causes the machine to run out of memory, and the Java Virtual Machine (read: the mask) is shut down.<br><br>sometimes i think of myself as a machine.<br>and life as a sort of digital violence."
+}

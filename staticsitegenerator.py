@@ -2,7 +2,7 @@
 Python Static Site Generator
 written by end
 
-Goal: take simplified site & posts in /private/ and generate a functional static with minimal JS site in /public/
+Goal: take simplified site & posts in /src/ and generate a functional static with minimal JS site in /dist/
 
 Tasks:
 - Rewrite header with a unique HTML tag to be replaced by the script (also make the header look good ffs)
@@ -41,8 +41,6 @@ link_count = 289
 
 # Updated by the script
 tags = []
-
-
 
 # go through all files/folders and call the requisite functions for all of them
 def generate():

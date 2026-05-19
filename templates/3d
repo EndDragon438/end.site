@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  {{ head }}
+  <body>
+    <!-- navbar div -->
+    {{ header }}
+    <div class="main_content" id="creation_page">
+        <div class="creation-side">
+          {{ data: title }}
+          {{ data: link }}
+          <p class="creation-image-desc">
+            {{ data: text }}
+          </p>
+          {{ data: tags }}
+        </div>
+        <img class="creation-image" src="/pages/projects/3d/resources/{{ data: file }}"/>
+    </div>
+    <!-- fixed footer here -->
+    <footer>
+      <p class="footer" id="last_modified"></p>
+    </footer>
+  </body>
+</html>
