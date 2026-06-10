@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="pinterest" content="nopin" />
+        <meta name="description" content="personal blog and portfolio of end!">
+        <link rel="icon" type="image/png" href="/resources/images/aroace_dragon.PNG"/> <!-- sets tab icon -->
+        <title>end.site</title> <!-- name it shows on the tab -->
+        <style>
+            :root {
+                --blue: #ddebff;
+                --orange: #ffe6cc;
+            }
+            
+            nav > ul {
+                list-style: none;
+                display: flex;
+                flex-direction: none;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            nav > ul > li {
+                padding: 1em;
+            }
+            
+            nav > ul > li > details > summary::marker {
+                content: "";
+            }
+            
+            .nav-item > div {
+                display: none;
+                position: absolute;
+                inset-block-start: 70px;
+                margin-left: -1em;
+            }
+            
+            #nav-about > details {
+                anchor-name: --about-anchor;
+            }
+            
+            #nav-about > div {
+                inset-inline-end: anchor(--about-anchor 100%);
+                margin-right: -1em;
+            }
+            
+            .nav-item > div ul {
+                list-style: none;
+                padding: 0 1em;
+            }
+            
+            #nav-header, #nav-header * {
+                background-color: var(--blue);
+            }
+            
+            #nav-projects, #nav-projects * {
+                background-color: var(--orange);
+            }
+            
+            #nav-links, #nav-links * {
+                background-color: var(--blue);
+            }
+            
+            #nav-about, #nav-about * {
+                background-color: var(--orange);
+            }
+            
+            #nav-header > details[open] + div  {
+                display: block;
+            }
+            
+            #nav-projects > details[open] + div  {
+                display: block;
+            }
+            
+            #nav-links > details[open] + div  {
+                display: block;
+            }
+            
+            #nav-about > details[open] + div  {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="nav-item" id="nav-header">
+                        <details name="nav">
+                            <summary>Header</summary>
+                        </details>
+                        <div>
+                            <ul>
+                                <li><a href="#">Nicely aligned</a></li>
+                                <li><a href="#">Well padded</a></li>
+                                <li><a href="#">Expands to content as needed</a></li>
+                                <li><a href="#">And best of all:</a></li>
+                                <li><a href="#">No JS!!</a></li>
+                                <li><a href="#">Pure HTML/CSS</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item" id="nav-projects">
+                        <details name="nav">
+                            <summary>Projects</summary>
+                        </details>
+                        <div>
+                            <ul>
+                                <li><a href="#">Some</a></li>
+                                <li><a href="#">More</a></li>
+                                <li><a href="#">Items</a></li>
+                                <li>
+                                    <details>
+                                        <summary>With nested lists????</summary>
+                                        <ul>
+                                            <li><a href="#">A</a></li>
+                                            <li><a href="#">Nested</a></li>
+                                            <li><a href="#">List</a></li>
+                                            <li>
+                                                <details>
+                                                    <summary>ANOTHER LIST!</summary>
+                                                    <ul>
+                                                        <li><a href="#">Super</a></li>
+                                                        <li><a href="#">Mega</a></li>
+                                                        <li><a href="#">Nested</a></li>
+                                                        <li><a href="#">List</a></li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                                <li><a href="#">Moar item</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item" id="nav-links">
+                        <details name="nav">
+                            <summary>Links</summary>
+                        </details>
+                        <div>
+                            <ul>
+                                <li><a href="#">Some links</a></li>
+                                <li><a href="#">Another kinda link</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item" id="nav-about">
+                        <details name="nav">
+                            <summary>About</summary>
+                        </details>
+                        <div>
+                            <ul>
+                                <li><a href="#">First about</a></li>
+                                <li><a href="#">real long about item</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            ok i just think this header i made is sexy as hell and i wanted to show it off.
+            <a href="/">heres the main site.</a>
+        </main>
+    </body>
+</html>
