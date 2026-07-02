@@ -1,17 +1,14 @@
 # end.site
-all code and assets for my personal site and blog at https://endy-boi.neocities.org !!
+all code and assets for my personal site and blog at https://end-draconis.neocities.org !!
 
-## Update Rules
-These are the rules I have to follow when making updates or adding new pages
+## Mini Static Site Generator
 
-### Blog
-- Posts must be in /pages/blog/pages/
-- Posts must be formatted as `YYYY-MM-DD_[a-zA-Z0-9!#$%&()].html` ("MM" is not optional, must be 2 chars so no 4 must be 04)
-
-### Projects
-- Posts are generated from `toml` files in `/src` wherever they should end up after parsing
-- Post resources are stored in the resource/ dir of their respective type (../2d/resources/, etc.)
-- All posts must have at least a type.
+I've built a lil super specific SSG just for my site! I format my creations
+as TOML files, then build them into HTML pages with the SSG. It also handles
+other things, like tag pages, the blog homepage, and serverless server-side
+includes. You're welcome to draw inspiration from it, or even copy it directly
+if you like (though good luck working with something that isn't my site lol),
+it's licensed under the GPLv3, a free, copyleft license.
 
 ## TODO:
 - rework socials page into Contacts, make better (no dropdowns, lists)
