@@ -1,7 +1,28 @@
 #! /bin/python
 """Mini static site generator
 
+Highly specific SSG just for my use. Basically implementing server-side
+includes, but without the server (just statically pregenerating content).
+
+Formatting is inspired by Liquid templating.
+
+There are 3 types of templates: simple templates, data templates, and
+generated templates.
+
+Simple templates are just find-and-replace, nothing to it.
+
+Data templates are used for populating same-format pages with data from a
+serialized data format (TOML right now), mainly the /creations/ pages.
+
+Generated templates are used for slightly more complex stuff, usually for
+navigation, like the tag pages and the blog homepage.
+
+Feel free to take inspiration or even just copy. If you've got questions,
+feel free to ask. I'm here to make the indie web more accessible!
+
 Author: end draconis
+License: GPL v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
+Updated: July 2, 2026
 """
 
 import datetime
@@ -83,15 +104,22 @@ def main():
         
         with open(post.replace(SOURCE_DIR, DIST_DIR).replace('.toml', '.html'), 'w') as file:
             file.write(content)
-    
+
     # Build tag pages
     os.makedirs(f'{DIST_DIR}/creations/tags/', exist_ok = True)
     with open(f'{TEMPLATE_DIR}/tag', 'r') as file:
-            tagPage = file.read()
+        tagPage = file.read()
     for tag in tags:
         content = applyTemplates(tagPage, {'name': tag, 'posts': tags[tag]})
         with open(f'{DIST_DIR}/creations/tags/{tag}.html', 'w') as file:
             file.write(content)
+    
+    # Build tag list page
+    with open(f'{TEMPLATE_DIR}/tagged', 'r') as file:
+        content = file.read()
+    content = applyTemplates(content, list(tags.keys()))
+    with open(f'{DIST_DIR}/creations/tagged.html', 'w') as file:
+        file.write(content)
     
     # Replace templates in static pages
     for page in pages:
@@ -106,7 +134,6 @@ def main():
         
         with open(page.replace(SOURCE_DIR, DIST_DIR), 'w') as file:
             file.write(content)
-    
 
 def applyTemplates(text, data = None):
     """Apply templates to a piece of text
@@ -121,8 +148,10 @@ def applyTemplates(text, data = None):
             operation = name[4:].strip()
             if operation == 'blogPosts':
                 replace = '<ul id="blogPosts">'
+                # Sort blog posts by date
                 def blogSort(post):
                     return datetime.datetime(*post['date'])
+                
                 blogPosts.sort(key = blogSort)
                 for post in blogPosts:
                     replace += f'\n<li><a href="/blog/{'-'.join([f'{x:02}' for x in post['date']])}_{post['title'].replace(' ', '-')}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
@@ -136,6 +165,13 @@ def applyTemplates(text, data = None):
                     replace += f'\n<li><a href="/creations/{post['type']}/{post['name']}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
                 replace += '\n</ul>'
                 
+                text = re.sub(r'{{.*}}', replace, text, count = 1)
+            elif operation == 'tagList':
+                data.sort()
+                replace = '<ul id="tagList">'
+                for tag in data:
+                    replace += f'\n<li><a href="/creations/tags/{tag}.html">{tag}</a></li>'
+                replace += '\n</ul>'
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
         elif 'data:' in name:
             # Data template
@@ -174,7 +210,7 @@ def subData(text, replacement, field, data):
     if field in data:
         return re.sub(r'{{.*}}', replacement, text, count = 1)
     else:
-        return re.sub(r'.*{{.*}}.*', '', text, count = 1) # DANGER: this is a fuckin patchy job, only works if the template elem has it's own line
+        return re.sub(r'.*{{.*}}.*', '', text, count = 1) # NOTE: this is a fuckin patchy job, only works if the template elem has it's own line
 
 if __name__ == '__main__':
     main()
