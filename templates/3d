@@ -14,7 +14,7 @@
           </p>
           {{ data: tags }}
         </div>
-        <img class="creation-image" src="/pages/projects/3d/resources/{{ data: file }}"/>
+        <img class="creation-image" src="/creations/3d/resources/{{ data: file }}"/>
     </div>
     <!-- fixed footer here -->
     <footer>

@@ -1,0 +1,9 @@
+type = "3d"
+title = "Skyblock"
+date = [2024,9,1]
+file = "Skyblock.png"
+tags = ["2024","3d"]
+text = """
+&emsp;This is a little piece I rendered of an OG skyblock scene. The
+assets are from a Blender addon (MCPrep).
+"""
