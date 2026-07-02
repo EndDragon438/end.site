@@ -12,11 +12,11 @@
 }
 @font-face {
     font-family: "VCR OSD Mono";
-    src: url('/resources/fonts/VCR_OSD_MONO.ttf') format("truetype");
+    src: url('/resources/fonts/VCR OSD MONO.ttf') format("truetype");
 }
 @font-face {
     font-family: "Jack Input";
-    src: url('/resources/fonts/Jack_Input.ttf') format("truetype");
+    src: url('/resources/fonts/Jack Input.ttf') format("truetype");
 }
 
 /* Variables */
