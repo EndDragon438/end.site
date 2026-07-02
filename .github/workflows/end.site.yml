@@ -11,16 +11,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./
-    steps:
-      - uses: actions/checkout@v6
-      - name: Build with mini-SSG
-        run: python ./mini_ssg.py
-  
   deploy:
     runs-on: ubuntu-latest
     needs: build
