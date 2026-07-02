@@ -1,2 +1,6 @@
 *.nix
 test.html
+testing
+dist
+guestbook_db.sh
+staticsitegenerator.py
