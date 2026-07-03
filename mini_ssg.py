@@ -76,6 +76,10 @@ def main():
     # Populated by post loop. [{name, posts[]}]
     tags = {}
     
+    # Add manual posts to tags
+    with open(f'{TEMPLATE_DIR}/tags.toml', 'rb') as file:
+        tags = dict(tomllib.load(file))
+    
     # Plain copy over non-HTML
     for file in files:
         newfile = file.replace(SOURCE_DIR, DIST_DIR)
@@ -89,7 +93,6 @@ def main():
             data = tomllib.load(file)
         with open(f'{TEMPLATE_DIR}/{data['type']}', 'r') as file:
             content = file.read()
-        
         for tag in [data['type']] + data.get('tags'):
             if tag in tags:
                 tags[tag] = tags[tag] + [{'type':  data.get('type'), 'title': data.get('title'), 'date': data.get('date'), 'name': post[post.rfind('/') + 1:-5]}]
