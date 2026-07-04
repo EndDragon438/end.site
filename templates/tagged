@@ -2,16 +2,15 @@
 <html>
     {{ head }}
     <body>
-        <!-- navbar div -->
         {{ header }}
-        <!-- site content begins -->
-        <div class="main_content">
-            <h1>Tags</h1>
+        <main>
+            <div style="width: 80%;">
+                <h1>Tags</h1>
                 {{ gen: tagList }}
-        </div>
-        <!-- fixed footer here -->
+            </div>
+        </main>
         <footer>
-            <p class="footer">{{ last_modified }}</p>
+            <p>{{ last_modified }}</p>
         </footer>
     </body>
 </html>

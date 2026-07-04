@@ -1,0 +1,391 @@
+/*
+=================
++++   FONTS   +++
+=================
+*/
+@font-face {
+    font-family: "Albertus MT";
+    src: url('/resources/fonts/AlbertusMT.otf') format("opentype");
+}
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url('/resources/fonts/VCR OSD MONO.ttf') format("truetype");
+}
+@font-face {
+    font-family: "Jack Input";
+    src: url('/resources/fonts/Jack Input.TTF') format("truetype");
+}
+
+/*
+=====================
++++   VARIABLES   +++
+=====================
+*/
+:root {
+    --foreground: #e5074b;
+    --background: #161a26;
+    --background-dark: #0c0e14;
+    --accent: #4d5e80;
+    --anchor: #e6ac08;
+    --background-image: url("/resources/images/dragons_clouds_seamless.jpg");
+}
+
+/*
+==================
++++   CURSOR   +++
+==================
+*/
+:root {
+    cursor: url('/resources/images/dragon_cursor_auto.png'), auto;
+}
+button:hover, a:hover, summary:hover {
+    cursor: url('/resources/images/dragon_cursor_pointer.png'), auto;
+}
+
+/*
+==================
++++   HEADER   +++
+==================
+*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "VCR OSD Mono", "Albertus MT", "Helvetica";
+}
+
+header a, header a:visited {
+    color: var(--foreground);
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+header > #home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+header > #home:hover {
+    background-color: var(--accent);
+}
+
+header > #home > img {
+    height: 150px;
+}
+
+header > #home > span {
+    font-size: 2vw;
+    margin: 0 1em;
+}
+
+header > nav {
+    margin-left: auto;
+    margin-right: 25px;
+    height: 100%;
+}
+
+header > nav > ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: transparent;
+}
+
+header > nav > ul > li {
+    display: inline-block;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 2vw;
+    height: 100%;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+header > nav > ul > li:hover {
+    background-color: var(--accent);
+}
+
+header > nav > ul > li > a {
+    display: inline-block;
+    height: 100%;
+    align-content: center;
+    padding: 0 0.5em;
+}
+
+/*
+=====================
++++   TOP-LEVEL   +++
+=====================
+*/
+body {
+    font-family: "Albertus MT", "Helvetica";
+    background-image: var(--background-image);
+    margin: 0;
+    padding: 0;
+    color: var(--foreground);
+    font-size: 18pt;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3em;
+}
+
+main > * {
+    background-color: var(--background);
+    border-radius: 5px;
+    padding: 1em;
+}
+
+main > div:only-child {
+    width: 80%;
+}
+
+/*
+====================
++++   ELEMENTS   +++
+====================
+*/
+h1 {
+    font-size: 26pt;
+}
+
+h2 {
+    font-size: 24pt;
+}
+
+h3 {
+    font-size: 20pt;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+code {
+    font-family: 'Jack Input';
+}
+
+a, a:hover, a:visited {
+    color: var(--anchor);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Pixel font */
+.pixel {
+    font-family: 'VCR OSD Mono';
+}
+
+/* button styling */
+button {
+    font-family: 'VCR OSD Mono';
+    position: relative;
+    background-color: #e5074b;
+    border-radius: 5px;
+    box-shadow: #9b0633 0px 4px 0px 0px;
+    padding: 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 10em;
+    height: 4em;
+    color: #181c24;
+    border: none;
+    font-size: 1em;
+    font-weight: 900;
+}
+button:hover {
+    background-color: #e209d8;
+}
+button:active {
+    box-shadow: #9b0633 4px 0 4px 0;
+}
+
+/* tab selector styling */
+.tabSelector {
+    text-align: center;
+    height: 100%;
+}
+.tabButton {
+    font-size: 2em;
+    box-shadow: #e77395 5px 5px 0px 4px;
+    border: solid;
+    border-width: 5px;
+    border-color: #31010f;
+    width: 100%;
+    margin: 8px;
+    overflow: visible;
+}
+.tabButton:hover {
+    box-shadow: #ff60cd 5px 5px 0px 4px;
+    right: 15px;
+}
+.tabButton.active {
+    background-color: #9807b5;
+    box-shadow: #ff60e7 5px 5px 0px 4px;
+    right: 20px;
+}
+
+
+/*
+===================
++++   SIDEBAR   +++
+===================
+*/
+.sidebar {
+    background-color: var(--background);
+    width: 45%;
+    margin: 0 1em;
+}
+
+#changelog {
+    max-height: 1200px;
+    overflow-y: scroll;
+}
+
+/*
+=====================
++++   CREATIONS   +++
+=====================
+*/
+.creation-side {
+    width: 25%;
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.creation-side p {
+    font-size: 20pt;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.creation-side iframe {
+    width: 97%;
+    height: 300px;
+    border: #181c24;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 0.5em;
+    margin-right: 10px;
+}
+
+.creation-image {
+    width: 60%;
+    border: #181c24;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 10px;
+}
+
+.creation-title {
+    margin: 0.25em 0;
+    font-size: 2.5em;
+    border-radius: 10px;
+}
+
+.creation-subtitle {
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+.creation-date {
+    margin: 0em;
+    font-size: 0.75em;
+    color: white;
+}
+
+.creation-tags {
+    padding: 0;
+}
+
+.creation-tags::before {
+    content: "Tags: ";
+}
+
+.creation-tags li {
+    display: inline;
+    margin: 0;
+}
+
+.creation-tags li:not(:last-child)::after {
+    content: ", ";
+}
+
+#tags {
+    color: #FFFFFF;
+    font-size: 1em;
+    padding-left: 50px;
+}
+
+/*
+==================
++++   FOOTER   +++
+==================
+*/
+footer {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+footer > p{
+    font-family: 'VCR OSD Mono';
+    font-size: 15pt;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    background-color: var(--background-dark);
+    border-radius: 0;
+}
+
+/* button div styling */
+#blinkies {
+    text-align: center;
+}
+.button img {
+    width: 132px;
+}
+
+/* scrollbar styling */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #9b0633 #2c3759;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #e5074b;
+    border-radius: 26px;
+    border: 3px dashed #e5074b;
+}

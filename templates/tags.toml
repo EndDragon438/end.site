@@ -1,0 +1,10 @@
+[[programming]]
+    type = "programming"
+    title = "Dragon Code"
+    date = [2024, 5, 15]
+    name = "dragon_code"
+[[programming]]
+    type = "programming"
+    title = "JSON Post Generator"
+    date = [2024, 5, 5]
+    name = "json_generator"

@@ -1,0 +1,7 @@
+type = ""
+title = ""
+link = ""
+date = ['YYYY', 'MM', 'DD']
+file = ""
+text = ""
+tags = []

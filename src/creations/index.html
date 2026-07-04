@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-  {{ head }}
-  <body>
-    <!-- navbar div -->
-    {{ header }}
-    <!-- site content begins -->
-    <div class="main_content">
-    <h1>My Projects</h1>
-    <br>
-    <p class="alternate" style="color:#e5074b;text-decoration:none;"><a href="/creations/tagged.html">TAGGED &gt;</a></p>
-    <p class="alternate" style="color:#e5074b;text-decoration:none;"><a href="/creations/tags/2d.html">2D ART &gt;</a></p>
-    <p class="alternate" style="color:#e5074b;text-decoration:none;"><a href="/creations/tags/3d.html">3D ART &gt;</a></p>
-    <p class="alternate" style="color:#e5074b;text-decoration:none;"><a href="/creations/tags/writing.html">WRITING &gt;</a></p>
-    <p class="alternate" style="color:#e5074b;text-decoration:none;"><a href="/creations/tags/music.html">MUSIC &gt;</a></p>
-    <p class="alternate" style="color:#e5074b;text-decoration:none;"><a href="/creations/tags/games.html">GAMES &gt;</a></p>
-    <p class="alternate" style="color:#e5074b;text-decoration:none;"><a href="/creations/tags/other.html">OTHER &gt;</a></p>
-    </div>
-    <!-- fixed footer here -->
-    <footer>
-      <p class="footer">CURRENT IDEA COUNT: 49</p>
-    </footer>
-  </body>
+    {{ head }}
+    <body>
+        {{ header }}
+        <main>
+            <div>
+                <h1>My Projects</h1>
+                <br>
+                <p class="pixel"><a href="/creations/tagged.html">TAGGED &gt;</a></p>
+                <p class="pixel"><a href="/creations/tags/2d.html">2D ART &gt;</a></p>
+                <p class="pixel"><a href="/creations/tags/3d.html">3D ART &gt;</a></p>
+                <p class="pixel"><a href="/creations/tags/writing.html">WRITING &gt;</a></p>
+                <p class="pixel"><a href="/creations/tags/music.html">MUSIC &gt;</a></p>
+                <p class="pixel"><a href="/creations/tags/programming.html">PROGRAMMING &gt;</a></p>
+                <p class="pixel"><a href="/creations/tags/other.html">OTHER &gt;</a></p>
+            </div>
+        </main>
+        <footer>
+            <p>{{ idea_count }}</p>
+        </footer>
+    </body>
 </html>

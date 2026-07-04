@@ -1,0 +1,96 @@
+/*
+NoJS tabs implementation using <details> elements
+*/
+
+/* No bullet points, flex to horizontal, and go relative for the div positioning */
+.tabs {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+}
+
+/* Hide disclosure icons */
+.tabs > li > details > summary::marker {
+    content: "";
+}
+
+/* Hide divs, position in the right spot */
+.tabs > li > div {
+    display: none;
+    position: absolute;
+    left: -1em;
+    top: 100%;
+    margin-top: 3em;
+    width: 100%;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: var(--background);
+}
+
+/* Show div when its <details> is open */
+.tabs > li > details[open] + div {
+    display: block;
+}
+
+/* Style the <summary> to look like my buttons */
+.tabs > li > details > summary {
+    font-family: 'VCR OSD Mono';
+    font-size: 2em;
+    background-color: var(--foreground);
+    border-radius: 5px;
+    box-shadow: #e77395 5px 5px 0px 4px;
+    padding: 15px;
+    box-sizing: border-box;
+    width: 20rem;
+    height: 6rem;
+    color: var(--background);
+    border: none;
+    text-align: center;
+    align-content: center;
+    border: solid 5px #31010f;
+    margin: 0 0.5em;
+}
+
+.tabs > li > details > summary:hover {
+    background-color: #e209d8;
+    box-shadow: #ff60cd 5px 5px 0px 4px;
+}
+
+.tabs > li > details[open] > summary {
+    background-color: #9807b5;
+    box-shadow: #ff60e7 5px 5px 0px 4px;
+}
+
+/* For vertical tabs, position divs according to main content div */
+div:has(.vTabs) {
+    position: relative;
+    background: transparent;
+}
+
+/* Vertical tabs go to column, and float over on the right */
+.tabs.vTabs {
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: auto;
+    width: fit-content;
+    position: static;
+    background-color: var(--background);
+    border-radius: 5px;
+    padding: 10px 10px 20px 5px;
+}
+
+/* nice bit of spacing for the tabs */
+.tabs.vTabs > li {
+    margin: 0.5em 0;
+}
+
+/* Position the vertical tab divs properly */
+.tabs.vTabs > li > div {
+    width: calc(100% - 30rem);
+    margin-top: 0;
+    top: 1em;
+    left: 0;
+}
