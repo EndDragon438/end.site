@@ -1,4 +1,7 @@
 // TAB & TAB SELECTOR IMPLEMENTATION //
+
+// This is no longer in use, and has been replace by a NoJS implementation, which you can find at /stylesheets/tabs.css
+
 const tabs = document.getElementsByClassName('tab');
 
 if (document.getElementsByClassName('tabSelector')) {

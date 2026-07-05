@@ -32,21 +32,6 @@ import re
 import shutil
 import tomllib
 
-"""
-Tasks:
-- Copy every non-HTML file to /dist unmodified
-    - Except posts, which are JSON (translate to TOML?? much nicer)
-- Generate post pages from JSON post data (located in same position they should be in /dist, no special folder)
-- Recursively loop over every HTML file, __recursively__ replace templates ({{ }}) with content from /templates
-    - Allows nesting templates inside templates
-- Copy over modified HTML files to /dist
-
-Templates:
-- Simple templates: just plain replace with template content
-- Generated templates: various types of programatically generated templates
-- Data templates: For use in post templates, replaced with data from JSON (or whateva data format) matching name
-"""
-
 SOURCE_DIR = './src'
 DIST_DIR = './dist'
 TEMPLATE_DIR = './templates'
@@ -150,6 +135,7 @@ def applyTemplates(text, data = None):
             # Generated template (handles tags and other lists)
             operation = name[4:].strip()
             if operation == 'blogPosts':
+                # List all blog posts
                 replace = '<ul id="blogPosts">'
                 # Sort blog posts by date
                 def blogSort(post):
@@ -163,6 +149,7 @@ def applyTemplates(text, data = None):
             elif operation == 'tagName':
                 text = re.sub(r'{{.*}}', data['name'], text, count = 1)
             elif operation == 'pageList':
+                # List all pages in a specific tag
                 replace = '<ul id="tagList">'
                 for post in data['posts']:
                     replace += f'\n<li><a href="/creations/{post['type']}/{post['name']}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
@@ -170,10 +157,18 @@ def applyTemplates(text, data = None):
                 
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
             elif operation == 'tagList':
+                # List all tags in use
                 data.sort()
                 replace = '<ul id="tagList">'
                 for tag in data:
                     replace += f'\n<li><a href="/creations/tags/{tag}.html">{tag}</a></li>'
+                replace += '\n</ul>'
+                text = re.sub(r'{{.*}}', replace, text, count = 1)
+            elif operation == 'listScripts':
+                # List all scripts in the /scripts/ directory
+                replace = '<ul>'
+                for file in [f for f in os.listdir(f'{SOURCE_DIR}/scripts') if f[-3:] == '.js']:
+                    replace += f'\n<li><a href="/scripts/{file}">{file[:-3]}</a></li>'
                 replace += '\n</ul>'
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
         elif 'data:' in name:

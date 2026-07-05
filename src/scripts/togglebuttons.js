@@ -1,4 +1,7 @@
 // hide/show blinkies & buttons. accessibility!!
+
+// This is no longer in use, and has been replaced by a simple <details> element
+
 const blinkies = document.getElementsByClassName('button');
 const animated = document.getElementsByClassName('animated');
 
