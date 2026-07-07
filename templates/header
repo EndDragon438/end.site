@@ -1,6 +1,6 @@
 <header>
-    <a href="/home.html" id="home" alt="back to home!">
-        <img src="/resources/images/icon.png" alt="The sites icon">
+    <a href="/home.html" id="home">
+        <img src="/resources/images/icon.png" alt="The sites icon, a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
         <span class="pixel">end.site</span>
     </a>
     <nav>

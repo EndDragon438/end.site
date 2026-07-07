@@ -2,44 +2,44 @@
 <html lang="en">
 	<head>
 		{{ head }}
+		<style>
+			div > ul {
+				padding: 0;
+				margin-left: 1em;
+			}
+			
+			main > div > div, #linksList > div {
+				background-color: var(--background);
+				border-radius: 5px;
+				padding: 1em;
+				margin: 1em;
+			}
+			
+			h1, h2, h3 {
+				margin: 0;
+			}
+			
+			#linksList {
+				display: flex;
+				flex-flow: row wrap;
+				align-items: start;
+				justify-content: center;
+				background: transparent;
+			}
+			
+			#toc > li {
+				display: inline;
+			}
+			
+			#toc > li::after {
+				content: ",";
+			}
+		</style>
 	</head>
 	<body>
 		{{ header }}
 		<main>
 			<div style="background: transparent;">
-				<style>
-					div > ul {
-						padding: 0;
-						margin-left: 1em;
-					}
-					
-					main > div > div, #linksList > div {
-						background-color: var(--background);
-						border-radius: 5px;
-						padding: 1em;
-						margin: 1em;
-					}
-					
-					h1, h2, h3 {
-						margin: 0;
-					}
-					
-					#linksList {
-						display: flex;
-						flex-flow: row wrap;
-						align-items: start;
-						justify-content: center;
-						background: transparent;
-					}
-					
-					#toc > li {
-						display: inline;
-					}
-					
-					#toc > li::after {
-						content: ",";
-					}
-				</style>
 				<div>
 					<h1>Linkies!</h1>
 					<p>
@@ -64,7 +64,7 @@
 						|
 						<a href="https://bytemoth.neocities.org/getlinks/">Bytemoth</a>
 					</p>
-					<h3>Table of Contents</h3>
+					<h2>Table of Contents</h2>
 					<ul id="toc">
 						<li><a href="#references">References & Graphics</a></li>
 						<li><a href="#alternatives">Alternatives</a></li>
