@@ -22,13 +22,26 @@
 =====================
 */
 :root {
+    color-scheme: dark;
     --foreground: #e5074b;
     --background: #04040F;
     --background-dark: #000000;
     --background-light: #101020;
-    --accent: #4d5e80;
+    --background-lighter: #232330;
     --anchor: #e6ac08;
     --background-image: url("/resources/images/dragons_clouds_seamless.jpg");
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --foreground: #e5074b;
+        --background: #04040F;
+        --background-dark: #000000;
+        --background-light: #101020;
+        --background-lighter: #232330;
+        --anchor: #e6ac08;
+    }
 }
 
 /*
@@ -60,10 +73,12 @@ header {
 
 header a, header a:visited {
     color: var(--foreground);
+    text-decoration: none;
 }
 
 header a:hover {
     text-decoration: none;
+    font-style: normal;
 }
 
 header > #home {
@@ -74,7 +89,7 @@ header > #home {
 }
 
 header > #home:hover {
-    background-color: var(--accent);
+    background-color: var(--background-lighter);
 }
 
 header > #home > img {
@@ -82,7 +97,7 @@ header > #home > img {
 }
 
 header > #home > span {
-    font-size: 2vw;
+    font-size: 2em;
     margin: 0 1em;
 }
 
@@ -90,6 +105,7 @@ header > nav {
     margin-left: auto;
     margin-right: 25px;
     height: 100%;
+    display: none;
 }
 
 header > nav > ul {
@@ -104,14 +120,14 @@ header > nav > ul > li {
     border-radius: 0;
     margin: 0;
     padding: 0;
-    font-size: 2vw;
+    font-size: 2em;
     height: 100%;
     box-sizing: border-box;
     background: transparent;
 }
 
 header > nav > ul > li:hover {
-    background-color: var(--accent);
+    background-color: var(--background-lighter);
 }
 
 header > nav > ul > li > a {
@@ -119,6 +135,62 @@ header > nav > ul > li > a {
     height: 100%;
     align-content: center;
     padding: 0 0.5em;
+}
+
+#collapsedNav {
+    display: block;
+    margin-left: auto;
+    margin-right: 2em;
+    
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#collapsedNav > summary {
+    font-size: 4em;
+}
+
+#collapsedNav > summary::marker {
+    content: "";
+}
+
+#collapsedNav > div {
+    position: absolute;
+    top: 0;
+    right: 2em;
+    margin: 1em;
+    font-size: 2em;
+    border: 3px solid var(--foreground);
+    z-index: 2;
+}
+
+#collapsedNav > div > ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--background);
+    list-style: none;
+}
+
+#collapsedNav > div > ul > li > a {
+    display: inline-block;
+    align-content: center;
+    padding: 0.5em;
+}
+
+#collapsedNav > div > ul > li:hover {
+    background-color: var(--background-lighter);
+}
+
+@media (min-width: 1200px) {
+    header > nav {
+        display: block;
+    }
+    
+    #collapsedNav {
+        display: none;
+    }
 }
 
 /*
@@ -132,24 +204,62 @@ body {
     margin: 0;
     padding: 0;
     color: var(--foreground);
-    font-size: 18pt;
+    font-size: 1em;
 }
 
 main {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
-    margin: 3em;
+    margin-bottom: 2em;
 }
 
 main > * {
+    flex: 2 1 550px;
     background-color: var(--background);
     border-radius: 5px;
     padding: 1em;
+    margin: 1em 0.5em;
+}
+
+@media (min-width: 1400px) {
+    body {
+        font-size: 1.25em;
+    }
+}
+
+@media (min-width: 1700px) {
+    main {
+        margin: 1em;
+        margin-bottom: 2em;
+    }
+    
+    body {
+        font-size: 1.5em;
+    }
+}
+
+main > aside {
+    flex: 1 1 220px;
 }
 
 main > div:only-child {
     width: 80%;
+}
+
+/*
+===================
++++   SIDEBAR   +++
+===================
+*/
+.sidebar {
+    background-color: var(--background);
+    width: 20%;
+}
+
+#changelog {
+    max-height: 1200px;
+    overflow-y: scroll;
 }
 
 /*
@@ -158,17 +268,17 @@ main > div:only-child {
 ====================
 */
 h1 {
-    font-size: 26pt;
+    font-size: 1.75em;
     font-weight: bold;
 }
 
 h2 {
-    font-size: 22pt;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 20pt;
+    font-size: 1.25em;
     font-weight: bold;
 }
 
@@ -189,11 +299,11 @@ code {
 
 a, a:hover, a:visited {
     color: var(--anchor);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:hover {
-    text-decoration: underline;
+    font-style: italic;
 }
 
 /* Pixel font */
@@ -201,11 +311,15 @@ a:hover {
     font-family: 'VCR OSD Mono';
 }
 
+.caps {
+    text-transform: uppercase;
+}
+
 /* button styling */
 button {
     font-family: 'VCR OSD Mono';
     position: relative;
-    background-color: #e5074b;
+    background-color: var(--foreground);
     border-radius: 5px;
     box-shadow: #9b0633 0px 4px 0px 0px;
     padding: 15px;
@@ -213,9 +327,8 @@ button {
     box-sizing: border-box;
     width: 10em;
     height: 4em;
-    color: #181c24;
+    color: var(--background-light);
     border: none;
-    font-size: 1em;
     font-weight: 900;
 }
 button:hover {
@@ -250,37 +363,20 @@ button:active {
     right: 20px;
 }
 
-
-/*
-===================
-+++   SIDEBAR   +++
-===================
-*/
-.sidebar {
-    background-color: var(--background);
-    width: 20%;
-    margin: 0 1em;
-}
-
-#changelog {
-    max-height: 1200px;
-    overflow-y: scroll;
-}
-
 /*
 =====================
 +++   CREATIONS   +++
 =====================
 */
 .creation-side {
+    flex: 1 1;
     width: 25%;
-    margin: 0 1em;
+    margin: 1em;
     display: flex;
     flex-direction: column;
 }
 
 .creation-side p {
-    font-size: 20pt;
     margin: 0;
     margin-bottom: 15px;
 }
@@ -288,34 +384,23 @@ button:active {
 .creation-side iframe {
     width: 97%;
     height: 300px;
-    border: #181c24;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 0.5em;
     margin-right: 10px;
 }
 
 .creation-image {
     width: 60%;
-    border: #181c24;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 10px;
 }
 
 .creation-title {
     margin: 0.25em 0;
-    font-size: 2.5em;
     border-radius: 10px;
 }
 
 .creation-subtitle {
-    font-size: 1.5em;
     border-radius: 10px;
 }
 .creation-date {
-    margin: 0em;
-    font-size: 0.75em;
+    margin: 0;
     color: white;
 }
 
@@ -337,8 +422,7 @@ button:active {
 }
 
 #tags {
-    color: #FFFFFF;
-    font-size: 1em;
+    color: white;
     padding-left: 50px;
 }
 
@@ -357,9 +441,8 @@ footer {
     margin: 0;
 }
 
-footer > p{
+footer > p {
     font-family: 'VCR OSD Mono';
-    font-size: 15pt;
     text-align: center;
     margin: 0;
     padding: 5px;
@@ -378,4 +461,13 @@ footer > p{
 /* scrollbar styling */
 :root {
     scrollbar-color: #9b0633 #2c3759;
+}
+
+/* Blur fast-blinking images */
+.flashing {
+    filter: blur(0.5em);
+}
+
+.flashing:hover {
+    filter: blur(0);
 }

@@ -142,6 +142,7 @@ def applyTemplates(text, data = None):
                     return datetime.datetime(*post['date'])
                 
                 blogPosts.sort(key = blogSort)
+                blogPosts.reverse() # Latest first
                 for post in blogPosts:
                     replace += f'\n<li><a href="/blog/{'-'.join([f'{x:02}' for x in post['date']])}_{post['title'].replace(' ', '-')}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
                 replace += '\n</ul>'

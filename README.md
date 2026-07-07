@@ -27,9 +27,13 @@ it's licensed under the GPLv3, a free, copyleft license.
     - Figure out how to render scroll bar under header/footer
     - Swap to using variables everywhere
     - Build several themes; build theme switcher, default to legible theme (if no js)
-    - Add styling for `creation-tags` (list style none, horizontal list)
+    - Make sure font sizes are all in `em` (can scale base at body/root)
+    - Make sure headings are all inserted properly for accessibility
 - Mini SSG
-    - Rebuild with pseudo-Liquid templating
-    - Swap post data format to TOML
-    - Check if Github Actions can run the SSG script on push
     - Build RSS generator (select for category, creation type, etc.)
+- ooooo checkout [the brook](https://bytemoth.neocities.org/) for a different design of
+CSS only tabs. they use paired input/labels, with the inputs hidden and next to the divs,
+with the labels wherever which works cause clicking on the labels counts as clicking the
+inputs!!!! that's so fucking cool.
+- acab, autism, codewontwork, end.site, fictionfolk, i_heart_dragons, musicbee, no2web3,
+palestine blinkies have FPS > 3

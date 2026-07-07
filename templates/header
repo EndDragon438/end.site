@@ -11,4 +11,15 @@
             <li><a href="/links/index.html">Linkies</a></li>
         </ul>
     </nav>
+    <details id="collapsedNav">
+        <summary>≡</summary>
+        <div>
+            <ul>
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="/blog/index.html">Blog</a></li>
+                <li><a href="/creations/index.html">Creations</a></li>
+                <li><a href="/links/index.html">Linkies</a></li>
+            </ul>
+        </div>
+    </details>
 </header>
