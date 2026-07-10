@@ -8,214 +8,203 @@
         {{ header }}
         <main>
             <div>
-                <ul class="tabs vTabs">
-                    <li>
-                        <details name="about" open>
-                            <summary>Bio</summary>
-                        </details>
-                        <div>
-                            <h1>Bio</h1>
-                            <img class="creation-content" src="/resources/images/icon.png" style="max-width:400px; display:inline; float:left; margin: 0 2em;" alt="My icon! a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
-                            <p>
-                            <strong>Name</strong>: end (end draconis if you must)<br>
-                            <strong>Pronouns</strong>: it/its, she/her<br>
-                            <strong>Species</strong>: dragon (<code>DC2.Dw[H]L10mW-T-PflhtvwSksCbk^\rb,ere-,sre-,wre-,vgy-,cgy-BflAFr---NeM---!H++$---Fc/oR+++Ac++J+SU?I--#VQ+Tc++E++</code>, or <code>DC2.Dw Gn L Sks Cbk^\rb,ere-,sre-,wre-,vgy-,cgy- Bfl A Fr--- Ne R+++ Ac++ I--# Tc++ E++</code> to be brief)<br>
-                            <strong>Interests</strong>: learning new things, music, digital art, programming, reading<br>
-                            <br><br><br><br>
-                            &emsp;ahhhhh i actually gotta describe myself oh no. here goes nothing
-                            <br><br>
-                            &emsp;hiya! i'm end, or end draconis if you must. i'm a girl, a dragon, and a lil bit robot on occasion. my field of expertise is in computer science,
-                            where i particularly enjoy software development and direct tech support. i pick up and drop hobbies all the time, i really enjoy learning
-                            new skills. i've tried my hand at embroidery (hope to get better), web development (clearly), wiki management (dropped now), drawing (getting
-                            better!), 3d art (modelling, sculpting, texturing, animating, the works. also getting better!), and probably more that i've forgotten. i really
-                            want to learn more about making music and drawing, i like having an artistic outlet (though i do see programming as an artistic kinda thing).
-                            <br><br>
-                            &emsp;i started this website a few years back as an escape from the swift decline of social media. i've spent a lot of my life on the computer,
-                            and the internet, and in recent years i've been trying to kinda get away from the mainstream internet to something that's all my own, and just for
-                            fun. i use this site to toy around with web design, share things i'm working on, and (hopefully) to share my thoughts 'n writing.
-                            <br><br>
-                            &emsp;if you'd like to let me know about an issue with the site, or just chat, feel free to contact me anywhere in the Contact tab!
-                        </div>
-                    </li>
-                    <li>
-                        <details name="about">
-                            <summary>Characters</summary>
-                        </details>
-                        <div>
-                            <h1>Original Characters</h1>
-                            <h2>Amaranth</h2>
-                            &emsp;<a href="/creations/tags/oc-amaranth.html">tag page</a><br>
-                            &emsp;Amaranth is my first OC. He's a Skywing, from the Wings of Fire (WOF) universe. You can find his bio <a href="/creations/writing/amaranth_bio.html">here</a>.
-                            
-                            <h2>Borealis</h2>
-                            &emsp;<a href="/creations/tags/oc-borealis.html">tag page</a><br>
-                            &emsp;Borealis is the most un-Icewing Icewing you'll ever meet. He is an Icewing, from the Wings of Fire universe. You can find his bio <a href="/creations/writing/borealis_bio.html">here</a>.
+                <nav class="tabList hTabs">
+                    <label class="tab" for="bio">Bio</label>
+                    <label class="tab" for="characters">Characters</label>
+                    <label class="tab" for="favorites">Favorites</label>
+                    <label class="tab" for="stuff">My Stuff</label>
+                    <label class="tab" for="site">Site</label>
+                    <label class="tab" for="contact">Contact</label>
+                </nav>
+                <input type="radio" class="tab" id="bio" name="tabs" checked>
+                <div class="tab">
+                    <h1>Bio</h1>
+                    <img class="creation-content" src="/resources/images/icon.png" style="max-width:400px; height: auto; float:left; margin: 0 2em;" alt="My icon! a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
+                    <p>
+                        <strong>Name</strong>: end (end draconis if you must)<br>
+                        <strong>Pronouns</strong>: it/its, she/her<br>
+                        <strong>Species</strong>: dragon (<code>DC2.Dw[H]L10mW-T-PflhtvwSksCbk^\rb,ere-,sre-,wre-,vgy-,cgy-BflAFr---NeM---!H++$---Fc/oR+++Ac++J+SU?I--#VQ+Tc++E++</code>, or <code>DC2.Dw Gn L Sks Cbk^\rb,ere-,sre-,wre-,vgy-,cgy- Bfl A Fr--- Ne R+++ Ac++ I--# Tc++ E++</code> to be brief)<br>
+                        <strong>Interests</strong>: learning new things, music, digital art, programming, reading<br>
+                        <br><br><br><br>
+                        &emsp;ahhhhh i actually gotta describe myself oh no. here goes nothing
+                        <br><br>
+                        &emsp;hiya! i'm end, or end draconis if you must. i'm a girl, a dragon, and a lil bit robot on occasion. my field of expertise is in computer science,
+                        where i particularly enjoy software development and direct tech support. i pick up and drop hobbies all the time, i really enjoy learning
+                        new skills. i've tried my hand at embroidery (hope to get better), web development (clearly), wiki management (dropped now), drawing (getting
+                        better!), 3d art (modelling, sculpting, texturing, animating, the works. also getting better!), and probably more that i've forgotten. i really
+                        want to learn more about making music and drawing, i like having an artistic outlet (though i do see programming as an artistic kinda thing).
+                        <br><br>
+                        &emsp;i started this website a few years back as an escape from the swift decline of social media. i've spent a lot of my life on the computer,
+                        and the internet, and in recent years i've been trying to kinda get away from the mainstream internet to something that's all my own, and just for
+                        fun. i use this site to toy around with web design, share things i'm working on, and (hopefully) to share my thoughts 'n writing.
+                        <br><br>
+                        &emsp;if you'd like to let me know about an issue with the site, or just chat, feel free to contact me anywhere in the Contact tab!
+                    </p>
+                </div>
+                <input type="radio" class="tab" id="characters" name="tabs">
+                <div class="tab">
+                    <h1>Original Characters</h1>
+                    <h2>Amaranth</h2>
+                    &emsp;<a href="/creations/tags/oc-amaranth.html">tag page</a><br>
+                    &emsp;Amaranth is my first OC. He's a Skywing, from the Wings of Fire (WOF) universe. You can find his bio <a href="/creations/writing/amaranth_bio.html">here</a>.
+                    
+                    <h2>Borealis</h2>
+                    &emsp;<a href="/creations/tags/oc-borealis.html">tag page</a><br>
+                    &emsp;Borealis is the most un-Icewing Icewing you'll ever meet. He is an Icewing, from the Wings of Fire universe. You can find his bio <a href="/creations/writing/borealis_bio.html">here</a>.
 
-                            <h2>Gharial</h2>
-                            &emsp;<a href="/creations/tags/oc-gharial.html">tag page</a><br>
-                            &emsp;Gharial is a bit headstrong, but tries to be a good leader and give everyone a fair chance. She is a Mudwing from the Wings of Fire universe. You can find her bio <a href="/creations/writing/gharial_bio.html">here</a>.
+                    <h2>Gharial</h2>
+                    &emsp;<a href="/creations/tags/oc-gharial.html">tag page</a><br>
+                    &emsp;Gharial is a bit headstrong, but tries to be a good leader and give everyone a fair chance. She is a Mudwing from the Wings of Fire universe. You can find her bio <a href="/creations/writing/gharial_bio.html">here</a>.
 
-                            <h2>Moon Moon</h2>
-                            &emsp;<a href="/creations/tags/oc-moon_moon.html">tag page</a><br>
-                            &emsp;Moon Moon was originally a joke character (as you may have guessed) but she's become an important side character in my canon now. They're an explorer, trying as many new things as moon can. She is a Nightwing/Rainwing hybrid from the Wings of Fire Universe. You can find its bio <a href="/creations/writing/moon_moon_bio.html">here</a>.
-                            
-                            <h2>PFLR-2</h2>
-                            &emsp;<a href="/creations/tags/oc-pflr_2.html">tag page</a><br>
-                            &emsp;PFLR-2 is a robot character i modelled 'n rigged originally for a game i wanted to make (&lt;- probably not gonna happen lol). Now it's stuck around cause i like having a robot around! no bio, and not much lore to speak of.
-                            
-                            <h2>Saguaro</h2>
-                            &emsp;<a href="/creations/tags/oc-saguaro.html">tag page</a><br>
-                            &emsp;Saguaro is a retired veteran, now figuring out how to live the rest of his life. They're a Sandwing from the Wings of Fire universe. You can find their bio <a href="/creations/writing/saguaro_bio.html">here</a>.
+                    <h2>Moon Moon</h2>
+                    &emsp;<a href="/creations/tags/oc-moon_moon.html">tag page</a><br>
+                    &emsp;Moon Moon was originally a joke character (as you may have guessed) but she's become an important side character in my canon now. They're an explorer, trying as many new things as moon can. She is a Nightwing/Rainwing hybrid from the Wings of Fire Universe. You can find its bio <a href="/creations/writing/moon_moon_bio.html">here</a>.
+                    
+                    <h2>PFLR-2</h2>
+                    &emsp;<a href="/creations/tags/oc-pflr_2.html">tag page</a><br>
+                    &emsp;PFLR-2 is a robot character i modelled 'n rigged originally for a game i wanted to make (&lt;- probably not gonna happen lol). Now it's stuck around cause i like having a robot around! no bio, and not much lore to speak of.
+                    
+                    <h2>Saguaro</h2>
+                    &emsp;<a href="/creations/tags/oc-saguaro.html">tag page</a><br>
+                    &emsp;Saguaro is a retired veteran, now figuring out how to live the rest of his life. They're a Sandwing from the Wings of Fire universe. You can find their bio <a href="/creations/writing/saguaro_bio.html">here</a>.
 
-                            <h2>Sierra</h2>
-                            &emsp;<a href="/creations/tags/oc-sierra.html">tag page</a><br>
-                            &emsp;Sierra is a deserter, now living in the mountains alone. She is a dragon from an original story. You can find her bio <a href="/creations/writing/sierra_bio.html">here</a>.
+                    <h2>Sierra</h2>
+                    &emsp;<a href="/creations/tags/oc-sierra.html">tag page</a><br>
+                    &emsp;Sierra is a deserter, now living in the mountains alone. She is a dragon from an original story. You can find her bio <a href="/creations/writing/sierra_bio.html">here</a>.
 
-                            <h2>Snowreader</h2>
-                            &emsp;<a href="/creations/tags/oc-snowreader.html">tag page</a><br>
-                            &emsp;Snowreader is relaxed and friendly dragon. She is a Nightwing/Icewing hybrid from the Wings of Fire universe. You can find his bio <a href="/creations/writing/snowreader_bio.html">here</a>.
-                        </div>
-                    </li>
-                    <li>
-                        <details name="about">
-                            <summary>Favorites</summary>
-                        </details>
-                        <div>
-                            <h1>My Favourites</h1>
-                            
-                            Books
-                            <ul style="padding:15px;">
-                                <li><em>Adventurer's Wanted</em>, by M.L. Forman<br>(nice basic fantasy, also happens to actually be me :3)</li>
-                                <li><em>Amulet</em>, by Kazu Kibuishi<br>(INCREDIBLY UNDERRATED. GO READ)</li>
-                                <li><em>Arc of a Scythe</em>, by Neal Shusterman<br>(mmmmmmm yes dystopia)</li>
-                                <li><em>Ender's Game</em>, by Orson Scott Card<br>(old fav of mine)</li>
-                                <li><em>Temeraire</em>, by Naomi Novik<br>(napoleonic wars, but with freedom fighting dragons)</li>
-                                <li><em>The Giver</em>, by Lois Lowry<br>(consumed me and made me involuntarily write about the sociology)</li>
-                                <li><em>The Locked Tomb</em>, by Tamsyn Muir<br>(im so confused. i love it.)</li>
-                                <li><em>The Murderbot Diaries</em>, by Martha Wells<br>(autistic robot is forced to make friends. (GREAT READ. VERY WORTH IT. READ NOW))</li>
-                                <li><em>Wheel of Time</em>, by Robert Jordan<br>(my fav high fantasy series. veryvery good)</li>
-                                <li><em>Wings of Fire</em>, by Tui T. Sutherland<br>(dragons :3) (hang on sorry) (DRAGONS!!!!!!!!!)</li>
-                            </ul>
-                            
-                            Fic
-                            <ul style="padding:15px;">
-                                <li><a href="https://archiveofourown.org/works/15477579" target="blank">Healed</a>, by Sandshadow9<br>(absolutely my fav fic. sooo good. read it immediately.)</li>
-                                <li><a href="https://archiveofourown.org/works/43220992" target="blank">A Song of Frost and Sand</a>, by qibli<br>(i had to pick one, but qibli's writing is ALL good)</li>
-                                <li><a href="http://archiveofourown.org/series/2854606" target="blank">Unresolved Threads</a>, by Rurikredwolf<br>(also a great 3d artist!!)</li>
-                            </ul>
-                            
-                            Musicians
-                            <ul style="padding:15px;">
-                                <li><a href="https://thenarcissistcookbook.bandcamp.com/music" target="blank">The Narcissist Cookbook</a></li>
-                                <li><a href="https://www.youtube.com/@monstersandmen" target="blank">Of Monsters and Men</a></li>
-                            </ul>
-                            
-                            Songs
-                            <ul style="padding:15px;">
-                                <li><a href="https://youtu.be/d6_8zMboZ1g" target="blank">Love Love Love</a>, by Of Monsters and Men<br>(link is an animatic, but i love it so fuck you)</li>
-                                <li><a href="https://youtu.be/N87BaCP0UB8" target="blank">Dragon</a>, by The Narcissist Cookbook<br>(meeeeeee :3)</li>
-                                <li><a href="https://youtu.be/cc8Ob0fXEyc" target="blank">Growing Wings</a>, by The Land<br>(also meee :3)</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <details name="about">
-                            <summary>My Stuff</summary>
-                        </details>
-                        <div>
-                            <h1>My Stuff</h1>
-                            <h2 style="margin:0.5em;">Software</h2>
-                            <ul>
-                                <li>CachyOS | current linux distro. hopped around a bit, but i'm a big fan of cachy</li>
-                                <li>KDE Plasma | desktop environment, love the customization options and aesthetic</li>
-                                <li>VSCodium | my fancy text editor. tried Kate a while, but it wasn't quite enough</li>
-                                <li>Firefox | my browser, with a whole lotta addons.</li>
-                                <li>MusicBee | old music manager & music player, kept on this list because BEST WINDOWS MUSIC MANAGER EVER</li>
-                                <li>Strawberry | current music manager (linux). it's alright, i wanna make a better one</li>
-                                <li>Krita | my drawing program!</li>
-                                <li>Blender | my modelling software</li>
-                            </ul>
-                            <h2 style="margin:0.5em;">Hardware</h2>
-                            <ul>
-                                <li>Gigabyte B550M-K | motherboard</li>
-                                <li>AMD 7800XT | graphics card</li>
-                                <li>AMD Ryzen 5600 | CPU</li>
-                                <li>Wacom Intuos Pro | drawing tablet</li>
-                            </ul>
-                            i hope to never buy hardware again. still, things will break someday.
-                        </div>
-                    </li>
-                    <li>
-                        <details name="about">
-                            <summary>Site</summary>
-                        </details>
-                        <div>
-                            <h1>Site</h1>
-                            <p>
-                                Written in VSCode, Kate, and VSCodium over the years. Serverless server-side includes provided by a custom Python
-                                <a href="https://github.com/EndDragon438/end.site/blob/main/mini_ssg.py">mini static site generator</a>. Source
-                                code hosted on Github, and distributed from there to Neocities. end.site began on April 11, 2024.
-                            </p>
-                            Fonts
-                            <ul>
-                                <li><a href="https://freefonts.co/fonts/albertus-bold" target="blank">Albertus MT</a><br>this is the font the wof books are printed in, and also the main font for end.site!</li>
-                                <li style="font-family: 'VCR OSD Mono';"><a href="https://www.dafont.com/vcr-osd-mono.font" target="blank">VCR OSD Mono</a><br>this is a neat digital-looking font i often use for navigation elements.</li>
-                                <li style="font-family: 'Jack Input';"><a href="https://www.dafont.com/jackinput.font" target="blank">Jack Input</a><br>this is the monospaced font i use inside <code>&lt;code&gt;</code> tags.</li>
-                            </ul>
-                            <br>
-                            HTML
-                            <ul>
-                                <li>old sidebar design from <a href="https://sadgrlonline.github.io/archived-goblin-heart.net/" target="blank">Sadgrl</a>.</li>
-                                <li>everything i ever learned from <a href="https://www.w3schools.com/" target="blank">W3Schools</a> and <a href="https://developer.mozilla.org/en-US/" target="blank">MDN</a></li>
-                            </ul>
-                            <br>
-                            CSS
-                            <ul>
-                                <li>old scrollbar code from <a href="https://codepen.io/stephenpaton-tech/full/JjRvGmY/" target="blank">Stephen Paton</a>.</li>
-                            </ul>
-                            <br>
-                            Javascript
-                            <ul>
-                                <li>no libraries included! most pages are NoJS, and <em>all</em> JS is local and unobfuscated (not necessarily readable lol)</li>
-                                <li>some JS inspired by <a href="https://zonelets.net/" target="blank">Zonelets</a> and <a href="https://sadgrlonline.github.io/archived-goblin-heart.net/" target="blank">Sadgrl</a>.</li>
-                            </ul>
-                            <p>All buttons & blinkies link to their source, or to me if I made them.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <details name="about">
-                            <summary>Contact</summary>
-                        </details>
-                        <div>
-                            <h1>Socials</h1>
-                            <div style="width: 40%; display: inline-block; margin-right: 4em;">
-                                <h2>tumblr</h2>
-                                my sole social media, only mildly less insufferable than others.<br>
-                                <a class="alternate_link" href="https://www.tumblr.com/blog/end-draconis" target="blank">main blog</a>
-                                |
-                                <a class="alternate_link" href="https://www.tumblr.com/blog/end-of-the-art" target="blank">art blog</a>
-                                |
-                                <a class="alternate_link" href="https://www.tumblr.com/blog/a-dragon-hoard" target="blank">dragon's hoard of dragon art</a>
-                            </div>
-                            <div style="width: 40%; display: inline-block;">
-                                <h2>youtube</h2>
-                                blegh google. nevertheless, free video sharing<br>
-                                <a class="alternate_link" href="https://www.youtube.com/@EndsVarietyClips" target="blank">clips channel</a> (largely inactive)
-                                |
-                                <a class="alternate_link" href="https://www.youtube.com/@EndsArt." target="blank">art channel</a> (timelapses mostly)
-                            </div>
-                            
-                            <br><br>
-                            
-                            <a class="alternate_link" href="https://www.last.fm/user/EndDragon438" target="blank">Last.fm</a> (music listening stats, account not long for this world)
-                            |
-                            <a class="alternate_link" href="https://artfight.net/~end_draconis" target="blank">Artfight</a> (often when i draw the most)
-                            |
-                            <a class="alternate_link" href="https://archiveofourown.org/users/end_draconis/profile" target="blank">AO3</a> (i've written a bit, no promises for more)
-                            <p style="text-align:center;">Email: end-drake@protonmail.com | <a href="/resources/end_pgp.asc">Download PGP Key</a></p>
-                        </div>
-                    </li>
-                </ul>
+                    <h2>Snowreader</h2>
+                    &emsp;<a href="/creations/tags/oc-snowreader.html">tag page</a><br>
+                    &emsp;Snowreader is relaxed and friendly dragon. She is a Nightwing/Icewing hybrid from the Wings of Fire universe. You can find his bio <a href="/creations/writing/snowreader_bio.html">here</a>.
+                </div>
+                <input type="radio" class="tab" id="favorites" name="tabs">
+                <div class="tab">
+                    <h1>My Favourites</h1>
+                    
+                    Books
+                    <ul style="padding:15px;">
+                        <li><em>Adventurer's Wanted</em>, by M.L. Forman<br>(nice basic fantasy, also happens to actually be me :3)</li>
+                        <li><em>Amulet</em>, by Kazu Kibuishi<br>(INCREDIBLY UNDERRATED. GO READ)</li>
+                        <li><em>Arc of a Scythe</em>, by Neal Shusterman<br>(mmmmmmm yes dystopia)</li>
+                        <li><em>Ender's Game</em>, by Orson Scott Card<br>(old fav of mine)</li>
+                        <li><em>Temeraire</em>, by Naomi Novik<br>(napoleonic wars, but with freedom fighting dragons)</li>
+                        <li><em>The Giver</em>, by Lois Lowry<br>(consumed me and made me involuntarily write about the sociology)</li>
+                        <li><em>The Locked Tomb</em>, by Tamsyn Muir<br>(im so confused. i love it.)</li>
+                        <li><em>The Murderbot Diaries</em>, by Martha Wells<br>(autistic robot is forced to make friends. (GREAT READ. VERY WORTH IT. READ NOW))</li>
+                        <li><em>Wheel of Time</em>, by Robert Jordan<br>(my fav high fantasy series. veryvery good)</li>
+                        <li><em>Wings of Fire</em>, by Tui T. Sutherland<br>(dragons :3) (hang on sorry) (DRAGONS!!!!!!!!!)</li>
+                    </ul>
+                    
+                    Fic
+                    <ul style="padding:15px;">
+                        <li><a href="https://archiveofourown.org/works/15477579" target="blank">Healed</a>, by Sandshadow9<br>(absolutely my fav fic. sooo good. read it immediately.)</li>
+                        <li><a href="https://archiveofourown.org/works/43220992" target="blank">A Song of Frost and Sand</a>, by qibli<br>(i had to pick one, but qibli's writing is ALL good)</li>
+                        <li><a href="http://archiveofourown.org/series/2854606" target="blank">Unresolved Threads</a>, by Rurikredwolf<br>(also a great 3d artist!!)</li>
+                    </ul>
+                    
+                    Musicians
+                    <ul style="padding:15px;">
+                        <li><a href="https://thenarcissistcookbook.bandcamp.com/music" target="blank">The Narcissist Cookbook</a></li>
+                        <li><a href="https://www.youtube.com/@monstersandmen" target="blank">Of Monsters and Men</a></li>
+                    </ul>
+                    
+                    Songs
+                    <ul style="padding:15px;">
+                        <li><a href="https://youtu.be/d6_8zMboZ1g" target="blank">Love Love Love</a>, by Of Monsters and Men<br>(link is an animatic, but i love it so fuck you)</li>
+                        <li><a href="https://youtu.be/N87BaCP0UB8" target="blank">Dragon</a>, by The Narcissist Cookbook<br>(meeeeeee :3)</li>
+                        <li><a href="https://youtu.be/cc8Ob0fXEyc" target="blank">Growing Wings</a>, by The Land<br>(also meee :3)</li>
+                    </ul>
+                </div>
+                <input type="radio" class="tab" id="stuff" name="tabs">
+                <div class="tab">
+                    <h1>My Stuff</h1>
+                    <h2 style="margin:0.5em;">Software</h2>
+                    <ul>
+                        <li>CachyOS | current linux distro. hopped around a bit, but i'm a big fan of cachy</li>
+                        <li>KDE Plasma | desktop environment, love the customization options and aesthetic</li>
+                        <li>VSCodium | my fancy text editor. tried Kate a while, but it wasn't quite enough</li>
+                        <li>Firefox | my browser, with a whole lotta addons.</li>
+                        <li>MusicBee | old music manager & music player, kept on this list because BEST WINDOWS MUSIC MANAGER EVER</li>
+                        <li>Strawberry | current music manager (linux). it's alright, i wanna make a better one</li>
+                        <li>Krita | my drawing program!</li>
+                        <li>Blender | my modelling software</li>
+                    </ul>
+                    <h2 style="margin:0.5em;">Hardware</h2>
+                    <ul>
+                        <li>Gigabyte B550M-K | motherboard</li>
+                        <li>AMD 7800XT | graphics card</li>
+                        <li>AMD Ryzen 5600 | CPU</li>
+                        <li>Wacom Intuos Pro | drawing tablet</li>
+                    </ul>
+                    i hope to never buy hardware again. still, things will break someday.
+                </div>
+                <input type="radio" class="tab" id="site" name="tabs">
+                <div class="tab">
+                    <h1>Site</h1>
+                    <p>
+                        Written in VSCode, Kate, and VSCodium over the years. Serverless server-side includes provided by a custom Python
+                        <a href="https://github.com/EndDragon438/end.site/blob/main/mini_ssg.py">mini static site generator</a>. Source
+                        code hosted on Github, and distributed from there to Neocities. end.site began on April 11, 2024.
+                    </p>
+                    Fonts
+                    <ul>
+                        <li><a href="https://freefonts.co/fonts/albertus-bold" target="blank">Albertus MT</a><br>this is the font the wof books are printed in, and also the main font for end.site!</li>
+                        <li style="font-family: 'VCR OSD Mono';"><a href="https://www.dafont.com/vcr-osd-mono.font" target="blank">VCR OSD Mono</a><br>this is a neat digital-looking font i often use for navigation elements.</li>
+                        <li style="font-family: 'Jack Input';"><a href="https://www.dafont.com/jackinput.font" target="blank">Jack Input</a><br>this is the monospaced font i use inside <code>&lt;code&gt;</code> tags.</li>
+                    </ul>
+                    <br>
+                    HTML
+                    <ul>
+                        <li>old sidebar design from <a href="https://sadgrlonline.github.io/archived-goblin-heart.net/" target="blank">Sadgrl</a>.</li>
+                        <li>everything i ever learned from <a href="https://www.w3schools.com/" target="blank">W3Schools</a> and <a href="https://developer.mozilla.org/en-US/" target="blank">MDN</a></li>
+                        <li>better (<code>&lt;label&gt;</code> based) tab implementation inspired by <a href="https://bytemoth.neocities.org/">Bytemoth</a></li>
+                    </ul>
+                    <br>
+                    CSS
+                    <ul>
+                        <li>old scrollbar code from <a href="https://codepen.io/stephenpaton-tech/full/JjRvGmY/" target="blank">Stephen Paton</a>.</li>
+                    </ul>
+                    <br>
+                    Javascript
+                    <ul>
+                        <li>no libraries included! most pages are NoJS, and <em>all</em> JS is local and unobfuscated (not necessarily readable lol)</li>
+                        <li>some JS inspired by <a href="https://zonelets.net/" target="blank">Zonelets</a> and <a href="https://sadgrlonline.github.io/archived-goblin-heart.net/" target="blank">Sadgrl</a>.</li>
+                    </ul>
+                    <p>All buttons & blinkies link to their source, or to me if I made them.</p>
+                    <p>
+                        Code and assets for this website may be found here, or in the <a href="https://github.com/EndDragon438/end.site">source repository</a>.
+                        The code and assets for this site may be distributed under the terms of the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
+                        license (i.e. public domain). Attribution, is not necessary, but is appreciated!
+                    </p>
+                </div>
+                <input type="radio" class="tab" id="contact" name="tabs">
+                <div class="tab">
+                    <h1>Socials</h1>
+                    <div style="width: 40%; display: inline-block; margin-right: 4em;">
+                        <h2>tumblr</h2>
+                        my sole social media, only mildly less insufferable than others.<br>
+                        <a class="alternate_link" href="https://www.tumblr.com/blog/end-draconis" target="blank">main blog</a>
+                        |
+                        <a class="alternate_link" href="https://www.tumblr.com/blog/end-of-the-art" target="blank">art blog</a>
+                        |
+                        <a class="alternate_link" href="https://www.tumblr.com/blog/a-dragon-hoard" target="blank">dragon's hoard of dragon art</a>
+                    </div>
+                    <div style="width: 40%; display: inline-block;">
+                        <h2>youtube</h2>
+                        blegh google. nevertheless, free video sharing<br>
+                        <a class="alternate_link" href="https://www.youtube.com/@EndsVarietyClips" target="blank">clips channel</a> (largely inactive)
+                        |
+                        <a class="alternate_link" href="https://www.youtube.com/@EndsArt." target="blank">art channel</a> (timelapses mostly)
+                    </div>
+                    
+                    <br><br>
+                    
+                    <a class="alternate_link" href="https://www.last.fm/user/EndDragon438" target="blank">Last.fm</a> (music listening stats, account not long for this world)
+                    |
+                    <a class="alternate_link" href="https://artfight.net/~end_draconis" target="blank">Artfight</a> (often when i draw the most)
+                    |
+                    <a class="alternate_link" href="https://archiveofourown.org/users/end_draconis/profile" target="blank">AO3</a> (i've written a bit, no promises for more)
+                    <p style="text-align:center;">Email: end-drake@protonmail.com | <a href="/resources/end_pgp.asc">Download PGP Key</a></p>
+                </div>
             </div>
         </main>
         <footer>
