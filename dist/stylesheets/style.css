@@ -24,6 +24,8 @@
 :root {
     color-scheme: dark;
     --foreground: #e5074b;
+    --foreground-light: #f7437a;
+    --foreground-lighter: #ff759f;
     --background: #04040F;
     --background-dark: #000000;
     --background-light: #101020;
@@ -189,6 +191,12 @@ header > nav > ul > li > a {
     }
     
     #collapsedNav {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    #home > span {
         display: none;
     }
 }
