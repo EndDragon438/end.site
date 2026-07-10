@@ -146,14 +146,23 @@ def applyTemplates(text, data = None):
                 for post in blogPosts:
                     replace += f'\n<li><a href="/blog/{'-'.join([f'{x:02}' for x in post['date']])}_{post['title'].replace(' ', '-')}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
                 replace += '\n</ul>'
-                text = re.sub(r'{{.*}}', replace, text, count = 1)  # TODO
+                text = re.sub(r'{{.*}}', replace, text, count = 1)
             elif operation == 'tagName':
                 text = re.sub(r'{{.*}}', data['name'], text, count = 1)
             elif operation == 'pageList':
+                # Sort posts by date
+                def postSort(post):
+                    return datetime.datetime(*post['date'])
+                
+                data['posts'].sort(key = postSort)
+                data['posts'].reverse()
                 # List all pages in a specific tag
                 replace = '<ul id="tagList">'
                 for post in data['posts']:
-                    replace += f'\n<li><a href="/creations/{post['type']}/{post['name']}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
+                    if post['name'][-1] == '/':
+                        replace += f'\n<li><a href="/creations/{post['type']}/{post['name']}">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
+                    else:
+                        replace += f'\n<li><a href="/creations/{post['type']}/{post['name']}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
                 replace += '\n</ul>'
                 
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
