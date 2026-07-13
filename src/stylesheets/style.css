@@ -5,15 +5,25 @@
 */
 @font-face {
     font-family: "Albertus MT";
-    src: url('/resources/fonts/AlbertusMT.otf') format("opentype");
+    src: url('/resources/fonts/Albertus MT.ttf') format("truetype");
+    font-style: normal;
 }
 @font-face {
     font-family: "VCR OSD Mono";
     src: url('/resources/fonts/VCR OSD MONO.ttf') format("truetype");
 }
 @font-face {
-    font-family: "Jack Input";
-    src: url('/resources/fonts/Jack Input.TTF') format("truetype");
+    font-family: "JetBrains Mono";
+    src: url("/resources/fonts/JetBrainsMono.ttf"), format('truetype');
+    font-style: normal;
+    font-weight: 300 800;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/resources/fonts/JetBrainsMono-Italic.ttf"), format('truetype');
+    font-style: italic;
+    font-weight: 300 800;
 }
 
 /*
@@ -33,8 +43,8 @@
     --anchor: #e6ac08;
     --background-image: url("/resources/images/dragons_clouds_seamless.jpg");
     --main-font: 'Albertus MT';
-    --alt-font: 'VCR OSD Mono';
-    --mono-font: 'Jack Input';
+    --bitmap-font: 'VCR OSD Mono';
+    --mono-font: 'JetBrains Mono';
 }
 
 /*
@@ -61,7 +71,7 @@ header {
     height: 200px;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--alt-font), var(--main-font), "Helvetica";
+    font-family: var(--bitmap-font), var(--main-font), "Helvetica";
 }
 
 header a, header a:visited {
@@ -307,7 +317,7 @@ a:hover {
 
 /* Pixel font */
 .pixel {
-    font-family: var(--alt-font);
+    font-family: var(--bitmap-font);
 }
 
 .caps {
@@ -328,7 +338,7 @@ a:hover {
 
 /* button styling */
 button {
-    font-family: var(--alt-font);
+    font-family: var(--bitmap-font);
     position: relative;
     background-color: var(--foreground);
     border-radius: 5px;
@@ -453,7 +463,7 @@ footer {
 }
 
 footer > p {
-    font-family: var(--alt-font);
+    font-family: var(--bitmap-font);
     text-align: center;
     margin: 0;
     padding: 5px;

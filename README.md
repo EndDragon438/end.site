@@ -28,6 +28,7 @@ it's licensed under the GPLv3, a free, copyleft license.
     - Build RSS generator (select for category, creation type, etc.)
 - acab, autism, codewontwork, end.site, fictionfolk, i_heart_dragons, musicbee, no2web3,
 palestine blinkies have FPS > 3 (fine cause very tiny, not causing too much bright)
+- design some fonts for the site? (bitmap one i could pull off at least)
 
 Potential webrings:
 - [Code collective](https://petrapixel.neocities.org/webring) (resource sharing)
