@@ -22,7 +22,7 @@ feel free to ask. I'm here to make the indie web more accessible!
 
 Author: end draconis
 License: GPL v3.0 https://www.gnu.org/licenses/gpl-3.0.en.html
-Updated: July 2, 2026
+Updated: July 10, 2026
 """
 
 import datetime
