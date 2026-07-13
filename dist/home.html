@@ -12,6 +12,81 @@
 <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
+        
+
+<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background-color: var(--background); color: var(--foreground); padding: 0.25em; border: 3px solid var(--foreground); bottom: 1em; right: 1em;">
+    <details>
+        <summary>Swap theme</summary>
+        <input type="radio" name="theme" id="lightTheme" value="light">
+        <label for="lightTheme">Light</label>
+        <input type="radio" name="theme" id="darkTheme" value="dark">
+        <label for="darkTheme">Dark</label>
+        <input type="radio" name="theme" id="draconicTheme" value="draconic">
+        <label for="draconicTheme">Draconic</label>
+    </details>
+</div>
+<script>
+    // Allowed themes
+    const themes = {
+        light: {
+            foreground: '#000000',
+            foreground_light: '#000000',
+            foreground_lighter: '#000000',
+            background: '#ffffff',
+            background_dark: '#ffffff',
+            background_light: '#ffffff',
+            background_lighter: '#ffffff',
+            anchor: '#e6ac08',
+        },
+        dark: {
+            foreground: '#ffffff',
+            foreground_light: '#ffffff',
+            foreground_lighter: '#ffffff',
+            background: '#000000',
+            background_dark: '#000000',
+            background_light: '#000000',
+            background_lighter: '#000000',
+            anchor: '#e6ac08',
+        },
+        draconic: {
+            foreground: '#e5074b',
+            foreground_light: '#f7437a',
+            foreground_lighter: '#ff759f',
+            background: '#04040F',
+            background_dark: '#000000',
+            background_light: '#101020',
+            background_lighter: '#232330',
+            anchor: '#e6ac08',
+        }
+    }
+
+    // If the theme isn't defined, default to dark theme
+    if (!localStorage['data-theme']) {
+        changeTheme('dark');
+    }
+    
+    // Always set the variables on load
+    changeTheme(null);
+    
+    // Change theme whenever the themepicker changes
+    document.getElementById('themePicker').addEventListener('click', (event) => {
+        changeTheme(document.querySelector('input[name="theme"]:checked')?.value)
+    })
+    
+    function changeTheme(theme) {
+        // Store the theme, or replace the theme with the stored one if undefined
+        if (Object.keys(themes).includes(theme)) {
+            localStorage['data-theme'] = theme;
+        } else {
+            theme = localStorage['data-theme'];
+        }
+        
+        // Change the variable values to those of the theme
+        for (val in themes[theme]) {
+            document.body.style.setProperty(`--${val.replace('_', '-')}`, themes[theme][val]);
+        }
+    }
+</script>
         <header>
     <a href="/home.html" id="home">
         <img src="/resources/images/icon.png" alt="The sites icon, a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
@@ -116,7 +191,7 @@
                         <a class="button" href="https://yesterweb.org/"><img src="/resources/images/no2web3.gif" alt="say no to web3 tech! from yesterweb.org" title="say no to web3 tech! from yesterweb.org"></a>
                         <a class="button" href="https://yesterweb.org/"><img src="/resources/images/yesterweb_button.png" alt="yesterweb movement link. from yesterweb.org" title="yesterweb movement link. from yesterweb.org"></a>
                         <a class="button" href="https://jigsaw.w3.org/css-validator/check/referer"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" title="Valid CSS!"></a>
-                        <a class="button" href="#"><img src="/resources/images/wave_score_button.gif" alt="my sites WebAIM WAVE accessibility score of 10/10" title="my sites WebAIM WAVE accessibility score of 10/10"></a>
+                        <a class="button" href="#"><img src="/resources/images/wave_score_button.png" alt="my sites WebAIM WAVE accessibility score of 10/10" title="my sites WebAIM WAVE accessibility score of 10/10"></a>
                         <a class="button" href="https://www.tumblr.com/blinkees"><img class="flashing" src="/resources/images/i_heart_dragons.gif" alt="I &lt;3 dragons surrounded by two dragons waving their tails. made by @blinkees on tumblr!" title="I &lt;3 dragons surrounded by two dragons waving their tails. made by @blinkees on tumblr!" height=45></a>
                     </details>
                 </div>
@@ -376,5 +451,6 @@
         <footer>
             <p>LAST MODIFIED: JULY 12, 2026</p>
         </footer>
+        
     </body>
 </html>
