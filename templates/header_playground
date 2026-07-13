@@ -11,7 +11,7 @@
                 </details>
                 <div>
                     <ul>
-                        <li><a href="./index.html#headerInfo">NoJS tabs</a></li>
+                        <li><a href="./index.html#headerInfo">NoJS header tabs</a></li>
                     </ul>
                 </div>
             </li>
@@ -21,7 +21,7 @@
                 </details>
                 <div>
                     <ul>
-                        <li>No CSS snippets yet!</li>
+                        <li><a href="./sr_only.html">Screenreader-only elements</a></li>
                     </ul>
                 </div>
             </li>
@@ -41,7 +41,7 @@
                 </details>
                 <div>
                     <ul>
-                        <li>No Misc snippets yet!</li>
+                        <li><a href="./mini_ssg.html">Mini SSG</a></li>
                     </ul>
                 </div>
             </li>
@@ -55,7 +55,7 @@
                     <details name="collapsedHeader">
                         <summary>HTML</summary>
                         <ul>
-                            <li><a href="./index.html#headerInfo">NoJS tabs</a></li>
+                            <li><a href="./index.html#headerInfo">NoJS header tabs</a></li>
                         </ul>
                     </details>
                 </li>
@@ -63,7 +63,7 @@
                     <details name="collapsedHeader">
                         <summary>CSS</summary>
                         <ul>
-                            <li>Nothing here yet!</li>
+                            <li><a href="./sr_only.html">Screenreader-only elements</a></li>
                         </ul>
                     </details>
                 </li>
@@ -79,7 +79,7 @@
                     <details name="collapsedHeader">
                         <summary>Misc</summary>
                         <ul>
-                            <li>Nothing here yet!</li>
+                            <li><a href="./mini_ssg.html">Mini SSG</a></li>
                         </ul>
                     </details>
                 </li>

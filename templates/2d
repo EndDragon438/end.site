@@ -3,9 +3,10 @@
     <head>
         {{ head }}
     </head>
-    <body>
+    <body id="top">
+        {{ before }}
         {{ header }}
-        <main>
+        <main id="content">
             <img class="creation-image" src="/creations/2d/resources/{{ data: file }}">
             <div class="creation-side">
                 <h1 class="creation-title">{{ data: title }}</h1>
@@ -20,5 +21,6 @@
         <footer>
             <p>{{ last_modified }}</p>
         </footer>
+        {{ after }}
     </body>
 </html>

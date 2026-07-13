@@ -3,9 +3,10 @@
     <head>
         {{ head }}
     </head>
-    <body>
+    <body id="top">
+        {{ before }}
         {{ header }}
-        <main>
+        <main id="content">
             <div>
                 <h1>My Projects</h1>
                 <br>
@@ -21,5 +22,6 @@
         <footer>
             <p>{{ idea_count }}</p>
         </footer>
+        {{ after }}
     </body>
 </html>

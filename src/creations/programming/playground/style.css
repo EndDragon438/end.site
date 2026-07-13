@@ -23,22 +23,24 @@
 */
 
 :root {
-    color-scheme: dark;
-    --foreground: #e5074b;
-    --foreground-light: #f7437a;
-    --foreground-lighter: #ff759f;
-    --foreground-alt: white;
-    --background: #04040F;
+    --foreground: #ffffff;
+    --foreground-light: #ffffff;
+    --foreground-lighter: #ffffff;
+    --foreground-alt: #ffffff;
+    --background: #000000;
     --background-dark: #000000;
-    --background-light: #101020;
-    --background-lighter: #232330;
-    --anchor: #e6ac08;
+    --background-light: #000000;
+    --background-lighter: #000000;
+    --anchor: #3f8aff;
     --background-image: url("/resources/images/dragons_clouds_seamless.jpg");
+    --main-font: 'Albertus MT';
+    --alt-font: 'VCR OSD Mono';
+    --mono-font: 'Jack Input';
 }
 
 /* Pixel font */
 .pixel {
-    font-family: 'VCR OSD Mono';
+    font-family: var(--alt-font);
 }
 
 body {
@@ -87,7 +89,7 @@ main > * {
 code, pre {
     background: var(--background-lighter);
     color: var(--foreground-alt);
-    font-family: 'Jack Input';
+    font-family: var(--mono-font);
     padding: 0 0.25em;
 }
 
@@ -105,6 +107,18 @@ a:hover {
     font-style: italic;
 }
 
+.focus-only:not(:focus) {
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border-width: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
 /*
 ==================
 +++   HEADER   +++
@@ -117,11 +131,12 @@ header {
     height: 200px;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: "VCR OSD Mono", "Albertus MT", "Helvetica";
+    font-family: var(--alt-font), var(--main-font), "Helvetica";
 }
 
 header a, header a:visited, header a:hover {
     color: var(--foreground);
+    font-style: normal;
     text-decoration: none;
 }
 
@@ -208,6 +223,7 @@ header > nav div {
     right: 0;
     
     background: var(--background);
+    border: 3px solid var(--foreground);
     padding: 0.2em;
     font-size: 0.75em;
 }
@@ -329,7 +345,7 @@ header > nav div ul {
 
 /* Style the <summary> to look like my buttons */
 .dTabs > li > details > summary {
-    font-family: 'VCR OSD Mono';
+    font-family: var(--alt-font);
     font-size: 2em;
     background-color: var(--foreground);
     border-radius: 5px;

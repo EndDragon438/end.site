@@ -3,9 +3,10 @@
     <head>
         {{ head_playground }}
     </head>
-    <body>
+    <body id="top">
+        {{ before }}
         {{ header_playground }}
-        <main>
+        <main id="content">
             <div>
                 <p>
                     &emsp;hiya! welcome to the playground!<br>
@@ -105,5 +106,6 @@ header > nav > ul > li details[open] + div {
                 </p>
             </div>
         </main>
+        {{ after }}
     </body>
 </html>

@@ -11,18 +11,39 @@
 <title>end.site</title>
 <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
     </head>
-    <body>
-        
+    <body id="top">
+        <!--
+Hello there, and welcome to my source code! Feel free to poke around and
+have yourself a look-see.
 
+You're also free to copy, modify, and share anything you find on here (yes, including my art)
+as you please, and attribution is not necessary though it is appreciated.
+
+If you make something particularly cool with stuff I've made, let me know! I'd love to see it!
+
+If you need help with webmastery, or have a question about my site, feel
+free to contact me (contact information can be found on my about page)
+
+- end draconis
+-->
+<div>
+    <a href="#content" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--background); border: 3px solid var(--foreground); padding: 0.5em;">Skip to content</a>
+</div>
+<div>
+    <a href="#top" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--background); border: 3px solid var(--foreground); padding: 0.5em;">Back to top</a>
+</div>
 <div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background-color: var(--background); color: var(--foreground); padding: 0.25em; border: 3px solid var(--foreground); bottom: 1em; right: 1em;">
     <details>
         <summary>Swap theme</summary>
-        <input type="radio" name="theme" id="lightTheme" value="light">
-        <label for="lightTheme">Light</label>
-        <input type="radio" name="theme" id="darkTheme" value="dark">
-        <label for="darkTheme">Dark</label>
-        <input type="radio" name="theme" id="draconicTheme" value="draconic">
-        <label for="draconicTheme">Draconic</label>
+        <fieldset>
+            <legend>Themes</legend>
+            <input type="radio" name="theme" id="lightTheme" value="light">
+            <label for="lightTheme">Light</label>
+            <input type="radio" name="theme" id="darkTheme" value="dark">
+            <label for="darkTheme">Dark</label>
+            <input type="radio" name="theme" id="draconicTheme" value="draconic">
+            <label for="draconicTheme">Draconic</label>
+        </fieldset>
     </details>
 </div>
 <script>
@@ -32,31 +53,46 @@
             foreground: '#000000',
             foreground_light: '#000000',
             foreground_lighter: '#000000',
+            foreground_alt: '#000000',
             background: '#ffffff',
             background_dark: '#ffffff',
             background_light: '#ffffff',
             background_lighter: '#ffffff',
-            anchor: '#e6ac08',
+            anchor: '#1200e8',
+            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
         },
         dark: {
             foreground: '#ffffff',
             foreground_light: '#ffffff',
             foreground_lighter: '#ffffff',
+            foreground_alt: '#ffffff',
             background: '#000000',
             background_dark: '#000000',
             background_light: '#000000',
             background_lighter: '#000000',
-            anchor: '#e6ac08',
+            anchor: '#3f8aff',
+            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
         },
         draconic: {
             foreground: '#e5074b',
             foreground_light: '#f7437a',
             foreground_lighter: '#ff759f',
+            foreground_alt: '#ffffff',
             background: '#04040F',
             background_dark: '#000000',
             background_light: '#101020',
             background_lighter: '#232330',
             anchor: '#e6ac08',
+            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
+        }
+    }
+    
+    // Allowed font sets
+    const fonts = {
+        draconic: {
+            main_font: 'Albertus MT',
+            alt_font: 'VCR OSD Mono',
+            mono_font: 'Jack Input',
         }
     }
 
@@ -112,7 +148,7 @@
         </div>
     </details>
 </header>
-        <main>
+        <main id="content">
             <aside class="sidebar" aria-label="Info sidebar">
                 <b>Listening to...</b>
                 <ul>
@@ -135,7 +171,7 @@
                 <div style="width: fit-content; margin: auto;">
                     <script src="https://transring.neocities.org/ring.js"></script>
                 </div>
-                <div>
+                <div id="alterhuman-ring">
                     <script src="https://www.zpires.com/style/scripts/onionring/onionring-variables.js"></script>
                     <script src="https://www.zpires.com/style/scripts/onionring/onionring-widget.js"></script>
                 </div>
@@ -150,17 +186,13 @@
                 </p>
                 <h2>Roadmap (in no particular order):</h2>
                 <ul>
-                    <li>Change dropdowns on Contact to lists</li>
                     <li>get a library card guide/blog post</li>
                     <li>finish off Dragon Code Encoder</li>
                     <li>starter guide (flowchart??) to building a website (SSG, hosts, generators, libraries, straight (jorkin) code, etc.)</li>
-                    <li>add audio playing functionality to Music type Creations</li>
                     <li>add option for more paragraphs to JSON generator (for loop based on postParas)</li>
                     <li>integrate last.fm "recently played" (might need supporter???)</li>
                     <li>add guestbook (requires supporter)</li>
                     <li>Transfer projects onto the site</li>
-                    <li>Figure out audio or YT embed for music</li>
-                    <li>join webrings ( <a href="https://isaacfish.neocities.org/webring/" target="blank">4</a> )</li>
                     <li><a href="https://garlic.garden/onionring/" target="blank">Host GC webring</a> (dey gotta make site first >:3)</li>
                     <li>RSS feed, select for blog/project-[type]</li>
                 </ul>

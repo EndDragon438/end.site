@@ -3,9 +3,10 @@
     <head>
         {{ head }}
     </head>
-    <body>
+    <body id="top">
+        {{ before }}
         {{ header }}
-        <main>
+        <main id="content">
             <aside class="sidebar" aria-label="Info sidebar">
                 <b>Listening to...</b>
                 {{ listening_to }}
@@ -21,7 +22,7 @@
                 <div style="width: fit-content; margin: auto;">
                     <script src="https://transring.neocities.org/ring.js"></script>
                 </div>
-                <div>
+                <div id="alterhuman-ring">
                     <script src="https://www.zpires.com/style/scripts/onionring/onionring-variables.js"></script>
                     <script src="https://www.zpires.com/style/scripts/onionring/onionring-widget.js"></script>
                 </div>
@@ -36,17 +37,13 @@
                 </p>
                 <h2>Roadmap (in no particular order):</h2>
                 <ul>
-                    <li>Change dropdowns on Contact to lists</li>
                     <li>get a library card guide/blog post</li>
                     <li>finish off Dragon Code Encoder</li>
                     <li>starter guide (flowchart??) to building a website (SSG, hosts, generators, libraries, straight (jorkin) code, etc.)</li>
-                    <li>add audio playing functionality to Music type Creations</li>
                     <li>add option for more paragraphs to JSON generator (for loop based on postParas)</li>
                     <li>integrate last.fm "recently played" (might need supporter???)</li>
                     <li>add guestbook (requires supporter)</li>
                     <li>Transfer projects onto the site</li>
-                    <li>Figure out audio or YT embed for music</li>
-                    <li>join webrings ( <a href="https://isaacfish.neocities.org/webring/" target="blank">4</a> )</li>
                     <li><a href="https://garlic.garden/onionring/" target="blank">Host GC webring</a> (dey gotta make site first >:3)</li>
                     <li>RSS feed, select for blog/project-[type]</li>
                 </ul>
@@ -77,7 +74,7 @@
                         <a class="button" href="https://yesterweb.org/"><img src="/resources/images/no2web3.gif" alt="say no to web3 tech! from yesterweb.org" title="say no to web3 tech! from yesterweb.org"></a>
                         <a class="button" href="https://yesterweb.org/"><img src="/resources/images/yesterweb_button.png" alt="yesterweb movement link. from yesterweb.org" title="yesterweb movement link. from yesterweb.org"></a>
                         <a class="button" href="https://jigsaw.w3.org/css-validator/check/referer"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" title="Valid CSS!"></a>
-                        <a class="button" href="#"><img src="/resources/images/wave_score_button.gif" alt="my sites WebAIM WAVE accessibility score of 10/10" title="my sites WebAIM WAVE accessibility score of 10/10"></a>
+                        <a class="button" href="#"><img src="/resources/images/wave_score_button.png" alt="my sites WebAIM WAVE accessibility score of 10/10" title="my sites WebAIM WAVE accessibility score of 10/10"></a>
                         <a class="button" href="https://www.tumblr.com/blinkees"><img class="flashing" src="/resources/images/i_heart_dragons.gif" alt="I &lt;3 dragons surrounded by two dragons waving their tails. made by @blinkees on tumblr!" title="I &lt;3 dragons surrounded by two dragons waving their tails. made by @blinkees on tumblr!" height=45></a>
                     </details>
                 </div>
@@ -337,5 +334,6 @@
         <footer>
             <p>{{ last_modified }}</p>
         </footer>
+        {{ after }}
     </body>
 </html>

@@ -3,9 +3,9 @@
     <head>
         {{ head }}
     </head>
-    <body>
+    <body id="top">
         {{ header }}
-        <main>
+        <main id="content">
             <div class="tagPage" style="width: 80%;">
                 <h1>Tagged: {{ gen: tagName }}</h1>
                 {{ gen: pageList }}

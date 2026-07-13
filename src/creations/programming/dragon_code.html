@@ -73,8 +73,9 @@
             }
         </style>
     </head>
-    <body onLoad="speciesSelect()">
-        <main>
+    <body id="top" onLoad="speciesSelect()">
+        {{ before }}
+        <main id="content">
             <div>
                 <h1 style="background: var(--background); border-radius: 5px; padding: 0.25em; text-align: center;">The Dragon Code</h1>
                 <noscript>The Decoder/Encoder will not work without JS, but you can still read the info! Here's a text-only reference for the code if you like: <a rel="alternate" href="./dragon_text.html">Text Only Version</a>'</noscript>
@@ -1443,5 +1444,6 @@
             <p><a href="/home.html">&gt; BACK TO HOME &lt;</a></p>
         </footer>
         <script src="./resources/dragon_code.js"></script>
+        {{ after }}
     </body>
 </html>

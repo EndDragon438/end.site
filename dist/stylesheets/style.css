@@ -22,28 +22,19 @@
 =====================
 */
 :root {
-    color-scheme: dark;
     --foreground: #e5074b;
     --foreground-light: #f7437a;
     --foreground-lighter: #ff759f;
+    --foreground-alt: white;
     --background: #04040F;
     --background-dark: #000000;
     --background-light: #101020;
     --background-lighter: #232330;
     --anchor: #e6ac08;
     --background-image: url("/resources/images/dragons_clouds_seamless.jpg");
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color-scheme: light;
-        --foreground: #e5074b;
-        --background: #04040F;
-        --background-dark: #000000;
-        --background-light: #101020;
-        --background-lighter: #232330;
-        --anchor: #e6ac08;
-    }
+    --main-font: 'Albertus MT';
+    --alt-font: 'VCR OSD Mono';
+    --mono-font: 'Jack Input';
 }
 
 /*
@@ -70,7 +61,7 @@ header {
     height: 200px;
     background-color: var(--background);
     color: var(--foreground);
-    font-family: "VCR OSD Mono", "Albertus MT", "Helvetica";
+    font-family: var(--alt-font), var(--main-font), "Helvetica";
 }
 
 header a, header a:visited {
@@ -207,7 +198,7 @@ header > nav > ul > li > a {
 =====================
 */
 body {
-    font-family: "Albertus MT", "Helvetica";
+    font-family: var(--main-font), "Helvetica";
     background-image: var(--background-image);
     margin: 0;
     padding: 0;
@@ -299,7 +290,7 @@ strong {
 }
 
 code {
-    font-family: 'Jack Input';
+    font-family: var(--mono-font);
     background-color: var(--background-light);
     padding: 0 0.5em;
     border-radius: 3px;
@@ -316,16 +307,28 @@ a:hover {
 
 /* Pixel font */
 .pixel {
-    font-family: 'VCR OSD Mono';
+    font-family: var(--alt-font);
 }
 
 .caps {
     text-transform: uppercase;
 }
 
+.focus-only:not(:focus) {
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border-width: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
 /* button styling */
 button {
-    font-family: 'VCR OSD Mono';
+    font-family: var(--alt-font);
     position: relative;
     background-color: var(--foreground);
     border-radius: 5px;
@@ -450,7 +453,7 @@ footer {
 }
 
 footer > p {
-    font-family: 'VCR OSD Mono';
+    font-family: var(--alt-font);
     text-align: center;
     margin: 0;
     padding: 5px;

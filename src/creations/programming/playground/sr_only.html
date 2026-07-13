@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ head_playground }}
+    </head>
+    <body id="top">
+        {{ before }}
+        {{ header_playground }}
+        <main id="content">
+            <div>
+                <p>
+                    &emsp;Inspired by my regular webdev work, i've got some screenreader-only elements on this
+                    site! What that means, is that there are bits of this site that most users can't see,
+                    only those that are using screen readers (although in my case most of those elements
+                    are also visible when focused). This is a super useful (and simple!) technique to give
+                    screenreader users more options for navigation, like a 'skip to content' button to skip
+                    past the repetitive header on every page.
+                </p>
+                <p>
+                    &emsp;There are <a href="https://webaim.org/techniques/css/invisiblecontent/">several ways</a> to
+                    implement screenreader-only (or sr-only for short) elements on the web. The method i use is
+                    the same one the Tailwind CSS library uses. It looks like this:
+                </p>
+<pre>
+.sr-only {
+    clip-path: inset(50%);
+	white-space: nowrap;
+	border-width: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+</pre>
+                <p>
+                    &emsp;This pretty much just makes the element <em>super</em> tiny, too tiny to even be rendered.
+                    That way, it's not visible, but it's still content on the page so screenreaders can see it.
+                </p>
+                <p>
+                    &emsp;Most of the time, i don't actually <em>fully</em> hide these elements from non-SR users. I
+                    often have them visible when <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus">focused</a>,
+                    which is what it's called when an element has that lil box around it (usually from being selected with <code>Tab</code>)
+                    By doing it this way, anyone trying to navigate my website with their keyboard can get around quickly
+                    and see the extra tools i've given them to do so. It's super easy to add this bit, it looks like this:
+                </p>
+<pre>
+.focus-only:not(:focus) {
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border-width: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+</pre>
+                <p>
+                    &emsp;All that's changed is the selector. It's now targeting the <code>.focus-only</code> class,
+                    and <em>only when not focused</em>. That's it.
+                </p>
+                {{ copying_playground }}
+            </div>
+        </main>
+        {{ after }}
+    </body>
+</html>

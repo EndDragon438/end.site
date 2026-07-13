@@ -11,8 +11,119 @@
 <title>end.site</title>
 <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="all">
     </head>
-    <body>
-        <main class="pixel">
+    <body id="top">
+        <!--
+Hello there, and welcome to my source code! Feel free to poke around and
+have yourself a look-see.
+
+You're also free to copy, modify, and share anything you find on here (yes, including my art)
+as you please, and attribution is not necessary though it is appreciated.
+
+If you make something particularly cool with stuff I've made, let me know! I'd love to see it!
+
+If you need help with webmastery, or have a question about my site, feel
+free to contact me (contact information can be found on my about page)
+
+- end draconis
+-->
+<div>
+    <a href="#content" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--background); border: 3px solid var(--foreground); padding: 0.5em;">Skip to content</a>
+</div>
+<div>
+    <a href="#top" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--background); border: 3px solid var(--foreground); padding: 0.5em;">Back to top</a>
+</div>
+<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background-color: var(--background); color: var(--foreground); padding: 0.25em; border: 3px solid var(--foreground); bottom: 1em; right: 1em;">
+    <details>
+        <summary>Swap theme</summary>
+        <fieldset>
+            <legend>Themes</legend>
+            <input type="radio" name="theme" id="lightTheme" value="light">
+            <label for="lightTheme">Light</label>
+            <input type="radio" name="theme" id="darkTheme" value="dark">
+            <label for="darkTheme">Dark</label>
+            <input type="radio" name="theme" id="draconicTheme" value="draconic">
+            <label for="draconicTheme">Draconic</label>
+        </fieldset>
+    </details>
+</div>
+<script>
+    // Allowed themes
+    const themes = {
+        light: {
+            foreground: '#000000',
+            foreground_light: '#000000',
+            foreground_lighter: '#000000',
+            foreground_alt: '#000000',
+            background: '#ffffff',
+            background_dark: '#ffffff',
+            background_light: '#ffffff',
+            background_lighter: '#ffffff',
+            anchor: '#1200e8',
+            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
+        },
+        dark: {
+            foreground: '#ffffff',
+            foreground_light: '#ffffff',
+            foreground_lighter: '#ffffff',
+            foreground_alt: '#ffffff',
+            background: '#000000',
+            background_dark: '#000000',
+            background_light: '#000000',
+            background_lighter: '#000000',
+            anchor: '#3f8aff',
+            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
+        },
+        draconic: {
+            foreground: '#e5074b',
+            foreground_light: '#f7437a',
+            foreground_lighter: '#ff759f',
+            foreground_alt: '#ffffff',
+            background: '#04040F',
+            background_dark: '#000000',
+            background_light: '#101020',
+            background_lighter: '#232330',
+            anchor: '#e6ac08',
+            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
+        }
+    }
+    
+    // Allowed font sets
+    const fonts = {
+        draconic: {
+            main_font: 'Albertus MT',
+            alt_font: 'VCR OSD Mono',
+            mono_font: 'Jack Input',
+        }
+    }
+
+    // If the theme isn't defined, default to dark theme
+    if (!localStorage['data-theme']) {
+        changeTheme('dark');
+    }
+    
+    // Always set the variables on load
+    changeTheme(null);
+    
+    // Change theme whenever the themepicker changes
+    document.getElementById('themePicker').addEventListener('click', (event) => {
+        changeTheme(document.querySelector('input[name="theme"]:checked')?.value)
+    })
+    
+    function changeTheme(theme) {
+        // Store the theme, or replace the theme with the stored one if undefined
+        if (Object.keys(themes).includes(theme)) {
+            localStorage['data-theme'] = theme;
+        } else {
+            theme = localStorage['data-theme'];
+        }
+        
+        // Change the variable values to those of the theme
+        for (val in themes[theme]) {
+            document.body.style.setProperty(`--${val.replace('_', '-')}`, themes[theme][val]);
+        }
+    }
+</script>
+        <main id="content" class="pixel">
             <div style="width: 20%; text-align: center;">
                 <h1>ERROR 404</h1>
                 <br>
@@ -21,5 +132,6 @@
                 <p><a href="/home.html">&gt; HOME &lt;</a></p>
             </div>
         </main>
+        
     </body>
 </html>

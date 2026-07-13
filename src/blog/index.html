@@ -3,9 +3,10 @@
     <head>
         {{ head }}
     </head>
-    <body>
+    <body id="top">
+        {{ before }}
         {{ header }}
-        <main>
+        <main id="content">
             <div>
                 <h1>Blog</h1>
                 {{ gen: blogPosts }}
@@ -14,5 +15,6 @@
         <footer>
             <p>END IS TYPING...</p>
         </footer>
+        {{ after }}
     </body>
 </html>

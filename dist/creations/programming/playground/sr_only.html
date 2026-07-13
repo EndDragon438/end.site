@@ -215,30 +215,58 @@ free to contact me (contact information can be found on my about page)
         <main id="content">
             <div>
                 <p>
-                    &emsp;As you may have noticed, i have a theme switcher! It's the lil dropdown in the bottom
-                    right of the site, if you open it up you'll see the themes i've currently got. It's a
-                    JavaScript widget i threw together, which uses <code>localStorage</code> to persist
-                    theme preferences across my site!
+                    &emsp;Inspired by my regular webdev work, i've got some screenreader-only elements on this
+                    site! What that means, is that there are bits of this site that most users can't see,
+                    only those that are using screen readers (although in my case most of those elements
+                    are also visible when focused). This is a super useful (and simple!) technique to give
+                    screenreader users more options for navigation, like a 'skip to content' button to skip
+                    past the repetitive header on every page.
                 </p>
                 <p>
-                    &emsp;Basically the way it works, is i've got the floating div over there which has a named
-                    radio button group to pick the theme. Each of those inputs has a <code>value</code>
-                    with the name of the theme in it, so in the script I grab the selected theme with
-                    a <code>document.querySelector('input[name="theme"]:checked')?.value</code> and pass
-                    it to my theme swapper. I also check if there's a theme already selected or not, and
-                    set the theme accordingly.
+                    &emsp;There are <a href="https://webaim.org/techniques/css/invisiblecontent/">several ways</a> to
+                    implement screenreader-only (or sr-only for short) elements on the web. The method i use is
+                    the same one the Tailwind CSS library uses. It looks like this:
+                </p>
+<pre>
+.sr-only {
+    clip-path: inset(50%);
+	white-space: nowrap;
+	border-width: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+</pre>
+                <p>
+                    &emsp;This pretty much just makes the element <em>super</em> tiny, too tiny to even be rendered.
+                    That way, it's not visible, but it's still content on the page so screenreaders can see it.
                 </p>
                 <p>
-                    &emsp;The theme swapper itself is pretty simple. I've got a big dictionary (in Python terms)
-                    which for each theme stores the name of <strong>all</strong> the variables i use in my CSS, along with
-                    their values for that theme. The theme swapper iterates over the CSS variables and sets
-                    new values. That's it. Super easy. I also have the option of changing the background
-                    image (which i think i'll do as soon as a make some new ones) and i plan on making it
-                    so you can swap font sets too!
+                    &emsp;Most of the time, i don't actually <em>fully</em> hide these elements from non-SR users. I
+                    often have them visible when <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:focus">focused</a>,
+                    which is what it's called when an element has that lil box around it (usually from being selected with <code>Tab</code>)
+                    By doing it this way, anyone trying to navigate my website with their keyboard can get around quickly
+                    and see the extra tools i've given them to do so. It's super easy to add this bit, it looks like this:
                 </p>
+<pre>
+.focus-only:not(:focus) {
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border-width: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+}
+</pre>
                 <p>
-                    &emsp;Feel free to check out the source for the widget! It's on just about every page
-                    on this site, so you can find it pretty easily. It's right above the header in the code.
+                    &emsp;All that's changed is the selector. It's now targeting the <code>.focus-only</code> class,
+                    and <em>only when not focused</em>. That's it.
                 </p>
                 <p>
     &emsp;As always, you (yes you! and anyone else!) are free to copy, modify,

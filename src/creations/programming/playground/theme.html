@@ -3,14 +3,40 @@
     <head>
         {{ head_playground }}
     </head>
-    <body>
+    <body id="top">
+        {{ before }}
         {{ header_playground }}
-        <main>
+        <main id="content">
             <div>
                 <p>
-                    i'm building a theme switcher, gimme a sec.
+                    &emsp;As you may have noticed, i have a theme switcher! It's the lil dropdown in the bottom
+                    right of the site, if you open it up you'll see the themes i've currently got. It's a
+                    JavaScript widget i threw together, which uses <code>localStorage</code> to persist
+                    theme preferences across my site!
                 </p>
+                <p>
+                    &emsp;Basically the way it works, is i've got the floating div over there which has a named
+                    radio button group to pick the theme. Each of those inputs has a <code>value</code>
+                    with the name of the theme in it, so in the script I grab the selected theme with
+                    a <code>document.querySelector('input[name="theme"]:checked')?.value</code> and pass
+                    it to my theme swapper. I also check if there's a theme already selected or not, and
+                    set the theme accordingly.
+                </p>
+                <p>
+                    &emsp;The theme swapper itself is pretty simple. I've got a big dictionary (in Python terms)
+                    which for each theme stores the name of <strong>all</strong> the variables i use in my CSS, along with
+                    their values for that theme. The theme swapper iterates over the CSS variables and sets
+                    new values. That's it. Super easy. I also have the option of changing the background
+                    image (which i think i'll do as soon as a make some new ones) and i plan on making it
+                    so you can swap font sets too!
+                </p>
+                <p>
+                    &emsp;Feel free to check out the source for the widget! It's on just about every page
+                    on this site, so you can find it pretty easily. It's right above the header in the code.
+                </p>
+                {{ copying_playground }}
             </div>
         </main>
+        {{ after }}
     </body>
 </html>

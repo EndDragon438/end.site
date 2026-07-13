@@ -3,8 +3,9 @@
     <head>
         {{ head }}
     </head>
-    <body>
-        <main>
+    <body id="top">
+        {{ before }}
+        <main id="content">
             <div style="text-align: center;">
                 <img src="/resources/images/icon.png" style="max-height: 300px;" alt="The sites icon">
                 <h1 class="pixel">WELCOME TO END.SITE</h1>
@@ -13,12 +14,17 @@
                     <br><br>
                     personal site, hoard, blog, and project dump of end!
                     <br><br>
-                    mostly accessible down to 450px wide, i don't put much focus on responsiveness. developed on desktop firefox.
-                    <br><br>
-                    minimal flashing lights (blurred by default, shown on hover), semantic HTML
-                    <br><br>
-                    fully javascript free, excepting some specific projects.
-                    <br><br>
+                    developed on desktop firefox
+                    <ul style="list-style: none;">
+                        <li>10/10 WebAIM WAVE accessibility score</li>
+                        <li>Mostly usable down to 450px wide (not a big focus)</li>
+                        <li>Minimal flashing lights (blurred by default, shown on hover)</li>
+                        <li>Semantic HTML (header/main/footer, etc.)</li>
+                        <li>100% functional without javascript, except some specific projects</li>
+                        <li>Defaults to accessible high-contrast theme, other themes available through JS theme swapper in bottom right</li>
+                        <li>All non-decorative images have alt text, and some decorative ones</li>
+                        <li>Back to top and jump to content links available as first focusable elements (only visible on focus)</li>
+                    </ul>
                     <a href="/home.html">-ENTER-</a>
                 </p>
             </div>
@@ -26,5 +32,6 @@
         <footer>
             <p>{{ last_modified }}</p>
         </footer>
+        {{ after }}
     </body>
 </html>

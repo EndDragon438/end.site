@@ -4,9 +4,10 @@
         <title>Welcome to end.site!</title>
         {{ head_notitle }}
     </head>
-    <body>
+    <body id="top">
+        {{ before }}
         {{ header }}
-        <main>
+        <main id="content">
             <div>
                 <article class="h-entry">
                     <h1 id="p-name">Welcome to end.site!!!</h1> <!-- enter article title here -->
@@ -60,5 +61,6 @@
         <footer>
             <p>{{ last_modified }}</p>
         </footer>
+        {{ after }}
     </body>
 </html>

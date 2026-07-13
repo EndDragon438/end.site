@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ head_playground }}
+    </head>
+    <body id="top">
+        {{ before }}
+        {{ header_playground }}
+        <main id="content">
+            <div>
+                <p>
+                    &emsp;Okay, this one's a big one!
+                </p>
+                <p>
+                    &emsp;I've build a little mini SSG (stands for Static Site Generator) for my site,
+                    to help me in making changes across a whole bunch of my pages. I've broken up the
+                    capabilities of the SSG into three categories (along with a bit of miscellaneous
+                    stuff): basic includes, data, and generators.
+                </p>
+                <p>
+                    &emsp;The basic includes are pretty much what they sound like: just identical snippets
+                    i can put wherever on a page, then update from one spot without worrying about
+                    all the pages i've put it on. All my templates (from all three categories) kind of
+                    mimic <a href="https://shopify.github.io/liquid/">Liquid</a> templates, but that's
+                    pretty much just aesthetic. I use these ones for my headers, the sr-only widgets,
+                    the theme switcher, and a few other things.
+                </p>
+                <p>
+                    &emsp;Data includes get a bit more interesting. They're around because some of the
+                    pages on my site are actually written in a data format (TOML to be specific), and
+                    then transformed into webpages by the SSG. Data includes just grab a bit of data
+                    from the file, and insert it into the page, maybe with a bit of formatting. I use
+                    these for all the pages in Creations that look like they share a template (cause
+                    they do!). That isn't all my Creations pages, i can also just stick a regular page
+                    in there (though i do have to add it to a list when i do, for the tag pages).
+                </p>
+                <p>
+                    &emsp;Generator includes are the most interesting, and the most varied by far. These
+                    are used for content that is dynamic (as in frequently changing) and dependent on
+                    other variables. Every one of these includes is handmade, unique, so there's not
+                    really a specific way they work. I use these to list pages associated with a tag
+                    in my tag pages, list <em>all</em> the tags on my "Tags" page, list all my blog posts
+                    and one other secret thing!
+                </p>
+                <p>
+                    &emsp;Oh, i almost forgot to mention! Remember when i was talking about the data includes
+                    earlier, and i said that some of the creation pages are templated? Well, the templates
+                    are also handled by the SSG! Each one is a webpage template with structure specific
+                    to the project type (e.g. 2d, programming, writing, etc.) that itself includes more
+                    templates. Which leads me to another feature: the templating system is recursive (via a
+                    while loop that is), so templates can include other templates! This gives me access to a
+                    <em>really</em> powerful level of abstraction, and is super handy.
+                </p>
+                <p>
+                    &emsp;That's about all the overall features of the mini SSG! I've brushed over a lot
+                    of details in this explanation, so if you want to learn more check out the
+                    <a href="https://github.com/EndDragon438/end.site/blob/main/mini_ssg.py">source</a> for
+                    the project! It's written in Python (the language i'm most comfortable with at the moment)
+                    which is a pretty readable language even if you don't have experience with it personally.
+                    My code isn't super pretty, but i've tried to add some comments and such throughout
+                    to make it more understandable. Have fun!
+                </p>
+                {{ copying_playground }}
+            </div>
+        </main>
+        {{ after }}
+    </body>
+</html>

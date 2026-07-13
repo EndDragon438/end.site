@@ -30,8 +30,9 @@
             }
         </style>
     </head>
-    <body>
-        <main>
+    <body id="top">
+        {{ before }}
+        <main id="content">
             <div>
                 <p>don't really use this anymore, 'specially after the SSG, but it's stuck around for posterity!</p>
                 <div>
@@ -174,5 +175,6 @@
             </div>
         </main>
         <script src="./resources/json_generator.js"></script>
+        {{ after }}
     </body>
 </html>
