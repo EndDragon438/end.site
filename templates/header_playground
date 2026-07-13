@@ -1,0 +1,89 @@
+<header>
+    <a href="/creations/programming/playground/index.html" id="home">
+        <img src="/resources/images/icon.png" alt="The sites icon, a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
+        <span class="pixel">the playground</span>
+    </a>
+    <nav>
+        <ul>
+            <li>
+                <details name="header">
+                    <summary>HTML</summary>
+                </details>
+                <div>
+                    <ul>
+                        <li><a href="./index.html#headerInfo">NoJS tabs</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <details name="header">
+                    <summary>CSS</summary>
+                </details>
+                <div>
+                    <ul>
+                        <li>No CSS snippets yet!</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <details name="header">
+                    <summary>JS</summary>
+                </details>
+                <div>
+                    <ul>
+                        <li><a href="./theme.html">Theme switcher</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <details name="header">
+                    <summary>Misc</summary>
+                </details>
+                <div>
+                    <ul>
+                        <li>No Misc snippets yet!</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <details id="collapsedNav">
+        <summary>≡</summary>
+        <nav>
+            <ul>
+                <li>
+                    <details name="collapsedHeader">
+                        <summary>HTML</summary>
+                        <ul>
+                            <li><a href="./index.html#headerInfo">NoJS tabs</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details name="collapsedHeader">
+                        <summary>CSS</summary>
+                        <ul>
+                            <li>Nothing here yet!</li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details name="collapsedHeader">
+                        <summary>JS</summary>
+                        <ul>
+                            <li><a href="./theme.html">Theme switcher</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details name="collapsedHeader">
+                        <summary>Misc</summary>
+                        <ul>
+                            <li>Nothing here yet!</li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+    </details>
+</header>

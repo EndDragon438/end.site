@@ -4,14 +4,104 @@
         {{ head_playground }}
     </head>
     <body>
+        {{ header_playground }}
         <main>
             <div>
                 <p>
-                    hiya! welcome to the playground!<br>
-                    this is a space for me to fuck around with web stuff without worrying about
+                    &emsp;hiya! welcome to the playground!<br>
+                    &emsp;this is a space for me to fuck around with web stuff without worrying about
                     it being at all usable or even functional. it's still heavily under construction,
                     but i'm planning on having pages showing off lil snippets maybe with a bit of
                     description.
+                </p>
+                <p>
+                    &emsp;Anyone is welcome to use anything i've made in the playground for whatever purpose,
+                    like the rest of my site the playground is licensed under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
+                    license. Attribution isn't necessary but is appreciated. If you've got any questions,
+                    or want some help, feel free to get in contact with me! (contact info is in <a href="/about">About</a> &gt; Contact)
+                </p>
+                <p style="text-align: center; font-size: 2em;">
+                    <a href="/home.html">&gt; BACK TO HOME &lt;</a>
+                </p>
+            </div>
+            <div id="headerInfo">
+                <p>
+                    &emsp;To start, i'll talk about how i made the header for the playground, particularly the
+                    tabs!
+                </p>
+                <p>
+                    &emsp;The header has a similar structure to the header of the main site, with a main flexbox
+                    containing a 'home' section with the site icon and name, then the navbar over on the right
+                    (with <code>margin-left: auto;</code>) which is where the real magic happens!
+                </p>
+<pre>
+&lt;header&gt;
+    &lt;a href="..." id="home"&gt;
+        &lt;img src="..." alt="..."&gt;
+        &lt;span class="pixel"&gt;the playground&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;nav&gt;
+        &lt;!-- where the magic happens! --&gt;
+    &lt;/nav&gt;
+    ...
+&lt;/header&gt;
+</pre>
+                <p>
+                    &emsp;So, inside that nav section i've got a <code>&lt;ul&gt;</code>, which has each nav button
+                    inside its own <code>&lt;li&gt;</code>.
+                </p>
+                <p>
+                    &emsp;Each nav button is made up of a pair of elements, a <code>&lt;details&gt;</code> first, and
+                    then a <code>&lt;div&gt;</code>. Each of the details share a name, and their <code>&lt;summary&gt;</code>
+                    has the name of the nav item. Sharing a name makes it so only one of them can be open at once,
+                    which is great for a navbar, and because they're details elements all of them can be closed
+                    at once, unlike a radio button group.
+                </p>
+                <p>
+                    &emsp;The divs are set to <code>display: none;</code> by default, and are only displayed when their
+                    paired <code>&lt;details&gt;</code> is open, with a simple CSS selector. They are also given
+                    <code>position: absolute;</code>, so they don't mess with their containing elements and can be
+                    put in the right spot.
+                </p>
+<pre>
+header > nav div {
+    display: none;
+    position: absolute;
+    right: 0; /* can also do `left: 0;` if you prefer them on the left, or mix n match */
+    transform: translateY(...); /* Use if your divs are too high/low, often due to padding */
+    /* ... */
+}
+
+header > nav > ul > li details[open] + div {
+    display: block;
+}
+</pre>
+                <p>
+                    &emsp;And that's really it for the tabs! It's a fairly simple system, which works great for it's
+                    purpose. You can put whatever you like in those divs, i'm using just a <code>&lt;ul&gt;</code>
+                    at the moment, and i might often nest some more <code>&lt;details&gt;</code> for nested lists,
+                    but it'll work with whatever.
+                </p>
+                <p>
+                    &emsp;This method does have a few limitations. While this method can be used to make tabs generally,
+                    the details and divs <em>have</em> to be next to each other (as far as i'm aware, please show me
+                    how if not!). This makes positioning a real hassle if you <em>don't</em> want them visually next
+                    to each other. The possibility of all of them being closed also may be a downside for your use,
+                    in a navbar it's great but for regular tabs on a webpage it might not be so good. If you want
+                    some NoJS tabs that are better for that, i'd recommend another method i've found from <a href="https://bytemoth.neocities.org/">Bytemoth</a>,
+                    my implementation of which can be found <a href="/stylesheets/tabs.css">here</a>.
+                </p>
+                <p>
+                    &emsp;Now, there is one bit of my header i've yet to talk about which you <em>might</em> have noticed
+                    (probably not). It's mobile responsive! When the viewport is too narrow to display the full
+                    navbar, it collapses down into a lil hamburger menu. This is also all NoJS! It's actually
+                    done in a similar way to the tabs, I've just got a <code>&lt;details&gt;</code> with the
+                    summary containing a unicode symbol that looks a lot like a hamburger menu (≡, U+2261)
+                    and it's contents are a <code>position: absolute;</code> div with some more dropdowns (named)
+                    containing lists for each nav category. The menu is displayed/hidden based on breakpoints,
+                    which i just got from when the full nav overflows on my screen (not necessarily on everyone's
+                    screen). The dropdowns are pretty much just mirrored from the main nav. It's really quite simple,
+                    the hardest part was just finding the right unicode symbol lol.
                 </p>
             </div>
         </main>

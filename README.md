@@ -11,29 +11,24 @@ if you like (though good luck working with something that isn't my site lol),
 it's licensed under the GPLv3, a free, copyleft license.
 
 ## TODO:
-- rework socials page into Contacts, make better (no dropdowns, lists)
-- finish DC Encoder
-- debug DC Decoder/Encoder (kidnap some testers)
+- Dragon Code
+    - Finish Encoder
+    - Rewrite Decoder (i know how to program better now. hopefully)
+    - Debug. Shits brokey all over
 - write library propaganda post (blog)
 - starter guide to building a website (SSGs, hosts, code, etc.)
-- USA legal resources post
-- playable audio in Creations/Music
 - option for more paragraphs in post generator (for loop based on postParas)
 - last.fm recently played widget (may need supporter, or python implementation)
 - add guestbook (supporter, or python implementation)
 - move more projects onto site
-- join (or start :3) webrings
 - Stylesheet
     - Figure out how to render scroll bar under header/footer
-    - Swap to using variables everywhere
     - Build several themes; build theme switcher, default to legible theme (if no js)
-    - Make sure font sizes are all in `em` (can scale base at body/root)
-    - Make sure headings are all inserted properly for accessibility
 - Mini SSG
     - Build RSS generator (select for category, creation type, etc.)
-- ooooo checkout [the brook](https://bytemoth.neocities.org/) for a different design of
-CSS only tabs. they use paired input/labels, with the inputs hidden and next to the divs,
-with the labels wherever which works cause clicking on the labels counts as clicking the
-inputs!!!! that's so fucking cool.
 - acab, autism, codewontwork, end.site, fictionfolk, i_heart_dragons, musicbee, no2web3,
-palestine blinkies have FPS > 3
+palestine blinkies have FPS > 3 (fine cause very tiny, not causing too much bright)
+
+Potential webrings:
+- [Code collective](https://petrapixel.neocities.org/webring) (resource sharing)
+- [Queer coded](https://isaacfish.neocities.org/webring/) (queer)
