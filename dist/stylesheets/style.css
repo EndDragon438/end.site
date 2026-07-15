@@ -42,9 +42,9 @@
     --background-lighter: #232330;
     --anchor: #e6ac08;
     --background-image: url("/resources/images/dragons_clouds_seamless.jpg");
-    --main-font: 'Albertus MT';
-    --bitmap-font: 'VCR OSD Mono';
-    --mono-font: 'JetBrains Mono';
+    --main-font: 'Albertus MT', serif;
+    --bitmap-font: 'VCR OSD Mono', sans-serif;
+    --mono-font: 'JetBrains Mono', monospace;
 }
 
 /*
