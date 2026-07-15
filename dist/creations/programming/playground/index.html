@@ -140,42 +140,42 @@ free to contact me (contact information can be found on my about page)
             <li>
                 <details name="header">
                     <summary>HTML</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./index.html#headerInfo">NoJS header tabs</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./index.html#headerInfo">NoJS header tabs</a></li>
-                    </ul>
-                </div>
             </li>
             <li>
                 <details name="header">
                     <summary>CSS</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./sr_only.html">Screenreader-only elements</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./sr_only.html">Screenreader-only elements</a></li>
-                    </ul>
-                </div>
             </li>
             <li>
                 <details name="header">
                     <summary>JS</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./theme.html">Theme switcher</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./theme.html">Theme switcher</a></li>
-                    </ul>
-                </div>
             </li>
             <li>
                 <details name="header">
                     <summary>Misc</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./mini_ssg.html">Mini SSG</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./mini_ssg.html">Mini SSG</a></li>
-                    </ul>
-                </div>
             </li>
         </ul>
     </nav>
@@ -266,22 +266,21 @@ free to contact me (contact information can be found on my about page)
                 </p>
                 <p>
                     &emsp;Each nav button is made up of a pair of elements, a <code>&lt;details&gt;</code> first, and
-                    then a <code>&lt;div&gt;</code>. Each of the details share a name, and their <code>&lt;summary&gt;</code>
+                    then a nested <code>&lt;div&gt;</code>. Each of the details share a name, and their <code>&lt;summary&gt;</code>
                     has the name of the nav item. Sharing a name makes it so only one of them can be open at once,
                     which is great for a navbar, and because they're details elements all of them can be closed
                     at once, unlike a radio button group.
                 </p>
                 <p>
-                    &emsp;The divs are set to <code>display: none;</code> by default, and are only displayed when their
-                    paired <code>&lt;details&gt;</code> is open, with a simple CSS selector. They are also given
+                    &emsp;Because the divs are inside the details, they aren't displayed by default and are only
+                    displayed when their paired <code>&lt;details&gt;</code> is open. They are also given
                     <code>position: absolute;</code>, so they don't mess with their containing elements and can be
                     put in the right spot.
                 </p>
 <pre>
 header > nav div {
-    display: none;
     position: absolute;
-    right: 0; /* can also do `left: 0;` if you prefer them on the left, or mix n match */
+    right: 0; /* can also do `left: 0;` if you prefer them on the left, or mix n match, if they're going *all* the way left try making the &lt;ul&gt; `position: relative;` */
     transform: translateY(...); /* Use if your divs are too high/low, often due to padding */
     /* ... */
 }

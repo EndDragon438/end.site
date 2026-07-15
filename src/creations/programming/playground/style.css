@@ -228,7 +228,6 @@ header > nav details summary::marker {
 }
 
 header > nav div {
-    display: none;
     position: absolute;
     right: 0;
     
@@ -236,10 +235,6 @@ header > nav div {
     border: 3px solid var(--foreground);
     padding: 0.2em;
     font-size: 0.75em;
-}
-
-header > nav > ul > li details[open] + div {
-    display: block;
 }
 
 header > nav div ul {

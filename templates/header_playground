@@ -8,42 +8,42 @@
             <li>
                 <details name="header">
                     <summary>HTML</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./index.html#headerInfo">NoJS header tabs</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./index.html#headerInfo">NoJS header tabs</a></li>
-                    </ul>
-                </div>
             </li>
             <li>
                 <details name="header">
                     <summary>CSS</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./sr_only.html">Screenreader-only elements</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./sr_only.html">Screenreader-only elements</a></li>
-                    </ul>
-                </div>
             </li>
             <li>
                 <details name="header">
                     <summary>JS</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./theme.html">Theme switcher</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./theme.html">Theme switcher</a></li>
-                    </ul>
-                </div>
             </li>
             <li>
                 <details name="header">
                     <summary>Misc</summary>
+                    <div>
+                        <ul>
+                            <li><a href="./mini_ssg.html">Mini SSG</a></li>
+                        </ul>
+                    </div>
                 </details>
-                <div>
-                    <ul>
-                        <li><a href="./mini_ssg.html">Mini SSG</a></li>
-                    </ul>
-                </div>
             </li>
         </ul>
     </nav>
