@@ -129,7 +129,7 @@ def applyTemplates(text, data = None):
     Used by both static HTML pages and pages generated from JSON post data.
     """
     while re.search(r'{{.*}}', text):
-        name = re.search(r'{{.*}}', text).span()
+        name = re.search(r'{{.*?}}', text).span()
         name = text[name[0] + 2: name[1] - 2].strip()
         if 'gen:' in name:
             # Generated template (handles tags and other lists)
@@ -196,6 +196,8 @@ def applyTemplates(text, data = None):
                 text = subData(text, f'{MONTHS[data.get(field)[1] - 1]} {data.get(field)[2]}, {data.get(field)[0]}', field, data)
             elif field == 'file':
                 text = subData(text, data.get(field), field, data)
+            elif field == 'alt':
+                text = subData(text, data.get(field), field, data)
             elif field == 'text':
                 text = subData(text, data.get(field), field, data)
             elif field == 'tags':
@@ -216,9 +218,9 @@ def applyTemplates(text, data = None):
 
 def subData(text, replacement, field, data):
     if field in data:
-        return re.sub(r'{{.*}}', replacement, text, count = 1)
+        return re.sub(r'{{.*?}}', replacement, text, count = 1)
     else:
-        return re.sub(r'.*{{.*}}.*', '', text, count = 1) # NOTE: this is a fuckin patchy job, only works if the template elem has it's own line
+        return re.sub(r'.*{{.*?}}.*', '', text, count = 1) # NOTE: this is a fuckin patchy job, only works if the template elem has it's own line
 
 if __name__ == '__main__':
     main()

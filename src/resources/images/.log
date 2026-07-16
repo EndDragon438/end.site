@@ -1,2 +1,0 @@
-/usr/bin/ffprobe  -hide_banner -v warning -of json=compact=1 -show_format -show_streams -i /run/media/end/Crucial-SSD/Creations/Programming/WebDev/end.site/src/resources/images/autism_blinkie.gif 
-=====================================================

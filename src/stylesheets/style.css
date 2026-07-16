@@ -359,31 +359,6 @@ button:active {
     box-shadow: #9b0633 4px 0 4px 0;
 }
 
-/* tab selector styling */
-.tabSelector {
-    text-align: center;
-    height: 100%;
-}
-.tabButton {
-    font-size: 2em;
-    box-shadow: #e77395 5px 5px 0px 4px;
-    border: solid;
-    border-width: 5px;
-    border-color: #31010f;
-    width: 100%;
-    margin: 8px;
-    overflow: visible;
-}
-.tabButton:hover {
-    box-shadow: #ff60cd 5px 5px 0px 4px;
-    right: 15px;
-}
-.tabButton.active {
-    background-color: #9807b5;
-    box-shadow: #ff60e7 5px 5px 0px 4px;
-    right: 20px;
-}
-
 /*
 =====================
 +++   CREATIONS   +++
@@ -422,7 +397,7 @@ button:active {
 }
 .creation-date {
     margin: 0;
-    color: white;
+    color: var(--foreground-alt);
 }
 
 .creation-tags {
@@ -443,7 +418,7 @@ button:active {
 }
 
 #tags {
-    color: white;
+    color: var(--foreground-alt);
     padding-left: 50px;
 }
 

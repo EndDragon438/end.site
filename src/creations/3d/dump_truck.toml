@@ -2,5 +2,6 @@ type = "3d"
 title = "Dump Truck"
 date = [2024, 5, 29]
 file = "3d_dump_truck.png"
+alt = "A large mining dump truck with three ladders leading up to the cab."
 text = "dont talk to me or my massive dump truck ever again"
 tags = ["2024"]

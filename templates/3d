@@ -7,7 +7,7 @@
         {{ before }}
         {{ header }}
         <main id="content">
-            <img class="creation-image" src="/creations/3d/resources/{{ data: file }}">
+            <img class="creation-image" src="/creations/3d/resources/{{ data: file }}" alt="{{ data: alt }}" title="{{ data: alt }}">
             <div class="creation-side">
                 <h1 class="creation-title">{{ data: title }}</h1>
                 <p class="creation-date">{{ data: date }}</p>
