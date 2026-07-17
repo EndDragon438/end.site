@@ -33,99 +33,159 @@ free to contact me (contact information can be found on my about page)
 - end draconis
 -->
 <div>
-    <a href="#content" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--background); border: 3px solid var(--foreground); padding: 0.5em;">Skip to content</a>
+    <a href="#content" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--col-bg); border: 3px solid var(--col-fg); padding: 0.5em;">Skip to content</a>
 </div>
 <div>
-    <a href="#top" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--background); border: 3px solid var(--foreground); padding: 0.5em;">Back to top</a>
+    <a href="#top" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--col-bg); border: 3px solid var(--col-fg); padding: 0.5em;">Back to top</a>
 </div>
-<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background-color: var(--background); color: var(--foreground); padding: 0.25em; border: 3px solid var(--foreground); bottom: 1em; right: 1em;">
+<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em">
     <details>
-        <summary>Swap theme</summary>
-        <fieldset>
-            <legend>Themes</legend>
-            <input type="radio" name="theme" id="lightTheme" value="light">
-            <label for="lightTheme">Light</label>
-            <input type="radio" name="theme" id="darkTheme" value="dark">
-            <label for="darkTheme">Dark</label>
-            <input type="radio" name="theme" id="draconicTheme" value="draconic">
-            <label for="draconicTheme">Draconic</label>
+        <summary>Swap themes</summary>
+        <fieldset style="display: flex; flex-flow: row wrap;">
+            <legend>Colours</legend>
+            <span>
+                <input type="radio" name="colours" id="draconicColours" value="draconic">
+                <label for="draconicColours">Draconic</label>
+            </span>
+            <span>
+                <input type="radio" name="colours" id="hackerColours" value="hacker">
+                <label for="hackerColours">Hacker</label>
+            </span>
+            <span>
+                <input type="radio" name="colours" id="bloodColours" value="blood">
+                <label for="bloodColours">Blood</label>
+            </span>
+            <span>
+                <input type="radio" name="colours" id="darkColours" value="dark">
+                <label for="darkColours">Dark</label>
+            </span>
+            <span>
+                <input type="radio" name="colours" id="lightColours" value="light">
+                <label for="lightColours">Light</label>
+            </span>
+        </fieldset>
+        <fieldset style="display: flex; flex-flow: row wrap;">
+            <legend>Fonts</legend>
+            <span>
+                <input type="radio" name="fonts" id="draconicTheme" value="draconic">
+                <label for="draconicTheme">Draconic</label>
+            </span>
+            <span>
+                <input type="radio" name="fonts" id="darkTheme" value="regular">
+                <label for="darkTheme">Regular</label>
+            </span>
         </fieldset>
     </details>
 </div>
 <script>
     // Allowed themes
     const themes = {
-        light: {
-            foreground: '#000000',
-            foreground_light: '#000000',
-            foreground_lighter: '#000000',
-            foreground_alt: '#000000',
-            background: '#ffffff',
-            background_dark: '#ffffff',
-            background_light: '#ffffff',
-            background_lighter: '#ffffff',
-            anchor: '#1200e8',
-            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
+        colours: { // Colour themes
+            default: 'dark',
+            draconic: {
+                col_fg: '#e5074b',
+                col_fg_light: '#f7437a',
+                col_fg_lighter: '#ff759f',
+                col_fg_alt: '#ffffff',
+                col_bg: '#04040F',
+                col_bg_dark: '#000000',
+                col_bg_light: '#101020',
+                col_bg_lighter: '#232330',
+                anchor: '#e6ac08',
+                background: 'url("/resources/images/dragons_clouds_seamless.jpg")',
+            },
+            hacker: {
+                col_fg: '#00ff00',
+                col_fg_light: '#00ff00',
+                col_fg_lighter: '#00ff00',
+                col_fg_alt: '#00ff00',
+                col_bg: '#000000',
+                col_bg_dark: '#000000',
+                col_bg_light: '#000800',
+                col_bg_lighter: '#001400',
+                anchor: '#00ddff',
+                background: '#111111',
+            },
+            blood: {
+                col_fg: '#ff0000',
+                col_fg_light: '#ff0000',
+                col_fg_lighter: '#ff0000',
+                col_fg_alt: '#ff0000',
+                col_bg: '#000000',
+                col_bg_dark: '#000000',
+                col_bg_light: '#110000',
+                col_bg_lighter: '#220000',
+                anchor: '#ff00aa',
+                background: '#1f0000',
+            },
+            dark: {
+                col_fg: '#ffffff',
+                col_fg_light: '#ffffff',
+                col_fg_lighter: '#ffffff',
+                col_fg_alt: '#ffffff',
+                col_bg: '#000000',
+                col_bg_dark: '#000000',
+                col_bg_light: '#111111',
+                col_bg_lighter: '#222222',
+                anchor: '#3f8aff',
+                background: '#111111',
+            },
+            light: {
+                col_fg: '#000000',
+                col_fg_light: '#000000',
+                col_fg_lighter: '#000000',
+                col_fg_alt: '#000000',
+                col_bg: '#ffffff',
+                col_bg_dark: '#ffffff',
+                col_bg_light: '#eeeeee',
+                col_bg_lighter: '#dddddd',
+                anchor: '#1200e8',
+                background: '#dddddd',
+            },
         },
-        dark: {
-            foreground: '#ffffff',
-            foreground_light: '#ffffff',
-            foreground_lighter: '#ffffff',
-            foreground_alt: '#ffffff',
-            background: '#000000',
-            background_dark: '#000000',
-            background_light: '#000000',
-            background_lighter: '#000000',
-            anchor: '#3f8aff',
-            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
-        },
-        draconic: {
-            foreground: '#e5074b',
-            foreground_light: '#f7437a',
-            foreground_lighter: '#ff759f',
-            foreground_alt: '#ffffff',
-            background: '#04040F',
-            background_dark: '#000000',
-            background_light: '#101020',
-            background_lighter: '#232330',
-            anchor: '#e6ac08',
-            background_image: 'url("/resources/images/dragons_clouds_seamless.jpg")',
-        }
-    }
-    
-    // Allowed font sets
-    const fonts = {
-        draconic: {
-            main_font: 'Albertus MT',
-            alt_font: 'VCR OSD Mono',
-            mono_font: 'Jack Input',
+        fonts: { // Font sets
+            default: 'draconic',
+            draconic: {
+                main_font: '"Albertus MT", serif',
+                bitmap_font: '"VCR OSD Mono", sans-serif',
+                mono_font: '"Jack Input", monospace',
+            },
+            regular: {
+                main_font: 'serif',
+                bitmap_font: 'sans-serif',
+                mono_font: 'monospace',
+            }
         }
     }
 
-    // If the theme isn't defined, default to dark theme
-    if (!localStorage['data-theme']) {
-        changeTheme('dark');
-    }
-    
     // Always set the variables on load
-    changeTheme(null);
-    
+    changeTheme();
     // Change theme whenever the themepicker changes
-    document.getElementById('themePicker').addEventListener('click', (event) => {
-        changeTheme(document.querySelector('input[name="theme"]:checked')?.value)
-    })
+    document.getElementById('themePicker').addEventListener('click', (event) => changeTheme())
     
-    function changeTheme(theme) {
-        // Store the theme, or replace the theme with the stored one if undefined
-        if (Object.keys(themes).includes(theme)) {
-            localStorage['data-theme'] = theme;
-        } else {
-            theme = localStorage['data-theme'];
-        }
-        
-        // Change the variable values to those of the theme
-        for (val in themes[theme]) {
-            document.body.style.setProperty(`--${val.replace('_', '-')}`, themes[theme][val]);
+    function changeTheme() {
+        for (const theme of Object.keys(themes)) {
+            // Value of the input for whichever theme we're working on
+            let value = document.querySelector(`#themePicker input[name="${theme}"]:checked`)?.value;
+            if (localStorage['data-' + theme]) {
+                if (!Object.keys(themes[theme]).includes(value)) {
+                    value = localStorage['data-' + theme];
+                } else {
+                    localStorage['data-' + theme] = value;
+                }
+            } else {
+                // Set the theme to default if it's not usable
+                if (!Object.keys(themes[theme]).includes(value)) {
+                    value = themes[theme].default;
+                }
+                
+                localStorage['data-' + theme] = value;
+            }
+            
+            // Set appropriate variables
+            for (const variable of Object.keys(themes[theme][value])) {
+                document.body.style.setProperty(`--${variable.replaceAll('_', '-')}`, themes[theme][value][variable]);
+            }
         }
     }
 </script>
@@ -198,7 +258,7 @@ Check out art other people have done of him on
             </div>
         </main>
         <footer>
-            <p>LAST MODIFIED: JULY 16, 2026</p>
+            <p>LAST MODIFIED: JULY 17, 2026</p>
         </footer>
         
     </body>
