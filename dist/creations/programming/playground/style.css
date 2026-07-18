@@ -39,8 +39,8 @@
     --col-fg-alt: #ffffff;
     --col-bg: #000000;
     --col-bg-dark: #000000;
-    --col-bg-light: #000000;
-    --col-bg-lighter: #000000;
+    --col-bg-light: #111111;
+    --col-bg-lighter: #222222;
     --anchor: #3f8aff;
     --background: url("/resources/images/dragons_clouds_seamless.jpg");
     --main-font: 'Albertus MT', serif;
