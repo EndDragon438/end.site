@@ -22,3 +22,14 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
           cleanup: false
           dist_dir: dist
+      - name: Prepare nekoweb build
+        run: python ./build_nekowebl.py
+      - name: Deploy to nekoweb
+        uses: mp-pinheiro/nekoweb-deploy@main
+        with:
+          API_KEY: ${{ secrets.NEKOWEB_API_TOKEN }}
+          BUILD_DIR: './dist'
+          DEPLOY_DIR: '/'
+          CLEANUP: 'False'
+          DELAY: '0.5'
+          NEKOWEB_PAGENAME: 'end-draconis'

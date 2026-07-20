@@ -3,3 +3,5 @@ test.html
 testing
 guestbook_db.sh
 staticsitegenerator.py
+update.sh
+.env
