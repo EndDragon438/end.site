@@ -23,7 +23,7 @@ jobs:
           cleanup: false
           dist_dir: dist
       - name: Prepare nekoweb build
-        run: python ./build_nekowebl.py
+        run: python ./build_nekoweb.py
       - name: Deploy to nekoweb
         uses: mp-pinheiro/nekoweb-deploy@main
         with:
