@@ -21,14 +21,14 @@
                 font-size: 1.5em;
             }
             
-            label {
+            main label {
                 font-size: 1.75em;
                 padding: 1em;
                 margin: 0;
                 border-radius: 10px;
             }
             
-            input {
+            main input {
                 width: 65%;
                 font-size: 1.5em;
                 border-width: 5px;
@@ -37,7 +37,7 @@
                 margin: 1em;
             }
             
-            select {
+            main select {
                 font-size: 1.5em;
                 font-family: 'Albertus MT';
                 background-color: #e5074b;
@@ -46,7 +46,7 @@
                 border-radius: 5px;
             }
             
-            option {
+            main option {
                 background-color: #9807b5;
             }
             
@@ -101,9 +101,10 @@ free to contact me (contact information can be found on my about page)
 <div>
     <a href="#top" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--col-bg); border: 3px solid var(--col-fg); padding: 0.5em;">Back to top</a>
 </div>
-<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em">
+<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em; -webkit-user-select: none; -ms-user-select: none; user-select: none;">
     <details>
         <summary>Swap themes</summary>
+        <noscript>theme switcher requires javascript!</noscript>
         <fieldset style="display: flex; flex-flow: row wrap;">
             <legend>Colours</legend>
             <span>
