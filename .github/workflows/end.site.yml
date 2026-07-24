@@ -14,12 +14,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       # When the dist_dir is ready, deploy it to neocities
       - name: Deploy to neocities
-        uses: bcomnes/deploy-to-neocities@v1
+        uses: bcomnes/deploy-to-neocities@v3
         with:
-          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
           cleanup: false
           dist_dir: dist
       - name: Prepare nekoweb build
@@ -28,6 +28,6 @@ jobs:
         uses: indiefellas/deploy2nekoweb@main
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_TOKEN }}
-          directory: './dist'
-          nekoweb-domain: 'end-draconis.nekoweb.org'
-          nekoweb-username: 'end-draconis'
+          directory: dist
+          nekoweb-domain: end-draconis.nekoweb.org
+          nekoweb-username: end-draconis
