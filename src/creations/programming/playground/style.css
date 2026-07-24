@@ -210,6 +210,10 @@ header > nav > ul > li > details {
     align-content: center;
 }
 
+header > nav > ul > li > details[open] {
+    background-color: var(--col-bg-lighter)
+}
+
 header > nav div a, header > nav div a:visited, header > nav div a:hover,
 #collapsedNav > nav a, #collapsedNav > nav a:visited, #collapsedNav > nav a:hover {
     color: var(--anchor);

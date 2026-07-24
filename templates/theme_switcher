@@ -1,6 +1,7 @@
-<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em">
+<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em; -webkit-user-select: none; -ms-user-select: none; user-select: none;">
     <details>
         <summary>Swap themes</summary>
+        <noscript>theme switcher requires javascript!</noscript>
         <fieldset style="display: flex; flex-flow: row wrap;">
             <legend>Colours</legend>
             <span>

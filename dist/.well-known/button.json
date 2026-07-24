@@ -1,0 +1,15 @@
+{
+    "method": "download",
+    "last_updated": "2026-07-16T14:53-08:00",
+    "location": {
+        "blinkie": [
+            "https://end-draconis.neocities.org/resources/images/end.site_blinkie.gif",
+            "https://end-draconis.nekoweb.org/resources/images/end.site_blinkie.gif"
+        ],
+        "button": [
+            "https://end-draconis.neocities.org/resources/images/end.site_button.gif",
+            "https://end-draconis.nekoweb.org/resources/images/end.site_button.gif"
+        ]
+    },
+    "_comment": "i don't plan to update the blinkie frequently, but you can check via the last_updated field if yours is outdated"
+}

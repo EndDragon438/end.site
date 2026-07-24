@@ -22,6 +22,7 @@
                 <b>Currently reading....</b>
                 {{ currently_reading }}
                 <b>Webrings, Cliques, n the like</b>
+                <!-- BEGIN WEBRINGS -->
                 <!-- Currently under development i think https://feelingmachine.moe/alterring -->
                 <!-- <div id="ahsc">
                     <script src="https://feelingmachine.moe/alterring/onionring-variables.js"></script>
@@ -36,6 +37,7 @@
                     <script src="https://www.zpires.com/style/scripts/onionring/onionring-widget.js"></script>
                 </div>
                 <script>createWidget("red");</script>
+                <!-- END WEBRINGS -->
             </aside>
             <div>
                 <h1>end.site</h1>
@@ -64,8 +66,8 @@
                 <!-- blinkies and buttons, oh my!!!! -->
                 <div id="blinkies">
                     <p>my site blinkie & button</p>
-                    <a class="button animated" href="/index.html"><img src="/resources/images/end.site_blinkie.gif" alt="my site blinkie! made by me." title="my site blinkie! made by me."></a>
-                    <a class="button" href="/index.html"><img src="/resources/images/end.site_button.png" alt="my site button! made by me." title="my site button! made by me."></a>
+                    <a class="button animated" href="/.well-known/button.json"><img src="/resources/images/end.site_blinkie.gif" alt="my site blinkie! click for usage info." title="my site blinkie! click for usage info."></a>
+                    <a class="button" href="/.well-known/button.json"><img src="/resources/images/end.site_button.png" alt="my site button! click for usage info." title="my site button! click for usage info."></a>
                     
                     <br><br>
                     
@@ -94,6 +96,12 @@
             <aside class="sidebar" id="changelog" aria-label="Changelog sidebar">
                 <h2>Changelog</h2>
                 <div>
+                    July 24, 2026
+                    <ul>
+                        <li>Added <a href="/.well-known">/.well-known</a> for programmatically accessible info about the site</li>
+                        <li>Added button usage instructions to /.well-known</li>
+                    </ul>
+                    
                     July 17, 2026
                     <ul>
                         <li>Added font set options to theme switcher</li>

@@ -47,9 +47,10 @@ free to contact me (contact information can be found on my about page)
 <div>
     <a href="#top" class="focus-only" style="position: fixed; top: 1em; left: 1em; border-radius: 5px; background-color: var(--col-bg); border: 3px solid var(--col-fg); padding: 0.5em;">Back to top</a>
 </div>
-<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em">
+<div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em; -webkit-user-select: none; -ms-user-select: none; user-select: none;">
     <details>
         <summary>Swap themes</summary>
+        <noscript>theme switcher requires javascript!</noscript>
         <fieldset style="display: flex; flex-flow: row wrap;">
             <legend>Colours</legend>
             <span>
@@ -280,8 +281,8 @@ free to contact me (contact information can be found on my about page)
                 <!-- blinkies and buttons, oh my!!!! -->
                 <div id="blinkies">
                     <p>my site blinkie & button</p>
-                    <a class="button animated" href="/index.html"><img src="/resources/images/end.site_blinkie.gif" alt="my site blinkie! made by me." title="my site blinkie! made by me."></a>
-                    <a class="button" href="/index.html"><img src="/resources/images/end.site_button.png" alt="my site button! made by me." title="my site button! made by me."></a>
+                    <a class="button animated" href="/.well-known/button.json"><img src="/resources/images/end.site_blinkie.gif" alt="my site blinkie! click for usage info." title="my site blinkie! click for usage info."></a>
+                    <a class="button" href="/.well-known/button.json"><img src="/resources/images/end.site_button.png" alt="my site button! click for usage info." title="my site button! click for usage info."></a>
                     
                     <br><br>
                     
@@ -310,6 +311,12 @@ free to contact me (contact information can be found on my about page)
             <aside class="sidebar" id="changelog" aria-label="Changelog sidebar">
                 <h2>Changelog</h2>
                 <div>
+                    July 24, 2026
+                    <ul>
+                        <li>Added <a href="/.well-known">/.well-known</a> for programmatically accessible info about the site</li>
+                        <li>Added button usage instructions to /.well-known</li>
+                    </ul>
+                    
                     July 17, 2026
                     <ul>
                         <li>Added font set options to theme switcher</li>
@@ -581,7 +588,7 @@ free to contact me (contact information can be found on my about page)
             </aside>
         </main>
         <footer>
-            <p>LAST MODIFIED: JULY 17, 2026</p>
+            <p>LAST MODIFIED: JULY 24, 2026</p>
         </footer>
         
     </body>

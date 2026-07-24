@@ -45,7 +45,7 @@ def main():
     if os.path.isdir(DIST_DIR): shutil.rmtree(DIST_DIR)
     
     # Collect all files
-    paths = [p for p in glob.glob(SOURCE_DIR + '/**/*', recursive = True) if os.path.isfile(p)]
+    paths = [p for p in glob.glob(SOURCE_DIR + '/**/*', recursive = True, include_hidden=True) if os.path.isfile(p)]
     
     # Break up by type
     files = [p for p in paths if '.html' not in p and '.toml' not in p]

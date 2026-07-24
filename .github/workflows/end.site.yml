@@ -25,11 +25,9 @@ jobs:
       - name: Prepare nekoweb build
         run: python ./build_nekoweb.py
       - name: Deploy to nekoweb
-        uses: mp-pinheiro/nekoweb-deploy@main
+        uses: indiefellas/deploy2nekoweb@main
         with:
-          API_KEY: ${{ secrets.NEKOWEB_API_TOKEN }}
-          BUILD_DIR: './dist'
-          DEPLOY_DIR: '/end-draconis.nekoweb.org/'
-          CLEANUP: 'False'
-          DELAY: '0.5'
-          NEKOWEB_PAGENAME: 'end-draconis'
+          nekoweb-api-key: ${{ secrets.NEKOWEB_API_TOKEN }}
+          directory: './dist'
+          nekoweb-domain: 'end-draconis.nekoweb.org'
+          nekoweb-username: 'end-draconis'
