@@ -1,5 +1,5 @@
 # end.site
-all code and assets for my personal site and blog at https://end-draconis.neocities.org !!
+all code and assets for my personal site and blog at https://end-draconis.neocities.org (mirrored at https://end-draconis.nekoweb.org/) !!
 
 ## Mini Static Site Generator
 
