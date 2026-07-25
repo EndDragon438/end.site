@@ -153,12 +153,14 @@ code {
 }
 
 a, a:hover, a:visited {
+    box-sizing: border-box;
+    border: transparent solid 2px;
     color: var(--anchor);
     text-decoration: underline;
 }
 
 a:hover {
-    font-style: italic;
+    border: solid 2px var(--anchor);
 }
 
 /* Pixel font */
