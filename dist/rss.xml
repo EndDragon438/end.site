@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>end's site</title>
+        <link>https://end-draconis.neocities.org/</link>
+        <description>RSS feed for end's site, including blog posts and creations</description>
+        <language>en-us</language>
+        <docs>https://www.rssboard.org/rss-specification</docs>
+        <generator>end's mini SSG</generator>
+        <webMaster>end-drake@protonmail.com (end draconis)</webMaster>
+        <atom:link href="https://end-draconis.neocities.org/rss" rel="self" type="application/rss+xml" />
+        <ttl>1440</ttl>
+        <lastBuildDate>Wed, 29 Jul 2026 00:29:46 +0000</lastBuildDate>
+            <item>
+                <title>The Playground!</title>
+                <link>https://end-draconis.neocities.org/creations/programming</link>
+                <pubDate>2026-07-10T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/programming/playground/</guid>
+            </item>
+                    
+            <item>
+                <title>Site revamp and where i'm at</title>
+                <link>https://end-draconis.neocities.org/blog</link>
+                <pubDate>2026-07-04T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/blog/Site-revamp-and-where-i'm-at</guid>
+            </item>
+                    
+            <item>
+                <title>Digital Violence</title>
+                <link>https://end-draconis.neocities.org/creations/3d</link>
+                <pubDate>2024-12-15T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/3d/digital_violence</guid>
+            </item>
+                    
+            <item>
+                <title>Bi-Bye Demo</title>
+                <link>https://end-draconis.neocities.org/creations/3d</link>
+                <pubDate>2024-10-27T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/3d/bi-bye_demo</guid>
+            </item>
+                    
+            <item>
+                <title>Skyblock</title>
+                <link>https://end-draconis.neocities.org/creations/3d</link>
+                <pubDate>2024-09-01T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/3d/skyblock</guid>
+            </item>
+                    
+            <item>
+                <title>Nighttime Street</title>
+                <link>https://end-draconis.neocities.org/creations/3d</link>
+                <pubDate>2024-07-29T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/3d/nighttime_street</guid>
+            </item>
+                    
+            <item>
+                <title>PFLR_2 Ref</title>
+                <link>https://end-draconis.neocities.org/creations/3d</link>
+                <pubDate>2024-06-29T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/3d/pflr_2_ref</guid>
+            </item>
+                    
+            <item>
+                <title>Borealis Ref</title>
+                <link>https://end-draconis.neocities.org/creations/2d</link>
+                <pubDate>2024-06-26T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/2d/borealis_ref</guid>
+            </item>
+                    
+            <item>
+                <title>Snowreader Ref</title>
+                <link>https://end-draconis.neocities.org/creations/2d</link>
+                <pubDate>2024-06-25T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/2d/snowreader_ref</guid>
+            </item>
+                    
+            <item>
+                <title>Moon Moon Ref</title>
+                <link>https://end-draconis.neocities.org/creations/2d</link>
+                <pubDate>2024-06-24T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/2d/moon_moon_ref</guid>
+            </item>
+                    
+            <item>
+                <title>Amaranth Ref</title>
+                <link>https://end-draconis.neocities.org/creations/2d</link>
+                <pubDate>2024-06-22T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/2d/amaranth_ref</guid>
+            </item>
+                    
+            <item>
+                <title>Dump Truck</title>
+                <link>https://end-draconis.neocities.org/creations/3d</link>
+                <pubDate>2024-05-29T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/3d/dump_truck</guid>
+            </item>
+                    
+            <item>
+                <title>Dragon Code</title>
+                <link>https://end-draconis.neocities.org/creations/programming</link>
+                <pubDate>2024-05-15T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/programming/dragon_code</guid>
+            </item>
+                    
+            <item>
+                <title>JSON Post Generator</title>
+                <link>https://end-draconis.neocities.org/creations/programming</link>
+                <pubDate>2024-05-05T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/programming/json_generator</guid>
+            </item>
+                    
+            <item>
+                <title>Welcome to end.site!!!</title>
+                <link>https://end-draconis.neocities.org/blog</link>
+                <pubDate>2024-04-27T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/blog/Welcome-to-end.site!!!</guid>
+            </item>
+                    
+            <item>
+                <title>Low Poly Island</title>
+                <link>https://end-draconis.neocities.org/creations/3d</link>
+                <pubDate>2024-04-14T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/3d/low_poly_island</guid>
+            </item>
+                    
+            <item>
+                <title>Artiversary 2024</title>
+                <link>https://end-draconis.neocities.org/creations/2d</link>
+                <pubDate>2024-02-08T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/2d/artiversary_2024</guid>
+            </item>
+                    
+            <item>
+                <title>Sierra Bio</title>
+                <link>https://end-draconis.neocities.org/creations/writing</link>
+                <pubDate>2023-10-11T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/writing/sierra_bio</guid>
+            </item>
+                    
+            <item>
+                <title>Peril The Adventurer</title>
+                <link>https://end-draconis.neocities.org/creations/2d</link>
+                <pubDate>2023-08-14T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/2d/peril_the_adventurer</guid>
+            </item>
+                    
+            <item>
+                <title>Saguaro Bio</title>
+                <link>https://end-draconis.neocities.org/creations/writing</link>
+                <pubDate>2023-08-04T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/writing/saguaro_bio</guid>
+            </item>
+                    
+            <item>
+                <title>Amaranth Bio</title>
+                <link>https://end-draconis.neocities.org/creations/writing</link>
+                <pubDate>2023-07-22T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/writing/amaranth_bio</guid>
+            </item>
+                    
+            <item>
+                <title>Borealis Bio</title>
+                <link>https://end-draconis.neocities.org/creations/writing</link>
+                <pubDate>2023-07-22T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/writing/borealis_bio</guid>
+            </item>
+                    
+            <item>
+                <title>Moon Moon Bio</title>
+                <link>https://end-draconis.neocities.org/creations/writing</link>
+                <pubDate>2023-07-22T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/writing/moon_moon_bio</guid>
+            </item>
+                    
+            <item>
+                <title>Gharial Bio</title>
+                <link>https://end-draconis.neocities.org/creations/writing</link>
+                <pubDate>2023-07-22T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/writing/gharial_bio</guid>
+            </item>
+                    
+            <item>
+                <title>Snowreader Bio</title>
+                <link>https://end-draconis.neocities.org/creations/writing</link>
+                <pubDate>2023-07-22T00:00:00</pubDate>
+                <guid>https://end-draconis.neocities.org/creations/writing/snowreader_bio</guid>
+            </item>
+                    
+    </channel>
+</rss>

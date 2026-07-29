@@ -7,13 +7,28 @@
             #blinkies {
                 text-align: center;
             }
-            .button img {
+            
+            .button {
+                display: inline-block;
                 height: 48px;
-                image-rendering: pixelated;
+                
+                & img {
+                    height: 48px;
+                    image-rendering: pixelated;
+                }
             }
             
             a.button:hover {
                 border: transparent solid 2px;
+            }
+            
+            .sidebar:first-of-type > b {
+                display: block;
+                margin: 0.5em 0;
+            }
+            
+            .sidebar .button {
+                display: inline-block;
             }
         </style>
     </head>
@@ -24,8 +39,10 @@
             <aside class="sidebar" aria-label="Info sidebar">
                 <b>Listening to...</b>
                 {{ listening_to }}
+                
                 <b>Currently reading....</b>
                 {{ currently_reading }}
+                
                 <b>Webrings, Cliques, n the like</b>
                 <!-- BEGIN WEBRINGS -->
                 <!-- Currently under development i think https://feelingmachine.moe/alterring -->
@@ -43,6 +60,13 @@
                 </div>
                 <script>createWidget("red");</script>
                 <!-- END WEBRINGS -->
+                 
+                <b>My feeds!</b>
+                <a class="button" href="/atom.xml"><img src="/resources/images/atom_blinkie.gif" alt="this site support Atom!" title="this site support Atom!"></a>
+                <a class="button" href="/rss.xml"><img src="/resources/images/rss_blinkie.gif" alt="this site support RSS!" title="this site support RSS!"></a>
+                
+                <b>this site and its contents are licensed under the CC0 (effectively public domain)</b>
+                <a class="button" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/resources/images/cc0_button.png" alt="this site and its contents are licensed under the CC0" title="this site and its contents are licensed under the CC0"></a>
             </aside>
             <div>
                 <h1>end.site</h1>
@@ -65,7 +89,6 @@
                     <li>add guestbook (requires supporter)</li>
                     <li>Transfer projects onto the site</li>
                     <li><a href="https://allium.house/garden/onionring/" target="blank">Host GC webring</a> (dey gotta make site first >:3)</li>
-                    <li>RSS feed, select for blog/project-[type]</li>
                     <li>design some fonts for the site? (bitmap one i could pull off at least)</li>
                 </ul>
                 <!-- blinkies and buttons, oh my!!!! -->
@@ -88,13 +111,14 @@
                     <br><br>
                     
                     <p>blinkie wall!</p>
+                    <a class="button" href="/atom.xml"><img src="/resources/images/atom_blinkie.gif" alt="this site support Atom!" title="this site support Atom!"></a>
+                    <a class="button" href="/rss.xml"><img src="/resources/images/rss_blinkie.gif" alt="this site support RSS!" title="this site support RSS!"></a>
+                    <a class="button" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/resources/images/cc0_button.png" alt="this site and its contents are licensed under the CC0" title="this site and its contents are licensed under the CC0"></a>
                     <a class="button" href="#"><img src="/resources/images/autism_blinkie.gif" alt="autism infinity symbol scrolling rainbow. made by me!" title="autism infinity symbol scrolling rainbow. made by me!"></a>
                     <a class="button" href="#"><img src="/resources/images/e5074b_blinkie.gif" alt="'#E5074B' flashing on a background of the same color. made by me!" title="'#E5074B' flashing on a background of the same color. made by me!"></a>
                     <a class="button" href="#"><img src="/resources/images/updating_blinkie.gif" alt="updating . . ." title="updating . . ."></a>
                     <a class="button" href="https://getmusicbee.com/" target="blank"><img src="/resources/images/musicbee_blinkie.gif" alt="bee flying with the blinking text 'MUSICBEE' made by me!" title="bee flying with the blinking text 'MUSICBEE' made by me!"></a>
                     <a class="button" href="https://bdsmovement.net/get-involved/what-to-boycott"><img src="/resources/images/palestine_blinkie.gif" alt="Free Palestine! made by me." title="Free Palestine! made by me."></a>
-                    <a class="button" href="https://artfight.net/~end_draconis"><img src="/resources/images/2023-werewolves-stamp.png" alt="Artfight Team Werewolves 2023!" title="Artfight Team Werewolves 2023!"></a>
-                    <a class="button" href="https://artfight.net/~end_draconis"><img src="/resources/images/2024-stardust-stamp.png" alt="Artfight Team Stardust 2024!" title="Artfight Team Stardust 2024!"></a>
                     <a class="button" href="https://yesterweb.org/"><img src="/resources/images/no2web3.gif" alt="say no to web3 tech! from yesterweb.org" title="say no to web3 tech! from yesterweb.org"></a>
                     <a class="button" href="https://yesterweb.org/"><img src="/resources/images/yesterweb_button.png" alt="yesterweb movement link. from yesterweb.org" title="yesterweb movement link. from yesterweb.org"></a>
                     <a class="button" href="https://jigsaw.w3.org/css-validator/check/referer"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" title="Valid CSS!"></a>
@@ -105,6 +129,12 @@
             <aside class="sidebar" id="changelog" aria-label="Changelog sidebar">
                 <h2>Changelog</h2>
                 <div>
+                    July 28, 2026
+                    
+                    <ul>
+                        <li>Implemented <a href="/rss">RSS</a> and <a href="/atom">Atom</a> feed generation in the SSG (i'm basically all-powerful)</li>
+                    </ul>
+                    
                     July 24, 2026
                     <ul>
                         <li>Added <a href="/.well-known">/.well-known</a> for programmatically accessible info about the site</li>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>end's site</title>
+        <link>https://end-draconis.neocities.org/</link>
+        <description>RSS feed for end's site, including blog posts and creations</description>
+        <language>en-us</language>
+        <docs>https://www.rssboard.org/rss-specification</docs>
+        <generator>end's mini SSG</generator>
+        <webMaster>end-drake@protonmail.com (end draconis)</webMaster>
+        <atom:link href="https://end-draconis.neocities.org/rss" rel="self" type="application/rss+xml" />
+        <ttl>1440</ttl>
+        {{ gen: rss }}
+    </channel>
+</rss>

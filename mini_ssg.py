@@ -26,6 +26,7 @@ Updated: July 10, 2026
 """
 
 import datetime
+from email import utils
 import glob
 import os
 import re
@@ -122,6 +123,28 @@ def main():
         
         with open(page.replace(SOURCE_DIR, DIST_DIR), 'w') as file:
             file.write(content)
+    
+    # Build RSS/Atom feeds
+    # max number of items to grab
+    itemLimit = 25
+    # build items list
+    items = [{'title': post['title'], 'date': post['date'], 'type': 'blog'} for post in blogPosts]
+    [items.append(post) for tag in tags for post in tags[tag] if post not in items]
+    def itemSort(item):
+        return datetime.datetime(*item['date'])
+    items.sort(key = itemSort)
+    items.reverse()
+    items = items[:itemLimit]
+    with open(f'{TEMPLATE_DIR}/rss', 'r') as file:
+        content = file.read()
+    content = applyTemplates(content, items)
+    with open(f'{DIST_DIR}/rss.xml', 'w') as file:
+        file.write(content)
+    with open(f'{TEMPLATE_DIR}/atom', 'r') as file:
+        content = file.read()
+    content = applyTemplates(content, items)
+    with open(f'{DIST_DIR}/atom.xml', 'w') as file:
+        file.write(content)
 
 def applyTemplates(text, data = None):
     """Apply templates to a piece of text
@@ -180,6 +203,31 @@ def applyTemplates(text, data = None):
                 for file in [f for f in os.listdir(f'{SOURCE_DIR}/scripts') if f[-3:] == '.js']:
                     replace += f'\n<li><a href="/scripts/{file}">{file[:-3]}</a></li>'
                 replace += '\n</ul>'
+                text = re.sub(r'{{.*}}', replace, text, count = 1)
+            elif operation == 'rss':
+                replace = f'<lastBuildDate>{utils.format_datetime(datetime.datetime.now(datetime.timezone.utc))}</lastBuildDate>'
+                for item in data:
+                    replace += f"""
+            <item>
+                <title>{item['title']}</title>
+                <link>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}</link>
+                <pubDate>{datetime.datetime(*item['date']).isoformat()}</pubDate>
+                <guid>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'blog' else item['name']}</guid>
+            </item>
+                    """
+                text = re.sub(r'{{.*}}', replace, text, count = 1)
+            elif operation == 'atom':
+                replace = f'<updated>{datetime.datetime.now(datetime.timezone.utc).isoformat()}</updated>'
+                for item in data:
+                    replace += f"""
+        <entry>
+            <title>{item['title']}</title>
+            <link href="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" rel="alternate"/>
+            <id>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'blog' else item['name']}</id>
+            <updated>{datetime.datetime(*item['date']).isoformat()}</updated>
+            <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" type="html"></content>
+        </entry>
+                    """
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
         elif 'data:' in name:
             # Data template
