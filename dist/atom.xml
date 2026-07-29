@@ -3,20 +3,20 @@
     <title>end's site</title>
     <subtitle>Atom feed for end's site, including blog posts and creations</subtitle>
     <link href="https://end-draconis.neocities.org/" rel="alternate"/>
-    <link href="/atom" rel="self"/>
-    <icon>/resources/images/icon.png</icon>
+    <link href="https://end-draconis.neocities.org/atom.xml" rel="self"/>
+    <icon>https://end-draconis.neocities.org/resources/images/icon.png</icon>
     <author>
         <name>end draconis</name>
         <email>end-drake@protonmail.com</email>
     </author>
-    <id>https://end-draconis.neocities.org</id>
-    <updated>2026-07-29T00:29:46.566997+00:00</updated>
+    <id>https://end-draconis.neocities.org/</id>
+    <updated>2026-07-29T00:44:34.439963Z</updated>
         <entry>
             <title>The Playground!</title>
             <link href="https://end-draconis.neocities.org/creations/programming/playground/" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/programming/playground/</id>
             <updated>2026-07-10T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/programming/playground/" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/programming/playground/" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -24,7 +24,7 @@
             <link href="https://end-draconis.neocities.org/blog/2026-07-04_Site-revamp-and-where-i'm-at" rel="alternate"/>
             <id>https://end-draconis.neocities.org/blog/Site-revamp-and-where-i'm-at</id>
             <updated>2026-07-04T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/blog/2026-07-04_Site-revamp-and-where-i'm-at" type="html"></content>
+            <content src="https://end-draconis.neocities.org/blog/2026-07-04_Site-revamp-and-where-i'm-at" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -32,7 +32,7 @@
             <link href="https://end-draconis.neocities.org/creations/3d/digital_violence" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/3d/digital_violence</id>
             <updated>2024-12-15T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/3d/digital_violence" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/3d/digital_violence" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -40,7 +40,7 @@
             <link href="https://end-draconis.neocities.org/creations/3d/bi-bye_demo" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/3d/bi-bye_demo</id>
             <updated>2024-10-27T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/3d/bi-bye_demo" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/3d/bi-bye_demo" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -48,7 +48,7 @@
             <link href="https://end-draconis.neocities.org/creations/3d/skyblock" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/3d/skyblock</id>
             <updated>2024-09-01T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/3d/skyblock" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/3d/skyblock" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -56,7 +56,7 @@
             <link href="https://end-draconis.neocities.org/creations/3d/nighttime_street" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/3d/nighttime_street</id>
             <updated>2024-07-29T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/3d/nighttime_street" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/3d/nighttime_street" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -64,7 +64,7 @@
             <link href="https://end-draconis.neocities.org/creations/3d/pflr_2_ref" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/3d/pflr_2_ref</id>
             <updated>2024-06-29T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/3d/pflr_2_ref" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/3d/pflr_2_ref" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -72,7 +72,7 @@
             <link href="https://end-draconis.neocities.org/creations/2d/borealis_ref" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/2d/borealis_ref</id>
             <updated>2024-06-26T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/2d/borealis_ref" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/2d/borealis_ref" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -80,7 +80,7 @@
             <link href="https://end-draconis.neocities.org/creations/2d/snowreader_ref" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/2d/snowreader_ref</id>
             <updated>2024-06-25T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/2d/snowreader_ref" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/2d/snowreader_ref" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -88,7 +88,7 @@
             <link href="https://end-draconis.neocities.org/creations/2d/moon_moon_ref" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/2d/moon_moon_ref</id>
             <updated>2024-06-24T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/2d/moon_moon_ref" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/2d/moon_moon_ref" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -96,7 +96,7 @@
             <link href="https://end-draconis.neocities.org/creations/2d/amaranth_ref" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/2d/amaranth_ref</id>
             <updated>2024-06-22T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/2d/amaranth_ref" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/2d/amaranth_ref" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -104,7 +104,7 @@
             <link href="https://end-draconis.neocities.org/creations/3d/dump_truck" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/3d/dump_truck</id>
             <updated>2024-05-29T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/3d/dump_truck" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/3d/dump_truck" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -112,7 +112,7 @@
             <link href="https://end-draconis.neocities.org/creations/programming/dragon_code" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/programming/dragon_code</id>
             <updated>2024-05-15T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/programming/dragon_code" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/programming/dragon_code" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -120,7 +120,7 @@
             <link href="https://end-draconis.neocities.org/creations/programming/json_generator" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/programming/json_generator</id>
             <updated>2024-05-05T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/programming/json_generator" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/programming/json_generator" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -128,7 +128,7 @@
             <link href="https://end-draconis.neocities.org/blog/2024-04-27_Welcome-to-end.site!!!" rel="alternate"/>
             <id>https://end-draconis.neocities.org/blog/Welcome-to-end.site!!!</id>
             <updated>2024-04-27T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/blog/2024-04-27_Welcome-to-end.site!!!" type="html"></content>
+            <content src="https://end-draconis.neocities.org/blog/2024-04-27_Welcome-to-end.site!!!" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -136,7 +136,7 @@
             <link href="https://end-draconis.neocities.org/creations/3d/low_poly_island" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/3d/low_poly_island</id>
             <updated>2024-04-14T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/3d/low_poly_island" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/3d/low_poly_island" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -144,7 +144,7 @@
             <link href="https://end-draconis.neocities.org/creations/2d/artiversary_2024" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/2d/artiversary_2024</id>
             <updated>2024-02-08T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/2d/artiversary_2024" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/2d/artiversary_2024" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -152,7 +152,7 @@
             <link href="https://end-draconis.neocities.org/creations/writing/sierra_bio" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/writing/sierra_bio</id>
             <updated>2023-10-11T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/writing/sierra_bio" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/writing/sierra_bio" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -160,7 +160,7 @@
             <link href="https://end-draconis.neocities.org/creations/2d/peril_the_adventurer" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/2d/peril_the_adventurer</id>
             <updated>2023-08-14T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/2d/peril_the_adventurer" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/2d/peril_the_adventurer" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -168,7 +168,7 @@
             <link href="https://end-draconis.neocities.org/creations/writing/saguaro_bio" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/writing/saguaro_bio</id>
             <updated>2023-08-04T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/writing/saguaro_bio" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/writing/saguaro_bio" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -176,7 +176,7 @@
             <link href="https://end-draconis.neocities.org/creations/writing/amaranth_bio" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/writing/amaranth_bio</id>
             <updated>2023-07-22T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/writing/amaranth_bio" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/writing/amaranth_bio" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -184,7 +184,7 @@
             <link href="https://end-draconis.neocities.org/creations/writing/borealis_bio" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/writing/borealis_bio</id>
             <updated>2023-07-22T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/writing/borealis_bio" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/writing/borealis_bio" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -192,7 +192,7 @@
             <link href="https://end-draconis.neocities.org/creations/writing/moon_moon_bio" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/writing/moon_moon_bio</id>
             <updated>2023-07-22T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/writing/moon_moon_bio" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/writing/moon_moon_bio" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -200,7 +200,7 @@
             <link href="https://end-draconis.neocities.org/creations/writing/gharial_bio" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/writing/gharial_bio</id>
             <updated>2023-07-22T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/writing/gharial_bio" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/writing/gharial_bio" type="text/html"></content>
         </entry>
                     
         <entry>
@@ -208,7 +208,7 @@
             <link href="https://end-draconis.neocities.org/creations/writing/snowreader_bio" rel="alternate"/>
             <id>https://end-draconis.neocities.org/creations/writing/snowreader_bio</id>
             <updated>2023-07-22T00:00:00</updated>
-            <content src="https://end-draconis.neocities.org/creations/writing/snowreader_bio" type="html"></content>
+            <content src="https://end-draconis.neocities.org/creations/writing/snowreader_bio" type="text/html"></content>
         </entry>
                     
 </feed>

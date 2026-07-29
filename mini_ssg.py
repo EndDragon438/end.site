@@ -211,21 +211,21 @@ def applyTemplates(text, data = None):
             <item>
                 <title>{item['title']}</title>
                 <link>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}</link>
-                <pubDate>{datetime.datetime(*item['date']).isoformat()}</pubDate>
+                <pubDate>{utils.format_datetime(datetime.datetime(*item['date']))}</pubDate>
                 <guid>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'blog' else item['name']}</guid>
             </item>
                     """
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
             elif operation == 'atom':
-                replace = f'<updated>{datetime.datetime.now(datetime.timezone.utc).isoformat()}</updated>'
+                replace = f'<updated>{datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00', 'Z')}</updated>'
                 for item in data:
                     replace += f"""
         <entry>
             <title>{item['title']}</title>
             <link href="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" rel="alternate"/>
             <id>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'blog' else item['name']}</id>
-            <updated>{datetime.datetime(*item['date']).isoformat()}</updated>
-            <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" type="html"></content>
+            <updated>{datetime.datetime(*item['date']).isoformat().replace('+00:00', 'Z')}</updated>
+            <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" type="text/html"></content>
         </entry>
                     """
                 text = re.sub(r'{{.*}}', replace, text, count = 1)

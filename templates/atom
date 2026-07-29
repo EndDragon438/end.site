@@ -3,12 +3,12 @@
     <title>end's site</title>
     <subtitle>Atom feed for end's site, including blog posts and creations</subtitle>
     <link href="https://end-draconis.neocities.org/" rel="alternate"/>
-    <link href="/atom" rel="self"/>
-    <icon>/resources/images/icon.png</icon>
+    <link href="https://end-draconis.neocities.org/atom.xml" rel="self"/>
+    <icon>https://end-draconis.neocities.org/resources/images/icon.png</icon>
     <author>
         <name>end draconis</name>
         <email>end-drake@protonmail.com</email>
     </author>
-    <id>https://end-draconis.neocities.org</id>
+    <id>https://end-draconis.neocities.org/</id>
     {{ gen: atom }}
 </feed>
