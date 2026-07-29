@@ -224,7 +224,7 @@ def applyTemplates(text, data = None):
             <title>{item['title']}</title>
             <link href="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" rel="alternate"/>
             <id>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'blog' else item['name']}</id>
-            <updated>{datetime.datetime(*item['date']).isoformat().replace('+00:00', 'Z')}</updated>
+            <updated>{datetime.datetime(*item['date']).isoformat()}Z</updated>
             <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" type="text/html"></content>
         </entry>
                     """
