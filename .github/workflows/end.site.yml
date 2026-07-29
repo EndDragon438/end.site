@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      # Run the SSG to build the site
+      - name: Build site
+        run: python ./mini_ssg.py
       # When the dist_dir is ready, deploy it to neocities
       - name: Deploy to neocities
         uses: bcomnes/deploy-to-neocities@v3

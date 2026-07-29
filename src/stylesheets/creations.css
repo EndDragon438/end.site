@@ -1,0 +1,58 @@
+/*
+=====================
++++   CREATIONS   +++
+=====================
+*/
+.creation-side {
+    flex: 1 1;
+    width: 25%;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    
+    & p {
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    
+    & iframe {
+        width: 97%;
+        height: 300px;
+        margin-right: 10px;
+    }
+}
+
+.creation-image {
+    width: 60%;
+}
+
+.creation-title {
+    margin: 0.25em 0;
+    border-radius: 10px;
+}
+
+.creation-subtitle {
+    border-radius: 10px;
+}
+.creation-date {
+    margin: 0;
+    color: var(--col-fg-alt);
+}
+
+.creation-tags {
+    padding: 0;
+    
+    &::before {
+        content: "Tags: ";
+    }
+    
+    & li {
+        display: inline;
+        margin: 0;
+        
+        /* Comma-separate tags (except for last one) */
+        &:not(:last-child)::after {
+            content: ", ";
+        }
+    }
+}
