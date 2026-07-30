@@ -1,7 +1,7 @@
 type = "3d"
 title = "Digital Violence"
 date =  [2024,12,15]
-file = "digital violence.png"
+file = "digital violence.webp"
 alt = "Four Java exception messages one after another: WARNING: Not enough memory allocated, ERROR: StackOverflowException, FATAL: OutOfMemoryException, SHUTTING DOWN THE VIRTUAL MACHINE. A chain is wrapped around the frame of the image. In the background a desktop PC is wrapped in more chains, and there are blood splatters on the floor. The whole image is lit in a red fog."
 tags = ["2024"]
 text = """

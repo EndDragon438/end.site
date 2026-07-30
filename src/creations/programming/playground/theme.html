@@ -8,6 +8,12 @@
         {{ header_playground }}
         <main id="content">
             <div>
+                <p><b>
+                    NOTICE: i no longer use this theme switcher, and have swapped to a nearly JS-free version,
+                    the details for which you can find <a href="./css_theme.html">here</a>. This page is kept
+                    around for archival purposes, and in case someone would still like to copy the (imo worse)
+                    implementation.
+                </b></p>
                 <p>
                     &emsp;As you may have noticed, i have a theme switcher! It's the lil dropdown in the bottom
                     right of the site, if you open it up you'll see the themes i've currently got. It's a
@@ -34,6 +40,130 @@
                     &emsp;Feel free to check out the source for the widget! It's on just about every page
                     on this site, so you can find it pretty easily. It's right above the header in the code.
                 </p>
+                <p>
+                    due to this widget not being in use anymore, you cannot find the source code on this site.
+                    i've copied it here for your convenience.
+                </p>
+<pre>
+<code>
+&lt;div id="themePicker" style="position: fixed; z-index: 2; border-radius: 5px; background: var(--col-bg); color: var(--col-fg); padding: 0.25em; border: 3px solid var(--col-fg); bottom: 1em; right: 1em; width: 14em; -webkit-user-select: none; -ms-user-select: none; user-select: none;"&gt;
+    &lt;details&gt;
+        &lt;summary&gt;Swap themes&lt;/summary&gt;
+        &lt;noscript&gt;theme switcher requires javascript!&lt;/noscript&gt;
+        &lt;fieldset style="display: flex; flex-flow: row wrap;"&gt;
+            &lt;legend&gt;Colours&lt;/legend&gt;
+            &lt;span&gt;
+                &lt;input type="radio" name="colours" id="draconicColours" value="draconic"&gt;
+                &lt;label for="draconicColours"&gt;Draconic&lt;/label&gt;
+            &lt;/span&gt;
+            &lt;span&gt;
+                &lt;input type="radio" name="colours" id="hackerColours" value="hacker"&gt;
+                &lt;label for="hackerColours"&gt;Hacker&lt;/label&gt;
+            &lt;/span&gt;
+            &lt;span&gt;
+                &lt;input type="radio" name="colours" id="bloodColours" value="blood"&gt;
+                &lt;label for="bloodColours"&gt;Blood&lt;/label&gt;
+            &lt;/span&gt;
+            &lt;span&gt;
+                &lt;input type="radio" name="colours" id="darkColours" value="dark"&gt;
+                &lt;label for="darkColours"&gt;Dark&lt;/label&gt;
+            &lt;/span&gt;
+            &lt;span&gt;
+                &lt;input type="radio" name="colours" id="lightColours" value="light"&gt;
+                &lt;label for="lightColours"&gt;Light&lt;/label&gt;
+            &lt;/span&gt;
+        &lt;/fieldset&gt;
+        &lt;fieldset style="display: flex; flex-flow: row wrap;"&gt;
+            &lt;legend&gt;Fonts&lt;/legend&gt;
+            &lt;span&gt;
+                &lt;input type="radio" name="fonts" id="draconicTheme" value="draconic"&gt;
+                &lt;label for="draconicTheme"&gt;Draconic&lt;/label&gt;
+            &lt;/span&gt;
+            &lt;span&gt;
+                &lt;input type="radio" name="fonts" id="darkTheme" value="regular"&gt;
+                &lt;label for="darkTheme"&gt;Regular&lt;/label&gt;
+            &lt;/span&gt;
+        &lt;/fieldset&gt;
+    &lt;/details&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // Allowed themes
+    const themes = {
+        colours: { // Colour themes
+            default: 'dark',
+            dark: {
+                col_fg: '#ffffff',
+                col_fg_light: '#ffffff',
+                col_fg_lighter: '#ffffff',
+                col_fg_alt: '#ffffff',
+                col_bg: '#000000',
+                col_bg_dark: '#000000',
+                col_bg_light: '#111111',
+                col_bg_lighter: '#222222',
+                anchor: '#3f8aff',
+                background: '#111111',
+            },
+            light: {
+                col_fg: '#000000',
+                col_fg_light: '#000000',
+                col_fg_lighter: '#000000',
+                col_fg_alt: '#000000',
+                col_bg: '#ffffff',
+                col_bg_dark: '#ffffff',
+                col_bg_light: '#eeeeee',
+                col_bg_lighter: '#dddddd',
+                anchor: '#1200e8',
+                background: '#dddddd',
+            },
+        },
+        fonts: { // Font sets
+            default: 'draconic',
+            draconic: {
+                main_font: '"Albertus MT", serif',
+                bitmap_font: '"VCR OSD Mono", sans-serif',
+                mono_font: '"Jack Input", monospace',
+            },
+            regular: {
+                main_font: 'serif',
+                bitmap_font: 'sans-serif',
+                mono_font: 'monospace',
+            }
+        }
+    }
+
+    // Always set the variables on load
+    changeTheme();
+    // Change theme whenever the themepicker changes
+    document.getElementById('themePicker').addEventListener('click', (event) =&gt; changeTheme())
+    
+    function changeTheme() {
+        for (const theme of Object.keys(themes)) {
+            // Value of the input for whichever theme we're working on
+            let value = document.querySelector(`#themePicker input[name="${theme}"]:checked`)?.value;
+            if (localStorage['data-' + theme]) {
+                if (!Object.keys(themes[theme]).includes(value)) {
+                    value = localStorage['data-' + theme];
+                } else {
+                    localStorage['data-' + theme] = value;
+                }
+            } else {
+                // Set the theme to default if it's not usable
+                if (!Object.keys(themes[theme]).includes(value)) {
+                    value = themes[theme].default;
+                }
+                
+                localStorage['data-' + theme] = value;
+            }
+            
+            // Set appropriate variables
+            for (const variable of Object.keys(themes[theme][value])) {
+                document.body.style.setProperty(`--${variable.replaceAll('_', '-')}`, themes[theme][value][variable]);
+            }
+        }
+    }
+&lt;/script&gt;
+</code>
+</pre>
                 {{ copying_playground }}
             </div>
         </main>

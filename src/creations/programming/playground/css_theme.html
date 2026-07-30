@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ head_playground }}
+    </head>
+    <body id="top">
+        {{ before }}
+        {{ header_playground }}
+        <main id="content">
+            <div>
+                <p>
+                    &emsp;Building on my <a href="./theme.html">old theme switcher</a>, my current one
+                    has made some improvements, primarily in that JavaScript is technically not required
+                    to use it. Now, it does still need JS to persist theme choice across pages and reloads,
+                    but it can still be used to change the theme without JS.
+                </p>
+                <p>
+                    &emsp;Basically the way it works, is i've got the floating div over there which has a named
+                    radio button group for each theme set (at time of writing, colours and fonts). I've then got
+                    <a href="/stylesheets/themeswitcher.css">a stylesheet</a> for the widget which just selects
+                    whichever input is checked, and sets a bunch of CSS variables accordingly.
+                </p>
+                <p>
+                    &emsp;Now, on its own this is a perfectly functional theme switcher! The only issue is that
+                    whichever theme the user picks isn't gonna be remembered when they navigate to a new page,
+                    or reload the page. As far as i know, this is just plain impossible without JavaScript (though
+                    if you know of a way, please tell me!!) so that's where it comes into play. The widget comes
+                    with a simple little JS snippet that just stores the selected theme in <code>localStorage</code>,
+                    then whenever a page loads, it checks the stored value and changes which input is checked
+                    based on that!
+                </p>
+                <p>
+                    &emsp;This implementation builds on my old theme switcher, and the improvements are largely
+                    inspired by <a href="https://notnite.com/">notnite's</a> theme switcher which was an epiphany
+                    for me! Feel free to check out the source for the widget, it's on just about every page
+                    on this site, so you can find it pretty easily. It's right above the header in the code.
+                </p>
+                {{ copying_playground }}
+            </div>
+        </main>
+        {{ after }}
+    </body>
+</html>

@@ -1,7 +1,7 @@
 type = "3d"
 title = "Bi-Bye Demo"
 date = [2024, 10, 27]
-file = "bi-bye paint testing.png"
+file = "bi-bye paint testing.webp"
 alt = "A 3d sniper rifle with the bi flag painted on it and a design with a crosshair and the text 'Bi-Bye' on the side."
 tags = ["2024"]
 text = """

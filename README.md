@@ -17,15 +17,14 @@ it's licensed under the GPLv3, a free, copyleft license.
     - Debug. Shits brokey all over
 - write library propaganda post (blog)
 - starter guide to building a website (SSGs, hosts, code, etc.)
-- option for more paragraphs in post generator (for loop based on postParas)
 - last.fm recently played widget (may need supporter, or python implementation)
 - add guestbook (supporter, or python implementation)
 - design some fonts for the site? (bitmap one i could pull off at least)
 - blinkeeees:
     - web2.0 hater
     - cachyos
-- move creations stylesheet to be *only* for creations
 
 Potential webrings:
 - [Code collective](https://petrapixel.neocities.org/webring) (resource sharing)
 - [Queer coded](https://isaacfish.neocities.org/webring/) (queer)
+- [*nix](https://softmachine.dev/webring/linuxring/) (linux, maybe after the 'every distro' project gets off the ground)

@@ -4,7 +4,7 @@
     <subtitle>Atom feed for end's site, including blog posts and creations</subtitle>
     <link href="https://end-draconis.neocities.org/" rel="alternate"/>
     <link href="https://end-draconis.neocities.org/atom.xml" rel="self"/>
-    <icon>https://end-draconis.neocities.org/resources/images/icon.png</icon>
+    <icon>https://end-draconis.neocities.org/resources/images/icon.webp</icon>
     <author>
         <name>end draconis</name>
         <email>end-drake@protonmail.com</email>

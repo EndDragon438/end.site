@@ -8,27 +8,24 @@
                 text-align: center;
             }
             
+            
             .button {
+                height: 48px;
+                image-rendering: pixelated;
+            }
+            
+            a:has(.button) {
                 display: inline-block;
                 height: 48px;
                 
-                & img {
-                    height: 48px;
-                    image-rendering: pixelated;
+                &:hover {
+                    border: transparent solid 2px;
                 }
             }
-            
-            a.button:hover {
-                border: transparent solid 2px;
-            }
-            
+
             .sidebar:first-of-type > b {
                 display: block;
                 margin: 0.5em 0;
-            }
-            
-            .sidebar .button {
-                display: inline-block;
             }
         </style>
     </head>
@@ -62,11 +59,11 @@
                 <!-- END WEBRINGS -->
                  
                 <b>My feeds!</b>
-                <a class="button" href="/atom.xml"><img src="/resources/images/atom_blinkie.gif" alt="this site support Atom!" title="this site support Atom!"></a>
-                <a class="button" href="/rss.xml"><img src="/resources/images/rss_blinkie.gif" alt="this site support RSS!" title="this site support RSS!"></a>
+                <a href="/atom.xml"><img class="button" src="/resources/images/atom_blinkie.gif" alt="a rotating Atom protocol icon next to the text 'Atom'" title="this site support Atom!"></a>
+                <a href="/rss.xml"><img class="button" src="/resources/images/rss_blinkie.gif" alt="blinking RSS icon next to the text 'RSS'" title="this site support RSS!"></a>
                 
-                <b>this site and its contents are licensed under the CC0 (effectively public domain)</b>
-                <a class="button" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/resources/images/cc0_button.png" alt="this site and its contents are licensed under the CC0" title="this site and its contents are licensed under the CC0"></a>
+                <b>this site and its contents (that i made) are licensed under the CC0 (effectively public domain)</b>
+                <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img class="button" src="/resources/images/cc0_button.png" alt="Creative Commons Zero license button" title="this site and its contents are licensed under the CC0"></a>
             </aside>
             <div>
                 <h1>end.site</h1>
@@ -91,45 +88,58 @@
                 <!-- blinkies and buttons, oh my!!!! -->
                 <div id="blinkies">
                     <p>my site blinkie & button <span style="font-size: 0.8em;">(<a href="/.well-known/button.json">usage</a>)</span></p>
-                    <a class="button" href="/.well-known/button.json"><img src="/resources/images/end.site_blinkie.gif" alt="'end.site' with a theta-delta and a dragon wing flapping over a gradient background" title="my site blinkie! click for usage info."></a>
-                    <a class="button" href="/.well-known/button.json"><img src="/resources/images/end.site_button.png" alt="'end.site' with a theta-delta and a dragon wing over a gradient background" title="my site button! click for usage info."></a>
+                    <a href="/.well-known/button.json"><img class="button" src="/resources/images/end.site_blinkie.gif" alt="'end.site' with a theta-delta and a dragon wing flapping over a gradient background" title="my site blinkie! click for usage info."></a>
+                    <a href="/.well-known/button.json"><img class="button" src="/resources/images/end.site_button.png" alt="'end.site' with a theta-delta and a dragon wing over a gradient background" title="my site button! click for usage info."></a>
                     
                     <br><br>
                     
                     <p>friends!</p>
-                    <a class="button" href="https://fantasydragon.xyz/"><img src="https://fantasydragon.xyz/buttons/vaporwave" alt="lineart dragon against a vaporwave-style background" title="FantasyDragon14 button"></a>
-                    <a class="button" href="https://ytd.wtf"><img src="https://ytd.wtf/yurithedragon_88x31.gif" alt="purple text 'Yuri' animated on a noisy black background" title="Yuri the Dragon's 88x31 Button"></a>
+                    <a href="https://fantasydragon.xyz/"><img class="button" src="https://fantasydragon.xyz/buttons/vaporwave" alt="lineart dragon against a vaporwave-style background" title="FantasyDragon14 button"></a>
+                    <a href="https://ytd.wtf"><img class="button" src="https://ytd.wtf/yurithedragon_88x31.gif" alt="purple text 'Yuri' animated on a noisy black background" title="Yuri the Dragon's 88x31 Button"></a>
                     <br><br>
                     
                     <p>other sites!</p>
-                    <a class="button" href="https://www.neververy4.com/en/"><img src="/resources/images/neverjhonsen.png" alt="a blue dragon with fluffy purple frill on a green background" title="Never Jhonsen, another cool dragon on the internet!"></a>
-                    <a class="button" href="https://savethedragons.xyz/"><img src = "/resources/images/savethedragons.gif" alt="green dragon icon on a 'Netscape Now!' style button reading 'Save the dragons now!'" title="Save the dragons now!"></a>
+                    <a href="https://www.neververy4.com/en/"><img class="button" src="/resources/images/neverjhonsen.png" alt="a blue dragon with fluffy purple frill on a green background" title="Never Jhonsen, another cool dragon on the internet!"></a>
+                    <a href="https://savethedragons.xyz/"><img class="button" src = "/resources/images/savethedragons.gif" alt="green dragon icon on a 'Netscape Now!' style button reading 'Save the dragons now!'" title="Save the dragons now!"></a>
+                    <a href="https://notnite.com"><img class="button" src = "/resources/images/notnite_button.png" alt="orange text 'notnite' on a black and gray checkered background" title="notnite"></a>
+                    <a href="https://neonaut.neocities.org"><img class="button" src="/resources/images/neonaut_button.png" alt="neonaut text on purple background" title="neonaut, maintainer of *the* netizen blinkie collection"></a>
                     
                     <br><br>
                     
                     <p>blinkie wall!</p>
-                    <a class="button" href="/atom.xml"><img src="/resources/images/atom_blinkie.gif" alt="a rotating Atom protocol icon next to the text 'Atom'" title="this site support Atom!"></a>
-                    <a class="button" href="/rss.xml"><img src="/resources/images/rss_blinkie.gif" alt="blinking RSS icon next to the text 'RSS'" title="this site support RSS!"></a>
-                    <a class="button" href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="/resources/images/cc0_button.png" alt="Creative Commons Zero license button" title="this site and its contents are licensed under the CC0"></a>
-                    <a class="button" href="#"><img src="/resources/images/autism_blinkie.gif" alt="scrolling rainbow of the autism infinity symbol on a red background." title="autism baybee! made by me"></a>
-                    <a class="button" href="#"><img src="/resources/images/e5074b_blinkie.gif" alt="'#E5074B' flashing on a background of the same color" title="my favourite colour :3 made by me"></a>
-                    <a class="button" href="#"><img src="/resources/images/updating_blinkie.gif" alt="updating . . . wiggling on a blue background with hazard striped border" title="updating . . ."></a>
-                    <a class="button" href="https://getmusicbee.com/" target="blank"><img src="/resources/images/musicbee_blinkie.gif" alt="bee flying through clouds with the blinking text 'MUSICBEE'" title="check out MusicBee on windows!"></a>
-                    <a class="button" href="https://bdsmovement.net/get-involved/what-to-boycott"><img src="/resources/images/palestine_blinkie.gif" alt="Palestinian flag with the text 'Free Palestine' flying in" title="click for resources for a free Palestine"></a>
-                    <a class="button" href="https://yesterweb.org/"><img src="/resources/images/no2web3.gif" alt="the text 'Say no to web3, keep the web free' a word at a time" title="say no to web3 tech"></a>
-                    <a class="button" href="https://yesterweb.org/"><img src="/resources/images/yesterweb_button.png" alt="yesterweb movement link. from yesterweb.org" title="yesterweb movement link. from yesterweb.org"></a>
-                    <a class="button" href="https://jigsaw.w3.org/css-validator/check/referer"><img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" title="Valid CSS!"></a>
-                    <a class="button" href="https://wave.webaim.org/aimscore"><img src="/resources/images/wave_score_button.png" alt="my sites WebAIM WAVE accessibility score of 10/10" title="my sites WebAIM WAVE accessibility score of 10/10"></a>
-                    <a class="button" href="https://www.tumblr.com/blinkees"><img src="/resources/images/i_heart_dragons.gif" alt="I &lt;3 dragons surrounded by two dragons waving their tails. made by @blinkees on tumblr!" title="I &lt;3 dragons surrounded by two dragons waving their tails. made by @blinkees on tumblr!"></a>
+                    <a href="/atom.xml"><img class="button" src="/resources/images/atom_blinkie.gif" alt="a rotating Atom protocol icon next to the text 'Atom'" title="this site support Atom!"></a>
+                    <a href="/rss.xml"><img class="button" src="/resources/images/rss_blinkie.gif" alt="blinking RSS icon next to the text 'RSS'" title="this site support RSS!"></a>
+                    <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img class="button" src="/resources/images/cc0_button.png" alt="Creative Commons Zero license button" title="this site and its contents are licensed under the CC0"></a>
+                    <a href="#"><img class="button" src="/resources/images/autism_blinkie.gif" alt="scrolling rainbow of the autism infinity symbol on a red background." title="autism baybee! made by me"></a>
+                    <a href="#"><img class="button" src="/resources/images/e5074b_blinkie.gif" alt="'#E5074B' flashing on a background of the same color" title="my favourite colour :3 made by me"></a>
+                    <a href="#"><img class="button" src="/resources/images/updating_blinkie.gif" alt="updating . . . wiggling on a blue background with hazard striped border" title="updating . . ."></a>
+                    <a href="https://getmusicbee.com/" target="blank"><img class="button" src="/resources/images/musicbee_blinkie.gif" alt="bee flying through clouds with the blinking text 'MUSICBEE'" title="check out MusicBee on windows!"></a>
+                    <a href="https://bdsmovement.net/get-involved/what-to-boycott"><img class="button" src="/resources/images/palestine_blinkie.gif" alt="Palestinian flag with the text 'Free Palestine' flying in" title="click for resources for a free Palestine"></a>
+                    <a href="https://yesterweb.org/"><img class="button" src="/resources/images/no2web3.gif" alt="the text 'Say no to web3, keep the web free' a word at a time" title="say no to web3 tech"></a>
+                    <a href="https://jigsaw.w3.org/css-validator/check/referer"><img class="button" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="W3C CSS validator button showing valid CSS" title="Valid CSS! (ignore the nest selectors that's a validator bug #431)"></a>
+                    <a href="http://validator.w3.org/feed/check.cgi?url=https%3A//end-draconis.neocities.org/rss.xml"><img class="button" src="/resources/images/valid_rss_button.png" alt="W3C valid RSS button" title="Validate my RSS feed" /></a>
+                    <a href="https://wave.webaim.org/aimscore"><img class="button" src="/resources/images/wave_score_button.png" alt="my sites WebAIM WAVE accessibility score of 10/10" title="my sites WebAIM WAVE accessibility score of 10/10"></a>
+                    <a href="https://www.tumblr.com/blinkees"><img class="button" src="/resources/images/i_heart_dragons.gif" alt="I &lt;3 dragons surrounded by two dragons waving their tails" title="made by @blinkees on tumblr!"></a>
+                    <img class="button" src="/resources/images/my_own_two_paws_button.png" alt="purple paw and the text 'made with my own two paws!'" title="claws too!">
+                    <img class="button" src="/resources/images/reject_humanity_therian_button.png" alt="theta delta and the text 'reject humanity' on an orange background" title=":3">
+                    <img class="button" src="/resources/images/todo_button.png" alt="HTML comment TODO" title="ctrl+f 36 results. made by me">
+                    <img class="button" src="/resources/images/anarchy_now_blinkie.gif" alt="netscape now style blinkie with the text 'anarchy now!'" title="anarchy now!">
                 </div>
             </div>
             <aside class="sidebar" id="changelog" aria-label="Changelog sidebar">
                 <h2>Changelog</h2>
                 <div>
-                    July 28, 2026
-                    
+                    July 29, 2026
                     <ul>
-                        <li>Implemented <a href="/rss">RSS</a> and <a href="/atom">Atom</a> feed generation in the SSG (i'm basically all-powerful)</li>
+                        <li>made theme switcher <em>almost</em> JS-free (only uses JS for memory now, not actually switching) inspired by an implementation by <a href="https://notnite.com/">notnite</a>!</li>
+                        <li>fixed the annoying unresponsive image on my about page</li>
+                        <li>added new theme switcher to the playground under CSS, noted on the old one that it's no longer in use</li>
+                        <li>added new blinkies! valid RSS, notnite, my own two paws, reject humanity, anarchy now, TODO, neonaut</li>
+                    </ul>
+                    
+                    July 28, 2026
+                    <ul>
+                        <li>Implemented <a href="/rss.xml">RSS</a> and <a href="/atom.xml">Atom</a> feed generation in the SSG (i'm basically all-powerful)</li>
                     </ul>
                     
                     July 24, 2026

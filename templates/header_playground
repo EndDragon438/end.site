@@ -1,6 +1,6 @@
 <header>
     <a href="/creations/programming/playground/index.html" id="home">
-        <img src="/resources/images/icon.png" alt="The sites icon, a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
+        <img src="/resources/images/icon.webp" alt="The sites icon, a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
         <span class="pixel">the playground</span>
     </a>
     <nav>
@@ -21,6 +21,7 @@
                     <div>
                         <ul>
                             <li><a href="./sr_only.html">Screenreader-only elements</a></li>
+                            <li><a href="./css_theme.html">(nearly) JS-free theme switcher</a></li>
                         </ul>
                     </div>
                 </details>
@@ -64,6 +65,7 @@
                         <summary>CSS</summary>
                         <ul>
                             <li><a href="./sr_only.html">Screenreader-only elements</a></li>
+                            <li><a href="./css_theme.html">(nearly) JS-free theme switcher</a></li>
                         </ul>
                     </details>
                 </li>

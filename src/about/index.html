@@ -3,6 +3,21 @@
     <head>
         {{ head }}
         <link href="/stylesheets/tabs.css" rel="stylesheet" type="text/css" media="all">
+        <style>
+            /* irritatingly unresponsive image *shakes fist* */
+            #bio + .tab > img:first-of-type {
+                max-width: 400px;
+                height: auto;
+                float: left;
+                margin: 0 2em;
+            }
+            @media (max-width: 600px) {
+                #bio + .tab > img:first-of-type {
+                    float: none;
+                    max-width: 75%;
+                }
+            }
+        </style>
     </head>
     <body id="top">
         {{ before }}
@@ -20,7 +35,7 @@
                 <input type="radio" class="tab" id="bio" name="tabs" checked>
                 <div class="tab">
                     <h1>Bio</h1>
-                    <img class="creation-content" src="/resources/images/icon.png" style="max-width:400px; height: auto; float:left; margin: 0 2em;" alt="My icon! a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
+                    <img class="creation-content" src="/resources/images/icon.webp" alt="My icon! a gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
                     <p>
                         <strong>Name</strong>: end (end draconis if you must)<br>
                         <strong>Pronouns</strong>: it/its, she/her<br>
