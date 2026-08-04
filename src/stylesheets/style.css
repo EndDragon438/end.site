@@ -41,10 +41,40 @@
     --col-bg-light: #111111;
     --col-bg-lighter: #222222;
     --anchor: #3f8aff;
-    --background: url("/resources/images/dragons_clouds_seamless.jpg");
+    --background: #111111;
     --main-font: 'Albertus MT', serif;
     --bitmap-font: 'VCR OSD Mono', sans-serif;
     --mono-font: 'JetBrains Mono', monospace;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --col-fg: #000000;
+        --col-fg-light: #000000;
+        --col-fg-lighter: #000000;
+        --col-fg-alt: #000000;
+        --col-bg: #ffffff;
+        --col-bg-dark: #ffffff;
+        --col-bg-light: #eeeeee;
+        --col-bg-lighter: #dddddd;
+        --anchor: #1200e8;
+        --background: #dddddd;
+    }
+}
+
+/*
+=========================
++++   NORMALIZATION   +++
+=========================
+*/
+* {
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -70,10 +100,7 @@ button, a, summary { /* Not showing up on some <summary> elements. why? always c
 body {
     font-family: var(--main-font), "Helvetica";
     background: var(--background);
-    margin: 0;
-    padding: 0;
     color: var(--col-fg);
-    font-size: 1em;
 }
 
 main {
@@ -94,12 +121,13 @@ main {
         flex: 1 1 220px;
     }
     
-    & > div:only-child {
-        width: 80%;
+    & > div:only-child, & > article:only-child {
+        width: 70%;
+        flex: initial;
     }
 }
 
-/* Responsive font sizes for smaller screens */
+/* Responsive font sizes for smaller screens - never go below 1em base */
 @media (min-width: 1400px) {
     body {
         font-size: 1.25em;
@@ -186,7 +214,7 @@ a:hover {
 
 /* Blur fast-blinking images */
 .flashing {
-    filter: blur(0.5em);
+    filter: blur(40px);
     
     &:hover { /* THIS IS A THING YOU CAN DO WITH CSS. WHAT. THIS IS AMAZING */
         filter: blur(0);
@@ -293,8 +321,8 @@ header {
     
     & > div {
         position: absolute;
-        top: 0;
-        right: 2em;
+        top: 3em;
+        right: 0;
         margin: 1em;
         font-size: 2em;
         border: 3px solid var(--col-fg);
