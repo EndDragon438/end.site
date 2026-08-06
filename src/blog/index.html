@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {{ head }}
+        <title>Redirect to /articles</title>
+        <meta http-equiv = "refresh" content = "3; url = /articles"/>
     </head>
-    <body id="top">
-        {{ before }}
-        {{ header }}
-        <main id="content">
-            <div>
-                <h1>Blog</h1>
-                {{ gen: blogPosts }}
-            </div>
+    <body>
+        <main>
+            /blog has migrated to <a href="/articles">/articles</a>!
         </main>
-        <footer>
-            <p>END IS TYPING...</p>
-        </footer>
-        {{ after }}
     </body>
 </html>

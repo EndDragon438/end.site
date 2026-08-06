@@ -5,3 +5,4 @@ guestbook_db.sh
 staticsitegenerator.py
 update.sh
 .env
+dist/

@@ -15,7 +15,7 @@ Data templates are used for populating same-format pages with data from a
 serialized data format (TOML right now), mainly the /creations/ pages.
 
 Generated templates are used for slightly more complex stuff, usually for
-navigation, like the tag pages and the blog homepage.
+navigation, like the tag pages and the articles homepage.
 
 Feel free to take inspiration or even just copy. If you've got questions,
 feel free to ask. I'm here to make the indie web more accessible!
@@ -37,7 +37,7 @@ SOURCE_DIR = './src'
 DIST_DIR = './dist'
 TEMPLATE_DIR = './templates'
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-blogPosts = []
+articles = []
 
 def main():
     """Collect all files, then execute necessary functions on them
@@ -52,12 +52,12 @@ def main():
     files = [p for p in paths if '.html' not in p and '.toml' not in p]
     pages = [p for p in paths if '.html' in p]
     posts = [p for p in paths if '.toml' in p]
-    blogs = [p for p in paths if 'index.html' not in p and '/blog' in p]
+    article = [p for p in paths if 'index.html' not in p and '/articles' in p]
     
-    global blogPosts
+    global articles
     
-    for blog in blogs:
-        blogPosts += [{'title': blog[blog.find('_') + 1:-5].replace('-', ' '), 'date': [int(x) for x in blog[blog.rfind('/') + 1:blog.find('_')].split('-')]}]
+    for post in article:
+        articles += [{'title': post[post.find('_') + 1:-5].replace('-', ' '), 'date': [int(x) for x in post[post.rfind('/') + 1:post.find('_')].split('-')]}]
 
     # Populated by post loop. [{name, posts[]}]
     tags = {}
@@ -128,7 +128,7 @@ def main():
     # max number of items to grab
     itemLimit = 25
     # build items list
-    items = [{'title': post['title'], 'date': post['date'], 'type': 'blog'} for post in blogPosts]
+    items = [{'title': post['title'], 'date': post['date'], 'type': 'article'} for post in articles]
     [items.append(post) for tag in tags for post in tags[tag] if post not in items]
     def itemSort(item):
         return datetime.datetime(*item['date'])
@@ -157,17 +157,17 @@ def applyTemplates(text, data = None):
         if 'gen:' in name:
             # Generated template (handles tags and other lists)
             operation = name[4:].strip()
-            if operation == 'blogPosts':
-                # List all blog posts
-                replace = '<ul id="blogPosts">'
-                # Sort blog posts by date
-                def blogSort(post):
+            if operation == 'articles':
+                # List all articles
+                replace = '<ul id="articles">'
+                # Sort articles by date
+                def articleSort(post):
                     return datetime.datetime(*post['date'])
                 
-                blogPosts.sort(key = blogSort)
-                blogPosts.reverse() # Latest first
-                for post in blogPosts:
-                    replace += f'\n<li><a href="/blog/{'-'.join([f'{x:02}' for x in post['date']])}_{post['title'].replace(' ', '-')}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
+                articles.sort(key = articleSort)
+                articles.reverse() # Latest first
+                for post in articles:
+                    replace += f'\n<li><a href="/articles/{'-'.join([f'{x:02}' for x in post['date']])}_{post['title'].replace(' ', '-')}.html">{post['title']} | {MONTHS[post['date'][1] - 1]} {post['date'][2]}, {post['date'][0]}</a></li>'
                 replace += '\n</ul>'
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
             elif operation == 'tagName':
@@ -210,9 +210,9 @@ def applyTemplates(text, data = None):
                     replace += f"""
             <item>
                 <title>{item['title']}</title>
-                <link>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}</link>
+                <link>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}</link>
                 <pubDate>{utils.format_datetime(datetime.datetime(*item['date']))}</pubDate>
-                <guid>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'blog' else item['name']}</guid>
+                <guid>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'article' else item['name']}</guid>
             </item>
                     """
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
@@ -222,10 +222,10 @@ def applyTemplates(text, data = None):
                     replace += f"""
         <entry>
             <title>{item['title']}</title>
-            <link href="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" rel="alternate"/>
-            <id>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'blog' else item['name']}</id>
+            <link href="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'article' else item['name']}" rel="alternate"/>
+            <id>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'article' else item['name']}</id>
             <updated>{datetime.datetime(*item['date']).isoformat()}Z</updated>
-            <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'blog' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'blog' else item['name']}" type="text/html"></content>
+            <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'article' else item['name']}" type="text/html"></content>
         </entry>
                     """
                 text = re.sub(r'{{.*}}', replace, text, count = 1)

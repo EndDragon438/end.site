@@ -127,21 +127,10 @@ main {
     }
 }
 
-/* Responsive font sizes for smaller screens - never go below 1em base */
-@media (min-width: 1400px) {
-    body {
-        font-size: 1.25em;
-    }
-}
-
 @media (min-width: 1700px) {
     main {
         margin: 1em;
         margin-bottom: 2em;
-    }
-    
-    body {
-        font-size: 1.5em;
     }
 }
 
@@ -260,29 +249,29 @@ header {
         }
         
         & > span {
-            font-size: 2em;
-            margin: 0 1em;
+            font-size: 1.5em;
+            margin: 0 0.5em;
         }
     }
     
     & > nav {
         margin-left: auto;
-        margin-right: 25px;
         height: 100%;
         display: none;
         
         & > ul {
             margin: 0;
             padding: 0;
+            padding-right: 0.5em;
             height: 100%;
             background: transparent;
-            
+
             & > li {
                 display: inline-block;
                 border-radius: 0;
                 margin: 0;
                 padding: 0;
-                font-size: 2em;
+                font-size: 3vw;
                 height: 100%;
                 box-sizing: border-box;
                 background: transparent;
@@ -295,7 +284,7 @@ header {
                     display: inline-block;
                     height: 100%;
                     align-content: center;
-                    padding: 0 0.5em;
+                    padding: 0 0.25em;
                 }
             }
         }
@@ -349,7 +338,7 @@ header {
 }
 
 /* Swap to collapsed nav at 1200px wide */
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
     header > nav {
         display: block;
     }

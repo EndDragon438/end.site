@@ -7,10 +7,12 @@
         {{ before }}
         {{ header }}
         <main id="content">
-            <h1>Blog</h1>
-            <ul id="blogPosts">
-                {{ gen: blogPosts }}
-            </ul>
+            <div>
+                <h1>Articles</h1>
+                <ul id="articles">
+                    {{ gen: articles }}
+                </ul>
+            </div>
         </main>
         <footer>
             <p>END IS TYPING...</p>
