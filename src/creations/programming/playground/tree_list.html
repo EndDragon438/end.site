@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ head_playground }}
+        <style>
+            .treeList, .treeList ul {
+                font-family: mono;
+                line-height: 1.15em;
+                list-style: "├ ";
+                /* For serif/sans-serif */
+                /* padding-left: .86em; */
+                /* For mono */
+                padding-left: 1.2em;
+                
+                & > li:has(ul) {
+                    list-style: "│ ";
+                }
+                
+                & > li:last-child {
+                    list-style: "└ "
+                }
+            }
+            
+            .treeList li:not(:last-child) ul li:not(:first-child) {
+                list-style: "│ ├ ";
+                
+                &:last-child {
+                    list-style: "│ └ ";
+                }
+            }
+            
+            .treeList li:not(:last-child) ul ul li:not(:first-child) {
+                list-style: "│   ├ ";
+                
+                &:last-child {
+                    list-style: "│   └ ";
+                }
+            }
+        </style>
+    </head>
+    <body id="top">
+        {{ before }}
+        {{ header_playground }}
+        <main id="content">
+            <div>
+                <ul class="treeList" style="width: fit-content; margin: auto;">
+                    <li>this</li>
+                    <li>is</li>
+                    <li>a</li>
+                    <li>
+                        <ul>
+                            <li>tree</li>
+                            <li>style</li>
+                            <li>
+                                <ul>
+                                    <li>(like</li>
+                                    <li>file</li>
+                                    <li>system)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>list</li>
+                    <li>
+                        <ul>
+                            <li>cool</li>
+                            <li>right?</li>
+                            <li>
+                                <ul>
+                                    <li>i</li>
+                                    <li>think</li>
+                                    <li>so</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    &emsp;You know those filesystem visualizations that are like a buncha nested
+                    trees in a long list? I wrote a lil CSS snippet to do that on an HTML list. The
+                    code is super simple, here it is:
+                </p>
+<pre>
+<code>
+.treeList, .treeList ul {
+    font-family: mono;
+    line-height: 1.15em;
+    list-style: "├ ";
+    /* For serif/sans-serif */
+    /* padding-left: .86em; */
+    /* For mono */
+    padding-left: 1.2em;
+    
+    & > li:has(ul) {
+        list-style: "│ ";
+    }
+    
+    & > li:last-child {
+        list-style: "└ "
+    }
+}
+
+/* First level nested lists */
+.treeList li:not(:last-child) ul li:not(:first-child) {
+    list-style: "│ ├ ";
+    
+    &:last-child {
+        list-style: "│ └ ";
+    }
+}
+
+/* Second level nested lists */
+.treeList li:not(:last-child) ul ul li:not(:first-child) { /* one more 'ul' */
+    list-style: "│   ├ "; /* two more spaces in between */
+    
+    &:last-child {
+        list-style: "│   └ ";
+    }
+}
+</code>
+</pre>
+                <p>
+                    &emsp;Just two blocks (with some nested blocks) and a few properties. This
+                    snippet makes use of the ability for <code>list-style</code> to be given whatever
+                    string you like, and some characters from Unicode which fit well. It's all applied to
+                    a classname, easy as that.
+                </p>
+                <p>
+                    &emsp;One thing to take note of if you use this snippet, if you're using a non-monospaced
+                    font you'll have to swap out the <code>padding-left</code> like i've commented there. It
+                    can also get pretty finicky on nested lists with a non-mono font, the lines just won't quite
+                    line up right without some tweaking. I've got it working with 2 levels, but beyond that you
+                    might have some issues.
+                </p>
+                <p>
+                    &emsp;You do hafta add a block for each level of nesting you're using, in this code
+                    i've got two nested levels defined. For each new level, all you gotta do is copy that
+                    last block, add another <code>ul</code> in the selector (between the first and last <code>li</code>
+                    bits), and add two spaces in between the two symbols in each of the <code>list-style</code> properties.
+                </p>
+                {{ copying_playground }}
+            </div>
+        </main>
+        {{ after }}
+    </body>
+</html>
