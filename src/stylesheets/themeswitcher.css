@@ -13,7 +13,7 @@
     color: var(--col-fg);
     padding: 0.25em;
     border: 3px solid var(--col-fg);
-    bottom: 1em;
+    bottom: 2em;
     right: 1em;
     width: 14em;
     -webkit-user-select: none;

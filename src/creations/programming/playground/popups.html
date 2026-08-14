@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ head_playground }}
+        <link href="/stylesheets/popups.css" rel="stylesheet">
+        <style>
+            #buttons {
+                display: flex;
+                gap: 1em;
+                justify-content: space-around;
+                margin: auto;
+                width: fit-content;
+                
+                & > label {
+                    padding: 0.25em;
+                    background-color: var(--col-bg-lighter);
+                    border-radius: 5px;
+                }
+            }
+        </style>
+    </head>
+    <body id="top">
+        {{ before }}
+        {{ header_playground }}
+        <main id="content">
+            <div>
+                <div class="popups">
+                    <input id="pop1" type="checkbox">
+                    <div>
+                        <label for="pop1" aria-label="Close">🞫</label>
+                        <div>
+                            <p>
+                                &emsp;These popups have a specific structure (though that can be modified with modifications to the stylesheet)
+                            </p>
+                        </div>
+                    </div>
+                    <input id="pop2" type="checkbox">
+                    <div>
+                        <label for="pop2" aria-label="Close">🞫</label>
+                        <div>
+                            <p>
+                                &emsp;The structure includes a button to close the popup of course, in the top right.
+                            </p>
+                        </div>
+                    </div>
+                    <input id="pop3" type="checkbox">
+                    <div>
+                        <label for="pop3" aria-label="Close">🞫</label>
+                        <div>
+                            <p>
+                                &emsp;The structure of these popups can be modified a fair bit, they really just need a <code>&lt;div&gt;</code>
+                                next to a matching <code>&lt;input&gt;</code>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="buttons">
+                    <label for="pop1">First popup</label>
+                    <label for="pop2">Second popup</label>
+                    <label for="pop3">Third popup</label>
+                </div>
+                <p>
+                    &emsp;This is a little NoJS popup stylesheet, once again abusing <code>&lt;input&gt;</code> elements and labels. It's a pretty
+                    simple little system. It works by pairing up <code>&lt;input&gt;</code> and <code>&lt;div&gt;</code> elements, the latter of
+                    which are styled to take up the full viewport and also given a lil 'close' button. The inputs are checkboxes, and the close
+                    buttons along with the main 'open' buttons are <code>&lt;label&gt;</code> elements for those inputs. Really there could be
+                    any number of these, but I'm only demonstrating a single open and close button here.
+                </p>
+                <p>
+                    &emsp;The inputs are always hidden, and by default the divs are hidden as well. When the inputs are checked (via the user
+                    clicking on the paired labels) their paired divs are set to <code>display: block;</code>. They already take up the whole
+                    viewport, and are given another label with the close icon (plain unicode!!), so then i can put whatever content in there
+                    i like.
+                </p>
+                <p>
+                    &emsp;The stylesheet for this lil trick can be found <a href="/stylesheets/popups.css">here</a>.
+                </p>
+                {{ copying_playground }}
+            </div>
+        </main>
+        {{ after }}
+    </body>
+</html>
