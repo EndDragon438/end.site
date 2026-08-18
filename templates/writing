@@ -13,7 +13,7 @@
                 <h2 class="creation-subtitle">{{ data: subtitle }}</h2>
                 <h3 class="creation-date">{{ data: date }}</h3>
                 {{ data: tags }}
-                <h2 class="creation-subtitle" style="margin:0;"><a href="{{ data: link }}" target="blank">alternative link</a></h2>
+                <b class="creation-subtitle" style="margin:0;"><a href="{{ data: link }}" target="blank">alternative link</a></b><br>
                 <p>{{ data: text }}</p>
             </div>
         </main>

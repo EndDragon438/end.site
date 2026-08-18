@@ -1,0 +1,13 @@
+type = "writing"
+title = "End of the Line Rail"
+date = [2026, 8, 18]
+link = "https://enddragon438.github.io/End-Rail/"
+text = """
+&emsp;This is a project i've been working on for a lil while. It's a  manual
+(in the form of a website) for a rail company i run on a Minecraft server i'm
+a part of. The main bit of the site is the manual itself, which is broken
+down into various sections on track and train design. I also have some tools
+on there, mostly Lua programs for using with ComputerCraft, as well as a map
+of the server with rail lines overlaid.
+"""
+tags = ["2026","minecraft"]

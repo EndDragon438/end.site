@@ -128,7 +128,7 @@ def main():
     # max number of items to grab
     itemLimit = 25
     # build items list
-    items = [{'title': post['title'], 'date': post['date'], 'type': 'article'} for post in articles]
+    items = [{'title': post['title'], 'date': post['date'], 'type': 'articles'} for post in articles]
     [items.append(post) for tag in tags for post in tags[tag] if post not in items]
     def itemSort(item):
         return datetime.datetime(*item['date'])
@@ -210,9 +210,9 @@ def applyTemplates(text, data = None):
                     replace += f"""
             <item>
                 <title>{item['title']}</title>
-                <link>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}</link>
+                <link>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'articles' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'articles' else item['name']}</link>
                 <pubDate>{utils.format_datetime(datetime.datetime(*item['date']))}</pubDate>
-                <guid>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'article' else item['name']}</guid>
+                <guid>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'articles' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'articles' else item['name']}</guid>
             </item>
                     """
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
@@ -222,10 +222,10 @@ def applyTemplates(text, data = None):
                     replace += f"""
         <entry>
             <title>{item['title']}</title>
-            <link href="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'article' else item['name']}" rel="alternate"/>
-            <id>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'article' else item['name']}</id>
+            <link href="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'articles' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'articles' else item['name']}" rel="alternate"/>
+            <id>https://end-draconis.neocities.org/{item['type'] if item['type'] == 'articles' else 'creations/' + item['type']}/{item['title'].replace(' ', '-') if item['type'] == 'articles' else item['name']}</id>
             <updated>{datetime.datetime(*item['date']).isoformat()}Z</updated>
-            <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'article' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'article' else item['name']}" type="text/html"></content>
+            <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'articles' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'articles' else item['name']}" type="text/html"></content>
         </entry>
                     """
                 text = re.sub(r'{{.*}}', replace, text, count = 1)

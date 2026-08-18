@@ -34,6 +34,22 @@
 			#toc > li::after {
 				content: ",";
 			}
+			
+			main {
+				counter-reset: links;
+			}
+			
+			main a {
+				counter-increment: links;
+			}
+			
+			#toc a {
+				counter-increment: links 0;
+			}
+			
+			footer p::before {
+				content: counter(links);
+			}
 		</style>
 	</head>
 	<body id="top">
@@ -230,7 +246,7 @@
 			</div>
 		</main>
 		<footer>
-			<p>91 LINKS</p>
+			<p> LINKS</p>
 		</footer>
 		{{ after }}
 	</body>
