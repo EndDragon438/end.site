@@ -89,12 +89,12 @@ body {
 
 /* custom cursor */
 :root {
-    cursor: url('/resources/images/dragon_cursor_auto.png'), auto;
+    cursor: url('/resources/images/dragon_cursor_auto.svg'), auto;
 }
 
 button, a, summary { /* Not showing up on some <summary> elements. why? always cropping up at the bottom of the window */
-    cursor: url('/resources/images/dragon_cursor_pointer.png'), auto;
-    cursor: -webkit-image-set(url('/resources/images/dragon_cursor_pointer.png')), auto;
+    cursor: url('/resources/images/dragon_cursor_pointer.svg'), auto;
+    cursor: -webkit-image-set(url('/resources/images/dragon_cursor_pointer.svg')), auto;
 }
 
 body {
