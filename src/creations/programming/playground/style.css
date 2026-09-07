@@ -49,6 +49,7 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: var(--main-font);
     background: var(--background);
     font-size: 1em;
 }

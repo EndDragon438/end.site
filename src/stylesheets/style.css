@@ -99,7 +99,7 @@ button, a, summary { /* Not showing up on some <summary> elements. why? always c
 }
 
 body {
-    font-family: var(--main-font), "Helvetica";
+    font-family: var(--main-font);
     background: var(--background);
     color: var(--col-fg);
 }
