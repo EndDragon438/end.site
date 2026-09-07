@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ head_playground }}
+    </head>
+    <body id="top">
+        {{ before }}
+        {{ header_playground }}
+        <main id="content">
+            <div>
+                <h1>NoJS Tabs</h1>
+                <p>
+                    &emsp;There are several different implementations of JS-free tabs, each with their own ups
+                    and downs. i know three of them, which i'll explain here. i'll go in (subjective) order
+                    of usefulness.
+                </p>
+                <h2>1: Input/Label Based</h2>
+                <p>
+                    &emsp;This is the implementation i use most frequently. It allows multiple groups of tabs (including
+                    nested groups!), and lets you have multiple places to click to open up a tab. The main limitation of
+                    this method is that without JS you can't style the buttons for the active tab (though there has been
+                    some talk in the web working groups about adding functionality that would fix this for several years.
+                    not like, super promising talk, but it might happen.)
+                </p>
+<pre>
+&lt;!-- style --&gt;
+input.tab {
+    display: none;
+}
+
+input.tab:not(:checked) + div {
+    display: none;
+}
+
+&lt;!-- markup --&gt;
+&lt;label class="tab" for="tabName">button text&lt;/label&gt; &lt;!-- this can go wherever, and can be duplicated --&gt;
+
+&lt;!-- the input MUST be placed next to the div, in this order --&gt;
+&lt;input class="tab" id="tabName" type="radio" name="tabGroup" checked&gt; &lt;!-- the 'checked' makes this tab open by default --&gt;
+&lt;div&gt;
+    &lt;!-- tab content here --&gt;
+&lt;/div&gt;
+</pre>
+                <h2>2: Anchor (Link) Based</h2>
+                <p>
+                    &emsp;This is a very common method, and it's quite simple to set up. It's advantages are that you can
+                    have a different default tab open when visiting the page just by changing an href, it's quite easy to
+                    use, the tab controls can be anywhere (even on other pages as mentioned), and the active tab can be styled.
+                    The biggest disadvantage is that you can only have one tab group per page.
+                </p>
+<pre>
+&lt;!-- style --&gt;
+div.tab:not(:target) {
+    display: none;
+}
+/* yup. that's it. */
+
+/* you can style the active tab like this */
+div.tab:target {
+    /* ... */
+}
+
+&lt;!-- markup --&gt;
+&lt;a href="#tabName">click me&lt;/a&gt; &lt;!-- this can go wherever, even on another page --&gt;
+&lt;div class="tab" id="tabName"&gt;
+    &lt;!-- tab content here --&gt;
+&lt;/div&gt;
+</pre>
+                <p>
+                    &emsp;For this one, if you'd like to have a default tab without having to add <code>#defaultTab</code> (or whatever
+                    the id is) to the end of all your links to the page, you've gotta group the tabs together. <a href="https://sainthood.xyz/code/snippets/css-tabs-with-default-open-tab.html">here's a guide for that</a>
+                </p>
+                <h2>3: Details/Summary Based</h2>
+                <p>
+                    &emsp;This is a method I haven't seen anyone else use, which is fair. The primary benefit of this method
+                    is that the active tab can be style, it's quite easy to have a tab group with no tabs open, which is useful
+                    for navigation menus and such, and it also is semantically accurate to a dropdown, which is also quite nice
+                    for navs. It also lets you have a default open tab, and allows for multiple (nested) tab groups. The
+                    disadvantages are that the tabs have to be right next to their controls and the positioning is a bit finicky.
+                </p>
+<pre>
+&lt;!-- style --&gt;
+details.tab > div {
+    position: absolute;
+    /* can also do `left: 0;` if you prefer them on the left, or mix n match. */
+    /* if they're going *all* the way left try giving their parent `position: relative;` */
+    right: 0; 
+    transform: translateY(...); /* Use if your divs are too high/low, often due to padding */
+    /* ... */
+}
+
+/* hide tabs that aren't open */
+details.tab:not([open]) + div {
+    display: none;
+}
+
+/* you can style the active tab like this */
+details.tab[open] + div {
+    /* ... */
+}
+
+&lt;!-- markup --&gt;
+&lt;details class="tab" name="tabgroup" open&gt; &lt;!-- the 'open' makes this tab open by default --&gt;
+    &lt;summary&gt;open button text here&lt;/summary&gt;
+    &lt;div&gt;
+        &lt;!-- tab content --&gt;
+    &lt;/div&gt;
+&lt;/details&gt;
+</pre>
+                <h2>Summary</h2>
+                <p>
+                    &emsp;So that's it! The three NoJS tab implementations i know of. If you've got any questions about any
+                    of them, feel free to ask me about it (About > Contact). I can also be found in  the r/neocities and Nekoweb
+                    discord servers, which are good spots to ask for help with webdev things.
+                </p>
+                {{ copying_playground }}
+            </div>
+        </main>
+        {{ after }}
+    </body>
+</html>
