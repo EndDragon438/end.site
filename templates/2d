@@ -10,7 +10,7 @@
         <main id="content">
             <img class="creation-image" src="/creations/2d/resources/{{ data: file }}" alt="{{ data: alt }}" title="{{ data: alt }}">
             <div class="creation-side">
-                <h1 class="creation-title">{{ data: title }}</h1>
+                <h2 class="creation-title">{{ data: title }}</h2>
                 <p class="creation-date">{{ data: date }}</p>
                 <p class="creation-subtitle" style="margin:0;"><a href="{{ data: link }}" target="blank">alternative link</a></p>
                 <p class="creation-image-desc">

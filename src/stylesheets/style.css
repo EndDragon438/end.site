@@ -249,7 +249,7 @@ header {
             height: 150px;
         }
         
-        & > span {
+        & > h1 {
             font-size: 1.5em;
             margin: 0 0.5em;
         }
@@ -351,7 +351,7 @@ header {
 
 /* Hide home text at 600px wide */
 @media (max-width: 600px) {
-    #home > span {
+    #home > h1 {
         display: none;
     }
 }
