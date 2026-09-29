@@ -31,12 +31,12 @@
         <fieldset class="themeSet" id="fontSet">
             <legend>Fonts</legend>
             <span>
-                <input type="radio" name="fonts" id="draconicFonts" checked>
-                <label for="draconicFonts">Draconic</label>
+                <input type="radio" name="fonts" id="regularFonts" checked>
+                <label for="regularFonts">Regular</label>
             </span>
             <span>
-                <input type="radio" name="fonts" id="regularFonts">
-                <label for="regularFonts">Regular</label>
+                <input type="radio" name="fonts" id="draconicFonts">
+                <label for="draconicFonts">Draconic</label>
             </span>
         </fieldset>
     </details>

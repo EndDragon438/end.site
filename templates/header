@@ -1,7 +1,7 @@
 <header>
     <a href="/home.html" id="home">
         <img src="/resources/images/icon.webp" fetchpriority="high" alt="A gray-scaled dragon with straight horns and a toothy grin, against a scribbled trans flag and theta-delta in the background.">
-        <span class="pixel">end.site</span>
+        <h1 class="pixel">end.site</h1>
     </a>
     <nav>
         <ul>

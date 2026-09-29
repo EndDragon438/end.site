@@ -8,10 +8,10 @@
         {{ header }}
         <main id="content">
             <div>
-                <h1 class="creation-title">{{ data: title }}</h1>
+                <h2 class="creation-title">{{ data: title }}</h2>
                 {{ data: date }}
                 {{ data: tags }}
-                <h2 class="creation-subtitle" style="margin:0;"><a href="{{ data: link }}" target="blank">alternative link</a></h2>
+                <p class="creation-subtitle" style="margin:0;"><a href="{{ data: link }}" target="blank">alternative link</a></p>
                 <p>{{ data: text }}</p>
             </div>
         </main>
