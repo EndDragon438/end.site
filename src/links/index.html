@@ -27,6 +27,25 @@
 				background: transparent;
 			}
 			
+			#dump {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-around;
+				gap: 2em;
+				list-style-type: none;
+			}
+			
+			#dump > li {
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: center;
+				border: 2px var(--col-fg-alt);
+				border-style: none solid;
+				padding: 0 0.5em;
+				border-radius: 0.75em;
+			}
+			
 			#toc > li {
 				display: inline;
 			}
@@ -60,9 +79,10 @@
 				<div>
 					<h2>Linkies!</h2>
 					<p>
-						&emsp;Welcome to my link collection! I've collected a couple hundred neat links in my time on the internet, and here
-						they're listed in a few categories. Organization is inconsistent, so try opening a relevant category and then using Ctrl+F.
-						<br>
+						&emsp;Welcome to my link collection! The collection is split up in to the Link Garden, a more carefully curated set of links
+						in nice categories n all, and the Link Dump, where i just put random things i find without worrying about organization much.
+					</p>
+					<p>
 						&emsp;i'll put a ⭐ star on things i think are really cool
 					</p>
 					<p>
@@ -80,9 +100,12 @@
 						<a href="https://isaacfish.neocities.org/links/smallweb">Small Web (isaacfish)</a>
 						|
 						<a href="https://bytemoth.neocities.org/getlinks/">Bytemoth</a>
+						|
+						<a href="https://taigabeetle.nekoweb.org/resources.html">Taige Beetle</a>
 					</p>
 					<h3>Table of Contents</h3>
 					<ul id="toc">
+						<li><a href="#people">People</a></li>
 						<li><a href="#references">References & Graphics</a></li>
 						<li><a href="#webmastery">Webmastery</a></li>
 						<li><a href="#archive">Archive</a></li>
@@ -94,6 +117,33 @@
 					</ul>
 				</div>
 				<div id="linksList">
+					<div id="people">
+						<h3>People</h3>
+						<ul>
+							<li><a href="https://exa.y2k.diy/">Exa</a></li>
+							<li><a href="https://tom7.org/">tom7</a></li>
+							<li><a href="https://lux.rip/">Lux</a></li>
+							<li><a href="https://highlysuspect.agency/">highly suspect agency</a></li>
+							<li><a href="https://zwartice.com/">Akir'Ischa</a></li>
+							<li><a href="https://wyndscale.carrd.co/">Dreki</a></li>
+							<li><a href="http://gregroelofs.com/">Greg Roelofs</a></li>
+							<li><a href="https://deerz.one/">ida</a></li>
+							<li><a href="https://ivy.dog/">ivy sinthetic</a></li>
+							<li><a href="https://cy83rpr1mm13.neocities.org/">Cy83r</a></li>
+							<li><a href="https://www.librarian.net/">Jessamyn West</a></li>
+						</ul>
+					</div>
+					
+					<div id="reading">
+						<h3>Reading</h3>
+						<ul>
+							<li><a href="https://dicot.moe/spicy/animal-girlfriends-old/">animal girlfriends</a></li>
+							<li><a href="https://killsixbilliondemons.com/">Kill 6 Billion Demons</a></li>
+							<li><a href="https://hopefulness.thecomicseries.com/">Hopefullness</a></li>
+							<li><a href="https://non-entity.thecomicseries.com/">Non-Entity</a></li>
+						</ul>
+					</div>
+					
 					<div id="references">
 						<h3>References & Graphics</h3>
 						<ul>
@@ -158,6 +208,7 @@
 							<li><a href="https://www.mf2fm.com/rv/">new JS/HTML effects</a></li>
 							<li><a href="https://webcode.tools/css-generator">CSS effect generator</a></li>
 							<li><a href="https://www.thefanlistings.org/">Fanlistings directory</a></li>
+							<li><a href="https://wave.webaim.org/">web accessibility checker</a></li>
 						</ul>
 					</div>
 					
@@ -242,6 +293,375 @@
 							<li><a href="https://slurify.co/">Slurify</a> (totally normal spotify clone)</li>
 						</ul>
 					</div>
+				</div>
+				<div>
+					<h3>Link Dump</h3>
+					<ul id="dump">
+						<!--
+						<li>
+							<a href=""></a>
+							<span></span>
+						</li>
+						-->
+						<li>
+							<a href="https://www.auralalliance.page/">Aural Alliance</a>
+							<span>furry music label</span>
+						</li>
+						<li>
+							<a href="https://smackstudio.com/">Smack Studio</a>
+							<span>sandbox platform fighting game</span>
+						</li>
+						<li>
+							<a href="https://sigbovik.org/">Association for Computational Heresy</a>
+							<span>yeah that's fun. also a yearly conference</span>
+						</li>
+						<li>
+							<a href="https://yokai.com/">Yokai.com</a>
+							<span>illustrated database of Japanese folklore</span>
+						</li>
+						<li>
+							<a href="https://sites.pitt.edu/~dash/folktexts.html">Folklore and Mythology</a>
+							<span>digitalized EU folklore and myths</span>
+						</li>
+						<li>
+							<a href="https://cooltext.com/Logo-Design-Burning">burning text generator</a>
+						</li>
+						<li>
+							<a href="https://makesweet.com/my/heart-locket">Heart locket GIF generator</a>
+						</li>
+						<li>
+							<a href="https://skinmc.net/achievement">Minecraft achievement generator</a>
+						</li>
+						<li>
+							<a href="https://web.blockbench.net/?plugins=minecraft_title_generator">Minecraft title generator</a>
+						</li>
+						<li>
+							<a href="https://shikoshib.ru/tools/winerr">WinErr</a>
+							<span>Windows error generator</span>
+						</li>
+						<li>
+							<a href="https://rezuaq.be/new-area/image-creator/">FromSoft image macro generator</a>
+						</li>
+						<li>
+							<a href="https://www.3dgifmaker.com/360Spin">3D GIF maker</a>
+							<span>animated 3D effects on images</span>
+						</li>
+						<li>
+							<a href="https://www.makewordart.com/">word art generator</a>
+						</li>
+						<li>
+							<a href="https://deathgenerator.com/#gallery">retro video game screen generator</a>
+						</li>
+						<li>
+							<a href="https://mint.lgbt/">mint.lgbt</a>
+							<span>service provider for queer people</span>
+						</li>
+						<li>
+							<a href="https://www.instructables.com/Simple-Origami-Dragon/">origami dragon pattern</a>
+						</li>
+						<li>
+							<a href="https://wikispeedruns.com/">Wikipedia Speedruns</a>
+						</li>
+						<li>
+							<a href="https://meyerweb.com/eric/tools/color-blend">Color Blender</a>
+							<span>tool to blend between two colours</span>
+						</li>
+						<li>
+							<a href="https://github.com/soapingtime/diyhrt">DIY HRT Archive</a>
+							<span>automatically archiving several DIY HRT resource sites</span>
+						</li>
+						<li>
+							<a href="https://valerie.vg/">Valerie</a>
+							<span>top resource for transfemme DIY HRT</span>
+						</li>
+						<li>
+							<a href="https://www.oscilloscopemusic.com/watch/n-spheres">Oscilloscope Music</a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/playlist?list=PL_9VobYoMHhBjLjSxq5vzNW_9b00VUxiE">No Evil</a>
+							<span>a long running indie animation series</span>
+						</li>
+						<li>
+							<a href="https://recommendmeabook.com/">book recommendation tool</a>
+						</li>
+						<li>
+							<a href="https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts">FDA Recalls</a>
+							<span>mailing list for FDA recall alerts</span>
+						</li>
+						<li>
+							<a href="https://briarproject.org/">Briar</a>
+							<span>P2P messaging over Bluetooth, Wi-Fi, or Tor</span>
+						</li>
+						<li>
+							<a href="https://git.sr.ht/~edwardloveall/scribe/tree/main/docs/instances.md">Scribe</a>
+							<span>alternative frontend to Medium</span>
+						</li>
+						<li>
+							<a href="https://github.com/libredirect/browser_extension">LibRedirect</a>
+							<span>browser extension redirecting popular sites to alt frontends</span>
+						</li>
+						<li>
+							<a href="https://tilde.wiki/Tildeverse">the tildeverse</a>
+							<span>it's the tildeverse!!!</span>
+						</li>
+						<li>
+							<a href="https://ohmygit.org/">OhMyGit</a>
+							<span>game for learning Git</span>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/watch?v=2Fe11OlMiz8">The 12 Days of Christmas - Straight No Chaser</a>
+							<span>totally normal rendition of 12 days of christmas</span>
+						</li>
+						<li>
+							<a href="https://x6ud.github.io/#/">Search photos by model</a>
+							<span>amazing pose reference tool. search for pictures by species and skull position</span>
+						</li>
+						<li>
+							<a href="http://millionsongdataset.com/">Million Song Dataset</a>
+						</li>
+						<li>
+							<a href="https://github.com/logisim-evolution/logisim-evolution">Logisim</a>
+							<span>Logic circuit simulator</span>
+						</li>
+						<li>
+							<span>Here follows a buncha fabric sourcing sites:</span>
+						</li>
+						<li>
+							<a href="https://www.graylinelinen.com/">Gray Lines Linen</a>
+						</li>
+						<li>
+							<a href="https://redrockthreads.com/">Red Rock Threads</a>
+							<span>cotton and silk thread</span>
+						</li>
+						<li>
+							<a href="https://burnleyandtrowbridge.com/">Burnley and Trowbridge</a>
+							<span>linen thread and wool fabric</span>
+						</li>
+						<li>
+							<a href="https://wmboothdraper.com/">Wm. Booth Draper</a>
+							<span>linen thread and wool</span>
+						</li>
+						<li>
+							<a href="https://www.dharmatrading.com/">Dharma Trading</a>
+							<span>silk fabric</span>
+						</li>
+						<li>
+							<a href="https://metrotextilesnyc.com/">metrotextilesnyc</a>
+							<span>wool, silk, cotton, and even some leather</span>
+						</li>
+						<li>
+							<a href="https://fashionfabricsclub.com/">Fashion Fabrics Club</a>
+							<span>wool</span>
+						</li>
+						<li>
+							<a href="https://renaissancefabrics.com/">Renaissance Fabrics</a>
+							<span>buncha different fabrics</span>
+						</li>
+						<li>
+							<a href="https://www.moodfabrics.com/">Mood Fabrics</a>
+							<span>buncha different fabrics, including synthetic</span>
+						</li>
+						<li>
+							<a href="https://www.woolsome.shop/">Woolsome</a>
+						</li>
+						<li>
+							<a href="https://www.tiedtohistory.com/">Tied To History</a>
+							<span>sheer voile linen, and others</span>
+						</li>
+						<li>
+							<a href="https://www.thelinenlab.com/">The Linen Lab</a>
+						</li>
+						<li>
+							<a href="https://periodfabric.com/">Period Fabric</a>
+							<span>wool</span>
+						</li>
+						<li>
+							<a href="https://fabricmartfabrics.com/">Fabric Mart</a>
+							<span>buncha different fabrics (look out for sales)</span>
+						</li>
+						<li>
+							<span>ok das it have fun</span>
+						</li>
+						<li>
+							<a href="https://www.wawak.com/">WAWAK</a>
+							<span>fibrework tools</span>
+						</li>
+						<li>
+							<a href="https://www.opensourcewheelchairs.org/">Open Source Wheelchairs</a>
+							<span>DIY wheelchairs and some more resources</span>
+						</li>
+						<li>
+							<span><a href="https://www.goodrx.com/">GoodRx</a>, <a href="https://scriptcycle.com/">Scriptcycle</a>, <a href="https://www.singlecare.com/">SingleCare</a></span>
+							<span>sites for discounts on medicine (USA)</span>
+						</li>
+						<li>
+							<a href="https://dollarfor.org/">Dollar For</a>
+							<span>see if you qualify for a discount on a medical bill (USA)</span>
+						</li>
+						<li>
+							<a href="https://www.bitchesgetriches.com/how-to-pay-hospital-bills-when-youre-flat-broke/">Bitches Get Riches - Paying hospital bills</a>
+							<span>how to pay when you're flat broke (USA)</span>
+						</li>
+						<li>
+							<a href="https://askjan.org/a-to-z.cfm">JAN A-to-Z</a>
+							<span>disabilities and accommodations (focused on USA law, still useful outside USA)</span>
+						</li>
+						<li>
+							<a href="https://howtogeton.wordpress.com/">How to Get On</a>
+							<span>living with disability, self-advocacy</span>
+						</li>
+						<li>
+							<a href="https://ableforall.com/">ABLE for All</a>
+							<span>increase savings limit on disability (USA)</span>
+						</li>
+						<li>
+							<a href="https://www.google.com/maps/d/viewer?mid=1DxyOTw8dI8n96BHFF2JVUMK7bXsRKtzA&hl=en_US">Erin's Informed Consent Map</a>
+							<span>map of informed consent HRT clinics in the USA (a few outside USA too)</span>
+						</li>
+						<li>
+							<a href="https://genderkit.org.uk/">gender construction kit</a>
+							<span>trans resources for UK</span>
+						</li>
+						<li>
+							<a href="https://transharmreduction.org/">Trans Harm Reduction</a>
+							<span>DIY HRT source testing, injection supplies, healthcare fund, etc.</span>
+						</li>
+						<li>
+							<a href="https://docs.sevenpens.com/drawtab">SevenPens Drawing Tablets</a>
+							<span>guide to drawing tablets</span>
+						</li>
+						<li>
+							<a href="https://3d.nih.gov/">NIH 3D</a>
+							<span>3D scans of anatomy</span>
+						</li>
+						<li>
+							<a href="https://projects.propublica.org/claimfile/">ProPublica Claim File</a>
+							<span>find out why your insurer denied your claim</span>
+						</li>
+						<li>
+							<a href="https://bash-prompt-generator.org/">Bash Prompt Generator</a>
+						</li>
+						<li>
+							<a href="https://www.fieggen.com/shoelace/">Ian's Shoelace Site</a>
+						</li>
+						<li>
+							<a href="https://philome.la/jace_harr/you-feel-like-shit-an-interactive-self-care-guide/">You feel like shit</a>
+							<span>interactive self-care guide</span>
+						</li>
+						<li>
+							<a href="https://github.com/RSS-Bridge/rss-bridge">RSS-Bridge</a>
+							<span>generates RSS feeds for websites missing them</span>
+						</li>
+						<li>
+							<a href="https://www.digitaltransgenderarchive.net/">Digital Transgender Archive</a>
+						</li>
+						<li>
+							<a href="https://www.bitchesgetriches.com/">Bitches Get Riches</a>
+							<span>articles on surviving in a patriarchal capitalist hellscape</span>
+						</li>
+						<li>
+							<a href="https://www.dodiy.org/">DoDIY</a>
+							<span>list of DIY spaces (international) and resources</span>
+						</li>
+						<li>
+							<a href="https://www.zotero.org/groups/4956615/altarchive/items/ZU8G3LGR/library">Alterhuman Archive</a>
+							<span>ever-expanding collection of nonhuman info, writing, and creations</span>
+						</li>
+						<li>
+							<a href="https://nasen.org/">NASEN</a>
+							<span>north american syringe exchange network</span>
+						</li>
+						<li>
+							<a href="https://www.intomore.com/impact/trans-rules-engagement/">Trans Rules of Engagement</a>
+							<span>article on trans solidarity, in the face of misdeeds</span>
+						</li>
+						<li>
+							<a href="https://freedomofform.org/">Freedom of Form Foundation</a>
+							<span>research &amp; outreach on body modding; neat results already!!</span>
+						</li>
+						<li>
+							<a href="https://noterook.net/">Noterook</a>
+							<span>neat social media concept, all local except discovery</span>
+						</li>
+						<li>
+							<a href="https://drive.proton.me/urls/CTQ2QSXB00#zoJFzAb1nybA">Anonsee's Archive</a>
+							<span>archive of transfeminist, womanist, disability justice, restorative justice, and ecofeminist works</span>
+						</li>
+						<li>
+							<a href="https://calculatingempires.net/">Calculating Empires</a>
+							<span>an interactive genealogy of technology and power since 1500</span>
+						</li>
+						<li>
+							<a href="https://www.historyisaweapon.com/">History is a Weapon</a>
+							<span>radical history library (USA focused, but not exclusive)</span>
+						</li>
+						<li>
+							<a href="https://openalternative.co/">Open Alternative</a>
+							<span>open source alternatives to popular software</span>
+						</li>
+						<li>
+							<a href="https://virtualosmuseum.org/">Virtual OS Museum</a>
+							<span>museum of a <em>massive</em> amount of operating systems</span>
+						</li>
+						<li>
+							<a href="https://web1.0hosting.net/">Web 1.0 Hosting</a>
+							<span>simple static website hosting</span>
+						</li>
+						<li>
+							<a href="https://darksitefinder.com/map/">Dark Site Finder</a>
+							<span>map to see the stars!</span>
+						</li>
+						<li>
+							<a href="https://unduemedicaldebt.org/">Undue Medical Debt</a>
+							<span>donate to erase a whole lotta medical debt (USA)</span>
+						</li>
+						<li>
+							<a href="https://forvo.com/">Forvo</a>
+							<span>pronunciation dictionary, with audio!</span>
+						</li>
+						<li>
+							<a href="https://geminiprotocol.net/">Gemini Protocol</a>
+							<span>small web protocol</span>
+						</li>
+						<li>
+							<a href="http://gopher.quux.org:70/">Gopher Protocol</a>
+							<span>small web protocol</span>
+						</li>
+						<li>
+							<a href="https://rainbowspec.observer/">RainbowSpec</a>
+							<span>all about rainbows, colour, and light!</span>
+						</li>
+						<li>
+							<a href="https://www.thistothat.com/">this to that</a>
+							<span>how to stick <em>this</em>, to <em>that</em> (find adhesives for material pairs)</span>
+						</li>
+						<li>
+							<a href="https://uberspace.de/en/">Uberspace</a>
+							<span>pay-what-you-want universal hosting</span>
+						</li>
+						<li>
+							<a href="https://libraryfreedom.org/resources/">Library Freedom Project</a>
+							<span>librarians working to build information democracy</span>
+						</li>
+						<li>
+							<a href="https://ledger.worseonpurpose.com/">Worse On Purpose</a>
+							<span>enshittification tracker and alternative finder</span>
+						</li>
+						<li>
+							<a href="https://mapcomplete.org/surveillance.html">Surveillance under Surveillance</a>
+							<span>map of surveillance devices (international)</span>
+						</li>
+						<li>
+							<a href="https://safefantasytoys.com/">Safe Fantasy Toys</a>
+							<span>list of sex shops, focusing on indie shops</span>
+						</li>
+						<!--
+						<li>
+							<a href=""></a>
+							<span></span>
+						</li>
+						-->
+					</ul>
 				</div>
 			</div>
 		</main>

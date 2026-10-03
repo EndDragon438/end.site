@@ -24,6 +24,7 @@
                             <li><a href="./sr_only.html">Screenreader-only elements</a></li>
                             <li><a href="./css_theme.html">(nearly) JS-free theme switcher</a></li>
                             <li><a href="./tree_list.html">Tree style list</a></li>
+                            <li><a href="./modern_marquee.html">Modern Marquee</a></li>
                         </ul>
                     </div>
                 </details>

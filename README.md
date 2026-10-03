@@ -22,8 +22,10 @@ it's licensed under the GPLv3, a free, copyleft license.
 - blinkeeees:
     - web2.0 hater
     - cachyos
+- on homepage, put main content first in source order then use `order` to move it into place
 
 Potential webrings:
 - [Code collective](https://petrapixel.neocities.org/webring) (resource sharing)
 - [Queer coded](https://isaacfish.neocities.org/webring/) (queer)
 - [*nix](https://softmachine.dev/webring/linuxring/) (linux, maybe after the 'every distro' project gets off the ground)
+- [Enclave](https://zatzhing.me/webring) (maybe dead, but whateva)
