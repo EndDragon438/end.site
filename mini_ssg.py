@@ -113,9 +113,10 @@ def main():
     # Replace templates in static pages
     for page in pages:
         with open(page, 'r') as file:
+            path = file.name
             content = file.read()
         
-        content = applyTemplates(content)
+        content = applyTemplates(content, path)
         
         newpath = page.replace(SOURCE_DIR, DIST_DIR)
         newpath = newpath[:newpath.rfind('/')]
@@ -228,6 +229,9 @@ def applyTemplates(text, data = None):
             <content src="https://end-draconis.neocities.org/{item['type'] if item['type'] == 'articles' else 'creations/' + item['type']}/{f"{item['date'][0]}-{item['date'][1]:02}-{item['date'][2]:02}_{item['title'].replace(' ', '-')}" if item['type'] == 'articles' else item['name']}" type="text/html"></content>
         </entry>
                     """
+                text = re.sub(r'{{.*}}', replace, text, count = 1)
+            elif operation == 'path':
+                replace = data.replace(SOURCE_DIR, "")[:-5]
                 text = re.sub(r'{{.*}}', replace, text, count = 1)
         elif 'data:' in name:
             # Data template

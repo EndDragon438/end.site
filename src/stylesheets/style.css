@@ -202,6 +202,10 @@ a:hover {
 	overflow: hidden;
 }
 
+span.required {
+    color: red;
+}
+
 /* Blur fast-blinking images */
 .flashing {
     filter: blur(40px);
