@@ -22,6 +22,6 @@
             Comment<span class="required">*</span>
             <textarea id="body" name="body" rows="8" placeholder="what have you got to say?" required style="width: 100%; height: 100%; margin-left: 1em;"></textarea>
         </label>
-        <button type="submit" style="margin: auto; padding: 0.2em;">Submit Comment</button>
+        <button type="submit" style="margin: auto; padding: 0.2em;" onclick="alert('Comment submitted for review!')">Submit Comment</button>
     </form>
 </div>
