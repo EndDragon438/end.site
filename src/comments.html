@@ -28,8 +28,9 @@
         {{ before }}
         <main id="content">
             <p>don't mind me, i'm a testing area for development!</p>
+            <iframe name="dummy_frame" id="dummy_frame" style="display: none;"></iframe>
             <input id="page" name="page" type="text" maxlength="256" placeholder="page" form="comments"> <!-- hidden and set to a default -->
-            <form id="comments" action="https://end-site-backend.alwaysdata.net/comment.php" method="post">
+            <form id="comments" action="https://end-site-backend.alwaysdata.net/comment.php" method="post" target="dummy_frame">
                 <!-- page, name, website, email, body -->
                 <label for="name">
                     Username<span class="required">*</span>
